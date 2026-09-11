@@ -1,0 +1,34 @@
+stratum,reading,kind,n,events,c,lo,hi,at_chance,hr,p,model_c
+hyposmia,single-region putamen,current practice,1003,68,0.7758884620002401,0.6961440671496674,0.846224344784636,False,,,
+hyposmia,lowest putamen %expected,current practice,1003,68,0.7614059310841638,0.6803207214004487,0.8410861586378321,False,,,
+hyposmia,age alone,demographic,1003,68,0.6818945851842958,0.601411596029658,0.7619669655003286,False,,,
+hyposmia,"demographics only, CV Cox",supervised in-cohort,1003,68,0.7129907551927002,0.6430589539429304,0.7842233764477381,False,,,
+hyposmia,"33 SBR, CV Cox on conversion",supervised in-cohort,1003,68,0.7750030015608116,0.6968968255715028,0.8468907336420094,False,,,
+hyposmia,"33 SBR + demographics, CV Cox",supervised in-cohort,1003,68,0.7789350462240365,0.7063766090138057,0.8456793224439865,False,,,
+hyposmia,"OIS, imaging only, zero-shot",olfaction-calibrated,1003,68,0.8195461640052828,0.7481285089828597,0.8790851054777398,False,,,
+hyposmia,"OIS, full, zero-shot",olfaction-calibrated,1003,68,0.8350642334013687,0.7699501487971604,0.8964003644382291,False,,,
+hyposmia,UPSIT total,behavioural,1003,68,0.6983131228238684,0.6323701633374745,0.7605808158737484,False,,,
+hyposmia,OIS adjusted for age,multivariable,1003,68,,,,,0.6828683842869127,1.3430994352977815e-17,0.8440088846200025
+hyposmia,upsit adjusted for age,multivariable,1003,68,,,,,0.905835045956002,1.0367824924761947e-06,0.7220704766478568
+hyposmia + DAT deficit,single-region putamen,current practice,265,46,0.6572892173328855,0.5775677633030891,0.7384148322333722,False,,,
+hyposmia + DAT deficit,lowest putamen %expected,current practice,265,46,0.6550218340611353,0.5746951081074859,0.7343213628996684,False,,,
+hyposmia + DAT deficit,age alone,demographic,265,46,0.598925092374874,0.48897517279039093,0.705595121003485,True,,,
+hyposmia + DAT deficit,"demographics only, CV Cox",supervised in-cohort,265,46,0.6390661740006718,0.5430310057566043,0.7346421386961388,False,,,
+hyposmia + DAT deficit,"33 SBR, CV Cox on conversion",supervised in-cohort,265,46,0.6597245549210615,0.5767633031968478,0.7422456116312551,False,,,
+hyposmia + DAT deficit,"33 SBR + demographics, CV Cox",supervised in-cohort,265,46,0.6644272757809876,0.5774427587794394,0.7492222621392767,False,,,
+hyposmia + DAT deficit,"OIS, imaging only, zero-shot",olfaction-calibrated,265,46,0.7559623782331206,0.670804765928485,0.8283824579201958,False,,,
+hyposmia + DAT deficit,"OIS, full, zero-shot",olfaction-calibrated,265,46,0.7643600940544172,0.6794321146709982,0.8358201241245602,False,,,
+hyposmia + DAT deficit,UPSIT total,behavioural,265,46,0.6495633187772926,0.5599876233840836,0.7341463740948562,False,,,
+hyposmia + DAT deficit,OIS adjusted for age,multivariable,265,46,,,,,0.7013310874468951,2.1721892583342041e-07,0.7641921397379913
+hyposmia + DAT deficit,upsit adjusted for age,multivariable,265,46,,,,,0.9265928336004715,0.0018493057164086196,0.6472959355055425
+hyposmia + no DAT deficit,single-region putamen,current practice,738,22,0.5174973488865323,0.3568099784863556,0.7076791489274603,True,,,
+hyposmia + no DAT deficit,lowest putamen %expected,current practice,738,22,0.4240266626268747,0.29188059672057914,0.5916960836378793,True,,,
+hyposmia + no DAT deficit,age alone,demographic,738,22,0.8112407211028632,0.7098441598110434,0.8975412720155463,False,,,
+hyposmia + no DAT deficit,"demographics only, CV Cox",supervised in-cohort,738,22,0.8312376912589001,0.6932191644192397,0.9316798897726425,False,,,
+hyposmia + no DAT deficit,"33 SBR, CV Cox on conversion",supervised in-cohort,738,22,0.5864262990455992,0.47648360539413476,0.7200622712307254,True,,,
+hyposmia + no DAT deficit,"33 SBR + demographics, CV Cox",supervised in-cohort,738,22,0.6708074534161491,0.5600835279054003,0.7841782884533347,False,,,
+hyposmia + no DAT deficit,"OIS, imaging only, zero-shot",olfaction-calibrated,738,22,0.6556582336009695,0.49266524455370075,0.8088717421278977,True,,,
+hyposmia + no DAT deficit,"OIS, full, zero-shot",olfaction-calibrated,738,22,0.71898197242842,0.5615507865276973,0.8650031167372969,False,,,
+hyposmia + no DAT deficit,UPSIT total,behavioural,738,22,0.6895924859869716,0.5732069489656791,0.8033412510630408,False,,,
+hyposmia + no DAT deficit,OIS adjusted for age,multivariable,738,22,,,,,0.7917865379857868,0.005753697660405308,0.824723526738373
+hyposmia + no DAT deficit,upsit adjusted for age,multivariable,738,22,,,,,0.8957498216144318,0.004295957412902341,0.8007120133313135

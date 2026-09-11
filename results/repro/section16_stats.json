@@ -1,0 +1,4071 @@
+{
+  "temporal_split": {
+    "cutoff": 2017,
+    "n_train": 435,
+    "n_test_pdhc": 963,
+    "r_heldout": 0.4159019848168688,
+    "n": 986,
+    "events": 54,
+    "c_upsit": 0.7015607580824972,
+    "c_ois": 0.8268195572543399,
+    "dc": 0.12525879917184268,
+    "lo": 0.05732904672118262,
+    "hi": 0.19976569342504807,
+    "p": 0.001,
+    "overlap_with_main": 986
+  },
+  "icc": {
+    "n_pairs": 1809,
+    "upsit_r": 0.8066517041774,
+    "upsit_icc": 0.8007913560247816,
+    "omi_r": 0.7637441670187327,
+    "omi_icc": 0.7594488057932283,
+    "by_group": [
+      {
+        "group": "Genetic",
+        "n_pairs": 144,
+        "upsit_r": 0.7895153633074785,
+        "upsit_icc": 0.7868479641056754,
+        "omi_r": 0.800575105269107,
+        "omi_icc": 0.7998733035319129
+      },
+      {
+        "group": "HC",
+        "n_pairs": 94,
+        "upsit_r": 0.575162322129037,
+        "upsit_icc": 0.4238359912252593,
+        "omi_r": 0.6250502907136538,
+        "omi_icc": 0.4895006687139636
+      },
+      {
+        "group": "Hyposmia",
+        "n_pairs": 998,
+        "upsit_r": 0.8009061437184468,
+        "upsit_icc": 0.7887995649684649,
+        "omi_r": 0.7623730381096792,
+        "omi_icc": 0.7527540397541347
+      },
+      {
+        "group": "PD",
+        "n_pairs": 188,
+        "upsit_r": 0.6481361031879009,
+        "upsit_icc": 0.5258199420947012,
+        "omi_r": 0.6133759174419785,
+        "omi_icc": 0.4826491328492357
+      },
+      {
+        "group": "RBD",
+        "n_pairs": 385,
+        "upsit_r": 0.850272547138321,
+        "upsit_icc": 0.8478726567151046,
+        "omi_r": 0.8319798787403994,
+        "omi_icc": 0.8295692450574799
+      }
+    ]
+  },
+  "landmark": [
+    {
+      "landmark_yr": 0,
+      "n": 1003,
+      "events": 68,
+      "c_upsit": 0.6983131228238684,
+      "c_ois": 0.8350642334013687,
+      "dc": 0.13675111057750033,
+      "lo": 0.06714499999651713,
+      "hi": 0.2038020769712451,
+      "p": 0.0
+    },
+    {
+      "landmark_yr": 1,
+      "n": 993,
+      "events": 58,
+      "c_upsit": 0.7201301427371957,
+      "c_ois": 0.8314861460957179,
+      "dc": 0.11135600335852225,
+      "lo": 0.041321911626317855,
+      "hi": 0.18517601398902742,
+      "p": 0.0
+    },
+    {
+      "landmark_yr": 2,
+      "n": 962,
+      "events": 27,
+      "c_upsit": 0.7368913857677902,
+      "c_ois": 0.8932584269662921,
+      "dc": 0.15636704119850187,
+      "lo": 0.021777722388390347,
+      "hi": 0.2746808286296951,
+      "p": 0.024
+    }
+  ],
+  "td_auc": [
+    {
+      "horizon_yr": 1,
+      "n_at_risk": 827,
+      "events": 10,
+      "auc_upsit": 0.6526927784577724,
+      "auc_ois": 0.8439412484700123,
+      "d_auc": 0.19124847001223988
+    },
+    {
+      "horizon_yr": 2,
+      "n_at_risk": 473,
+      "events": 41,
+      "auc_upsit": 0.7345867208672087,
+      "auc_ois": 0.8557475158084914,
+      "d_auc": 0.12116079494128273
+    },
+    {
+      "horizon_yr": 3,
+      "n_at_risk": 156,
+      "events": 53,
+      "auc_upsit": 0.7946510349880931,
+      "auc_ois": 0.8521707272394211,
+      "d_auc": 0.057519692251328025
+    }
+  ],
+  "centre_split": {
+    "discovery": {
+      "sites": [
+        19,
+        26,
+        28,
+        31,
+        67
+      ],
+      "n": 574,
+      "ev": 41,
+      "n_hyp": 290,
+      "ev_hyp": 16,
+      "c_upsit": 0.7189079878665319,
+      "c_ois": 0.8296258847320526,
+      "dc": 0.11071789686552069,
+      "lo": -0.020338811553963693,
+      "hi": 0.23423837337666895,
+      "p": 0.092,
+      "c_upsit_nh": 0.6428138265615525,
+      "c_ois_nh": 0.726096624216697
+    },
+    "external": {
+      "sites": [
+        22,
+        23,
+        33,
+        35,
+        36,
+        38
+      ],
+      "n": 441,
+      "ev": 26,
+      "n_hyp": 343,
+      "ev_hyp": 17,
+      "c_upsit": 0.6625046589638465,
+      "c_ois": 0.9381289601192695,
+      "dc": 0.275624301155423,
+      "lo": 0.14969937855534965,
+      "hi": 0.4207720105124834,
+      "p": 0.0,
+      "c_upsit_nh": 0.5827886710239651,
+      "c_ois_nh": 0.8954248366013072
+    }
+  },
+  "head_to_head": [
+    {
+      "model": "UPSIT (raw)",
+      "c": 0.6983131228238684,
+      "dc": 0.13675111057750033,
+      "lo": 0.06714499999651713,
+      "hi": 0.2038020769712451,
+      "p": 0.0,
+      "training": "behavioural baseline"
+    },
+    {
+      "model": "Binary DAT-deficit flag",
+      "c": 0.7487543522631769,
+      "dc": 0.08630988113819182,
+      "lo": 0.033703792814741236,
+      "hi": 0.1380947989872714,
+      "p": 0.001,
+      "training": "threshold rule"
+    },
+    {
+      "model": "Putamen + age/sex/edu",
+      "c": 0.805558890623124,
+      "dc": 0.02950534277824468,
+      "lo": -0.007205474017508092,
+      "hi": 0.06674852776553807,
+      "p": 0.059,
+      "training": "Coxnet 5-fold CV (in-cohort)"
+    },
+    {
+      "model": "33-SBR only",
+      "c": 0.7861688077800456,
+      "dc": 0.048895425621323096,
+      "lo": -0.0013639765444496729,
+      "hi": 0.10094889108324907,
+      "p": 0.03,
+      "training": "Coxnet 5-fold CV (in-cohort)"
+    },
+    {
+      "model": "33-SBR + age/sex/edu",
+      "c": 0.8124924960979709,
+      "dc": 0.022571737303397787,
+      "lo": -0.014799381155130879,
+      "hi": 0.06412117727478026,
+      "p": 0.11,
+      "training": "Coxnet 5-fold CV (in-cohort)"
+    },
+    {
+      "model": "OIS, SBR-only",
+      "c": 0.8195461640052828,
+      "dc": 0.01551806939608591,
+      "lo": -0.005962886883258103,
+      "hi": 0.037775018867569087,
+      "p": 0.081,
+      "training": "Ridge on UPSIT, PD+HC zero-shot"
+    },
+    {
+      "model": "OIS, full",
+      "c": 0.8350642334013687,
+      "dc": NaN,
+      "lo": NaN,
+      "hi": NaN,
+      "p": NaN,
+      "training": "Ridge on UPSIT, PD+HC zero-shot"
+    }
+  ],
+  "decisive_control": {
+    "dc": 0.007053667907311878,
+    "lo": -0.029087235778816244,
+    "hi": 0.049565309963310676,
+    "p": 0.359
+  },
+  "dat_metric_validation": {
+    "n_validated": 1181,
+    "agreement_vs_official_Stage_D": 0.9966130397967824,
+    "n_discordant": 4,
+    "official_deficit_max_pct_exp": 0.748569691709595,
+    "official_normal_min_pct_exp": 0.7315341409183851,
+    "n_hc_normative": 239,
+    "norm_intercept": 1.854698042770434,
+    "norm_beta_age": -0.003033634458319997,
+    "norm_beta_sex": -0.24190766543794648
+  },
+  "calibration": [
+    {
+      "cohort": "All prodromal",
+      "n": 2441,
+      "slope": 0.8847112908988698,
+      "intercept": -2.3932207226391746,
+      "r": 0.41669325783684474,
+      "p": 3.80091843190643e-103,
+      "mean_omi": -5.730668868984717
+    },
+    {
+      "cohort": "Non-Hyposmia",
+      "n": 885,
+      "slope": 1.0274252176895458,
+      "intercept": -3.5237001978458657,
+      "r": 0.47440158236639296,
+      "p": 7.305503838037028e-51,
+      "mean_omi": -2.716889126385697
+    },
+    {
+      "cohort": "Hyposmia",
+      "n": 1556,
+      "slope": 0.6795423671070759,
+      "intercept": 1.7463396707986298,
+      "r": 0.3577185275570894,
+      "p": 3.5198518499266674e-48,
+      "mean_omi": -7.444804519498942
+    }
+  ],
+  "calibration_deciles": [
+    {
+      "dec": 1,
+      "n": 89,
+      "pred": 22.532840404630775,
+      "obs": 18.48314606741573,
+      "residual": -4.049694337215044
+    },
+    {
+      "dec": 2,
+      "n": 88,
+      "pred": 25.137101055382118,
+      "obs": 22.704545454545453,
+      "residual": -2.4325556008366647
+    },
+    {
+      "dec": 3,
+      "n": 89,
+      "pred": 26.5059193724189,
+      "obs": 23.01123595505618,
+      "residual": -3.4946834173627224
+    },
+    {
+      "dec": 4,
+      "n": 88,
+      "pred": 27.62909666319177,
+      "obs": 25.375,
+      "residual": -2.2540966631917705
+    },
+    {
+      "dec": 5,
+      "n": 89,
+      "pred": 28.71805674843643,
+      "obs": 24.786516853932586,
+      "residual": -3.931539894503846
+    },
+    {
+      "dec": 6,
+      "n": 88,
+      "pred": 29.780348026986463,
+      "obs": 28.0,
+      "residual": -1.7803480269864629
+    },
+    {
+      "dec": 7,
+      "n": 88,
+      "pred": 30.775223312365867,
+      "obs": 28.0,
+      "residual": -2.775223312365867
+    },
+    {
+      "dec": 8,
+      "n": 89,
+      "pred": 32.27576273344747,
+      "obs": 31.15730337078652,
+      "residual": -1.1184593626609534
+    },
+    {
+      "dec": 9,
+      "n": 88,
+      "pred": 34.01713046644795,
+      "obs": 33.05681818181818,
+      "residual": -0.9603122846297723
+    },
+    {
+      "dec": 10,
+      "n": 89,
+      "pred": 36.81712544563288,
+      "obs": 32.48314606741573,
+      "residual": -4.333979378217151
+    }
+  ],
+  "pars_extension": {
+    "n": 265,
+    "events": 46,
+    "c_upsit": 0.6495633187772926,
+    "c_ois": 0.7643600940544172,
+    "dc": 0.11479677527712462,
+    "lo": 0.011575374692229357,
+    "hi": 0.21494605409089368,
+    "p": 0.026
+  },
+  "decomposition": [
+    {
+      "cohort": "All prodromal",
+      "n": 1759,
+      "sd_upsit": 8.435205609326683,
+      "sd_ois": 3.8159474479899393,
+      "sd_omi": 7.554999058629842,
+      "r_ois_omi": -0.008442261889836586,
+      "c_upsit": 0.7003415631786459,
+      "c_upsit_lo": 0.6541799915949725,
+      "c_upsit_hi": 0.7486375718899309,
+      "c_OIS": 0.7988572392418141,
+      "c_OIS_lo": 0.7534984027781241,
+      "c_OIS_hi": 0.8397258130242518,
+      "c_OMI": 0.5830680244857225,
+      "c_OMI_lo": 0.5322160489364958,
+      "c_OMI_hi": 0.6328331440258333,
+      "c_PUTAMEN_REF_CWM": 0.753139780865434,
+      "c_PUTAMEN_REF_CWM_lo": 0.6966792445682812,
+      "c_PUTAMEN_REF_CWM_hi": 0.802036278000311
+    },
+    {
+      "cohort": "Hyposmia",
+      "n": 1003,
+      "sd_upsit": 7.127021052865324,
+      "sd_ois": 3.461696740169668,
+      "sd_omi": 6.670075263796903,
+      "r_ois_omi": -0.1229725835273611,
+      "c_upsit": 0.6983131228238684,
+      "c_upsit_lo": 0.6332689307125332,
+      "c_upsit_hi": 0.7626727012717341,
+      "c_OIS": 0.8350642334013687,
+      "c_OIS_lo": 0.767681998434612,
+      "c_OIS_hi": 0.8945963260780124,
+      "c_OMI": 0.5391403529835515,
+      "c_OMI_lo": 0.46950682987449,
+      "c_OMI_hi": 0.611584467654487,
+      "c_PUTAMEN_REF_CWM": 0.7758884620002401,
+      "c_PUTAMEN_REF_CWM_lo": 0.6895871208754171,
+      "c_PUTAMEN_REF_CWM_hi": 0.845614327850456
+    },
+    {
+      "cohort": "Non-Hyposmia",
+      "n": 756,
+      "sd_upsit": 8.854884270114496,
+      "sd_ois": 4.175278186167027,
+      "sd_omi": 7.756205979308284,
+      "r_ois_omi": 0.012618705156117634,
+      "c_upsit": 0.6998214772755449,
+      "c_upsit_lo": 0.6387304724402568,
+      "c_upsit_hi": 0.7620471253191401,
+      "c_OIS": 0.7664575636607076,
+      "c_OIS_lo": 0.7026311558024511,
+      "c_OIS_hi": 0.8207984264805965,
+      "c_OMI": 0.590067193969899,
+      "c_OMI_lo": 0.5227442855390796,
+      "c_OMI_hi": 0.6627392186655834,
+      "c_PUTAMEN_REF_CWM": 0.7366541866058367,
+      "c_PUTAMEN_REF_CWM_lo": 0.664143585638621,
+      "c_PUTAMEN_REF_CWM_hi": 0.801935946513544
+    }
+  ],
+  "prespecified_comparisons": [
+    {
+      "stratum": "hyposmia",
+      "comparison": "OIS - UPSIT",
+      "n": 1003,
+      "events": 68,
+      "c_a": 0.8350642334013687,
+      "c_b": 0.6983131228238684,
+      "dC": 0.13675111057750033,
+      "lo": 0.07176303406546798,
+      "hi": 0.20334995048886226,
+      "p": 0.001
+    },
+    {
+      "stratum": "hyposmia",
+      "comparison": "OIS - putamen",
+      "n": 1003,
+      "events": 68,
+      "c_a": 0.8350642334013687,
+      "c_b": 0.7758884620002401,
+      "dC": 0.05917577140112862,
+      "lo": 0.010333862910988097,
+      "hi": 0.1110827402165636,
+      "p": 0.014
+    },
+    {
+      "stratum": "hyposmia + DAT deficit",
+      "comparison": "OIS - UPSIT",
+      "n": 265,
+      "events": 46,
+      "c_a": 0.7643600940544172,
+      "c_b": 0.6495633187772926,
+      "dC": 0.11479677527712462,
+      "lo": 0.014593915380416048,
+      "hi": 0.21324506950219796,
+      "p": 0.022
+    },
+    {
+      "stratum": "hyposmia + no DAT deficit",
+      "comparison": "OIS - putamen",
+      "n": 738,
+      "events": 22,
+      "c_a": 0.71898197242842,
+      "c_b": 0.5174973488865323,
+      "dC": 0.20148462354188768,
+      "lo": 0.07217203620917283,
+      "hi": 0.344208899671893,
+      "p": 0.001
+    },
+    {
+      "stratum": "hyposmia + no DAT deficit",
+      "comparison": "OIS - UPSIT",
+      "n": 738,
+      "events": 22,
+      "c_a": 0.71898197242842,
+      "c_b": 0.6895924859869716,
+      "dC": 0.029389486441448343,
+      "lo": -0.08428725707340748,
+      "hi": 0.1379696194166478,
+      "p": 0.516
+    },
+    {
+      "stratum": "non-hyposmia-enriched",
+      "comparison": "OIS - UPSIT",
+      "n": 756,
+      "events": 84,
+      "c_a": 0.7664575636607076,
+      "c_b": 0.6998214772755449,
+      "dC": 0.06663608638516272,
+      "lo": 0.00029842158049915904,
+      "hi": 0.13394585564280656,
+      "p": 0.05
+    }
+  ],
+  "interaction_test": {
+    "dC_hyposmia": 0.13675111057750033,
+    "n_hyposmia": 1003,
+    "events_hyposmia": 68,
+    "dC_control": 0.06663608638516272,
+    "n_control": 756,
+    "events_control": 84,
+    "ratio": 2.052208015144622,
+    "dd": 0.07011502419233762,
+    "lo": -0.03219555379416288,
+    "hi": 0.16771011896206933,
+    "p": 0.181,
+    "frac_above_zero": 0.9095,
+    "n_boot": 2000,
+    "verdict": "not significant; descriptive observation only"
+  },
+  "carrier_arm_composition": {
+    "enrolled": {
+      "LRRK2": 167,
+      "GBA": 161,
+      "LRRK2 + GBA": 16,
+      "SNCA": 9,
+      "PRKN": 7,
+      "LRRK2 + VPS35": 1
+    },
+    "analysed": {
+      "LRRK2": 166,
+      "GBA": 161,
+      "LRRK2 + GBA": 15,
+      "SNCA": 9,
+      "PRKN": 7,
+      "LRRK2 + VPS35": 1
+    },
+    "n_enrolled": 361,
+    "n_analysed": 359,
+    "upsit_mean": 33.030640668523674,
+    "upsit_sd": 5.386374012950802,
+    "pct_ge30": 84.958217270195,
+    "pct_ge35": 48.467966573816156,
+    "pct_ge30_hyposmia": 14.010282776349614
+  },
+  "heldout_by_arm": {
+    "rule_used_in_paper": "A (dual carriers assigned to RBD)",
+    "rows": [
+      {
+        "rule": "A",
+        "arm": "Hyposmia",
+        "n": 1556,
+        "r": 0.3577185275570892,
+        "p": 3.5198518499268175e-48,
+        "upsit_mean": 21.236503856041132,
+        "upsit_sd": 6.858654100108628
+      },
+      {
+        "rule": "A",
+        "arm": "RBD",
+        "n": 526,
+        "r": 0.3121177078517079,
+        "p": 2.3877193794933755e-13,
+        "upsit_mean": 22.38212927756654,
+        "upsit_sd": 8.316385663565647
+      },
+      {
+        "rule": "A",
+        "arm": "Genetic",
+        "n": 359,
+        "r": 0.22380873931715323,
+        "p": 1.8672712422556238e-05,
+        "upsit_mean": 33.030640668523674,
+        "upsit_sd": 5.386374012950802
+      },
+      {
+        "rule": "B",
+        "arm": "Hyposmia",
+        "n": 1556,
+        "r": 0.3577185275570892,
+        "p": 3.5198518499268175e-48,
+        "upsit_mean": 21.236503856041132,
+        "upsit_sd": 6.858654100108628
+      },
+      {
+        "rule": "B",
+        "arm": "RBD",
+        "n": 520,
+        "r": 0.32216209823419684,
+        "p": 5.0569504217355666e-14,
+        "upsit_mean": 22.342307692307692,
+        "upsit_sd": 8.313587692990021
+      },
+      {
+        "rule": "B",
+        "arm": "Genetic",
+        "n": 365,
+        "r": 0.22271326392335739,
+        "p": 1.751727831126925e-05,
+        "upsit_mean": 32.912328767123284,
+        "upsit_sd": 5.512023451417626
+      }
+    ],
+    "pooled_r": 0.41669325783684463,
+    "pooled_n": 2441
+  },
+  "cindex_ci": [
+    {
+      "stratum": "all prodromal",
+      "reading": "UPSIT total",
+      "n": 1759,
+      "events": 152,
+      "c": 0.7003415631786459,
+      "lo": 0.6529607850821774,
+      "hi": 0.7446998094230697,
+      "at_chance": false
+    },
+    {
+      "stratum": "all prodromal",
+      "reading": "OIS",
+      "n": 1759,
+      "events": 152,
+      "c": 0.7988572392418141,
+      "lo": 0.7531314523966084,
+      "hi": 0.8427189278946813,
+      "at_chance": false
+    },
+    {
+      "stratum": "all prodromal",
+      "reading": "OMI",
+      "n": 1759,
+      "events": 152,
+      "c": 0.5830680244857225,
+      "lo": 0.5357201345307714,
+      "hi": 0.6316534145901139,
+      "at_chance": false
+    },
+    {
+      "stratum": "all prodromal",
+      "reading": "putamen SBR",
+      "n": 1759,
+      "events": 152,
+      "c": 0.753139780865434,
+      "lo": 0.705643943753071,
+      "hi": 0.8041298893964954,
+      "at_chance": false
+    },
+    {
+      "stratum": "all prodromal",
+      "reading": "lowest putamen %expected",
+      "n": 1759,
+      "events": 152,
+      "c": 0.7504128978754208,
+      "lo": 0.7002841295754434,
+      "hi": 0.798305295856446,
+      "at_chance": false
+    },
+    {
+      "stratum": "hyposmia",
+      "reading": "UPSIT total",
+      "n": 1003,
+      "events": 68,
+      "c": 0.6983131228238684,
+      "lo": 0.6325314842230595,
+      "hi": 0.7601279052264246,
+      "at_chance": false
+    },
+    {
+      "stratum": "hyposmia",
+      "reading": "OIS",
+      "n": 1003,
+      "events": 68,
+      "c": 0.8350642334013687,
+      "lo": 0.7741060224062686,
+      "hi": 0.894507130532964,
+      "at_chance": false
+    },
+    {
+      "stratum": "hyposmia",
+      "reading": "OMI",
+      "n": 1003,
+      "events": 68,
+      "c": 0.5391403529835515,
+      "lo": 0.47340595128061846,
+      "hi": 0.6113959695665104,
+      "at_chance": true
+    },
+    {
+      "stratum": "hyposmia",
+      "reading": "putamen SBR",
+      "n": 1003,
+      "events": 68,
+      "c": 0.7758884620002401,
+      "lo": 0.6904716741353928,
+      "hi": 0.8482365331554907,
+      "at_chance": false
+    },
+    {
+      "stratum": "hyposmia",
+      "reading": "lowest putamen %expected",
+      "n": 1003,
+      "events": 68,
+      "c": 0.7614059310841638,
+      "lo": 0.6740277730288694,
+      "hi": 0.8373791713854698,
+      "at_chance": false
+    },
+    {
+      "stratum": "hyposmia + DAT deficit",
+      "reading": "UPSIT total",
+      "n": 265,
+      "events": 46,
+      "c": 0.6495633187772926,
+      "lo": 0.5571224773965076,
+      "hi": 0.7325541641540069,
+      "at_chance": false
+    },
+    {
+      "stratum": "hyposmia + DAT deficit",
+      "reading": "OIS",
+      "n": 265,
+      "events": 46,
+      "c": 0.7643600940544172,
+      "lo": 0.6763515078893891,
+      "hi": 0.8405852416385041,
+      "at_chance": false
+    },
+    {
+      "stratum": "hyposmia + DAT deficit",
+      "reading": "OMI",
+      "n": 265,
+      "events": 46,
+      "c": 0.5554249244205576,
+      "lo": 0.4679121122201609,
+      "hi": 0.6500147395055004,
+      "at_chance": true
+    },
+    {
+      "stratum": "hyposmia + DAT deficit",
+      "reading": "putamen SBR",
+      "n": 265,
+      "events": 46,
+      "c": 0.6572892173328855,
+      "lo": 0.5719882023092975,
+      "hi": 0.7368203737257351,
+      "at_chance": false
+    },
+    {
+      "stratum": "hyposmia + DAT deficit",
+      "reading": "lowest putamen %expected",
+      "n": 265,
+      "events": 46,
+      "c": 0.6550218340611353,
+      "lo": 0.5638848904656721,
+      "hi": 0.7461789216649146,
+      "at_chance": false
+    },
+    {
+      "stratum": "hyposmia + no DAT deficit",
+      "reading": "UPSIT total",
+      "n": 738,
+      "events": 22,
+      "c": 0.6895924859869716,
+      "lo": 0.5621838670821411,
+      "hi": 0.8126556125511423,
+      "at_chance": false
+    },
+    {
+      "stratum": "hyposmia + no DAT deficit",
+      "reading": "OIS",
+      "n": 738,
+      "events": 22,
+      "c": 0.71898197242842,
+      "lo": 0.5668409738846262,
+      "hi": 0.8835749616483839,
+      "at_chance": false
+    },
+    {
+      "stratum": "hyposmia + no DAT deficit",
+      "reading": "OMI",
+      "n": 738,
+      "events": 22,
+      "c": 0.621269504620512,
+      "lo": 0.5043170890137626,
+      "hi": 0.7334612049728468,
+      "at_chance": false
+    },
+    {
+      "stratum": "hyposmia + no DAT deficit",
+      "reading": "putamen SBR",
+      "n": 738,
+      "events": 22,
+      "c": 0.5174973488865323,
+      "lo": 0.36061515816827944,
+      "hi": 0.7186785106291032,
+      "at_chance": true
+    },
+    {
+      "stratum": "hyposmia + no DAT deficit",
+      "reading": "lowest putamen %expected",
+      "n": 738,
+      "events": 22,
+      "c": 0.4240266626268747,
+      "lo": 0.27583863777218737,
+      "hi": 0.577391540795202,
+      "at_chance": true
+    },
+    {
+      "stratum": "non-hyposmia-enriched",
+      "reading": "UPSIT total",
+      "n": 756,
+      "events": 84,
+      "c": 0.6998214772755449,
+      "lo": 0.6349438519497085,
+      "hi": 0.7600980414145581,
+      "at_chance": false
+    },
+    {
+      "stratum": "non-hyposmia-enriched",
+      "reading": "OIS",
+      "n": 756,
+      "events": 84,
+      "c": 0.7664575636607076,
+      "lo": 0.7043189103541067,
+      "hi": 0.8229643031858108,
+      "at_chance": false
+    },
+    {
+      "stratum": "non-hyposmia-enriched",
+      "reading": "OMI",
+      "n": 756,
+      "events": 84,
+      "c": 0.590067193969899,
+      "lo": 0.5162150424380726,
+      "hi": 0.6591650444416007,
+      "at_chance": false
+    },
+    {
+      "stratum": "non-hyposmia-enriched",
+      "reading": "putamen SBR",
+      "n": 756,
+      "events": 84,
+      "c": 0.7366541866058367,
+      "lo": 0.6642021397380529,
+      "hi": 0.7988845973026988,
+      "at_chance": false
+    },
+    {
+      "stratum": "non-hyposmia-enriched",
+      "reading": "lowest putamen %expected",
+      "n": 756,
+      "events": 84,
+      "c": 0.746373757159505,
+      "lo": 0.6811457970143906,
+      "hi": 0.8043205177684245,
+      "at_chance": false
+    }
+  ],
+  "continuous_vs_binary": [
+    {
+      "stratum": "all prodromal",
+      "reading": "UPSIT, continuous score",
+      "kind": "continuous",
+      "n": 1759,
+      "events": 152,
+      "c": 0.7003415631786459,
+      "lo": 0.6529607850821774,
+      "hi": 0.7446998094230697
+    },
+    {
+      "stratum": "all prodromal",
+      "reading": "UPSIT, dichotomised (hyposmic yes/no)",
+      "kind": "binary",
+      "n": 1759,
+      "events": 152,
+      "c": 0.618499933233535,
+      "lo": 0.5814360546205832,
+      "hi": 0.6546993062254021
+    },
+    {
+      "stratum": "all prodromal",
+      "reading": "imaging, continuous (lowest putamen %exp)",
+      "kind": "continuous",
+      "n": 1759,
+      "events": 152,
+      "c": 0.7504128978754208,
+      "lo": 0.7024811172940323,
+      "hi": 0.7982686443903714
+    },
+    {
+      "stratum": "all prodromal",
+      "reading": "imaging, dichotomised (DAT-deficit flag)",
+      "kind": "binary",
+      "n": 1759,
+      "events": 152,
+      "c": 0.7158419251231666,
+      "lo": 0.6745457478168456,
+      "hi": 0.7605338684984674
+    },
+    {
+      "stratum": "all prodromal",
+      "reading": "OIS, continuous",
+      "kind": "continuous",
+      "n": 1759,
+      "events": 152,
+      "c": 0.7988572392418141,
+      "lo": 0.7537577036337668,
+      "hi": 0.8422335908746389
+    },
+    {
+      "stratum": "hyposmia",
+      "reading": "UPSIT, continuous score",
+      "kind": "continuous",
+      "n": 1003,
+      "events": 68,
+      "c": 0.6983131228238684,
+      "lo": 0.6325314842230595,
+      "hi": 0.7601279052264246
+    },
+    {
+      "stratum": "hyposmia",
+      "reading": "UPSIT, dichotomised (hyposmic yes/no)",
+      "kind": "binary",
+      "n": 1003,
+      "events": 68,
+      "c": 0.5802767439068316,
+      "lo": 0.5474598430696581,
+      "hi": 0.6072789049918788
+    },
+    {
+      "stratum": "hyposmia",
+      "reading": "imaging, continuous (lowest putamen %exp)",
+      "kind": "continuous",
+      "n": 1003,
+      "events": 68,
+      "c": 0.7614059310841638,
+      "lo": 0.6747028831608805,
+      "hi": 0.8425627073244396
+    },
+    {
+      "stratum": "hyposmia",
+      "reading": "imaging, dichotomised (DAT-deficit flag)",
+      "kind": "binary",
+      "n": 1003,
+      "events": 68,
+      "c": 0.7487543522631769,
+      "lo": 0.6829333106060986,
+      "hi": 0.8061440341346409
+    },
+    {
+      "stratum": "hyposmia",
+      "reading": "OIS, continuous",
+      "kind": "continuous",
+      "n": 1003,
+      "events": 68,
+      "c": 0.8350642334013687,
+      "lo": 0.7702057649061561,
+      "hi": 0.891841701945599
+    }
+  ],
+  "levelled_comparison": {
+    "optimal_cut_all": [
+      {
+        "reading": "UPSIT total",
+        "cut": 23.0,
+        "chi2": 32.875735341219354,
+        "n_low": 592,
+        "frac_layer": 0.5902293120638086,
+        "frac_events": 0.8529411764705882,
+        "risk2y_low": 0.09631106106128762,
+        "risk2y_high": 0.01250548027780185,
+        "p_naive": 9.824186280186694e-09,
+        "p_permutation": 0.0
+      },
+      {
+        "reading": "lowest putamen %expected",
+        "cut": 52.87208982797759,
+        "chi2": 112.85284315888734,
+        "n_low": 128,
+        "frac_layer": 0.12761714855433698,
+        "frac_events": 0.47058823529411764,
+        "risk2y_low": 0.26730424413177944,
+        "risk2y_high": 0.031056751340385547,
+        "p_naive": 2.3239870347265207e-26,
+        "p_permutation": 0.0
+      },
+      {
+        "reading": "OIS",
+        "cut": 24.301436400611312,
+        "chi2": 137.89139374965922,
+        "n_low": 121,
+        "frac_layer": 0.12063808574277168,
+        "frac_events": 0.4852941176470588,
+        "risk2y_low": 0.28003003701815343,
+        "risk2y_high": 0.028337659436104,
+        "p_naive": 7.69735285061513e-32,
+        "p_permutation": 0.0
+      }
+    ],
+    "sensitivity_matched": [
+      {
+        "kind": "sensitivity_matched",
+        "reading": "UPSIT total",
+        "target_sensitivity": 0.5,
+        "n_flagged": 276,
+        "frac_flagged": 0.27517447657028915,
+        "events_caught": NaN,
+        "frac_events": NaN
+      },
+      {
+        "kind": "sensitivity_matched",
+        "reading": "lowest putamen %expected",
+        "target_sensitivity": 0.5,
+        "n_flagged": 158,
+        "frac_flagged": 0.1575274177467597,
+        "events_caught": NaN,
+        "frac_events": NaN
+      },
+      {
+        "kind": "sensitivity_matched",
+        "reading": "OIS",
+        "target_sensitivity": 0.5,
+        "n_flagged": 132,
+        "frac_flagged": 0.13160518444666003,
+        "events_caught": NaN,
+        "frac_events": NaN
+      },
+      {
+        "kind": "sensitivity_matched",
+        "reading": "UPSIT total",
+        "target_sensitivity": 0.6,
+        "n_flagged": 367,
+        "frac_flagged": 0.3659022931206381,
+        "events_caught": NaN,
+        "frac_events": NaN
+      },
+      {
+        "kind": "sensitivity_matched",
+        "reading": "lowest putamen %expected",
+        "target_sensitivity": 0.6,
+        "n_flagged": 216,
+        "frac_flagged": 0.21535393818544366,
+        "events_caught": NaN,
+        "frac_events": NaN
+      },
+      {
+        "kind": "sensitivity_matched",
+        "reading": "OIS",
+        "target_sensitivity": 0.6,
+        "n_flagged": 195,
+        "frac_flagged": 0.19441674975074777,
+        "events_caught": NaN,
+        "frac_events": NaN
+      },
+      {
+        "kind": "sensitivity_matched",
+        "reading": "UPSIT total",
+        "target_sensitivity": 0.7,
+        "n_flagged": 458,
+        "frac_flagged": 0.45663010967098705,
+        "events_caught": NaN,
+        "frac_events": NaN
+      },
+      {
+        "kind": "sensitivity_matched",
+        "reading": "lowest putamen %expected",
+        "target_sensitivity": 0.7,
+        "n_flagged": 348,
+        "frac_flagged": 0.3469591226321037,
+        "events_caught": NaN,
+        "frac_events": NaN
+      },
+      {
+        "kind": "sensitivity_matched",
+        "reading": "OIS",
+        "target_sensitivity": 0.7,
+        "n_flagged": 247,
+        "frac_flagged": 0.24626121635094717,
+        "events_caught": NaN,
+        "frac_events": NaN
+      },
+      {
+        "kind": "sensitivity_matched",
+        "reading": "UPSIT total",
+        "target_sensitivity": 0.8,
+        "n_flagged": 525,
+        "frac_flagged": 0.5234297108673978,
+        "events_caught": NaN,
+        "frac_events": NaN
+      },
+      {
+        "kind": "sensitivity_matched",
+        "reading": "lowest putamen %expected",
+        "target_sensitivity": 0.8,
+        "n_flagged": 537,
+        "frac_flagged": 0.5353938185443669,
+        "events_caught": NaN,
+        "frac_events": NaN
+      },
+      {
+        "kind": "sensitivity_matched",
+        "reading": "OIS",
+        "target_sensitivity": 0.8,
+        "n_flagged": 326,
+        "frac_flagged": 0.325024925224327,
+        "events_caught": NaN,
+        "frac_events": NaN
+      },
+      {
+        "kind": "sensitivity_matched",
+        "reading": "UPSIT total",
+        "target_sensitivity": 0.9,
+        "n_flagged": 668,
+        "frac_flagged": 0.6660019940179461,
+        "events_caught": NaN,
+        "frac_events": NaN
+      },
+      {
+        "kind": "sensitivity_matched",
+        "reading": "lowest putamen %expected",
+        "target_sensitivity": 0.9,
+        "n_flagged": 771,
+        "frac_flagged": 0.7686939182452642,
+        "events_caught": NaN,
+        "frac_events": NaN
+      },
+      {
+        "kind": "sensitivity_matched",
+        "reading": "OIS",
+        "target_sensitivity": 0.9,
+        "n_flagged": 579,
+        "frac_flagged": 0.5772681954137587,
+        "events_caught": NaN,
+        "frac_events": NaN
+      },
+      {
+        "kind": "fixed_flag_fraction",
+        "reading": "UPSIT total",
+        "target_sensitivity": NaN,
+        "n_flagged": 100,
+        "frac_flagged": 0.1,
+        "events_caught": 13.0,
+        "frac_events": 0.19117647058823528
+      },
+      {
+        "kind": "fixed_flag_fraction",
+        "reading": "lowest putamen %expected",
+        "target_sensitivity": NaN,
+        "n_flagged": 100,
+        "frac_flagged": 0.1,
+        "events_caught": 25.0,
+        "frac_events": 0.36764705882352944
+      },
+      {
+        "kind": "fixed_flag_fraction",
+        "reading": "OIS",
+        "target_sensitivity": NaN,
+        "n_flagged": 100,
+        "frac_flagged": 0.1,
+        "events_caught": 30.0,
+        "frac_events": 0.4411764705882353
+      },
+      {
+        "kind": "fixed_flag_fraction",
+        "reading": "UPSIT total",
+        "target_sensitivity": NaN,
+        "n_flagged": 200,
+        "frac_flagged": 0.2,
+        "events_caught": 23.0,
+        "frac_events": 0.3382352941176471
+      },
+      {
+        "kind": "fixed_flag_fraction",
+        "reading": "lowest putamen %expected",
+        "target_sensitivity": NaN,
+        "n_flagged": 200,
+        "frac_flagged": 0.2,
+        "events_caught": 39.0,
+        "frac_events": 0.5735294117647058
+      },
+      {
+        "kind": "fixed_flag_fraction",
+        "reading": "OIS",
+        "target_sensitivity": NaN,
+        "n_flagged": 200,
+        "frac_flagged": 0.2,
+        "events_caught": 41.0,
+        "frac_events": 0.6029411764705882
+      },
+      {
+        "kind": "fixed_flag_fraction",
+        "reading": "UPSIT total",
+        "target_sensitivity": NaN,
+        "n_flagged": 300,
+        "frac_flagged": 0.3,
+        "events_caught": 35.0,
+        "frac_events": 0.5147058823529411
+      },
+      {
+        "kind": "fixed_flag_fraction",
+        "reading": "lowest putamen %expected",
+        "target_sensitivity": NaN,
+        "n_flagged": 300,
+        "frac_flagged": 0.3,
+        "events_caught": 46.0,
+        "frac_events": 0.6764705882352942
+      },
+      {
+        "kind": "fixed_flag_fraction",
+        "reading": "OIS",
+        "target_sensitivity": NaN,
+        "n_flagged": 300,
+        "frac_flagged": 0.3,
+        "events_caught": 52.0,
+        "frac_events": 0.7647058823529411
+      },
+      {
+        "kind": "fixed_flag_fraction",
+        "reading": "UPSIT total",
+        "target_sensitivity": NaN,
+        "n_flagged": 501,
+        "frac_flagged": 0.5,
+        "events_caught": 50.0,
+        "frac_events": 0.7352941176470589
+      },
+      {
+        "kind": "fixed_flag_fraction",
+        "reading": "lowest putamen %expected",
+        "target_sensitivity": NaN,
+        "n_flagged": 501,
+        "frac_flagged": 0.5,
+        "events_caught": 54.0,
+        "frac_events": 0.7941176470588235
+      },
+      {
+        "kind": "fixed_flag_fraction",
+        "reading": "OIS",
+        "target_sensitivity": NaN,
+        "n_flagged": 501,
+        "frac_flagged": 0.5,
+        "events_caught": 61.0,
+        "frac_events": 0.8970588235294118
+      }
+    ]
+  },
+  "calibration_and_age": [
+    {
+      "stratum": "hyposmia",
+      "reading": "single-region putamen",
+      "kind": "current practice",
+      "n": 1003,
+      "events": 68,
+      "c": 0.7758884620002401,
+      "lo": 0.6961440671496674,
+      "hi": 0.846224344784636,
+      "at_chance": false,
+      "hr": NaN,
+      "p": NaN,
+      "model_c": NaN
+    },
+    {
+      "stratum": "hyposmia",
+      "reading": "lowest putamen %expected",
+      "kind": "current practice",
+      "n": 1003,
+      "events": 68,
+      "c": 0.7614059310841638,
+      "lo": 0.6803207214004487,
+      "hi": 0.8410861586378321,
+      "at_chance": false,
+      "hr": NaN,
+      "p": NaN,
+      "model_c": NaN
+    },
+    {
+      "stratum": "hyposmia",
+      "reading": "age alone",
+      "kind": "demographic",
+      "n": 1003,
+      "events": 68,
+      "c": 0.6818945851842958,
+      "lo": 0.601411596029658,
+      "hi": 0.7619669655003286,
+      "at_chance": false,
+      "hr": NaN,
+      "p": NaN,
+      "model_c": NaN
+    },
+    {
+      "stratum": "hyposmia",
+      "reading": "demographics only, CV Cox",
+      "kind": "supervised in-cohort",
+      "n": 1003,
+      "events": 68,
+      "c": 0.7129907551927002,
+      "lo": 0.6430589539429304,
+      "hi": 0.7842233764477381,
+      "at_chance": false,
+      "hr": NaN,
+      "p": NaN,
+      "model_c": NaN
+    },
+    {
+      "stratum": "hyposmia",
+      "reading": "33 SBR, CV Cox on conversion",
+      "kind": "supervised in-cohort",
+      "n": 1003,
+      "events": 68,
+      "c": 0.7750030015608116,
+      "lo": 0.6968968255715028,
+      "hi": 0.8468907336420094,
+      "at_chance": false,
+      "hr": NaN,
+      "p": NaN,
+      "model_c": NaN
+    },
+    {
+      "stratum": "hyposmia",
+      "reading": "33 SBR + demographics, CV Cox",
+      "kind": "supervised in-cohort",
+      "n": 1003,
+      "events": 68,
+      "c": 0.7789350462240365,
+      "lo": 0.7063766090138057,
+      "hi": 0.8456793224439865,
+      "at_chance": false,
+      "hr": NaN,
+      "p": NaN,
+      "model_c": NaN
+    },
+    {
+      "stratum": "hyposmia",
+      "reading": "OIS, imaging only, zero-shot",
+      "kind": "olfaction-calibrated",
+      "n": 1003,
+      "events": 68,
+      "c": 0.8195461640052828,
+      "lo": 0.7481285089828597,
+      "hi": 0.8790851054777398,
+      "at_chance": false,
+      "hr": NaN,
+      "p": NaN,
+      "model_c": NaN
+    },
+    {
+      "stratum": "hyposmia",
+      "reading": "OIS, full, zero-shot",
+      "kind": "olfaction-calibrated",
+      "n": 1003,
+      "events": 68,
+      "c": 0.8350642334013687,
+      "lo": 0.7699501487971604,
+      "hi": 0.8964003644382291,
+      "at_chance": false,
+      "hr": NaN,
+      "p": NaN,
+      "model_c": NaN
+    },
+    {
+      "stratum": "hyposmia",
+      "reading": "UPSIT total",
+      "kind": "behavioural",
+      "n": 1003,
+      "events": 68,
+      "c": 0.6983131228238684,
+      "lo": 0.6323701633374745,
+      "hi": 0.7605808158737484,
+      "at_chance": false,
+      "hr": NaN,
+      "p": NaN,
+      "model_c": NaN
+    },
+    {
+      "stratum": "hyposmia",
+      "reading": "OIS adjusted for age",
+      "kind": "multivariable",
+      "n": 1003,
+      "events": 68,
+      "c": NaN,
+      "lo": NaN,
+      "hi": NaN,
+      "at_chance": NaN,
+      "hr": 0.6828683842869127,
+      "p": 1.3430994352977815e-17,
+      "model_c": 0.8440088846200025
+    },
+    {
+      "stratum": "hyposmia",
+      "reading": "upsit adjusted for age",
+      "kind": "multivariable",
+      "n": 1003,
+      "events": 68,
+      "c": NaN,
+      "lo": NaN,
+      "hi": NaN,
+      "at_chance": NaN,
+      "hr": 0.905835045956002,
+      "p": 1.0367824924761947e-06,
+      "model_c": 0.7220704766478568
+    },
+    {
+      "stratum": "hyposmia + DAT deficit",
+      "reading": "single-region putamen",
+      "kind": "current practice",
+      "n": 265,
+      "events": 46,
+      "c": 0.6572892173328855,
+      "lo": 0.5775677633030891,
+      "hi": 0.7384148322333722,
+      "at_chance": false,
+      "hr": NaN,
+      "p": NaN,
+      "model_c": NaN
+    },
+    {
+      "stratum": "hyposmia + DAT deficit",
+      "reading": "lowest putamen %expected",
+      "kind": "current practice",
+      "n": 265,
+      "events": 46,
+      "c": 0.6550218340611353,
+      "lo": 0.5746951081074859,
+      "hi": 0.7343213628996684,
+      "at_chance": false,
+      "hr": NaN,
+      "p": NaN,
+      "model_c": NaN
+    },
+    {
+      "stratum": "hyposmia + DAT deficit",
+      "reading": "age alone",
+      "kind": "demographic",
+      "n": 265,
+      "events": 46,
+      "c": 0.598925092374874,
+      "lo": 0.48897517279039093,
+      "hi": 0.705595121003485,
+      "at_chance": true,
+      "hr": NaN,
+      "p": NaN,
+      "model_c": NaN
+    },
+    {
+      "stratum": "hyposmia + DAT deficit",
+      "reading": "demographics only, CV Cox",
+      "kind": "supervised in-cohort",
+      "n": 265,
+      "events": 46,
+      "c": 0.6390661740006718,
+      "lo": 0.5430310057566043,
+      "hi": 0.7346421386961388,
+      "at_chance": false,
+      "hr": NaN,
+      "p": NaN,
+      "model_c": NaN
+    },
+    {
+      "stratum": "hyposmia + DAT deficit",
+      "reading": "33 SBR, CV Cox on conversion",
+      "kind": "supervised in-cohort",
+      "n": 265,
+      "events": 46,
+      "c": 0.6597245549210615,
+      "lo": 0.5767633031968478,
+      "hi": 0.7422456116312551,
+      "at_chance": false,
+      "hr": NaN,
+      "p": NaN,
+      "model_c": NaN
+    },
+    {
+      "stratum": "hyposmia + DAT deficit",
+      "reading": "33 SBR + demographics, CV Cox",
+      "kind": "supervised in-cohort",
+      "n": 265,
+      "events": 46,
+      "c": 0.6644272757809876,
+      "lo": 0.5774427587794394,
+      "hi": 0.7492222621392767,
+      "at_chance": false,
+      "hr": NaN,
+      "p": NaN,
+      "model_c": NaN
+    },
+    {
+      "stratum": "hyposmia + DAT deficit",
+      "reading": "OIS, imaging only, zero-shot",
+      "kind": "olfaction-calibrated",
+      "n": 265,
+      "events": 46,
+      "c": 0.7559623782331206,
+      "lo": 0.670804765928485,
+      "hi": 0.8283824579201958,
+      "at_chance": false,
+      "hr": NaN,
+      "p": NaN,
+      "model_c": NaN
+    },
+    {
+      "stratum": "hyposmia + DAT deficit",
+      "reading": "OIS, full, zero-shot",
+      "kind": "olfaction-calibrated",
+      "n": 265,
+      "events": 46,
+      "c": 0.7643600940544172,
+      "lo": 0.6794321146709982,
+      "hi": 0.8358201241245602,
+      "at_chance": false,
+      "hr": NaN,
+      "p": NaN,
+      "model_c": NaN
+    },
+    {
+      "stratum": "hyposmia + DAT deficit",
+      "reading": "UPSIT total",
+      "kind": "behavioural",
+      "n": 265,
+      "events": 46,
+      "c": 0.6495633187772926,
+      "lo": 0.5599876233840836,
+      "hi": 0.7341463740948562,
+      "at_chance": false,
+      "hr": NaN,
+      "p": NaN,
+      "model_c": NaN
+    },
+    {
+      "stratum": "hyposmia + DAT deficit",
+      "reading": "OIS adjusted for age",
+      "kind": "multivariable",
+      "n": 265,
+      "events": 46,
+      "c": NaN,
+      "lo": NaN,
+      "hi": NaN,
+      "at_chance": NaN,
+      "hr": 0.7013310874468951,
+      "p": 2.1721892583342041e-07,
+      "model_c": 0.7641921397379913
+    },
+    {
+      "stratum": "hyposmia + DAT deficit",
+      "reading": "upsit adjusted for age",
+      "kind": "multivariable",
+      "n": 265,
+      "events": 46,
+      "c": NaN,
+      "lo": NaN,
+      "hi": NaN,
+      "at_chance": NaN,
+      "hr": 0.9265928336004715,
+      "p": 0.0018493057164086196,
+      "model_c": 0.6472959355055425
+    },
+    {
+      "stratum": "hyposmia + no DAT deficit",
+      "reading": "single-region putamen",
+      "kind": "current practice",
+      "n": 738,
+      "events": 22,
+      "c": 0.5174973488865323,
+      "lo": 0.3568099784863556,
+      "hi": 0.7076791489274603,
+      "at_chance": true,
+      "hr": NaN,
+      "p": NaN,
+      "model_c": NaN
+    },
+    {
+      "stratum": "hyposmia + no DAT deficit",
+      "reading": "lowest putamen %expected",
+      "kind": "current practice",
+      "n": 738,
+      "events": 22,
+      "c": 0.4240266626268747,
+      "lo": 0.29188059672057914,
+      "hi": 0.5916960836378793,
+      "at_chance": true,
+      "hr": NaN,
+      "p": NaN,
+      "model_c": NaN
+    },
+    {
+      "stratum": "hyposmia + no DAT deficit",
+      "reading": "age alone",
+      "kind": "demographic",
+      "n": 738,
+      "events": 22,
+      "c": 0.8112407211028632,
+      "lo": 0.7098441598110434,
+      "hi": 0.8975412720155463,
+      "at_chance": false,
+      "hr": NaN,
+      "p": NaN,
+      "model_c": NaN
+    },
+    {
+      "stratum": "hyposmia + no DAT deficit",
+      "reading": "demographics only, CV Cox",
+      "kind": "supervised in-cohort",
+      "n": 738,
+      "events": 22,
+      "c": 0.8312376912589001,
+      "lo": 0.6932191644192397,
+      "hi": 0.9316798897726425,
+      "at_chance": false,
+      "hr": NaN,
+      "p": NaN,
+      "model_c": NaN
+    },
+    {
+      "stratum": "hyposmia + no DAT deficit",
+      "reading": "33 SBR, CV Cox on conversion",
+      "kind": "supervised in-cohort",
+      "n": 738,
+      "events": 22,
+      "c": 0.5864262990455992,
+      "lo": 0.47648360539413476,
+      "hi": 0.7200622712307254,
+      "at_chance": true,
+      "hr": NaN,
+      "p": NaN,
+      "model_c": NaN
+    },
+    {
+      "stratum": "hyposmia + no DAT deficit",
+      "reading": "33 SBR + demographics, CV Cox",
+      "kind": "supervised in-cohort",
+      "n": 738,
+      "events": 22,
+      "c": 0.6708074534161491,
+      "lo": 0.5600835279054003,
+      "hi": 0.7841782884533347,
+      "at_chance": false,
+      "hr": NaN,
+      "p": NaN,
+      "model_c": NaN
+    },
+    {
+      "stratum": "hyposmia + no DAT deficit",
+      "reading": "OIS, imaging only, zero-shot",
+      "kind": "olfaction-calibrated",
+      "n": 738,
+      "events": 22,
+      "c": 0.6556582336009695,
+      "lo": 0.49266524455370075,
+      "hi": 0.8088717421278977,
+      "at_chance": true,
+      "hr": NaN,
+      "p": NaN,
+      "model_c": NaN
+    },
+    {
+      "stratum": "hyposmia + no DAT deficit",
+      "reading": "OIS, full, zero-shot",
+      "kind": "olfaction-calibrated",
+      "n": 738,
+      "events": 22,
+      "c": 0.71898197242842,
+      "lo": 0.5615507865276973,
+      "hi": 0.8650031167372969,
+      "at_chance": false,
+      "hr": NaN,
+      "p": NaN,
+      "model_c": NaN
+    },
+    {
+      "stratum": "hyposmia + no DAT deficit",
+      "reading": "UPSIT total",
+      "kind": "behavioural",
+      "n": 738,
+      "events": 22,
+      "c": 0.6895924859869716,
+      "lo": 0.5732069489656791,
+      "hi": 0.8033412510630408,
+      "at_chance": false,
+      "hr": NaN,
+      "p": NaN,
+      "model_c": NaN
+    },
+    {
+      "stratum": "hyposmia + no DAT deficit",
+      "reading": "OIS adjusted for age",
+      "kind": "multivariable",
+      "n": 738,
+      "events": 22,
+      "c": NaN,
+      "lo": NaN,
+      "hi": NaN,
+      "at_chance": NaN,
+      "hr": 0.7917865379857868,
+      "p": 0.005753697660405308,
+      "model_c": 0.824723526738373
+    },
+    {
+      "stratum": "hyposmia + no DAT deficit",
+      "reading": "upsit adjusted for age",
+      "kind": "multivariable",
+      "n": 738,
+      "events": 22,
+      "c": NaN,
+      "lo": NaN,
+      "hi": NaN,
+      "at_chance": NaN,
+      "hr": 0.8957498216144318,
+      "p": 0.004295957412902341,
+      "model_c": 0.8007120133313135
+    }
+  ],
+  "layer_flow": {
+    "arm_with_imaging": 1558,
+    "ever_diagnosed": 133,
+    "prevalent_excluded": 65,
+    "after_prevalent": 1493,
+    "no_followup_excluded": 488,
+    "after_followup": 1005,
+    "missing_vars_excluded": 2,
+    "analysed": 1003,
+    "events": 68,
+    "measured_at_or_below_p15": 852,
+    "measured_above_p15": 151,
+    "pct_measured_hyposmic": 84.94516450648057,
+    "median_followup_years": 1.3360711841204653,
+    "person_years": 1733.905544147844,
+    "rate_per_100py": 3.9217822579499106,
+    "km": [
+      {
+        "year": 1,
+        "cum_conversion": 0.010450812445844004,
+        "at_risk": 817
+      },
+      {
+        "year": 2,
+        "cum_conversion": 0.058441674456605086,
+        "at_risk": 432
+      },
+      {
+        "year": 3,
+        "cum_conversion": 0.10681630247551321,
+        "at_risk": 103
+      },
+      {
+        "year": 4,
+        "cum_conversion": 0.24890715574187006,
+        "at_risk": 17
+      }
+    ]
+  },
+  "three_group_split": {
+    "settings": {
+      "min_group_fraction": 0.15,
+      "grid_step_percentile": 2.5,
+      "n_perm": 1000,
+      "n_boot": 200,
+      "seed": 42
+    },
+    "search": [
+      {
+        "stratum": "hyposmia",
+        "reading": "OIS",
+        "feasible": true,
+        "cut1": 24.905978947800207,
+        "cut2": 27.236725030417258,
+        "chi2": 123.98883655258626,
+        "p_permutation": 0.0,
+        "n_perm": 1000.0,
+        "cut1_boot_lo": 24.40516056999773,
+        "cut1_boot_hi": 25.358576250115043,
+        "cut2_boot_lo": 27.116366908354557,
+        "cut2_boot_hi": 28.764545637025197,
+        "p_low_mid": 0.00023022010978622766,
+        "p_mid_high": 6.043631171359989e-10,
+        "p_low_high": 4.725312613306229e-30,
+        "n_low": 151.0,
+        "frac_low": 0.15054835493519442,
+        "ev_low": 39.0,
+        "km2_low": 22.6590232153133,
+        "km2_low_lo": 15.661467216407965,
+        "km2_low_hi": 32.13200649176533,
+        "n_mid": 200.0,
+        "frac_mid": 0.19940179461615154,
+        "ev_mid": 19.0,
+        "km2_mid": 9.644815720158494,
+        "km2_mid_lo": 5.353506246930961,
+        "km2_mid_hi": 17.05168648651938,
+        "n_high": 652.0,
+        "frac_high": 0.650049850448654,
+        "ev_high": 10.0,
+        "km2_high": 0.8904393383373677,
+        "km2_high_lo": 0.37008200302335315,
+        "km2_high_hi": 2.1345703738513855,
+        "chi2_unconstrained": NaN,
+        "cut1_unc": NaN,
+        "cut2_unc": NaN
+      },
+      {
+        "stratum": "hyposmia",
+        "reading": "UPSIT total",
+        "feasible": true,
+        "cut1": 22.0,
+        "cut2": 28.0,
+        "chi2": 35.54737000338951,
+        "p_permutation": 0.0,
+        "n_perm": 1000.0,
+        "cut1_boot_lo": 13.0,
+        "cut1_boot_hi": 23.0,
+        "cut2_boot_lo": 22.0,
+        "cut2_boot_hi": 28.0,
+        "p_low_mid": 0.0005067570566333937,
+        "p_mid_high": 0.006505913305887716,
+        "p_low_high": 1.5680911929043732e-07,
+        "n_low": 533.0,
+        "frac_low": 0.5314057826520439,
+        "ev_low": 55.0,
+        "km2_low": 9.954245268134231,
+        "km2_low_lo": 7.103950674741155,
+        "km2_low_hi": 13.859835832340583,
+        "n_mid": 266.0,
+        "frac_mid": 0.26520438683948155,
+        "ev_mid": 12.0,
+        "km2_mid": 3.0788788600503603,
+        "km2_mid_lo": 1.3591174980348564,
+        "km2_mid_hi": 6.897310435002724,
+        "n_high": 204.0,
+        "frac_high": 0.2033898305084746,
+        "ev_high": 1.0,
+        "km2_high": 0.5464480874317612,
+        "km2_high_lo": 0.07715569975184078,
+        "km2_high_hi": 3.8152354951983103,
+        "chi2_unconstrained": NaN,
+        "cut1_unc": NaN,
+        "cut2_unc": NaN
+      },
+      {
+        "stratum": "hyposmia",
+        "reading": "lower putamen %expected",
+        "feasible": true,
+        "cut1": 55.41202838199487,
+        "cut2": 72.3343915715097,
+        "chi2": 96.27964695187795,
+        "p_permutation": 0.0,
+        "n_perm": 1000.0,
+        "cut1_boot_lo": 53.18683892580648,
+        "cut1_boot_hi": 65.19572754148373,
+        "cut2_boot_lo": 66.65843477920747,
+        "cut2_boot_hi": 92.23885116868259,
+        "p_low_mid": 6.638205523311257e-07,
+        "p_mid_high": 0.00028932344087436807,
+        "p_low_high": 2.7219970407282683e-22,
+        "n_low": 151.0,
+        "frac_low": 0.15054835493519442,
+        "ev_low": 32.0,
+        "km2_low": 22.852091647729512,
+        "km2_low_lo": 15.218368327738963,
+        "km2_low_hi": 33.48391990121963,
+        "n_mid": 250.0,
+        "frac_mid": 0.24925224327018944,
+        "ev_mid": 19.0,
+        "km2_mid": 6.035020038524608,
+        "km2_mid_lo": 3.257396426173731,
+        "km2_mid_hi": 11.04204223589862,
+        "n_high": 602.0,
+        "frac_high": 0.6001994017946162,
+        "ev_high": 17.0,
+        "km2_high": 2.0480412089121214,
+        "km2_high_lo": 1.0553140759594903,
+        "km2_high_hi": 3.955764533820705,
+        "chi2_unconstrained": NaN,
+        "cut1_unc": NaN,
+        "cut2_unc": NaN
+      },
+      {
+        "stratum": "hyposmia + no DAT deficit",
+        "reading": "OIS",
+        "feasible": false,
+        "cut1": NaN,
+        "cut2": NaN,
+        "chi2": NaN,
+        "p_permutation": NaN,
+        "n_perm": NaN,
+        "cut1_boot_lo": NaN,
+        "cut1_boot_hi": NaN,
+        "cut2_boot_lo": NaN,
+        "cut2_boot_hi": NaN,
+        "p_low_mid": NaN,
+        "p_mid_high": NaN,
+        "p_low_high": NaN,
+        "n_low": NaN,
+        "frac_low": NaN,
+        "ev_low": NaN,
+        "km2_low": NaN,
+        "km2_low_lo": NaN,
+        "km2_low_hi": NaN,
+        "n_mid": NaN,
+        "frac_mid": NaN,
+        "ev_mid": NaN,
+        "km2_mid": NaN,
+        "km2_mid_lo": NaN,
+        "km2_mid_hi": NaN,
+        "n_high": NaN,
+        "frac_high": NaN,
+        "ev_high": NaN,
+        "km2_high": NaN,
+        "km2_high_lo": NaN,
+        "km2_high_hi": NaN,
+        "chi2_unconstrained": 26.86478923757496,
+        "cut1_unc": 26.45946155924973,
+        "cut2_unc": 31.01938496643165
+      },
+      {
+        "stratum": "hyposmia + no DAT deficit",
+        "reading": "UPSIT total",
+        "feasible": true,
+        "cut1": 17.0,
+        "cut2": 26.0,
+        "chi2": 14.568908767013019,
+        "p_permutation": 0.019,
+        "n_perm": 1000.0,
+        "cut1_boot_lo": 14.0,
+        "cut1_boot_hi": 20.0,
+        "cut2_boot_lo": 19.0,
+        "cut2_boot_hi": 30.0,
+        "p_low_mid": 0.02997317028836695,
+        "p_mid_high": 0.04880258682513629,
+        "p_low_high": 0.0003392142740173682,
+        "n_low": 227.0,
+        "frac_low": 0.3075880758807588,
+        "ev_low": 13.0,
+        "km2_low": 3.0523247555355293,
+        "km2_low_lo": 1.2792657953748843,
+        "km2_low_hi": 7.191673531478782,
+        "n_mid": 283.0,
+        "frac_mid": 0.38346883468834686,
+        "ev_mid": 8.0,
+        "km2_mid": 2.978030058902459,
+        "km2_mid_lo": 1.2171857204165248,
+        "km2_mid_hi": 7.191766791217136,
+        "n_high": 228.0,
+        "frac_high": 0.3089430894308943,
+        "ev_high": 1.0,
+        "km2_high": 0.48780487804883643,
+        "km2_high_lo": 0.06885818881011696,
+        "km2_high_hi": 3.4118789145204276,
+        "chi2_unconstrained": NaN,
+        "cut1_unc": NaN,
+        "cut2_unc": NaN
+      },
+      {
+        "stratum": "hyposmia + no DAT deficit",
+        "reading": "lower putamen %expected",
+        "feasible": false,
+        "cut1": NaN,
+        "cut2": NaN,
+        "chi2": NaN,
+        "p_permutation": NaN,
+        "n_perm": NaN,
+        "cut1_boot_lo": NaN,
+        "cut1_boot_hi": NaN,
+        "cut2_boot_lo": NaN,
+        "cut2_boot_hi": NaN,
+        "p_low_mid": NaN,
+        "p_mid_high": NaN,
+        "p_low_high": NaN,
+        "n_low": NaN,
+        "frac_low": NaN,
+        "ev_low": NaN,
+        "km2_low": NaN,
+        "km2_low_lo": NaN,
+        "km2_low_hi": NaN,
+        "n_mid": NaN,
+        "frac_mid": NaN,
+        "ev_mid": NaN,
+        "km2_mid": NaN,
+        "km2_mid_lo": NaN,
+        "km2_mid_hi": NaN,
+        "n_high": NaN,
+        "frac_high": NaN,
+        "ev_high": NaN,
+        "km2_high": NaN,
+        "km2_high_lo": NaN,
+        "km2_high_hi": NaN,
+        "chi2_unconstrained": 7.423967116937714,
+        "cut1_unc": 72.85299292835805,
+        "cut2_unc": 79.33492279418063
+      }
+    ],
+    "lowest_third_vs_rest": [
+      {
+        "stratum": "hyposmia",
+        "reading": "OIS",
+        "n_low": 335,
+        "ev_low": 56,
+        "km2_low": 15.294298662838269,
+        "km2_low_lo": 11.00805795532651,
+        "km2_low_hi": 21.041180712179287,
+        "n_rest": 668,
+        "ev_rest": 12,
+        "km2_rest": 1.348568026154351,
+        "km2_rest_lo": 0.6372879102663709,
+        "km2_rest_hi": 2.8422753138524826,
+        "p_two_group": 1.284048591033348e-20,
+        "p_three_group_tertiles": 1.347892467897401e-19,
+        "p_middle_vs_highest": 0.4217412617562152
+      },
+      {
+        "stratum": "hyposmia",
+        "reading": "UPSIT total",
+        "n_low": 372,
+        "ev_low": 41,
+        "km2_low": 9.872387729417632,
+        "km2_low_lo": 6.613394335209755,
+        "km2_low_hi": 14.606980149668193,
+        "n_rest": 631,
+        "ev_rest": 27,
+        "km2_rest": 3.718031414421896,
+        "km2_rest_lo": 2.2975506510819033,
+        "km2_rest_hi": 5.989409636648335,
+        "p_two_group": 1.1398914709138726e-05,
+        "p_three_group_tertiles": 2.048023197788055e-07,
+        "p_middle_vs_highest": 1.0087463828597648e-05
+      },
+      {
+        "stratum": "hyposmia + no DAT deficit",
+        "reading": "OIS",
+        "n_low": 246,
+        "ev_low": 14,
+        "km2_low": 4.639328563996359,
+        "km2_low_lo": 2.1988520800669487,
+        "km2_low_hi": 9.65142086829227,
+        "n_rest": 492,
+        "ev_rest": 8,
+        "km2_rest": 0.9588930053383016,
+        "km2_rest_lo": 0.35999346054160775,
+        "km2_rest_hi": 2.541359580467306,
+        "p_two_group": 0.0002467966828238687,
+        "p_three_group_tertiles": 0.000768696229824989,
+        "p_middle_vs_highest": 0.0867506914590882
+      },
+      {
+        "stratum": "hyposmia + no DAT deficit",
+        "reading": "UPSIT total",
+        "n_low": 254,
+        "ev_low": 14,
+        "km2_low": 3.6370231107902717,
+        "km2_low_lo": 1.6119805608540982,
+        "km2_low_hi": 8.099109355081758,
+        "n_rest": 484,
+        "ev_rest": 8,
+        "km2_rest": 1.441029839392538,
+        "km2_rest_lo": 0.5898126517424163,
+        "km2_rest_hi": 3.4989135821223205,
+        "p_two_group": 0.0019134296149523192,
+        "p_three_group_tertiles": 0.00211403021098032,
+        "p_middle_vs_highest": 0.0663607773159
+      }
+    ]
+  },
+  "td_auc_ipcw": {
+    "times": [
+      1.0,
+      1.5,
+      2.0
+    ],
+    "n": 1003,
+    "events": 68,
+    "n_boot_used": 1000,
+    "rows": [
+      {
+        "horizon_yr": 1.0,
+        "reading": "UPSIT total",
+        "auc": 0.6509084670580146,
+        "lo": 0.5166301946277531,
+        "hi": 0.7871386566763441,
+        "n_at_risk": 817,
+        "events_by_t": 10,
+        "p": NaN
+      },
+      {
+        "horizon_yr": 1.0,
+        "reading": "OIS",
+        "auc": 0.8433940507084112,
+        "lo": 0.677687320340042,
+        "hi": 0.967032825602578,
+        "n_at_risk": 817,
+        "events_by_t": 10,
+        "p": NaN
+      },
+      {
+        "horizon_yr": 1.0,
+        "reading": "putamen SBR",
+        "auc": 0.8323277720737111,
+        "lo": 0.6358073417550365,
+        "hi": 0.9491386094434335,
+        "n_at_risk": 817,
+        "events_by_t": 10,
+        "p": NaN
+      },
+      {
+        "horizon_yr": 1.0,
+        "reading": "OIS minus UPSIT total",
+        "auc": 0.19248558365039659,
+        "lo": 0.027971342617921446,
+        "hi": 0.36740718674629996,
+        "n_at_risk": 817,
+        "events_by_t": 10,
+        "p": 0.024
+      },
+      {
+        "horizon_yr": 1.5,
+        "reading": "UPSIT total",
+        "auc": 0.7316734936189465,
+        "lo": 0.6578254744032813,
+        "hi": 0.8020822009845483,
+        "n_at_risk": 488,
+        "events_by_t": 36,
+        "p": NaN
+      },
+      {
+        "horizon_yr": 1.5,
+        "reading": "OIS",
+        "auc": 0.8469102499586398,
+        "lo": 0.7738637854850153,
+        "hi": 0.9098072528491659,
+        "n_at_risk": 488,
+        "events_by_t": 36,
+        "p": NaN
+      },
+      {
+        "horizon_yr": 1.5,
+        "reading": "putamen SBR",
+        "auc": 0.7836089725333608,
+        "lo": 0.6903302388411121,
+        "hi": 0.8597640965653365,
+        "n_at_risk": 488,
+        "events_by_t": 36,
+        "p": NaN
+      },
+      {
+        "horizon_yr": 1.5,
+        "reading": "OIS minus UPSIT total",
+        "auc": 0.11523675633969332,
+        "lo": 0.03770771484830205,
+        "hi": 0.17985337309081836,
+        "n_at_risk": 488,
+        "events_by_t": 36,
+        "p": 0.006
+      },
+      {
+        "horizon_yr": 2.0,
+        "reading": "UPSIT total",
+        "auc": 0.7336376270368187,
+        "lo": 0.6688993314762346,
+        "hi": 0.800134097988511,
+        "n_at_risk": 432,
+        "events_by_t": 41,
+        "p": NaN
+      },
+      {
+        "horizon_yr": 2.0,
+        "reading": "OIS",
+        "auc": 0.8610868386818654,
+        "lo": 0.7983077803260871,
+        "hi": 0.9154580009366085,
+        "n_at_risk": 432,
+        "events_by_t": 41,
+        "p": NaN
+      },
+      {
+        "horizon_yr": 2.0,
+        "reading": "putamen SBR",
+        "auc": 0.8064052817232918,
+        "lo": 0.7268311088214368,
+        "hi": 0.8721026444252515,
+        "n_at_risk": 432,
+        "events_by_t": 41,
+        "p": NaN
+      },
+      {
+        "horizon_yr": 2.0,
+        "reading": "OIS minus UPSIT total",
+        "auc": 0.12744921164504674,
+        "lo": 0.06109914150662777,
+        "hi": 0.18778967671114746,
+        "n_at_risk": 432,
+        "events_by_t": 41,
+        "p": 0.001
+      }
+    ]
+  },
+  "genotype": [
+    {
+      "cohort": "Prodromal",
+      "measure": "UPSIT total",
+      "n_gba": 161,
+      "n_lrrk2": 166,
+      "mean_gba": 33.57142857142857,
+      "mean_lrrk2": 33.09036144578313,
+      "beta": 0.35576279378100617,
+      "lo": -0.7603176808498311,
+      "hi": 1.4718432684118434,
+      "p": 0.5310269749787239
+    },
+    {
+      "cohort": "Prodromal",
+      "measure": "Putamen SBR",
+      "n_gba": 161,
+      "n_lrrk2": 166,
+      "mean_gba": 1.6021118012422357,
+      "mean_lrrk2": 1.4240963855421684,
+      "beta": 0.18297968777191126,
+      "lo": 0.11444642134199356,
+      "hi": 0.25151295420182895,
+      "p": 2.7301829547598027e-07
+    },
+    {
+      "cohort": "Prodromal",
+      "measure": "OIS",
+      "n_gba": 161,
+      "n_lrrk2": 166,
+      "mean_gba": 32.86298661658787,
+      "mean_lrrk2": 30.8912282085058,
+      "beta": 2.136837810131097,
+      "lo": 1.4897818929699922,
+      "hi": 2.7838937272922024,
+      "p": 3.110911108303983e-10
+    },
+    {
+      "cohort": "Prodromal",
+      "measure": "OMI",
+      "n_gba": 161,
+      "n_lrrk2": 166,
+      "mean_gba": 0.7084419548407008,
+      "mean_lrrk2": 2.1991332372773296,
+      "beta": -1.7810750163500908,
+      "lo": -2.985373466411497,
+      "hi": -0.5767765662886843,
+      "p": 0.003870917407935045
+    },
+    {
+      "cohort": "PD",
+      "measure": "UPSIT total",
+      "n_gba": 69,
+      "n_lrrk2": 126,
+      "mean_gba": 19.492753623188406,
+      "mean_lrrk2": 25.58730158730159,
+      "beta": -6.1426611596435245,
+      "lo": -8.47729410242904,
+      "hi": -3.8080282168580095,
+      "p": 5.376446835713031e-07
+    },
+    {
+      "cohort": "PD",
+      "measure": "Putamen SBR",
+      "n_gba": 69,
+      "n_lrrk2": 126,
+      "mean_gba": 0.5989855072463768,
+      "mean_lrrk2": 0.6541269841269841,
+      "beta": -0.05090518032231428,
+      "lo": -0.13572983199913316,
+      "hi": 0.0339194713545046,
+      "p": 0.23798755202775598
+    },
+    {
+      "cohort": "PD",
+      "measure": "OIS",
+      "n_gba": 69,
+      "n_lrrk2": 126,
+      "mean_gba": 23.58736707228415,
+      "mean_lrrk2": 23.707809789797498,
+      "beta": -0.23958982740666332,
+      "lo": -0.8164744033424636,
+      "hi": 0.3372947485291369,
+      "p": 0.4136850208338124
+    },
+    {
+      "cohort": "PD",
+      "measure": "OMI",
+      "n_gba": 69,
+      "n_lrrk2": 126,
+      "mean_gba": -4.094613449095747,
+      "mean_lrrk2": 1.879491797504093,
+      "beta": -5.9030713322368635,
+      "lo": -8.170557438052136,
+      "hi": -3.6355852264215924,
+      "p": 6.948067492861441e-07
+    }
+  ],
+  "gcase": [
+    {
+      "cohort": "Prodromal",
+      "score": "upsit",
+      "n": 194,
+      "beta": 0.19404463325771204,
+      "p": 0.582726481593137
+    },
+    {
+      "cohort": "Prodromal",
+      "score": "OIS",
+      "n": 194,
+      "beta": -0.5549774820303441,
+      "p": 0.013554561095787848
+    },
+    {
+      "cohort": "Prodromal",
+      "score": "OMI",
+      "n": 194,
+      "beta": 0.7490221152880545,
+      "p": 0.0680579646500686
+    },
+    {
+      "cohort": "PD",
+      "score": "upsit",
+      "n": 345,
+      "beta": 1.0392230425650826,
+      "p": 0.013850531208790645
+    },
+    {
+      "cohort": "PD",
+      "score": "OIS",
+      "n": 345,
+      "beta": 0.2670760515450336,
+      "p": 0.004190788149203964
+    },
+    {
+      "cohort": "PD",
+      "score": "OMI",
+      "n": 345,
+      "beta": 0.772146991020049,
+      "p": 0.06413233921125518
+    }
+  ],
+  "csf_tau": {
+    "main": {
+      "Prodromal|pTau181_over_ABeta42_CSF": {
+        "n": 827,
+        "b_UPSIT": -0.13089137891442473,
+        "se_UPSIT": 0.03660917880597475,
+        "p_UPSIT": 0.00037014334821566433,
+        "b_OIS": 0.00404863416107357,
+        "se_OIS": 0.041550953432909585,
+        "p_OIS": 0.9224022383599582,
+        "b_OMI": -0.12052032648447492,
+        "se_OMI": 0.03409468156632908,
+        "p_OMI": 0.0004307693764629357,
+        "q_OMI": 0.0025846162587776144
+      },
+      "Prodromal|pTau181_CSF": {
+        "n": 827,
+        "b_UPSIT": -0.11472799784001098,
+        "se_UPSIT": 0.03640876507965944,
+        "p_UPSIT": 0.0016854425404612147,
+        "b_OIS": -0.011458722840573634,
+        "se_OIS": 0.04126615672486311,
+        "p_OIS": 0.78132834677541,
+        "b_OMI": -0.10095695558374876,
+        "se_OMI": 0.03392407082202379,
+        "p_OMI": 0.003006261121365715,
+        "q_OMI": 0.009018783364097145
+      },
+      "Prodromal|eMTBR_TAU243_CSF": {
+        "n": 827,
+        "b_UPSIT": -0.09631492395250607,
+        "se_UPSIT": 0.036476845303462256,
+        "p_UPSIT": 0.008436905007928921,
+        "b_OIS": -0.024923718914092962,
+        "se_OIS": 0.04136412115773601,
+        "p_OIS": 0.5469764088539713,
+        "b_OMI": -0.07890205982939551,
+        "se_OMI": 0.03399811434825134,
+        "p_OMI": 0.02054270442628686,
+        "q_OMI": 0.04108540885257372
+      },
+      "Prodromal|ABeta42_CSF": {
+        "n": 827,
+        "b_UPSIT": 0.043321197049663175,
+        "se_UPSIT": 0.037855131254525026,
+        "p_UPSIT": 0.2527932655250476,
+        "b_OIS": -0.01524205592450245,
+        "se_OIS": 0.04264262566056864,
+        "p_OIS": 0.7208554825318628,
+        "b_OMI": 0.044247802932212706,
+        "se_OMI": 0.03524326842293715,
+        "p_OMI": 0.2096553215771098,
+        "q_OMI": 0.31448298236566474
+      },
+      "Prodromal|NfL_serum": {
+        "n": 275,
+        "b_UPSIT": 0.009244372441511065,
+        "se_UPSIT": 0.05366442430250063,
+        "p_UPSIT": 0.8633601473684802,
+        "b_OIS": 0.08934889912176941,
+        "se_OIS": 0.06790696317737469,
+        "p_OIS": 0.18936431392049155,
+        "b_OMI": -0.022837505342231636,
+        "se_OMI": 0.05139324718110219,
+        "p_OMI": 0.6571326361305668,
+        "q_OMI": 0.7414938525469644
+      },
+      "Prodromal|NfL_plasma": {
+        "n": 673,
+        "b_UPSIT": 0.013468714266448875,
+        "se_UPSIT": 0.03749939623117958,
+        "p_UPSIT": 0.719580298830705,
+        "b_OIS": -0.005888089936358361,
+        "se_OIS": 0.0415261421631912,
+        "p_OIS": 0.8872862602413898,
+        "b_OMI": 0.011697178223220524,
+        "se_OMI": 0.03544463364458919,
+        "p_OMI": 0.7414938525469644,
+        "q_OMI": 0.7414938525469644
+      },
+      "PD|pTau181_over_ABeta42_CSF": {
+        "n": 656,
+        "b_UPSIT": -0.14014214296528837,
+        "se_UPSIT": 0.03768105093763694,
+        "p_UPSIT": 0.00021711848061906183,
+        "b_OIS": 0.014657738885952475,
+        "se_OIS": 0.0463717614523176,
+        "p_OIS": 0.7520301704731873,
+        "b_OMI": -0.1408629106651823,
+        "se_OMI": 0.03679593346131543,
+        "p_OMI": 0.00014153276057520653,
+        "q_OMI": 0.0009907293240264457
+      },
+      "PD|pTau181_CSF": {
+        "n": 656,
+        "b_UPSIT": -0.03133546023451114,
+        "se_UPSIT": 0.03756237781521116,
+        "p_UPSIT": 0.40446042469076093,
+        "b_OIS": -0.022646837484787526,
+        "se_OIS": 0.045835912978114,
+        "p_OIS": 0.621406412306108,
+        "b_OMI": -0.02484315791595673,
+        "se_OMI": 0.03670944777365559,
+        "p_OMI": 0.4988042956194587,
+        "q_OMI": 0.5819383448893686
+      },
+      "PD|eMTBR_TAU243_CSF": {
+        "n": 656,
+        "b_UPSIT": -0.06371125168158819,
+        "se_UPSIT": 0.03739057389399864,
+        "p_UPSIT": 0.08886971865165946,
+        "b_OIS": -0.020484497657553016,
+        "se_OIS": 0.045775515823913586,
+        "p_OIS": 0.6546579534867283,
+        "b_OMI": -0.058745158173159964,
+        "se_OMI": 0.03654379580386274,
+        "p_OMI": 0.10842355519264599,
+        "q_OMI": 0.1897412215871305
+      },
+      "PD|ABeta42_CSF": {
+        "n": 656,
+        "b_UPSIT": 0.10954487215079713,
+        "se_UPSIT": 0.039861237863928735,
+        "p_UPSIT": 0.006159199583057807,
+        "b_OIS": -0.0382004904083695,
+        "se_OIS": 0.04890253526620705,
+        "p_OIS": 0.43498403994041046,
+        "b_OMI": 0.11698783579905206,
+        "se_OMI": 0.038905015165447566,
+        "p_OMI": 0.002739964215625993,
+        "q_OMI": 0.009589874754690976
+      },
+      "PD|NfL_CSF": {
+        "n": 155,
+        "b_UPSIT": -0.004711136887014896,
+        "se_UPSIT": 0.06836890422644946,
+        "p_UPSIT": 0.9451549447138146,
+        "b_OIS": -0.016465671624260433,
+        "se_OIS": 0.09210055926316575,
+        "p_OIS": 0.8583522594108048,
+        "b_OMI": -0.0019397871362375856,
+        "se_OMI": 0.06501192639919252,
+        "p_OMI": 0.9762363899543016,
+        "q_OMI": 0.9762363899543016
+      },
+      "PD|NfL_serum": {
+        "n": 364,
+        "b_UPSIT": -0.08144274278584653,
+        "se_UPSIT": 0.04240814323371781,
+        "p_UPSIT": 0.05559292964351034,
+        "b_OIS": -0.041464634206597094,
+        "se_OIS": 0.053266746514851214,
+        "p_OIS": 0.4368149222554464,
+        "b_OMI": -0.07478649640463343,
+        "se_OMI": 0.041591645317944306,
+        "p_OMI": 0.07299906275220236,
+        "q_OMI": 0.17033114642180552
+      },
+      "PD|NfL_plasma": {
+        "n": 543,
+        "b_UPSIT": -0.043267404400857336,
+        "se_UPSIT": 0.03462379924452278,
+        "p_UPSIT": 0.21197317088829823,
+        "b_OIS": -0.01972758888785346,
+        "se_OIS": 0.04297447998833068,
+        "p_OIS": 0.6463744544820775,
+        "b_OMI": -0.03851360093537224,
+        "se_OMI": 0.033796650658495575,
+        "p_OMI": 0.2549731902207358,
+        "q_OMI": 0.35696246630903006
+      }
+    },
+    "robustness_ratio_prodromal": {
+      "age+sex+educ": {
+        "n": 827,
+        "b_UPSIT": -0.13089137891442473,
+        "p_UPSIT": 0.00037014334821566433,
+        "b_OIS": 0.00404863416107357,
+        "p_OIS": 0.9224022383599582,
+        "b_OMI": -0.12052032648447492,
+        "p_OMI": 0.0004307693764629357
+      },
+      "+ enrichment subgroup": {
+        "n": 827,
+        "b_UPSIT": -0.11589722550957622,
+        "p_UPSIT": 0.0022369850252021545,
+        "b_OIS": 0.008526266837517551,
+        "p_OIS": 0.837466487253102,
+        "b_OMI": -0.10745478911159226,
+        "p_OMI": 0.002233920863134918
+      },
+      "+ MoCA": {
+        "n": 826,
+        "b_UPSIT": -0.1304376611334501,
+        "p_UPSIT": 0.00039013293659312837,
+        "b_OIS": 0.006151537154142395,
+        "p_OIS": 0.8825322372682474,
+        "b_OMI": -0.1208102613058928,
+        "p_OMI": 0.00041936637847326007
+      },
+      "+ APOE e4 dose": {
+        "n": 813,
+        "b_UPSIT": -0.09388221947390964,
+        "p_UPSIT": 0.004916325301572819,
+        "b_OIS": -0.008387369151769257,
+        "p_OIS": 0.822729700440445,
+        "b_OMI": -0.08311072217370973,
+        "p_OMI": 0.007471771125519972
+      },
+      "+ subgroup + APOE e4": {
+        "n": 813,
+        "b_UPSIT": -0.0744761912097363,
+        "p_UPSIT": 0.030376570318600683,
+        "b_OIS": -0.0032898696968447867,
+        "p_OIS": 0.9298779370750958,
+        "b_OMI": -0.06636631711145745,
+        "p_OMI": 0.037318107138201
+      }
+    },
+    "strata_ratio_prodromal": {
+      "Hyposmia": {
+        "n": 586,
+        "b_OMI": -0.08939080571152137,
+        "p_OMI": 0.029999285642823937,
+        "b_OIS": -0.033923710866761256,
+        "p_OIS": 0.5109760050572861,
+        "b_UPSIT": -0.12034613393202158,
+        "p_UPSIT": 0.00936595034381468
+      },
+      "RBD": {
+        "n": 224,
+        "b_OMI": -0.17673217187722162,
+        "p_OMI": 0.007553539108913932,
+        "b_OIS": 0.06665825073736373,
+        "p_OIS": 0.343694177772745,
+        "b_UPSIT": -0.1531144444744958,
+        "p_UPSIT": 0.026943927111869333
+      }
+    },
+    "pd_replication_ratio": {
+      "n": 656,
+      "b_UPSIT": -0.14014214296528837,
+      "p_UPSIT": 0.00021711848061906183,
+      "b_OIS": 0.014657738885952475,
+      "p_OIS": 0.7520301704731873,
+      "b_OMI": -0.1408629106651823,
+      "p_OMI": 0.00014153276057520653
+    },
+    "cross_platform": {
+      "CSF_pTau181_p283": {
+        "n": 827,
+        "b_UPSIT": -0.11472799784001098,
+        "p_UPSIT": 0.0016854425404612147,
+        "b_OIS": -0.011458722840573634,
+        "p_OIS": 0.78132834677541,
+        "b_OMI": -0.10095695558374876,
+        "p_OMI": 0.003006261121365715
+      },
+      "NULISA_pTau181": {
+        "n": 827,
+        "b_UPSIT": -0.1317264112505044,
+        "p_UPSIT": 0.00036713136125652126,
+        "b_OIS": -0.017184779335629743,
+        "p_OIS": 0.681147330262929,
+        "b_OMI": -0.11517047770884684,
+        "p_OMI": 0.0008268543183514895
+      },
+      "NULISA_pTau217": {
+        "n": 827,
+        "b_UPSIT": -0.11378017951000373,
+        "p_UPSIT": 0.0020564601121078317,
+        "b_OIS": -0.018804542126345445,
+        "p_OIS": 0.6521017666890003,
+        "b_OMI": -0.09838352500334109,
+        "p_OMI": 0.004225788149144397
+      }
+    },
+    "platform_concordance": {
+      "n_prodromal": 842,
+      "spearman_prodromal": 0.8253964444454248,
+      "pearson_prodromal": 0.8324293142468759,
+      "n_all": 1919,
+      "spearman_all": 0.7887643940269813
+    }
+  },
+  "staging_dissociation": [
+    {
+      "score": "upsit",
+      "endpoint": "S axis",
+      "stat": "0.897",
+      "p": 0.0033333333333333335,
+      "eff": 0.7933569884210607
+    },
+    {
+      "score": "OIS",
+      "endpoint": "S axis",
+      "stat": "0.639",
+      "p": 0.0033333333333333335,
+      "eff": 0.2772994025960327
+    },
+    {
+      "score": "OMI",
+      "endpoint": "S axis",
+      "stat": "0.855",
+      "p": 0.0033333333333333335,
+      "eff": 0.7093588265871134
+    },
+    {
+      "score": "upsit",
+      "endpoint": "D axis",
+      "stat": "0.679",
+      "p": 0.0033333333333333335,
+      "eff": 0.357268499195039
+    },
+    {
+      "score": "OIS",
+      "endpoint": "D axis",
+      "stat": "0.868",
+      "p": 0.0033333333333333335,
+      "eff": 0.7368373978892135
+    },
+    {
+      "score": "OMI",
+      "endpoint": "D axis",
+      "stat": "0.529",
+      "p": 0.19,
+      "eff": 0.05813606821298656
+    },
+    {
+      "score": "upsit",
+      "endpoint": "NSD stage",
+      "stat": "-0.368",
+      "p": 1.8826352147727952e-34,
+      "eff": 0.36769858000804845
+    },
+    {
+      "score": "OIS",
+      "endpoint": "NSD stage",
+      "stat": "-0.214",
+      "p": 3.402353909831621e-12,
+      "eff": 0.2141885383507169
+    },
+    {
+      "score": "OMI",
+      "endpoint": "NSD stage",
+      "stat": "-0.305",
+      "p": 1.1174757059371614e-23,
+      "eff": 0.3048529462553616
+    },
+    {
+      "score": "upsit",
+      "endpoint": "Hoehn-Yahr",
+      "stat": "-0.071",
+      "p": 0.018987213267781314,
+      "eff": 0.07052778047240589
+    },
+    {
+      "score": "OIS",
+      "endpoint": "Hoehn-Yahr",
+      "stat": "-0.171",
+      "p": 1.1467393883217388e-08,
+      "eff": 0.170552986666108
+    },
+    {
+      "score": "OMI",
+      "endpoint": "Hoehn-Yahr",
+      "stat": "-0.035",
+      "p": 0.24785319095566405,
+      "eff": 0.03477621083084531
+    },
+    {
+      "score": "upsit",
+      "endpoint": "UPDRS-III",
+      "stat": "-1.03",
+      "p": 0.0009512859223095043,
+      "eff": 0.5157033506466026
+    },
+    {
+      "score": "OIS",
+      "endpoint": "UPDRS-III",
+      "stat": "-1.81",
+      "p": 5.5212848637229306e-09,
+      "eff": 0.9051760573756762
+    },
+    {
+      "score": "OMI",
+      "endpoint": "UPDRS-III",
+      "stat": "-0.49",
+      "p": 0.11688762111418986,
+      "eff": 0.2451662016389493
+    },
+    {
+      "score": "upsit",
+      "endpoint": "PD conversion",
+      "stat": "0.698",
+      "p": 0.0033333333333333335,
+      "eff": 0.39662624564773674
+    },
+    {
+      "score": "OIS",
+      "endpoint": "PD conversion",
+      "stat": "0.835",
+      "p": 0.0033333333333333335,
+      "eff": 0.6702618491221763
+    },
+    {
+      "score": "OMI",
+      "endpoint": "PD conversion",
+      "stat": "0.539",
+      "p": 0.11,
+      "eff": 0.0782807059671029
+    }
+  ],
+  "nsd_stage_omi": {
+    "n": 1034,
+    "spearman_omi": -0.3048529462553616,
+    "p_omi": 1.1174757059371614e-23,
+    "spearman_ois": -0.2141885383507169,
+    "p_ois": 3.402353909831621e-12,
+    "rows": [
+      {
+        "stage": "2a",
+        "n": 27,
+        "mean_omi": -4.661161747891115,
+        "sd_omi": 7.596941490326825
+      },
+      {
+        "stage": "2b",
+        "n": 192,
+        "mean_omi": -1.2259067649863535,
+        "sd_omi": 7.117441947909593
+      },
+      {
+        "stage": "3",
+        "n": 531,
+        "mean_omi": -1.3091042000124722,
+        "sd_omi": 6.817360865258585
+      },
+      {
+        "stage": "4",
+        "n": 123,
+        "mean_omi": -2.646556559638298,
+        "sd_omi": 7.241449058256768
+      },
+      {
+        "stage": "5",
+        "n": 6,
+        "mean_omi": 1.8004039711572208,
+        "sd_omi": 7.005007423208689
+      },
+      {
+        "stage": "Not NSD",
+        "n": 153,
+        "mean_omi": 8.21497606590167,
+        "sd_omi": 5.74329778173252
+      }
+    ]
+  },
+  "training_cohort": {
+    "models": [
+      {
+        "training_set": "PD + HC (main)",
+        "n": 1398,
+        "cv_r": 0.4785343099794064,
+        "c_hyposmia": 0.8350642334013687
+      },
+      {
+        "training_set": "HC only",
+        "n": 235,
+        "cv_r": 0.28008987347869757,
+        "c_hyposmia": 0.5443630687957738
+      },
+      {
+        "training_set": "PD only",
+        "n": 1163,
+        "cv_r": 0.2790131355732732,
+        "c_hyposmia": 0.8349141553607876
+      }
+    ],
+    "downsample_mean": 0.8056920098451195,
+    "downsample_sd": 0.020133761712134258,
+    "downsample_below_055": 0,
+    "n_downsample": 235,
+    "r_pdonly_vs_main": 0.9936821449081596,
+    "hc_extrapolation_fraction": 0.1814556331006979,
+    "verdict": "HC-only training yields a chance-level OIS; the failure is range restriction, not sample size"
+  },
+  "prodromal_saa": {
+    "assay_quality": [
+      {
+        "assay": "skin_synSAA R&D-v1 24h",
+        "cohort": "PD",
+        "n": 33,
+        "positive": 18,
+        "rate": 0.5454545454545454
+      },
+      {
+        "assay": "skin_synSAA R&D-v1 24h",
+        "cohort": "Control",
+        "n": 15,
+        "positive": 0,
+        "rate": 0.0
+      },
+      {
+        "assay": "skin_synSAA R&D-v1 24h",
+        "cohort": "Prodromal",
+        "n": 45,
+        "positive": 18,
+        "rate": 0.4
+      },
+      {
+        "assay": "skin_synSAA R&D-v2 24h",
+        "cohort": "PD",
+        "n": 75,
+        "positive": 38,
+        "rate": 0.5066666666666667
+      },
+      {
+        "assay": "skin_synSAA R&D-v2 24h",
+        "cohort": "Prodromal",
+        "n": 188,
+        "positive": 105,
+        "rate": 0.5585106382978723
+      }
+    ],
+    "skin": {
+      "n": 188,
+      "n_positive": 105,
+      "results": [
+        {
+          "score": "upsit",
+          "auc": 0.5400458978772231,
+          "odds_ratio": 0.8906907412648425,
+          "p": 0.4756639775938112
+        },
+        {
+          "score": "OIS",
+          "auc": 0.5555938037865749,
+          "odds_ratio": 0.8445992182747567,
+          "p": 0.33185347551111155
+        },
+        {
+          "score": "OMI",
+          "auc": 0.5249569707401033,
+          "odds_ratio": 0.9678105766921019,
+          "p": 0.8284946976428152
+        }
+      ]
+    },
+    "csf": {
+      "n": 60,
+      "n_positive": 30,
+      "results": [
+        {
+          "score": "upsit",
+          "auc": 0.77,
+          "p_unadjusted": 0.02881881748627568,
+          "p_arm_adjusted": 0.0460341111697186
+        },
+        {
+          "score": "OIS",
+          "auc": 0.6833333333333333,
+          "p_unadjusted": 0.5832641381927718,
+          "p_arm_adjusted": 0.6042262048929697
+        },
+        {
+          "score": "OMI",
+          "auc": 0.6977777777777778,
+          "p_unadjusted": 0.08109925647221064,
+          "p_arm_adjusted": 0.09958766329404817
+        }
+      ],
+      "pd_positivity": 0.14285714285714285,
+      "hyposmia_arm_n": 30,
+      "hyposmia_arm_positive": 8,
+      "hyposmia_arm_power_auc070": 0.433
+    },
+    "verdict": "prodromal seed-amplification data exist in the biospecimen file but neither assay can support a conclusion: the skin assay lacks sensitivity, the CSF dilution series lacks power once the enrolment channel is controlled"
+  },
+  "genotype_saa_premise": {
+    "groups": [
+      {
+        "group": "GBA",
+        "n": 56,
+        "positive": 52,
+        "rate": 0.9285714285714286
+      },
+      {
+        "group": "LRRK2",
+        "n": 126,
+        "positive": 84,
+        "rate": 0.6666666666666666
+      },
+      {
+        "group": "Sporadic",
+        "n": 824,
+        "positive": 764,
+        "rate": 0.9271844660194175
+      }
+    ],
+    "fisher_p": 8.780179984141926e-05
+  },
+  "cognitive_endpoints": [
+    {
+      "endpoint": "incident MCI (neuropsych)",
+      "model": "univariate UPSIT",
+      "term": "upsit",
+      "hr": 0.6945337250361066,
+      "p": 5.639952425981507e-05,
+      "concordance": 0.6754270432221027,
+      "n": 1623,
+      "events": 212
+    },
+    {
+      "endpoint": "incident MCI (neuropsych)",
+      "model": "univariate OIS",
+      "term": "OIS",
+      "hr": 0.9396530401539361,
+      "p": 0.48717305263377964,
+      "concordance": 0.6593808753003629,
+      "n": 1623,
+      "events": 212
+    },
+    {
+      "endpoint": "incident MCI (neuropsych)",
+      "model": "univariate OMI",
+      "term": "OMI",
+      "hr": 0.7623434227933167,
+      "p": 0.00040983897890248006,
+      "concordance": 0.6716618239948523,
+      "n": 1623,
+      "events": 212
+    },
+    {
+      "endpoint": "incident MCI (neuropsych)",
+      "model": "OIS + OMI",
+      "term": "OIS",
+      "hr": 0.8314958534515842,
+      "p": 0.04846530451964893,
+      "concordance": 0.6752309904185476,
+      "n": 1623,
+      "events": 212
+    },
+    {
+      "endpoint": "incident MCI (neuropsych)",
+      "model": "OIS + OMI",
+      "term": "OMI",
+      "hr": 0.7211628833596375,
+      "p": 6.939408000840811e-05,
+      "concordance": 0.6752309904185476,
+      "n": 1623,
+      "events": 212
+    },
+    {
+      "endpoint": "incident MCI (neuropsych)",
+      "model": "UPSIT + OMI (increment)",
+      "term": "upsit",
+      "hr": 0.6632635023907569,
+      "p": 0.048465304519646604,
+      "concordance": 0.6752309904185476,
+      "n": 1623,
+      "events": 212
+    },
+    {
+      "endpoint": "incident MCI (neuropsych)",
+      "model": "UPSIT + OMI (increment)",
+      "term": "OMI",
+      "hr": 1.0446089403479075,
+      "p": 0.8058660922414429,
+      "concordance": 0.6752309904185476,
+      "n": 1623,
+      "events": 212
+    },
+    {
+      "endpoint": "incident cognitive impairment (clinician)",
+      "model": "univariate UPSIT",
+      "term": "upsit",
+      "hr": 0.8157607107984041,
+      "p": 0.008233538316103801,
+      "concordance": 0.6786126284733527,
+      "n": 1622,
+      "events": 281
+    },
+    {
+      "endpoint": "incident cognitive impairment (clinician)",
+      "model": "univariate OIS",
+      "term": "OIS",
+      "hr": 0.6995375253612186,
+      "p": 4.976314962370612e-06,
+      "concordance": 0.6903857516670887,
+      "n": 1622,
+      "events": 281
+    },
+    {
+      "endpoint": "incident cognitive impairment (clinician)",
+      "model": "univariate OMI",
+      "term": "OMI",
+      "hr": 0.9619887032562296,
+      "p": 0.5660278686832054,
+      "concordance": 0.6757105475768428,
+      "n": 1622,
+      "events": 281
+    },
+    {
+      "endpoint": "incident cognitive impairment (clinician)",
+      "model": "OIS + OMI",
+      "term": "OIS",
+      "hr": 0.670488677294417,
+      "p": 8.022784190136006e-07,
+      "concordance": 0.6918046360943297,
+      "n": 1622,
+      "events": 281
+    },
+    {
+      "endpoint": "incident cognitive impairment (clinician)",
+      "model": "OIS + OMI",
+      "term": "OMI",
+      "hr": 0.8726830113974595,
+      "p": 0.05420750034022505,
+      "concordance": 0.6918046360943297,
+      "n": 1622,
+      "events": 281
+    },
+    {
+      "endpoint": "incident cognitive impairment (clinician)",
+      "model": "UPSIT + OMI (increment)",
+      "term": "upsit",
+      "hr": 0.4159727360042352,
+      "p": 8.022784190136164e-07,
+      "concordance": 0.6918046360943297,
+      "n": 1622,
+      "events": 281
+    },
+    {
+      "endpoint": "incident cognitive impairment (clinician)",
+      "model": "UPSIT + OMI (increment)",
+      "term": "OMI",
+      "hr": 1.9179629921689645,
+      "p": 2.876152378268416e-05,
+      "concordance": 0.6918046360943297,
+      "n": 1622,
+      "events": 281
+    }
+  ],
+  "age_absorption": {
+    "correlations": [
+      {
+        "cohort": "PD (training)",
+        "n": 1163,
+        "r_age_upsit": -0.11698413879632032,
+        "r_age_ois": -0.3352920938530486,
+        "r_age_omi": -0.01262619622536506,
+        "p_age_omi": 0.6670919259051148
+      },
+      {
+        "cohort": "HC (training)",
+        "n": 235,
+        "r_age_upsit": -0.2923608073679347,
+        "r_age_ois": -0.52056057310816,
+        "r_age_omi": 0.0714150626453089,
+        "p_age_omi": 0.2755689573279946
+      },
+      {
+        "cohort": "Prodromal (applied)",
+        "n": 2441,
+        "r_age_upsit": -0.40747934499851757,
+        "r_age_ois": -0.4173489684596965,
+        "r_age_omi": -0.2316001226405422,
+        "p_age_omi": 4.385213042469227e-31
+      },
+      {
+        "cohort": "Hyposmia stratum",
+        "n": 1556,
+        "r_age_upsit": null,
+        "r_age_ois": null,
+        "r_age_omi": -0.19105516677473305,
+        "p_age_omi": 2.9509753590996717e-14
+      }
+    ],
+    "unrecorded_confounders": [
+      "nasal",
+      "head trauma",
+      "smoking",
+      "post-infectious"
+    ]
+  },
+  "partial_r_two_tests": [
+    {
+      "test": "CSF pTau181/ABeta42",
+      "cohort": "Prodromal",
+      "score": "OMI",
+      "r": -0.12236626623766592,
+      "abs_r": 0.12236626623766592,
+      "p": 0.0004204547528714124,
+      "n": 827
+    },
+    {
+      "test": "CSF pTau181/ABeta42",
+      "cohort": "Prodromal",
+      "score": "OIS",
+      "r": 0.002920675376272327,
+      "abs_r": 0.002920675376272327,
+      "p": 0.9331639464562128,
+      "n": 827
+    },
+    {
+      "test": "CSF pTau181/ABeta42",
+      "cohort": "Prodromal",
+      "score": "UPSIT",
+      "r": -0.12374685956222523,
+      "abs_r": 0.12374685956222523,
+      "p": 0.00036109213749960613,
+      "n": 827
+    },
+    {
+      "test": "GBA vs LRRK2 genotype",
+      "cohort": "PD",
+      "score": "OMI",
+      "r": -0.349106473625957,
+      "abs_r": 0.349106473625957,
+      "p": 5.675700777058213e-07,
+      "n": 195
+    },
+    {
+      "test": "GBA vs LRRK2 genotype",
+      "cohort": "PD",
+      "score": "OIS",
+      "r": -0.05932806666758368,
+      "abs_r": 0.05932806666758368,
+      "p": 0.41001289607441843,
+      "n": 195
+    },
+    {
+      "test": "GBA vs LRRK2 genotype",
+      "cohort": "PD",
+      "score": "UPSIT",
+      "r": -0.3523676430540049,
+      "abs_r": 0.3523676430540049,
+      "p": 4.374693498669143e-07,
+      "n": 195
+    }
+  ],
+  "tau_gradient_fig1d": [
+    {
+      "split": "tertile",
+      "n_groups": 3,
+      "group": "G1",
+      "score": "OMI",
+      "n": 276,
+      "adj_mean": -4.688684059967987,
+      "adj_se": 0.4438407222876416,
+      "p_across_groups": 0.0013960694793516812,
+      "tau_mean": -3.3565494945446104
+    },
+    {
+      "split": "tertile",
+      "n_groups": 3,
+      "group": "G2",
+      "score": "OMI",
+      "n": 275,
+      "adj_mean": -5.510740044730617,
+      "adj_se": 0.4216796933519613,
+      "p_across_groups": 0.0013960694793516812,
+      "tau_mean": -3.0687166463662967
+    },
+    {
+      "split": "tertile",
+      "n_groups": 3,
+      "group": "G3",
+      "score": "OMI",
+      "n": 276,
+      "adj_mean": -6.89859150605495,
+      "adj_se": 0.43653371267374674,
+      "p_across_groups": 0.0013960694793516812,
+      "tau_mean": -2.427748101889841
+    },
+    {
+      "split": "tertile",
+      "n_groups": 3,
+      "group": "G1",
+      "score": "OIS",
+      "n": 276,
+      "adj_mean": 29.056954279573443,
+      "adj_se": 0.16570621290099255,
+      "p_across_groups": 0.9119959599560803,
+      "tau_mean": -3.3565494945446104
+    },
+    {
+      "split": "tertile",
+      "n_groups": 3,
+      "group": "G2",
+      "score": "OIS",
+      "n": 275,
+      "adj_mean": 29.117630875919083,
+      "adj_se": 0.17274113952252432,
+      "p_across_groups": 0.9119959599560803,
+      "tau_mean": -3.0687166463662967
+    },
+    {
+      "split": "tertile",
+      "n_groups": 3,
+      "group": "G3",
+      "score": "OIS",
+      "n": 276,
+      "adj_mean": 29.157513393056576,
+      "adj_se": 0.16219436940656792,
+      "p_across_groups": 0.9119959599560803,
+      "tau_mean": -2.427748101889841
+    },
+    {
+      "split": "median split",
+      "n_groups": 2,
+      "group": "G1",
+      "score": "OMI",
+      "n": 414,
+      "adj_mean": -4.906866816996432,
+      "adj_se": 0.3614003493886668,
+      "p_across_groups": 0.0016237470385385415,
+      "tau_mean": -3.2826360806968564
+    },
+    {
+      "split": "median split",
+      "n_groups": 2,
+      "group": "G2",
+      "score": "OMI",
+      "n": 413,
+      "adj_mean": -6.494185729507814,
+      "adj_se": 0.3483623684515738,
+      "p_across_groups": 0.0016237470385385415,
+      "tau_mean": -2.6182854163635385
+    },
+    {
+      "split": "median split",
+      "n_groups": 2,
+      "group": "G1",
+      "score": "OIS",
+      "n": 414,
+      "adj_mean": 28.997914475732536,
+      "adj_se": 0.13652286820974552,
+      "p_across_groups": 0.2410643798300037,
+      "tau_mean": -3.2826360806968564
+    },
+    {
+      "split": "median split",
+      "n_groups": 2,
+      "group": "G2",
+      "score": "OIS",
+      "n": 413,
+      "adj_mean": 29.223740860945192,
+      "adj_se": 0.1356978634947944,
+      "p_across_groups": 0.2410643798300037,
+      "tau_mean": -2.6182854163635385
+    }
+  ],
+  "baseline_table": {
+    "groups": [
+      "Parkinson's disease (training)",
+      "Healthy controls (training)",
+      "Hyposmia layer",
+      "Non-hyposmia-enriched layer"
+    ],
+    "group_n": {
+      "Parkinson's disease (training)": 1163,
+      "Healthy controls (training)": 235,
+      "Hyposmia layer": 1003,
+      "Non-hyposmia-enriched layer": 756
+    },
+    "rows": [
+      {
+        "section": "Demographics",
+        "variable": "Age, years",
+        "Parkinson's disease (training)": "62.8 (9.5)",
+        "Parkinson's disease (training) n": 1163,
+        "Healthy controls (training)": "62.5 (11.5)",
+        "Healthy controls (training) n": 235,
+        "Hyposmia layer": "68.1 (5.3)",
+        "Hyposmia layer n": 1003,
+        "Non-hyposmia-enriched layer": "65.0 (7.6)",
+        "Non-hyposmia-enriched layer n": 756
+      },
+      {
+        "section": "Demographics",
+        "variable": "Female",
+        "Parkinson's disease (training)": "434 (37%)",
+        "Parkinson's disease (training) n": 1163,
+        "Healthy controls (training)": "107 (46%)",
+        "Healthy controls (training) n": 235,
+        "Hyposmia layer": "592 (59%)",
+        "Hyposmia layer n": 1003,
+        "Non-hyposmia-enriched layer": "298 (39%)",
+        "Non-hyposmia-enriched layer n": 756
+      },
+      {
+        "section": "Demographics",
+        "variable": "White race",
+        "Parkinson's disease (training)": "1102 (95%)",
+        "Parkinson's disease (training) n": 1163,
+        "Healthy controls (training)": "216 (92%)",
+        "Healthy controls (training) n": 235,
+        "Hyposmia layer": "940 (94%)",
+        "Hyposmia layer n": 1003,
+        "Non-hyposmia-enriched layer": "723 (96%)",
+        "Non-hyposmia-enriched layer n": 756
+      },
+      {
+        "section": "Demographics",
+        "variable": "Education, years",
+        "Parkinson's disease (training)": "16.0 (2.9)",
+        "Parkinson's disease (training) n": 1163,
+        "Healthy controls (training)": "16.4 (2.7)",
+        "Healthy controls (training) n": 235,
+        "Hyposmia layer": "16.5 (2.4)",
+        "Hyposmia layer n": 1003,
+        "Non-hyposmia-enriched layer": "16.4 (3.0)",
+        "Non-hyposmia-enriched layer n": 756
+      },
+      {
+        "section": "Olfaction",
+        "variable": "UPSIT total",
+        "Parkinson's disease (training)": "23.6 (8.2)",
+        "Parkinson's disease (training) n": 1163,
+        "Healthy controls (training)": "33.7 (5.4)",
+        "Healthy controls (training) n": 235,
+        "Hyposmia layer": "21.7 (7.1)",
+        "Hyposmia layer n": 1003,
+        "Non-hyposmia-enriched layer": "27.6 (8.9)",
+        "Non-hyposmia-enriched layer n": 756
+      },
+      {
+        "section": "Olfaction",
+        "variable": "UPSIT at or below 15th percentile",
+        "Parkinson's disease (training)": "787 (68%)",
+        "Parkinson's disease (training) n": 1163,
+        "Healthy controls (training)": "28 (12%)",
+        "Healthy controls (training) n": 235,
+        "Hyposmia layer": "852 (85%)",
+        "Hyposmia layer n": 1003,
+        "Non-hyposmia-enriched layer": "326 (43%)",
+        "Non-hyposmia-enriched layer n": 756
+      },
+      {
+        "section": "Imaging",
+        "variable": "Putamen binding ratio, bilateral",
+        "Parkinson's disease (training)": "0.7 (0.3)",
+        "Parkinson's disease (training) n": 1163,
+        "Healthy controls (training)": "1.6 (0.3)",
+        "Healthy controls (training) n": 235,
+        "Hyposmia layer": "1.2 (0.3)",
+        "Hyposmia layer n": 1003,
+        "Non-hyposmia-enriched layer": "1.3 (0.4)",
+        "Non-hyposmia-enriched layer n": 756
+      },
+      {
+        "section": "Imaging",
+        "variable": "Lower putamen binding ratio",
+        "Parkinson's disease (training)": "0.6 (0.3)",
+        "Parkinson's disease (training) n": 1163,
+        "Healthy controls (training)": "1.5 (0.3)",
+        "Healthy controls (training) n": 235,
+        "Hyposmia layer": "1.2 (0.3)",
+        "Hyposmia layer n": 1003,
+        "Non-hyposmia-enriched layer": "1.3 (0.4)",
+        "Non-hyposmia-enriched layer n": 756
+      },
+      {
+        "section": "Imaging",
+        "variable": "Lower putamen, % of expected",
+        "Parkinson's disease (training)": "41.5 (18.8)",
+        "Parkinson's disease (training) n": 1163,
+        "Healthy controls (training)": "100.1 (18.4)",
+        "Healthy controls (training) n": 235,
+        "Hyposmia layer": "74.9 (18.5)",
+        "Hyposmia layer n": 1003,
+        "Non-hyposmia-enriched layer": "85.4 (23.8)",
+        "Non-hyposmia-enriched layer n": 756
+      },
+      {
+        "section": "Imaging",
+        "variable": "DAT deficit, below 65% of expected",
+        "Parkinson's disease (training)": "1052 (90%)",
+        "Parkinson's disease (training) n": 1163,
+        "Healthy controls (training)": "1 (0%)",
+        "Healthy controls (training) n": 235,
+        "Hyposmia layer": "265 (26%)",
+        "Hyposmia layer n": 1003,
+        "Non-hyposmia-enriched layer": "141 (19%)",
+        "Non-hyposmia-enriched layer n": 756
+      },
+      {
+        "section": "Components",
+        "variable": "OIS",
+        "Parkinson's disease (training)": "23.8 (2.6)",
+        "Parkinson's disease (training) n": 1163,
+        "Healthy controls (training)": "32.6 (3.8)",
+        "Healthy controls (training) n": 235,
+        "Hyposmia layer": "28.7 (3.5)",
+        "Hyposmia layer n": 1003,
+        "Non-hyposmia-enriched layer": "29.7 (4.2)",
+        "Non-hyposmia-enriched layer n": 756
+      },
+      {
+        "section": "Components",
+        "variable": "OMI",
+        "Parkinson's disease (training)": "-0.2 (7.8)",
+        "Parkinson's disease (training) n": 1163,
+        "Healthy controls (training)": "1.1 (6.0)",
+        "Healthy controls (training) n": 235,
+        "Hyposmia layer": "-7.0 (6.7)",
+        "Hyposmia layer n": 1003,
+        "Non-hyposmia-enriched layer": "-2.1 (7.8)",
+        "Non-hyposmia-enriched layer n": 756
+      },
+      {
+        "section": "Clinical",
+        "variable": "MoCA",
+        "Parkinson's disease (training)": "26.9 (2.4)",
+        "Parkinson's disease (training) n": 1157,
+        "Healthy controls (training)": "27.8 (1.7)",
+        "Healthy controls (training) n": 235,
+        "Hyposmia layer": "26.8 (2.3)",
+        "Hyposmia layer n": 997,
+        "Non-hyposmia-enriched layer": "26.6 (2.6)",
+        "Non-hyposmia-enriched layer n": 753
+      },
+      {
+        "section": "Clinical",
+        "variable": "MDS-UPDRS part I",
+        "Parkinson's disease (training)": "6.8 (4.9)",
+        "Parkinson's disease (training) n": 1153,
+        "Healthy controls (training)": "3.3 (3.1)",
+        "Healthy controls (training) n": 235,
+        "Hyposmia layer": "6.6 (4.8)",
+        "Hyposmia layer n": 992,
+        "Non-hyposmia-enriched layer": "6.7 (5.3)",
+        "Non-hyposmia-enriched layer n": 753
+      },
+      {
+        "section": "Clinical",
+        "variable": "MDS-UPDRS part II",
+        "Parkinson's disease (training)": "6.7 (5.1)",
+        "Parkinson's disease (training) n": 1161,
+        "Healthy controls (training)": "0.5 (1.0)",
+        "Healthy controls (training) n": 235,
+        "Hyposmia layer": "2.0 (3.1)",
+        "Hyposmia layer n": 1000,
+        "Non-hyposmia-enriched layer": "1.9 (3.1)",
+        "Non-hyposmia-enriched layer n": 755
+      },
+      {
+        "section": "Clinical",
+        "variable": "MDS-UPDRS part III",
+        "Parkinson's disease (training)": "22.3 (10.4)",
+        "Parkinson's disease (training) n": 1102,
+        "Healthy controls (training)": "1.6 (2.3)",
+        "Healthy controls (training) n": 233,
+        "Hyposmia layer": "4.4 (5.2)",
+        "Hyposmia layer n": 977,
+        "Non-hyposmia-enriched layer": "3.6 (4.5)",
+        "Non-hyposmia-enriched layer n": 747
+      },
+      {
+        "section": "Clinical",
+        "variable": "Hoehn and Yahr",
+        "Parkinson's disease (training)": "1.7 (0.5)",
+        "Parkinson's disease (training) n": 1106,
+        "Healthy controls (training)": "0.0 (0.3)",
+        "Healthy controls (training) n": 235,
+        "Hyposmia layer": "0.2 (0.5)",
+        "Hyposmia layer n": 997,
+        "Non-hyposmia-enriched layer": "0.1 (0.3)",
+        "Non-hyposmia-enriched layer n": 750
+      },
+      {
+        "section": "Clinical",
+        "variable": "SCOPA-AUT total",
+        "Parkinson's disease (training)": "10.9 (7.1)",
+        "Parkinson's disease (training) n": 1155,
+        "Healthy controls (training)": "6.1 (4.2)",
+        "Healthy controls (training) n": 233,
+        "Hyposmia layer": "10.4 (6.5)",
+        "Hyposmia layer n": 1001,
+        "Non-hyposmia-enriched layer": "10.5 (6.9)",
+        "Non-hyposmia-enriched layer n": 755
+      },
+      {
+        "section": "Clinical",
+        "variable": "SCOPA-AUT gastrointestinal",
+        "Parkinson's disease (training)": "2.6 (2.5)",
+        "Parkinson's disease (training) n": 1158,
+        "Healthy controls (training)": "0.7 (1.0)",
+        "Healthy controls (training) n": 234,
+        "Hyposmia layer": "2.0 (2.2)",
+        "Hyposmia layer n": 1001,
+        "Non-hyposmia-enriched layer": "2.1 (2.3)",
+        "Non-hyposmia-enriched layer n": 756
+      },
+      {
+        "section": "Clinical",
+        "variable": "Epworth sleepiness scale",
+        "Parkinson's disease (training)": "5.8 (3.8)",
+        "Parkinson's disease (training) n": 1161,
+        "Healthy controls (training)": "4.9 (3.3)",
+        "Healthy controls (training) n": 234,
+        "Hyposmia layer": "5.7 (3.5)",
+        "Hyposmia layer n": 1003,
+        "Non-hyposmia-enriched layer": "6.0 (4.0)",
+        "Non-hyposmia-enriched layer n": 755
+      },
+      {
+        "section": "Clinical",
+        "variable": "Geriatric depression scale",
+        "Parkinson's disease (training)": "2.4 (2.7)",
+        "Parkinson's disease (training) n": 1160,
+        "Healthy controls (training)": "1.2 (2.2)",
+        "Healthy controls (training) n": 235,
+        "Hyposmia layer": "1.7 (2.2)",
+        "Hyposmia layer n": 1000,
+        "Non-hyposmia-enriched layer": "2.2 (2.7)",
+        "Non-hyposmia-enriched layer n": 755
+      },
+      {
+        "section": "Clinical",
+        "variable": "State-trait anxiety inventory",
+        "Parkinson's disease (training)": "64.3 (18.3)",
+        "Parkinson's disease (training) n": 1160,
+        "Healthy controls (training)": "54.7 (13.6)",
+        "Healthy controls (training) n": 235,
+        "Hyposmia layer": "57.5 (15.5)",
+        "Hyposmia layer n": 1000,
+        "Non-hyposmia-enriched layer": "63.7 (19.3)",
+        "Non-hyposmia-enriched layer n": 754
+      },
+      {
+        "section": "Parkinson-specific",
+        "variable": "Age at onset, years",
+        "Parkinson's disease (training)": "59.8 (10.1)",
+        "Parkinson's disease (training) n": 1155,
+        "Healthy controls (training)": "NA",
+        "Healthy controls (training) n": 0,
+        "Hyposmia layer": "",
+        "Hyposmia layer n": 0,
+        "Non-hyposmia-enriched layer": "",
+        "Non-hyposmia-enriched layer n": 0
+      },
+      {
+        "section": "Parkinson-specific",
+        "variable": "Disease duration, years",
+        "Parkinson's disease (training)": "1.3 (1.8)",
+        "Parkinson's disease (training) n": 1160,
+        "Healthy controls (training)": "NA",
+        "Healthy controls (training) n": 0,
+        "Hyposmia layer": "",
+        "Hyposmia layer n": 0,
+        "Non-hyposmia-enriched layer": "",
+        "Non-hyposmia-enriched layer n": 0
+      },
+      {
+        "section": "Parkinson-specific",
+        "variable": "Levodopa equivalent daily dose, mg",
+        "Parkinson's disease (training)": "121.1 (327.8)",
+        "Parkinson's disease (training) n": 1163,
+        "Healthy controls (training)": "0.0 (0.0)",
+        "Healthy controls (training) n": 235,
+        "Hyposmia layer": "",
+        "Hyposmia layer n": 0,
+        "Non-hyposmia-enriched layer": "",
+        "Non-hyposmia-enriched layer n": 0
+      },
+      {
+        "section": "Recruitment channel",
+        "variable": "Recruited through olfactory screening",
+        "Parkinson's disease (training)": "",
+        "Parkinson's disease (training) n": 0,
+        "Healthy controls (training)": "",
+        "Healthy controls (training) n": 0,
+        "Hyposmia layer": "1003 (100%)",
+        "Hyposmia layer n": 1003,
+        "Non-hyposmia-enriched layer": "0 (0%)",
+        "Non-hyposmia-enriched layer n": 756
+      },
+      {
+        "section": "Recruitment channel",
+        "variable": "Recruited through REM sleep behaviour disorder",
+        "Parkinson's disease (training)": "",
+        "Parkinson's disease (training) n": 0,
+        "Healthy controls (training)": "",
+        "Healthy controls (training) n": 0,
+        "Hyposmia layer": "0 (0%)",
+        "Hyposmia layer n": 1003,
+        "Non-hyposmia-enriched layer": "408 (54%)",
+        "Non-hyposmia-enriched layer n": 756
+      },
+      {
+        "section": "Recruitment channel",
+        "variable": "Recruited through pathogenic variant carriage",
+        "Parkinson's disease (training)": "",
+        "Parkinson's disease (training) n": 0,
+        "Healthy controls (training)": "",
+        "Healthy controls (training) n": 0,
+        "Hyposmia layer": "0 (0%)",
+        "Hyposmia layer n": 1003,
+        "Non-hyposmia-enriched layer": "348 (46%)",
+        "Non-hyposmia-enriched layer n": 756
+      },
+      {
+        "section": "Follow-up",
+        "variable": "Follow-up, median years",
+        "Parkinson's disease (training)": "",
+        "Parkinson's disease (training) n": 0,
+        "Healthy controls (training)": "",
+        "Healthy controls (training) n": 0,
+        "Hyposmia layer": "1.34",
+        "Hyposmia layer n": 1003,
+        "Non-hyposmia-enriched layer": "3.00",
+        "Non-hyposmia-enriched layer n": 756
+      },
+      {
+        "section": "Follow-up",
+        "variable": "Person-years",
+        "Parkinson's disease (training)": "",
+        "Parkinson's disease (training) n": 0,
+        "Healthy controls (training)": "",
+        "Healthy controls (training) n": 0,
+        "Hyposmia layer": "1,734",
+        "Hyposmia layer n": 1003,
+        "Non-hyposmia-enriched layer": "3,372",
+        "Non-hyposmia-enriched layer n": 756
+      },
+      {
+        "section": "Follow-up",
+        "variable": "Conversions to Parkinson disease",
+        "Parkinson's disease (training)": "",
+        "Parkinson's disease (training) n": 0,
+        "Healthy controls (training)": "",
+        "Healthy controls (training) n": 0,
+        "Hyposmia layer": "68",
+        "Hyposmia layer n": 1003,
+        "Non-hyposmia-enriched layer": "84",
+        "Non-hyposmia-enriched layer n": 756
+      },
+      {
+        "section": "Follow-up",
+        "variable": "Conversions per 100 person-years",
+        "Parkinson's disease (training)": "",
+        "Parkinson's disease (training) n": 0,
+        "Healthy controls (training)": "",
+        "Healthy controls (training) n": 0,
+        "Hyposmia layer": "3.92",
+        "Hyposmia layer n": 1003,
+        "Non-hyposmia-enriched layer": "2.49",
+        "Non-hyposmia-enriched layer n": 756
+      }
+    ]
+  },
+  "ph_test": {
+    "method": "Schoenfeld residuals, lifelines proportional_hazard_test, time_transform='rank'",
+    "rows": [
+      {
+        "population": "hyposmia group",
+        "model": "OIS + age (per point / year)",
+        "term": "OIS",
+        "hr": 0.6828683842869127,
+        "p_cox": 1.3430994352977412e-17,
+        "model_c": 0.8440088846200025,
+        "ph_test_stat": 0.06831960598374036,
+        "ph_p": 0.7937993289417437,
+        "n": 1003,
+        "events": 68
+      },
+      {
+        "population": "hyposmia group",
+        "model": "OIS + age (per point / year)",
+        "term": "age",
+        "hr": 1.0551974656313827,
+        "p_cox": 0.025610300225348888,
+        "model_c": 0.8440088846200025,
+        "ph_test_stat": 0.5295708433111685,
+        "ph_p": 0.4667873417434595,
+        "n": 1003,
+        "events": 68
+      },
+      {
+        "population": "hyposmia group",
+        "model": "OIS + age (per point / year)",
+        "term": "global",
+        "hr": NaN,
+        "p_cox": NaN,
+        "model_c": 0.8440088846200025,
+        "ph_test_stat": 0.5978904492949089,
+        "ph_p": 0.741600029725581,
+        "n": 1003,
+        "events": 68
+      },
+      {
+        "population": "hyposmia group",
+        "model": "OIS + age + sex_num + educyrs (z-scored)",
+        "term": "OIS",
+        "hr": 0.24287401310126697,
+        "p_cox": 1.255165941078101e-15,
+        "model_c": 0.8460144927536232,
+        "ph_test_stat": 0.01971714016559038,
+        "ph_p": 0.8883299465561811,
+        "n": 999,
+        "events": 68
+      },
+      {
+        "population": "hyposmia group",
+        "model": "OIS + age + sex_num + educyrs (z-scored)",
+        "term": "age",
+        "hr": 1.2907343277634673,
+        "p_cox": 0.054760241270846596,
+        "model_c": 0.8460144927536232,
+        "ph_test_stat": 0.2495514276638812,
+        "ph_p": 0.6173911082392154,
+        "n": 999,
+        "events": 68
+      },
+      {
+        "population": "hyposmia group",
+        "model": "OIS + age + sex_num + educyrs (z-scored)",
+        "term": "educyrs",
+        "hr": 1.1545017931895252,
+        "p_cox": 0.25251502317245533,
+        "model_c": 0.8460144927536232,
+        "ph_test_stat": 0.304383366097725,
+        "ph_p": 0.5811474040608027,
+        "n": 999,
+        "events": 68
+      },
+      {
+        "population": "hyposmia group",
+        "model": "OIS + age + sex_num + educyrs (z-scored)",
+        "term": "sex_num",
+        "hr": 0.7115848227738465,
+        "p_cox": 0.295220455957053,
+        "model_c": 0.8460144927536232,
+        "ph_test_stat": 0.18970611246894875,
+        "ph_p": 0.6631613301545354,
+        "n": 999,
+        "events": 68
+      },
+      {
+        "population": "hyposmia group",
+        "model": "OIS + age + sex_num + educyrs (z-scored)",
+        "term": "global",
+        "hr": NaN,
+        "p_cox": NaN,
+        "model_c": 0.8460144927536232,
+        "ph_test_stat": 0.7633580463961454,
+        "ph_p": 0.9432918246568587,
+        "n": 999,
+        "events": 68
+      },
+      {
+        "population": "non-deficit stratum",
+        "model": "OIS + age (per point / year)",
+        "term": "OIS",
+        "hr": 0.7917865379857867,
+        "p_cox": 0.005753697660405273,
+        "model_c": 0.824723526738373,
+        "ph_test_stat": 1.7079468223048921,
+        "ph_p": 0.19125197664173313,
+        "n": 738,
+        "events": 22
+      },
+      {
+        "population": "non-deficit stratum",
+        "model": "OIS + age (per point / year)",
+        "term": "age",
+        "hr": 1.1613519836920645,
+        "p_cox": 0.00010809025571818967,
+        "model_c": 0.824723526738373,
+        "ph_test_stat": 0.005749650394265959,
+        "ph_p": 0.9395571732997189,
+        "n": 738,
+        "events": 22
+      },
+      {
+        "population": "non-deficit stratum",
+        "model": "OIS + age (per point / year)",
+        "term": "global",
+        "hr": NaN,
+        "p_cox": NaN,
+        "model_c": 0.824723526738373,
+        "ph_test_stat": 1.7136964726991581,
+        "ph_p": 0.42449789316127906,
+        "n": 738,
+        "events": 22
+      },
+      {
+        "population": "non-deficit stratum",
+        "model": "OIS + age + sex_num + educyrs (z-scored)",
+        "term": "OIS",
+        "hr": 0.6493787412222591,
+        "p_cox": 0.1313436140202034,
+        "model_c": 0.8250114521300962,
+        "ph_test_stat": 0.4481771960654804,
+        "ph_p": 0.5032018482950166,
+        "n": 734,
+        "events": 22
+      },
+      {
+        "population": "non-deficit stratum",
+        "model": "OIS + age + sex_num + educyrs (z-scored)",
+        "term": "age",
+        "hr": 2.1634214681226682,
+        "p_cox": 0.00028664118795809003,
+        "model_c": 0.8250114521300962,
+        "ph_test_stat": 0.0502578586868101,
+        "ph_p": 0.8226151864626429,
+        "n": 734,
+        "events": 22
+      },
+      {
+        "population": "non-deficit stratum",
+        "model": "OIS + age + sex_num + educyrs (z-scored)",
+        "term": "educyrs",
+        "hr": 1.0515485750820102,
+        "p_cox": 0.8293486976975459,
+        "model_c": 0.8250114521300962,
+        "ph_test_stat": 0.20012189917921513,
+        "ph_p": 0.6546224705063151,
+        "n": 734,
+        "events": 22
+      },
+      {
+        "population": "non-deficit stratum",
+        "model": "OIS + age + sex_num + educyrs (z-scored)",
+        "term": "sex_num",
+        "hr": 2.956928161760969,
+        "p_cox": 0.09413320328221216,
+        "model_c": 0.8250114521300962,
+        "ph_test_stat": 1.089637290432111,
+        "ph_p": 0.29655158754487854,
+        "n": 734,
+        "events": 22
+      },
+      {
+        "population": "non-deficit stratum",
+        "model": "OIS + age + sex_num + educyrs (z-scored)",
+        "term": "global",
+        "hr": NaN,
+        "p_cox": NaN,
+        "model_c": 0.8250114521300962,
+        "ph_test_stat": 1.7881942443636167,
+        "ph_p": 0.7746415677314151,
+        "n": 734,
+        "events": 22
+      },
+      {
+        "population": "hyposmia group",
+        "model": "upsit + age (per point / year)",
+        "term": "age",
+        "hr": 1.100750071820086,
+        "p_cox": 7.900308670106253e-06,
+        "model_c": 0.7220704766478568,
+        "ph_test_stat": 1.1459678454052586,
+        "ph_p": 0.2843948142464173,
+        "n": 1003,
+        "events": 68
+      },
+      {
+        "population": "hyposmia group",
+        "model": "upsit + age (per point / year)",
+        "term": "upsit",
+        "hr": 0.905835045956002,
+        "p_cox": 1.0367824924761947e-06,
+        "model_c": 0.7220704766478568,
+        "ph_test_stat": 0.6749908904678181,
+        "ph_p": 0.4113169481056582,
+        "n": 1003,
+        "events": 68
+      },
+      {
+        "population": "hyposmia group",
+        "model": "upsit + age (per point / year)",
+        "term": "global",
+        "hr": NaN,
+        "p_cox": NaN,
+        "model_c": 0.7220704766478568,
+        "ph_test_stat": 1.8209587358730768,
+        "ph_p": 0.40233131306831393,
+        "n": 1003,
+        "events": 68
+      },
+      {
+        "population": "hyposmia group",
+        "model": "upsit + age + sex_num + educyrs (z-scored)",
+        "term": "age",
+        "hr": 1.5672097733295856,
+        "p_cox": 0.00013598746382898673,
+        "model_c": 0.7370772946859904,
+        "ph_test_stat": 0.937451551756841,
+        "ph_p": 0.33293410023291503,
+        "n": 999,
+        "events": 68
+      },
+      {
+        "population": "hyposmia group",
+        "model": "upsit + age + sex_num + educyrs (z-scored)",
+        "term": "educyrs",
+        "hr": 1.1440840498448928,
+        "p_cox": 0.30338621518179215,
+        "model_c": 0.7370772946859904,
+        "ph_test_stat": 0.06561487420543013,
+        "ph_p": 0.7978319227745777,
+        "n": 999,
+        "events": 68
+      },
+      {
+        "population": "hyposmia group",
+        "model": "upsit + age + sex_num + educyrs (z-scored)",
+        "term": "sex_num",
+        "hr": 1.811256220532363,
+        "p_cox": 0.044724030657770336,
+        "model_c": 0.7370772946859904,
+        "ph_test_stat": 0.13999973542426997,
+        "ph_p": 0.7082812753147802,
+        "n": 999,
+        "events": 68
+      },
+      {
+        "population": "hyposmia group",
+        "model": "upsit + age + sex_num + educyrs (z-scored)",
+        "term": "upsit",
+        "hr": 0.5478995021946025,
+        "p_cox": 0.0001333639266738277,
+        "model_c": 0.7370772946859904,
+        "ph_test_stat": 0.5575810101861234,
+        "ph_p": 0.45523653552201027,
+        "n": 999,
+        "events": 68
+      },
+      {
+        "population": "hyposmia group",
+        "model": "upsit + age + sex_num + educyrs (z-scored)",
+        "term": "global",
+        "hr": NaN,
+        "p_cox": NaN,
+        "model_c": 0.7370772946859904,
+        "ph_test_stat": 1.7006471715726645,
+        "ph_p": 0.7906000611640769,
+        "n": 999,
+        "events": 68
+      },
+      {
+        "population": "non-deficit stratum",
+        "model": "upsit + age (per point / year)",
+        "term": "age",
+        "hr": 1.1751570301921126,
+        "p_cox": 1.782935310287454e-05,
+        "model_c": 0.8007120133313135,
+        "ph_test_stat": 0.1310002973635861,
+        "ph_p": 0.7173971426661696,
+        "n": 738,
+        "events": 22
+      },
+      {
+        "population": "non-deficit stratum",
+        "model": "upsit + age (per point / year)",
+        "term": "upsit",
+        "hr": 0.8957498216144318,
+        "p_cox": 0.004295957412902341,
+        "model_c": 0.8007120133313135,
+        "ph_test_stat": 3.7827207272233827,
+        "ph_p": 0.0517843933435088,
+        "n": 738,
+        "events": 22
+      },
+      {
+        "population": "non-deficit stratum",
+        "model": "upsit + age (per point / year)",
+        "term": "global",
+        "hr": NaN,
+        "p_cox": NaN,
+        "model_c": 0.8007120133313135,
+        "ph_test_stat": 3.9137210245869687,
+        "ph_p": 0.14130133910618692,
+        "n": 738,
+        "events": 22
+      },
+      {
+        "population": "non-deficit stratum",
+        "model": "upsit + age + sex_num + educyrs (z-scored)",
+        "term": "age",
+        "hr": 2.1884274755284783,
+        "p_cox": 0.00018608254724337666,
+        "model_c": 0.8276072682852343,
+        "ph_test_stat": 0.21197002278109087,
+        "ph_p": 0.6452276828871526,
+        "n": 734,
+        "events": 22
+      },
+      {
+        "population": "non-deficit stratum",
+        "model": "upsit + age + sex_num + educyrs (z-scored)",
+        "term": "educyrs",
+        "hr": 1.0720471494775181,
+        "p_cox": 0.7653973860887762,
+        "model_c": 0.8276072682852343,
+        "ph_test_stat": 0.3480276724270373,
+        "ph_p": 0.5552317458715268,
+        "n": 734,
+        "events": 22
+      },
+      {
+        "population": "non-deficit stratum",
+        "model": "upsit + age + sex_num + educyrs (z-scored)",
+        "term": "sex_num",
+        "hr": 2.949208346568634,
+        "p_cox": 0.07159795866501907,
+        "model_c": 0.8276072682852343,
+        "ph_test_stat": 0.3659540846052677,
+        "ph_p": 0.5452179408850166,
+        "n": 734,
+        "events": 22
+      },
+      {
+        "population": "non-deficit stratum",
+        "model": "upsit + age + sex_num + educyrs (z-scored)",
+        "term": "upsit",
+        "hr": 0.5429005815922913,
+        "p_cox": 0.04621519294003646,
+        "model_c": 0.8276072682852343,
+        "ph_test_stat": 1.7375716250582447,
+        "ph_p": 0.18744681226709323,
+        "n": 734,
+        "events": 22
+      },
+      {
+        "population": "non-deficit stratum",
+        "model": "upsit + age + sex_num + educyrs (z-scored)",
+        "term": "global",
+        "hr": NaN,
+        "p_cox": NaN,
+        "model_c": 0.8276072682852343,
+        "ph_test_stat": 2.6635234048716407,
+        "ph_p": 0.6156124672137606,
+        "n": 734,
+        "events": 22
+      }
+    ]
+  }
+}

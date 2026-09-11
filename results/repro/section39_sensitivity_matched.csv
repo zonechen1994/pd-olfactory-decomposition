@@ -1,0 +1,28 @@
+kind,reading,target_sensitivity,n_flagged,frac_flagged,events_caught,frac_events
+sensitivity_matched,UPSIT total,0.5,276,0.27517447657028915,,
+sensitivity_matched,lowest putamen %expected,0.5,158,0.1575274177467597,,
+sensitivity_matched,OIS,0.5,132,0.13160518444666003,,
+sensitivity_matched,UPSIT total,0.6,367,0.3659022931206381,,
+sensitivity_matched,lowest putamen %expected,0.6,216,0.21535393818544366,,
+sensitivity_matched,OIS,0.6,195,0.19441674975074777,,
+sensitivity_matched,UPSIT total,0.7,458,0.45663010967098705,,
+sensitivity_matched,lowest putamen %expected,0.7,348,0.3469591226321037,,
+sensitivity_matched,OIS,0.7,247,0.24626121635094717,,
+sensitivity_matched,UPSIT total,0.8,525,0.5234297108673978,,
+sensitivity_matched,lowest putamen %expected,0.8,537,0.5353938185443669,,
+sensitivity_matched,OIS,0.8,326,0.325024925224327,,
+sensitivity_matched,UPSIT total,0.9,668,0.6660019940179461,,
+sensitivity_matched,lowest putamen %expected,0.9,771,0.7686939182452642,,
+sensitivity_matched,OIS,0.9,579,0.5772681954137587,,
+fixed_flag_fraction,UPSIT total,,100,0.1,13.0,0.19117647058823528
+fixed_flag_fraction,lowest putamen %expected,,100,0.1,25.0,0.36764705882352944
+fixed_flag_fraction,OIS,,100,0.1,30.0,0.4411764705882353
+fixed_flag_fraction,UPSIT total,,200,0.2,23.0,0.3382352941176471
+fixed_flag_fraction,lowest putamen %expected,,200,0.2,39.0,0.5735294117647058
+fixed_flag_fraction,OIS,,200,0.2,41.0,0.6029411764705882
+fixed_flag_fraction,UPSIT total,,300,0.3,35.0,0.5147058823529411
+fixed_flag_fraction,lowest putamen %expected,,300,0.3,46.0,0.6764705882352942
+fixed_flag_fraction,OIS,,300,0.3,52.0,0.7647058823529411
+fixed_flag_fraction,UPSIT total,,501,0.5,50.0,0.7352941176470589
+fixed_flag_fraction,lowest putamen %expected,,501,0.5,54.0,0.7941176470588235
+fixed_flag_fraction,OIS,,501,0.5,61.0,0.8970588235294118

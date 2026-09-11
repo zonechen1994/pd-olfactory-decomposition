@@ -1,0 +1,33 @@
+section,variable,Parkinson's disease (training),Parkinson's disease (training) n,Healthy controls (training),Healthy controls (training) n,Hyposmia layer,Hyposmia layer n,Non-hyposmia-enriched layer,Non-hyposmia-enriched layer n
+Demographics,"Age, years",62.8 (9.5),1163,62.5 (11.5),235,68.1 (5.3),1003,65.0 (7.6),756
+Demographics,Female,434 (37%),1163,107 (46%),235,592 (59%),1003,298 (39%),756
+Demographics,White race,1102 (95%),1163,216 (92%),235,940 (94%),1003,723 (96%),756
+Demographics,"Education, years",16.0 (2.9),1163,16.4 (2.7),235,16.5 (2.4),1003,16.4 (3.0),756
+Olfaction,UPSIT total,23.6 (8.2),1163,33.7 (5.4),235,21.7 (7.1),1003,27.6 (8.9),756
+Olfaction,UPSIT at or below 15th percentile,787 (68%),1163,28 (12%),235,852 (85%),1003,326 (43%),756
+Imaging,"Putamen binding ratio, bilateral",0.7 (0.3),1163,1.6 (0.3),235,1.2 (0.3),1003,1.3 (0.4),756
+Imaging,Lower putamen binding ratio,0.6 (0.3),1163,1.5 (0.3),235,1.2 (0.3),1003,1.3 (0.4),756
+Imaging,"Lower putamen, % of expected",41.5 (18.8),1163,100.1 (18.4),235,74.9 (18.5),1003,85.4 (23.8),756
+Imaging,"DAT deficit, below 65% of expected",1052 (90%),1163,1 (0%),235,265 (26%),1003,141 (19%),756
+Components,OIS,23.8 (2.6),1163,32.6 (3.8),235,28.7 (3.5),1003,29.7 (4.2),756
+Components,OMI,-0.2 (7.8),1163,1.1 (6.0),235,-7.0 (6.7),1003,-2.1 (7.8),756
+Clinical,MoCA,26.9 (2.4),1157,27.8 (1.7),235,26.8 (2.3),997,26.6 (2.6),753
+Clinical,MDS-UPDRS part I,6.8 (4.9),1153,3.3 (3.1),235,6.6 (4.8),992,6.7 (5.3),753
+Clinical,MDS-UPDRS part II,6.7 (5.1),1161,0.5 (1.0),235,2.0 (3.1),1000,1.9 (3.1),755
+Clinical,MDS-UPDRS part III,22.3 (10.4),1102,1.6 (2.3),233,4.4 (5.2),977,3.6 (4.5),747
+Clinical,Hoehn and Yahr,1.7 (0.5),1106,0.0 (0.3),235,0.2 (0.5),997,0.1 (0.3),750
+Clinical,SCOPA-AUT total,10.9 (7.1),1155,6.1 (4.2),233,10.4 (6.5),1001,10.5 (6.9),755
+Clinical,SCOPA-AUT gastrointestinal,2.6 (2.5),1158,0.7 (1.0),234,2.0 (2.2),1001,2.1 (2.3),756
+Clinical,Epworth sleepiness scale,5.8 (3.8),1161,4.9 (3.3),234,5.7 (3.5),1003,6.0 (4.0),755
+Clinical,Geriatric depression scale,2.4 (2.7),1160,1.2 (2.2),235,1.7 (2.2),1000,2.2 (2.7),755
+Clinical,State-trait anxiety inventory,64.3 (18.3),1160,54.7 (13.6),235,57.5 (15.5),1000,63.7 (19.3),754
+Parkinson-specific,"Age at onset, years",59.8 (10.1),1155,NA,0,,0,,0
+Parkinson-specific,"Disease duration, years",1.3 (1.8),1160,NA,0,,0,,0
+Parkinson-specific,"Levodopa equivalent daily dose, mg",121.1 (327.8),1163,0.0 (0.0),235,,0,,0
+Recruitment channel,Recruited through olfactory screening,,0,,0,1003 (100%),1003,0 (0%),756
+Recruitment channel,Recruited through REM sleep behaviour disorder,,0,,0,0 (0%),1003,408 (54%),756
+Recruitment channel,Recruited through pathogenic variant carriage,,0,,0,0 (0%),1003,348 (46%),756
+Follow-up,"Follow-up, median years",,0,,0,1.34,1003,3.00,756
+Follow-up,Person-years,,0,,0,"1,734",1003,"3,372",756
+Follow-up,Conversions to Parkinson disease,,0,,0,68,1003,84,756
+Follow-up,Conversions per 100 person-years,,0,,0,3.92,1003,2.49,756
