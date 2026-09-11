@@ -2,8 +2,6 @@
 
 **Decomposition of the olfactory score by dopamine transporter imaging improves Parkinson's disease risk stratification in hyposmic individuals**
 
-Every value below is read programmatically from the reproducibility ledger (`results/repro/section16_stats.json` and the section CSVs) by `mk_supplementary.py`. No value is copied by hand.
-
 
 
 ## Contents
@@ -39,7 +37,7 @@ Every value below is read programmatically from the reproducibility ledger (`res
 | LightGBM | 0.470 | 0.475 ± 0.055 | 0.412 to 0.543 | 0.420 | 6.19 |
 | GradBoost | 0.474 | 0.478 ± 0.051 | 0.418 to 0.545 | 0.418 | 6.16 |
 
-Ridge was retained because the families are indistinguishable and a linear model keeps the fitted value interpretable as a weighted sum of binding ratios. Source: `model_output/repro_sbr_models/metadata.json`.
+Ridge was retained because the families are indistinguishable and a linear model keeps the fitted value interpretable as a weighted sum of binding ratios.
 
 
 
@@ -66,7 +64,7 @@ Training on healthy controls alone gives an OIS with no discrimination. Down-sam
 | B | RBD | 520 | 0.322 | 5.1 × 10<sup>−14</sup> | 22.3 (8.3) |
 | B | Variant carriers | 365 | 0.223 | 1.8 × 10<sup>−5</sup> | 32.9 (5.5) |
 
-Pooled r = 0.417 (n = 2,441). Source: `heldout_by_arm`.
+Pooled r = 0.417 (n = 2,441).
 
 
 
@@ -119,7 +117,7 @@ Pooled r = 0.417 (n = 2,441). Source: `heldout_by_arm`.
 | 43 | site_63 | 20 | 7 | 13 | 65% | 0.706 | 5.1 × 10<sup>−4</sup> | 5.08 |
 | 44 | site_20 | 16 | 14 | 2 | 12% | 0.709 | 0.002 | 7.82 |
 
-The 44 centres are numbered 1 to 44 in order of r, and the centre column gives the PPMI site code. Across the 44 centres the correlation rises with the control fraction (r = 0.521, P = 2.8 × 10<sup>−4</sup>) and is unrelated to centre size (r = 0.140, P = 0.36). Median centre size 26. The 35 centres that enrolled controls as well as patients reach a mean r of 0.493 against 0.204 in the 9 that enrolled patients only (Welch P = 8.4 × 10<sup>−4</sup>), and the two negative centres are both patient-dominated, so the olfactory score and the scan each vary over a narrow range there and a within-centre correlation carries little information. 30 of 44 reach P < 0.05, against 26.5 expected under a true correlation of 0.434 at the observed centre sizes. Source: `results/repro/loso_per_site.csv`.
+The 44 centres are numbered 1 to 44 in order of r, and the centre column gives the PPMI site code. Across the 44 centres the correlation rises with the control fraction (r = 0.521, P = 2.8 × 10<sup>−4</sup>) and is unrelated to centre size (r = 0.140, P = 0.36). Median centre size 26. The 35 centres that enrolled controls as well as patients reach a mean r of 0.493 against 0.204 in the 9 that enrolled patients only (Welch P = 8.4 × 10<sup>−4</sup>), and the two negative centres are both patient-dominated, so the olfactory score and the scan each vary over a narrow range there and a within-centre correlation carries little information. 30 of 44 reach P < 0.05, against 26.5 expected under a true correlation of 0.434 at the observed centre sizes.
 
 
 
@@ -138,8 +136,6 @@ The 44 centres are numbered 1 to 44 in order of r, and the centre column gives t
 
 
 Survival cohort after the exclusions in Methods (1,759 / 152). The RBD and variant-carrier group accrues more conversions than the hyposmia group (84 against 68) because it is followed longer, not because it is at higher risk. Per 100 person-years the hyposmia group is 3.92 against 2.49, and the two-year Kaplan–Meier estimates coincide. Within the hyposmia group cumulative conversion by Kaplan–Meier is 1.0% at 1 y (817 at risk), 5.8% at 2 y (432 at risk), 10.7% at 3 y (103 at risk), 24.9% at 4 y (17 at risk). The four-year value rests on 17 participants and is not used.
-
-Source: `results/repro/supp_channel_followup.csv` (same survival-frame rules as the main analysis, reproducing 1,759 / 152) and `layer_flow` in the ledger.
 
 
 
@@ -162,7 +158,7 @@ Source: `results/repro/supp_channel_followup.csv` (same survival-frame rules as 
 
 
 
-Dichotomisation costs 0.082 of concordance for the olfactory score and 0.035 for imaging in the whole prodromal cohort, and 0.118 against 0.013 within the hyposmia group, where the olfactory flag is nearly constant. Descriptive, with no paired test. Source: `section38_continuous_vs_binary.csv`.
+Dichotomisation costs 0.082 of concordance for the olfactory score and 0.035 for imaging in the whole prodromal cohort, and 0.118 against 0.013 within the hyposmia group, where the olfactory flag is nearly constant. Descriptive, with no paired test.
 
 **b. Five readings in five strata, including the residual.**
 
@@ -174,7 +170,7 @@ Dichotomisation costs 0.082 of concordance for the olfactory score and 0.035 for
 | Hyposmia, no DAT deficit | 738 / 22 | 0.690 (0.562–0.813) | 0.719 (0.567–0.884) | 0.621 (0.504–0.733) | 0.517 (0.361–0.719)\* | 0.424 (0.276–0.577)\* |
 | RBD and variant-carrier | 756 / 84 | 0.700 (0.635–0.760) | 0.766 (0.704–0.823) | 0.590 (0.516–0.659) | 0.737 (0.664–0.799) | 0.746 (0.681–0.804) |
 
-\* interval includes 0.5. The residual is at chance in the hyposmia group and in its deficit stratum only. In the whole cohort and in the RBD and variant-carrier group its interval excludes 0.5, and it never approaches the olfactory total. No clinical claim is made for it. All values from one bootstrap run (§36). Source: `section36_cindex_ci.csv`.
+\* interval includes 0.5. The residual is at chance in the hyposmia group and in its deficit stratum only. In the whole cohort and in the RBD and variant-carrier group its interval excludes 0.5, and it never approaches the olfactory total. All values come from one bootstrap run.
 
 
 
@@ -190,7 +186,7 @@ Dichotomisation costs 0.082 of concordance for the olfactory score and 0.035 for
 | OIS, SBR-only | ridge on UPSIT in PD + HC, transferred unchanged | 0.820 | +0.016 (−0.006, +0.038) | 0.08 |
 | OIS, full | ridge on UPSIT in PD + HC, transferred unchanged | 0.835 |  |  |
 
-1,003 participants, 68 conversions, 1,000 paired bootstrap resamples. OIS exceeds the olfactory total and the binary flag, is tied with the conversion-supervised 33-region model plus demographics and with its own imaging-only version, and reaches nominal significance against the 33 regions alone. The supervised models were cross-validated within this cohort and would be expected to fall in a new cohort. OIS used no conversion label. Source: `head_to_head`.
+1,003 participants, 68 conversions, 1,000 paired bootstrap resamples. OIS exceeds the olfactory total and the binary flag, is tied with the conversion-supervised 33-region model plus demographics and with its own imaging-only version, and reaches nominal significance against the 33 regions alone. The supervised models were cross-validated within this cohort and would be expected to fall in a new cohort. OIS used no conversion label.
 
 
 
@@ -208,8 +204,6 @@ Dichotomisation costs 0.082 of concordance for the olfactory score and 0.035 for
 | Non-deficit stratum | OIS | 29.93 | 16 / 369 | 3.5% (1.7–7.0) | 6 / 369 | 0.9% (0.3–2.8) | 0.01 |
 | Non-deficit stratum | UPSIT total | 23.00 | 19 / 405 | 3.4% (1.7–6.5) | 3 / 333 | 0.8% (0.2–3.3) | 1.6 × 10<sup>−4</sup> |
 | Non-deficit stratum | Lower putamen, % expected | 80.98 | 12 / 369 | 2.4% (1.0–5.8) | 10 / 369 | 2.0% (0.9–4.3) | 0.74 |
-
-Source: `supp_median_split.csv`, computed on the same survival frame as the main analysis.
 
 **b. Outcome-blind division at the tertile boundary (lowest third against upper two thirds).**
 
@@ -231,7 +225,7 @@ Source: `supp_median_split.csv`, computed on the same survival frame as the main
 | Non-deficit stratum | UPSIT total | 17.00 (14.0–20.0) / 26.00 (19.0–30.0) | 31% / 38% / 31% | 13 / 8 / 1 | 3.1% / 3.0% / 0.5% | 14.6, 0.02 | 0.03 / 0.05 / 3.4 × 10<sup>−4</sup> |
 | Non-deficit stratum | Lower putamen, % expected | no pair separates all three groups |  |  |  |  |  |
 
-These cut points are outcome-selected and exploratory. The main text uses the median, which is outcome-blind and coincides with the lowest-50% enrolment rule of the trial simulation. Source: `section44_three_groups.csv`, `section44_lowest_third_vs_rest.csv`, `three_group_split`.
+These cut points are outcome-selected and exploratory. The main text uses the median, which is outcome-blind and coincides with the lowest-50% enrolment rule of the trial simulation.
 
 
 
@@ -264,7 +258,7 @@ These cut points are outcome-selected and exploratory. The main text uses the me
 | 30% (300) | 35 / 68 (51%) | 46 / 68 (68%) | 52 / 68 (76%) |
 | 50% (501) | 50 / 68 (74%) | 54 / 68 (79%) | 61 / 68 (90%) |
 
-Read by rank alone, OIS dominates at every operating point, needing 132, 247 and 326 participants flagged to capture 50%, 70% and 80% of converters against 276, 458 and 525 for the olfactory total and 158, 348 and 537 for the lower putamen percentage. Imaging falls below the olfactory total at the high-sensitivity end (537 against 525), the same non-monotonicity seen across its clinical bands. These cut points are selected against the outcome and cannot serve as clinical thresholds. The median remains the primary division. Source: `section39_optimal_cut_all_readings.csv`, `section39_sensitivity_matched.csv`.
+Read by rank alone, OIS dominates at every operating point, needing 132, 247 and 326 participants flagged to capture 50%, 70% and 80% of converters against 276, 458 and 525 for the olfactory total and 158, 348 and 537 for the lower putamen percentage. Imaging falls below the olfactory total at the high-sensitivity end (537 against 525), the same non-monotonicity seen across its clinical bands. These cut points are selected against the outcome and cannot serve as clinical thresholds. The median remains the primary division.
 
 
 
@@ -306,7 +300,7 @@ Cumulative/dynamic AUC with inverse probability of censoring weighting, 1,000 us
 | Parkinson's disease (training) | 188 | 0.526 | 0.483 |
 | Healthy controls (training) | 94 | 0.424 | 0.490 |
 
-Within the three prodromal recruitment cohorts the residual's ICC lies between 0.75 and 0.83. In the training cohorts both scores are less reliable, the residual there having mean zero by construction and a narrower range. SWEDD participants are excluded at source, as everywhere in this work. Source: `icc`.
+Within the three prodromal recruitment cohorts the residual's ICC lies between 0.75 and 0.83. In the training cohorts both scores are less reliable, the residual there having mean zero by construction and a narrower range. SWEDD participants are excluded at source, as everywhere in this work.
 
 1,809 participants with at least two UPSIT measurements and an OIS. About three quarters of residual variance is stable across visits, so the small R² values in the pathology tests reflect diversity of sources rather than noise.
 
@@ -349,7 +343,7 @@ Standardised regression coefficients adjusted for age, sex and years of educatio
 | platform: NULISA_pTau181 | 827 | −0.132 (3.7 × 10<sup>−4</sup>) | −0.017 (0.68) | −0.115 (8.3 × 10<sup>−4</sup>) |
 | platform: NULISA_pTau217 | 827 | −0.114 (0.002) | −0.019 (0.65) | −0.098 (0.004) |
 
-The two tau platforms were run on the same participants (Spearman ρ = 0.825 between platforms, n = 842), so cross-platform agreement is consistency rather than independent replication. The raw total correlates slightly more strongly with the ratio than the residual does, which is an attribution result and not a demonstration that the residual outperforms the total. Source: `section22_csf_threeway.csv`, `csf_tau`.
+The two tau platforms were run on the same participants (Spearman ρ = 0.825 between platforms, n = 842), so cross-platform agreement is consistency rather than independent replication. The raw total correlates slightly more strongly with the ratio than the residual does, which is an attribution result and not a demonstration that the residual outperforms the total.
 
 
 
@@ -378,7 +372,7 @@ Fisher exact P = 8.8 × 10<sup>−5</sup>.
 | Diagnosed PD | OIS | 69 / 126 | 23.59 | 23.71 | −0.24 (−0.82, +0.34) | 0.41 |
 | Diagnosed PD | OMI | 69 / 126 | −4.09 | 1.88 | −5.90 (−8.17, −3.64) | 6.9 × 10<sup>−7</sup> |
 
-Among carriers without disease the two genotypes have the same olfactory total while OIS is higher and OMI lower in GBA1, the two differences cancelling. Among diagnosed patients OIS is identical (the negative control) and the whole 6-point olfactory difference sits in the residual. Putamen SBR is shown for completeness. Source: `genotype`.
+Among carriers without disease the two genotypes have the same olfactory total while OIS is higher and OMI lower in GBA1, the two differences cancelling. Among diagnosed patients OIS is identical (the negative control) and the whole 6-point olfactory difference sits in the residual. Putamen SBR is shown for completeness.
 
 **c. Partial correlations adjusted for age, sex and years of education (Supplementary Method 4).**
 
@@ -391,7 +385,7 @@ Among carriers without disease the two genotypes have the same olfactory total w
 | GBA1 vs LRRK2 genotype | Diagnosed PD | OIS | 195 | −0.059 | 0.41 |
 | GBA1 vs LRRK2 genotype | Diagnosed PD | UPSIT | 195 | −0.352 | 4.4 × 10<sup>−7</sup> |
 
-The UPSIT column shows that the total behaves like the residual on both measurements. The tests establish that the decomposition separates two biologies, not that the residual outperforms the total. Source: `section42_partial_r.csv`.
+The UPSIT column shows that the total behaves like the residual on both measurements. The tests establish that the decomposition separates two biologies, not that the residual outperforms the total.
 
 
 
@@ -408,7 +402,7 @@ S axis is seed-amplification status, D axis is the imaging deficit determination
 | UPDRS-III | −1.03 (9.5 × 10<sup>−4</sup>) | −1.81 (5.5 × 10<sup>−9</sup>) | −0.49 (0.12) |
 | PD conversion | 0.698 (0.003) | 0.835 (0.003) | 0.539 (0.11) |
 
-Each component locks onto one axis, OIS on the D axis and the residual on the S axis, while the total is intermediate on both and still exceeds the residual on the S axis. Because the D axis is derived from the same imaging as OIS, that column is not independent evidence. The residual is not assigned to either axis by construction. It is orthogonal only to the predictors. Source: `staging_dissociation`.
+Each component locks onto one axis, OIS on the D axis and the residual on the S axis, while the total is intermediate on both and still exceeds the residual on the S axis. Because the D axis is derived from the same imaging as OIS, that column is not independent evidence. The residual is not assigned to either axis by construction. It is orthogonal only to the predictors.
 
 **b. Residual by biological stage.**
 
@@ -446,7 +440,7 @@ n = 1,034 with a staging code. Participants without detectable synuclein patholo
 | incident cognitive impairment (clinician) | UPSIT + OMI (increment) | UPSIT | 0.416 | 8.0 × 10<sup>−7</sup> | 0.692 | 1,622 / 281 |
 | incident cognitive impairment (clinician) | UPSIT + OMI (increment) | OMI | 1.918 | 2.9 × 10<sup>−5</sup> | 0.692 | 1,622 / 281 |
 
-For incident mild cognitive impairment the two components are both significant when entered together, and the residual adds nothing to the total (HR 1.045, P = 0.81). All four models share the same concordance. The decomposition therefore provides no increment on cognitive endpoints, and no cognitive claim is made. Source: `cognitive_endpoints`.
+For incident mild cognitive impairment the two components are both significant when entered together, and the residual adds nothing to the total (HR 1.045, P = 0.81). All four models share the same concordance. The decomposition therefore provides no increment on cognitive endpoints, and no cognitive claim is made.
 
 
 
@@ -478,7 +472,7 @@ For incident mild cognitive impairment the two components are both significant w
 | OIS | 0.683 | 0.58 | 0.60 |
 | OMI | 0.698 | 0.08 | 0.10 |
 
-The skin assay is positive in only about half of diagnosed disease against 92.7% reported for the validated assay [PMID 38506839], and more often in prodromal than in diagnosed participants, so it lacks sensitivity. The CSF series has 30 hyposmia-recruitment cohort participants with 8 positives, giving 43% power to detect an AUC of 0.70, and its positivity in diagnosed disease is 14% against 86% for the primary assay. The association between residual and synuclein pathology is therefore established only in the diagnosed cohort. Source: `prodromal_saa`.
+The skin assay is positive in only about half of diagnosed disease against 92.7% reported for the validated assay [PMID 38506839], and more often in prodromal than in diagnosed participants, so it lacks sensitivity. The CSF series has 30 hyposmia-recruitment cohort participants with 8 positives, giving 43% power to detect an AUC of 0.70, and its positivity in diagnosed disease is 14% against 86% for the primary assay. The association between residual and synuclein pathology is therefore established only in the diagnosed cohort.
 
 
 
@@ -491,13 +485,13 @@ The skin assay is positive in only about half of diagnosed disease against 92.7%
 | Prodromal (applied) | 2,441 | −0.407 | −0.417 | −0.232 | 4.4 × 10<sup>−31</sup> |
 | Hyposmia stratum | 1,556 |  |  | −0.191 | 3.0 × 10<sup>−14</sup> |
 
-Age is absorbed in the training cohorts but not in the applied prodromal cohort, so every analysis involving the residual is adjusted for age. Sinonasal disease, head trauma, smoking and post-infectious dysfunction have no field in PPMI. Source: `age_absorption`.
+Age is absorbed in the training cohorts but not in the applied prodromal cohort, so every analysis involving the residual is adjusted for age. Sinonasal disease, head trauma, smoking and post-infectious dysfunction have no field in PPMI.
 
 
 
 ### Supplementary Table 14. Proportional hazards check for the Cox models adjusting a score for age
 
-Schoenfeld residual test (lifelines `proportional_hazard_test`, rank time transform) for the models reported in the main text, the score in its own units plus age in years, and for a fuller specification with sex and years of education (continuous terms z-scored). The global row sums the term statistics. Hazard ratios are per point (or per year) in the main-text models and per standard deviation in the fuller models.
+Schoenfeld residual test (rank time transform, as implemented in the lifelines package) for the models reported in the main text, the score in its own units plus age in years, and for a fuller specification with sex and years of education (continuous terms z-scored). The global row sums the term statistics. Hazard ratios are per point (or per year) in the main-text models and per standard deviation in the fuller models.
 
 | Population | Model | Term | HR | P (Cox) | Schoenfeld χ² | P (proportional hazards) | n / conversions |
 |---|---|---|---|---|---|---|---|
@@ -534,7 +528,7 @@ Schoenfeld residual test (lifelines `proportional_hazard_test`, rank time transf
 | Non-deficit stratum | UPSIT + age + sex + education (z-scored) | UPSIT total | 0.543 | 0.05 | 1.74 | 0.19 | 734 / 22 |
 | Non-deficit stratum | UPSIT + age + sex + education (z-scored) | Global |  |  | 2.66 | 0.62 | 734 / 22 |
 
-No term departs from proportional hazards at P < 0.05 (smallest term-level P = 0.052, smallest global P = 0.14). Source: `results/repro/supp_ph_test.csv`, `ph_test`.
+No term departs from proportional hazards at P < 0.05 (smallest term-level P = 0.052, smallest global P = 0.14).
 
 
 
@@ -577,10 +571,10 @@ No term departs from proportional hazards at P < 0.05 (smallest term-level P = 0
 | Centre split, discovery (5 centres) | 290 / 16 | 0.719 | 0.830 | +0.111 (−0.020, +0.234) | 0.09 |
 | Centre split, external (6 centres) | 343 / 17 | 0.663 | 0.938 | +0.276 (+0.150, +0.421) | < 0.001 |
 
-All intervals are from 1,000 paired bootstrap resamples. In the pre-2017 row the model is refitted in the 435 training participants enrolled before 2017 and applied to the hyposmia participants enrolled from 2017 onwards. What varies there is the training set, since all 986 of those participants are also in the 1,003 of the main analysis, so the row bears on training-set era and size rather than on an out-of-sample population. Held-out correlation of the refitted model in the 2017-onwards training-type participants was 0.416. Source: `temporal_split`, `landmark`.
+All intervals are from 1,000 paired bootstrap resamples. In the pre-2017 row the model is refitted in the 435 training participants enrolled before 2017 and applied to the hyposmia participants enrolled from 2017 onwards. What varies there is the training set, since all 986 of those participants are also in the 1,003 of the main analysis, so the row bears on training-set era and size rather than on an out-of-sample population. Held-out correlation of the refitted model in the 2017-onwards training-type participants was 0.416.
 
 
 
 ## Supplementary Note. The between-group interaction is not significant
 
-The gain of OIS over the olfactory total is +0.137 in the hyposmia group (1,003 / 68) and +0.067 in the RBD and variant-carrier group (756 / 84), a ratio of 2.05. The difference of differences is +0.070 (−0.032, +0.168), P = 0.181 over 2,000 paired bootstrap resamples, so no interaction is claimed and the contrast between groups is described only. Arguing an interaction from one significant and one non-significant group would be invalid.
+The gain of OIS over the olfactory total is +0.137 in the hyposmia group (1,003 / 68) and +0.067 in the RBD and variant-carrier group (756 / 84), a ratio of 2.05. The difference of differences is +0.070 (−0.032, +0.168), P = 0.181 over 2,000 paired bootstrap resamples, so the contrast between the two groups is described without a claim of interaction.

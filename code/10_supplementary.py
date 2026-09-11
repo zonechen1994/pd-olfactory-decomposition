@@ -391,8 +391,6 @@ def build_doc(chan_slopes):
     A(T('# Supplementary Information', '# 补充材料'))
     A(T('**Decomposition of the olfactory score by dopamine transporter imaging improves Parkinson\'s disease risk stratification in hyposmic individuals**',
         '**以多巴胺转运体显像分解嗅觉测试分数,可提升嗅觉减退人群中帕金森病的风险分层能力**'))
-    A(T('Every value below is read programmatically from the reproducibility ledger (`results/repro/section16_stats.json` and the section CSVs) by `mk_supplementary.py`. No value is copied by hand.',
-        '以下全部数值由 `mk_supplementary.py` 从复现总账(`results/repro/section16_stats.json` 与各节 CSV)程序化读出;无任何手抄数值。'))
     A('')
     A(T('## Contents', '## 目录'))
     A(T('''- Supplementary Methods 1–4
@@ -420,8 +418,8 @@ def build_doc(chan_slopes):
     for k, v in META['cv_models_ois'].items():
         rows.append([k, f3(v['pearson_r']), f"{v['fold_mean']:.3f} ± {v['fold_std']:.3f}", f"{v['fold_min']:.3f} to {v['fold_max']:.3f}", f3(v['spearman_r']), f"{v['mae']:.2f}"])
     A(md_table([T('Family', '回归族'), T('Pooled Pearson r', '合并 Pearson r'), T('Fold mean ± s.d.', '折均值 ± 标准差'), T('Fold range', '折范围'), T('Spearman ρ', 'Spearman ρ'), T('MAE (points)', 'MAE(分)')], rows))
-    A(T('Ridge was retained because the families are indistinguishable and a linear model keeps the fitted value interpretable as a weighted sum of binding ratios. Source: `model_output/repro_sbr_models/metadata.json`.',
-        '六族表现无法区分,保留岭回归是因为线性模型使拟合值可解读为结合比的加权和。来源:`model_output/repro_sbr_models/metadata.json`。'))
+    A(T('Ridge was retained because the families are indistinguishable and a linear model keeps the fitted value interpretable as a weighted sum of binding ratios.',
+        '六族表现无法区分,保留岭回归是因为线性模型使拟合值可解读为结合比的加权和。'))
     TC = J['training_cohort']
     A('')
     A(T('**b. Choice of training set.**', '**b. 训练集选择。**'))
@@ -434,7 +432,7 @@ def build_doc(chan_slopes):
     A(T('**c. Held-out correlation between OIS and measured UPSIT in the prodromal cohort, by recruitment cohort and by assignment rule.**', '**c. 前驱期 OIS 与实测 UPSIT 的 held-out 相关,按队列与按归属规则。**'))
     rows = [[r['rule'], {'Hyposmia': T('Hyposmia', '嗅觉减退'), 'RBD': 'RBD', 'Genetic': T('Variant carriers', '遗传携带')}[r['arm']], f"{r['n']:,}", f3(r['r']), pf(r['p']), f"{r['upsit_mean']:.1f} ({r['upsit_sd']:.1f})"] for r in HB['rows']]
     A(md_table([T('Rule', '规则'), T('Recruitment cohort', '入组队列'), 'n', 'r', 'P', T('UPSIT mean (s.d.)', 'UPSIT 均值(标准差)')], rows))
-    A(T(f'Pooled r = {HB["pooled_r"]:.3f} (n = {HB["pooled_n"]:,}). Source: `heldout_by_arm`.', f'合并 r = {HB["pooled_r"]:.3f}(n = {HB["pooled_n"]:,})。来源:`heldout_by_arm`。'))
+    A(T(f'Pooled r = {HB["pooled_r"]:.3f} (n = {HB["pooled_n"]:,}).', f'合并 r = {HB["pooled_r"]:.3f}(n = {HB["pooled_n"]:,})。'))
     A('')
     # d. 逐中心 LOSO 明细,含 PD/HC 构成(用户要求:两个负值靠这张表解释)
     A(T('**d. Leave-one-centre-out correlation at each of the 44 centres, with the patient and control counts that centre contributed.**',
@@ -452,13 +450,13 @@ def build_doc(chan_slopes):
         f'The {LO2["n_with_hc"]} centres that enrolled controls as well as patients reach a mean r of {LO2["r_with_hc"]:.3f} against {LO2["r_without_hc"]:.3f} in the {LO2["n_without_hc"]} that enrolled patients only (Welch P = {pf(LO2["p_with_vs_without"])}), '
         f'and the two negative centres are both patient-dominated, so the olfactory score and the scan each vary over a narrow range there and a within-centre correlation carries little information. '
         f'{LO2["n_significant"]} of 44 reach P < 0.05, against {LO2["n_significant_expected"]:.1f} expected under a true correlation of '
-        f'{LO2["r_mean"]:.3f} at the observed centre sizes. Source: `results/repro/loso_per_site.csv`.',
+        f'{LO2["r_mean"]:.3f} at the observed centre sizes.',
         f'44 个中心按 r 从低到高编为 1 至 44,站点一列为 PPMI 站点号。44 个中心间,相关随对照占比升高(r = {LO2["r_controlfrac_vs_siter"]:.3f},P = {pf(LO2["p_controlfrac_vs_siter"])}),'
         f'与中心人数无关(r = {LO2["r_size_vs_siter"]:.3f},P = {LO2["p_size_vs_siter"]:.2f})。中心人数中位数 {LO2["median_site_n"]}。'
         f'同时纳入对照与患者的 {LO2["n_with_hc"]} 个中心平均 r 为 {LO2["r_with_hc"]:.3f},只纳入患者的 {LO2["n_without_hc"]} 个中心为 {LO2["r_without_hc"]:.3f}(Welch P = {pf(LO2["p_with_vs_without"])}),'
         f'两个取负值的中心均以患者为主,其中嗅觉分数与影像的取值范围都很窄,中心内部的相关几乎不携带信息。'
         f'44 个中心中 {LO2["n_significant"]} 个达到 P<0.05,而按真实相关 {LO2["r_mean"]:.3f} 与各中心实际人数计算,期望为 '
-        f'{LO2["n_significant_expected"]:.1f} 个。来源:`results/repro/loso_per_site.csv`。'))
+        f'{LO2["n_significant_expected"]:.1f} 个。'))
     A('')
     # ---------------- Table 2
     A(T('## Supplementary Tables', '## 补充表'))
@@ -476,8 +474,6 @@ def build_doc(chan_slopes):
     A('')
     A(T(f'Survival cohort after the exclusions in Methods (1,759 / 152). The RBD and variant-carrier group accrues more conversions than the hyposmia group (84 against 68) because it is followed longer, not because it is at higher risk. Per 100 person-years the hyposmia group is {ch.loc["Hyposmia","rate_per_100py"]:.2f} against {ch.loc["Non-hyposmia-enriched","rate_per_100py"]:.2f}, and the two-year Kaplan–Meier estimates coincide. Within the hyposmia group cumulative conversion by Kaplan–Meier is ' + ', '.join(f'{k["cum_conversion"]*100:.1f}% at {k["year"]} y ({k["at_risk"]} at risk)' for k in LF['km']) + '. The four-year value rests on 17 participants and is not used.',
         f'为方法中各步排除后的生存队列(1,759 / 152)。RBD 与遗传携带组转化例数多于嗅觉减退组(84 对 68)是随访更久所致,不是风险更高:每百人年嗅觉减退组 {ch.loc["Hyposmia","rate_per_100py"]:.2f} 对 {ch.loc["Non-hyposmia-enriched","rate_per_100py"]:.2f},两年 Kaplan–Meier 估计相同。嗅觉减退组内 Kaplan–Meier 累积转化为 ' + '、'.join(f'{k["year"]} 年 {k["cum_conversion"]*100:.1f}%(在险 {k["at_risk"]} 人)' for k in LF['km']) + ';四年值仅基于 17 人,不予使用。'))
-    A(T('Source: `results/repro/supp_channel_followup.csv` (same survival-frame rules as the main analysis, reproducing 1,759 / 152) and `layer_flow` in the ledger.',
-        '来源:`results/repro/supp_channel_followup.csv`(与主分析同一套生存框架规则,复现 1,759 / 152)及总账中的 `layer_flow`。'))
     A('')
     # ---------------- Table 3
     A(T('### Supplementary Table 3. Discrimination of every reading, continuous against dichotomised, by stratum, and head to head with OIS', '### 补充表 3. 各读法的判别力:连续对二分、分层比较,以及与 OIS 的头对头'))
@@ -493,8 +489,8 @@ def build_doc(chan_slopes):
     A(md_table([T('Stratum', '分层'), T('Reading', '读法'), T('Participants / conversions', '人数 / 转化例数'), T('C-index (95% CI)', 'C-index(95% CI)')], rows))
     c = C38.set_index(['stratum', 'reading'])['c']
     A('')
-    A(T(f'Dichotomisation costs {c[("all prodromal","UPSIT, continuous score")]-c[("all prodromal","UPSIT, dichotomised (hyposmic yes/no)")]:.3f} of concordance for the olfactory score and {c[("all prodromal","imaging, continuous (lowest putamen %exp)")]-c[("all prodromal","imaging, dichotomised (DAT-deficit flag)")]:.3f} for imaging in the whole prodromal cohort, and {c[("hyposmia","UPSIT, continuous score")]-c[("hyposmia","UPSIT, dichotomised (hyposmic yes/no)")]:.3f} against {c[("hyposmia","imaging, continuous (lowest putamen %exp)")]-c[("hyposmia","imaging, dichotomised (DAT-deficit flag)")]:.3f} within the hyposmia group, where the olfactory flag is nearly constant. Descriptive, with no paired test. Source: `section38_continuous_vs_binary.csv`.',
-        f'二分使嗅觉分数在全前驱期损失 {c[("all prodromal","UPSIT, continuous score")]-c[("all prodromal","UPSIT, dichotomised (hyposmic yes/no)")]:.3f} 的 C-index、影像损失 {c[("all prodromal","imaging, continuous (lowest putamen %exp)")]-c[("all prodromal","imaging, dichotomised (DAT-deficit flag)")]:.3f};嗅觉减退组内分别为 {c[("hyposmia","UPSIT, continuous score")]-c[("hyposmia","UPSIT, dichotomised (hyposmic yes/no)")]:.3f} 对 {c[("hyposmia","imaging, continuous (lowest putamen %exp)")]-c[("hyposmia","imaging, dichotomised (DAT-deficit flag)")]:.3f},该组内嗅觉标志近乎常数。描述性,无配对检验。来源:`section38_continuous_vs_binary.csv`。'))
+    A(T(f'Dichotomisation costs {c[("all prodromal","UPSIT, continuous score")]-c[("all prodromal","UPSIT, dichotomised (hyposmic yes/no)")]:.3f} of concordance for the olfactory score and {c[("all prodromal","imaging, continuous (lowest putamen %exp)")]-c[("all prodromal","imaging, dichotomised (DAT-deficit flag)")]:.3f} for imaging in the whole prodromal cohort, and {c[("hyposmia","UPSIT, continuous score")]-c[("hyposmia","UPSIT, dichotomised (hyposmic yes/no)")]:.3f} against {c[("hyposmia","imaging, continuous (lowest putamen %exp)")]-c[("hyposmia","imaging, dichotomised (DAT-deficit flag)")]:.3f} within the hyposmia group, where the olfactory flag is nearly constant. Descriptive, with no paired test.',
+        f'二分使嗅觉分数在全前驱期损失 {c[("all prodromal","UPSIT, continuous score")]-c[("all prodromal","UPSIT, dichotomised (hyposmic yes/no)")]:.3f} 的 C-index、影像损失 {c[("all prodromal","imaging, continuous (lowest putamen %exp)")]-c[("all prodromal","imaging, dichotomised (DAT-deficit flag)")]:.3f};嗅觉减退组内分别为 {c[("hyposmia","UPSIT, continuous score")]-c[("hyposmia","UPSIT, dichotomised (hyposmic yes/no)")]:.3f} 对 {c[("hyposmia","imaging, continuous (lowest putamen %exp)")]-c[("hyposmia","imaging, dichotomised (DAT-deficit flag)")]:.3f},该组内嗅觉标志近乎常数。描述性,无配对检验。'))
     A(T('**b. Five readings in five strata, including the residual.**', '**b. 五种读法在五个分层中的表现,含残差。**'))
     stl = {'all prodromal': T('All prodromal', '全前驱期'), 'hyposmia': T('Hyposmia group', '嗅觉减退组'), 'hyposmia + DAT deficit': T('Hyposmia, DAT deficit', '嗅觉减退,DAT 缺损'),
            'hyposmia + no DAT deficit': T('Hyposmia, no DAT deficit', '嗅觉减退,DAT 非缺损'), 'non-hyposmia-enriched': T('RBD and variant-carrier', 'RBD 与遗传携带组')}
@@ -508,8 +504,8 @@ def build_doc(chan_slopes):
             r = g.loc[rd]; cells.append(ci(r.c, r.lo, r.hi) + ('\\*' if bool(r.at_chance) else ''))
         rows.append(cells)
     A(md_table([T('Stratum', '分层'), T('Participants / conversions', '人数 / 转化例数')] + [rdl[k] for k in ['UPSIT total', 'OIS', 'OMI', 'putamen SBR', 'lowest putamen %expected']], rows))
-    A(T('\\* interval includes 0.5. The residual is at chance in the hyposmia group and in its deficit stratum only. In the whole cohort and in the RBD and variant-carrier group its interval excludes 0.5, and it never approaches the olfactory total. No clinical claim is made for it. All values from one bootstrap run (§36). Source: `section36_cindex_ci.csv`.',
-        '\\* 区间含 0.5。残差仅在嗅觉减退组及其缺损亚组等同随机;在全队列与RBD 与遗传携带组其区间不含 0.5,且从未接近嗅觉总分。本文不对其提出临床主张。全部数值出自同一次 bootstrap(§36)。来源:`section36_cindex_ci.csv`。'))
+    A(T('\\* interval includes 0.5. The residual is at chance in the hyposmia group and in its deficit stratum only. In the whole cohort and in the RBD and variant-carrier group its interval excludes 0.5, and it never approaches the olfactory total. All values come from one bootstrap run.',
+        '\\* 区间含 0.5。残差仅在嗅觉减退组及其缺损亚组等同随机;在全队列与RBD 与遗传携带组其区间不含 0.5,且从未接近嗅觉总分。全部数值出自同一次 bootstrap。'))
     A('')
     A(T('**c. Head to head with OIS in the hyposmia group.**', '**c. 嗅觉减退组内与 OIS 的头对头比较。**'))
     HH = J['head_to_head']
@@ -520,8 +516,8 @@ def build_doc(chan_slopes):
         p = '' if r['p'] != r['p'] else pf(r['p'])
         rows.append([r['model'], tr[r['training']], f3(r['c']), d, p])
     A(md_table([T('Model', '模型'), T('How it was built', '构建方式'), 'C', T('ΔC, OIS minus model (95% CI)', 'ΔC,OIS 减模型(95% CI)'), 'P'], rows))
-    A(T('1,003 participants, 68 conversions, 1,000 paired bootstrap resamples. OIS exceeds the olfactory total and the binary flag, is tied with the conversion-supervised 33-region model plus demographics and with its own imaging-only version, and reaches nominal significance against the 33 regions alone. The supervised models were cross-validated within this cohort and would be expected to fall in a new cohort. OIS used no conversion label. Source: `head_to_head`.',
-        '1,003 人,68 转化,1,000 次配对 bootstrap。OIS 优于嗅觉总分与二分标志,与转化标签监督的 33 区加人口学模型及自身仅影像版打平,对单独 33 区达到名义显著。监督模型在本队列内交叉验证,换新队列预期会下降;OIS 未用任何转化标签。来源:`head_to_head`。'))
+    A(T('1,003 participants, 68 conversions, 1,000 paired bootstrap resamples. OIS exceeds the olfactory total and the binary flag, is tied with the conversion-supervised 33-region model plus demographics and with its own imaging-only version, and reaches nominal significance against the 33 regions alone. The supervised models were cross-validated within this cohort and would be expected to fall in a new cohort. OIS used no conversion label.',
+        '1,003 人,68 转化,1,000 次配对 bootstrap。OIS 优于嗅觉总分与二分标志,与转化标签监督的 33 区加人口学模型及自身仅影像版打平,对单独 33 区达到名义显著。监督模型在本队列内交叉验证,换新队列预期会下降;OIS 未用任何转化标签。'))
     A('')
     A('')
     # ---------------- Table 4 (three groups, §44)
@@ -531,7 +527,6 @@ def build_doc(chan_slopes):
     A(T('**a. Outcome-blind division at the median (the main-text division, Fig. 3c, e).**', '**a. 不看结局的中位数划分(正文所用,Fig 3c、e)。**'))
     rows = [[sl[r.stratum], rl[r.reading], f"{r['median']:.2f}", f'{int(r.ev_low)} / {int(r.n_low)}', f'{r.km2_low:.1f}% ({r.km2_low_lo:.1f}–{r.km2_low_hi:.1f})', f'{int(r.ev_high)} / {int(r.n_high)}', f'{r.km2_high:.1f}% ({r.km2_high_lo:.1f}–{r.km2_high_hi:.1f})', pf(r.p_logrank)] for _, r in M44.iterrows()]
     A(md_table([T('Population', '人群'), T('Reading', '读法'), T('Median', '中位数'), T('At or below, conversions / participants', '不高于中位数,转化 / 人数'), T('2-year conversion (95% CI)', '两年转化(95% CI)'), T('Above, conversions / participants', '高于中位数,转化 / 人数'), T('2-year conversion (95% CI)', '两年转化(95% CI)'), T('Log-rank P', 'log-rank P')], rows))
-    A(T('Source: `supp_median_split.csv`, computed on the same survival frame as the main analysis.', '来源:`supp_median_split.csv`,与主分析同一生存数据框计算。'))
     A(T('**b. Outcome-blind division at the tertile boundary (lowest third against upper two thirds).**', '**b. 不看结局的三分位边界划分(最低三分之一对其余三分之二)。**'))
     rows = [[sl[r.stratum], rl[r.reading], f'{int(r.ev_low)} / {int(r.n_low)}', f'{r.km2_low:.1f}% ({r.km2_low_lo:.1f}–{r.km2_low_hi:.1f})', f'{int(r.ev_rest)} / {int(r.n_rest)}', f'{r.km2_rest:.1f}% ({r.km2_rest_lo:.1f}–{r.km2_rest_hi:.1f})', pf(r.p_two_group), pf(r.p_three_group_tertiles), pf(r.p_middle_vs_highest)] for _, r in L44.iterrows()]
     A(md_table([T('Population', '人群'), T('Reading', '读法'), T('Lowest third, conversions / participants', '最低三分之一,转化 / 人数'), T('2-year conversion (95% CI)', '两年转化(95% CI)'), T('Upper two thirds, conversions / participants', '其余三分之二,转化 / 人数'), T('2-year conversion (95% CI)', '两年转化(95% CI)'), T('Two-group log-rank P', '两组 log-rank P'), T('Three-tertile log-rank P', '三分位 log-rank P'), T('Middle against highest tertile P', '中间对最高三分位 P')], rows))
@@ -545,8 +540,8 @@ def build_doc(chan_slopes):
                      f'{r.frac_low*100:.0f}% / {r.frac_mid*100:.0f}% / {r.frac_high*100:.0f}%', f'{int(r.ev_low)} / {int(r.ev_mid)} / {int(r.ev_high)}',
                      f'{r.km2_low:.1f}% / {r.km2_mid:.1f}% / {r.km2_high:.1f}%', f'{r.chi2:.1f}, {pf(r.p_permutation)}', f'{pf(r.p_low_mid)} / {pf(r.p_mid_high)} / {pf(r.p_low_high)}'])
     A(md_table([T('Population', '人群'), T('Reading', '读法'), T('Cut points (bootstrap 95%)', '切点(bootstrap 95%)'), T('Share of population, low / mid / high', '占比,低 / 中 / 高'), T('Conversions', '转化例数'), T('2-year conversion', '两年转化'), T('χ², permutation P', 'χ²,置换 P'), T('Pairwise P, low–mid / mid–high / low–high', '两两 P,低–中 / 中–高 / 低–高')], rows))
-    A(T('These cut points are outcome-selected and exploratory. The main text uses the median, which is outcome-blind and coincides with the lowest-50% enrolment rule of the trial simulation. Source: `section44_three_groups.csv`, `section44_lowest_third_vs_rest.csv`, `three_group_split`.',
-        '这些切点是对着结局选出的,属探索性。正文使用中位数,它不看结局,且与试验模拟中最低 50% 入组的规则一致。来源:`section44_three_groups.csv`、`section44_lowest_third_vs_rest.csv`、`three_group_split`。'))
+    A(T('These cut points are outcome-selected and exploratory. The main text uses the median, which is outcome-blind and coincides with the lowest-50% enrolment rule of the trial simulation.',
+        '这些切点是对着结局选出的,属探索性。正文使用中位数,它不看结局,且与试验模拟中最低 50% 入组的规则一致。'))
     A('')
     # ---------------- Figures
     # ---------------- Table 5
@@ -573,8 +568,8 @@ def build_doc(chan_slopes):
             cells.append(f"{int(r.events_caught)} / 68 ({r.frac_events*100:.0f}%)")
         rows.append(cells)
     A(md_table([T('Group flagged (n)', '标记比例(人数)')] + [rdl2[k] for k in ['UPSIT total', 'lowest putamen %expected', 'OIS']], rows))
-    A(T('Read by rank alone, OIS dominates at every operating point, needing 132, 247 and 326 participants flagged to capture 50%, 70% and 80% of converters against 276, 458 and 525 for the olfactory total and 158, 348 and 537 for the lower putamen percentage. Imaging falls below the olfactory total at the high-sensitivity end (537 against 525), the same non-monotonicity seen across its clinical bands. These cut points are selected against the outcome and cannot serve as clinical thresholds. The median remains the primary division. Source: `section39_optimal_cut_all_readings.csv`, `section39_sensitivity_matched.csv`.',
-        '若只按秩读,OIS 在每一个工作点均占优,欲覆盖 50%、70%、80% 的转化者需标记 132、247 与 326 人,而嗅觉总分需 276、458 与 525 人,较低侧壳核 %预期需 158、348 与 537 人。影像在高灵敏度端反而低于嗅觉总分(537 对 525),与其临床分档在本队列不单调是同一现象。这些切点是对着结局选出的,不能作为临床阈值,中位数仍为主划分。来源:`section39_optimal_cut_all_readings.csv`、`section39_sensitivity_matched.csv`。'))
+    A(T('Read by rank alone, OIS dominates at every operating point, needing 132, 247 and 326 participants flagged to capture 50%, 70% and 80% of converters against 276, 458 and 525 for the olfactory total and 158, 348 and 537 for the lower putamen percentage. Imaging falls below the olfactory total at the high-sensitivity end (537 against 525), the same non-monotonicity seen across its clinical bands. These cut points are selected against the outcome and cannot serve as clinical thresholds. The median remains the primary division.',
+        '若只按秩读,OIS 在每一个工作点均占优,欲覆盖 50%、70%、80% 的转化者需标记 132、247 与 326 人,而嗅觉总分需 276、458 与 525 人,较低侧壳核 %预期需 158、348 与 537 人。影像在高灵敏度端反而低于嗅觉总分(537 对 525),与其临床分档在本队列不单调是同一现象。这些切点是对着结局选出的,不能作为临床阈值,中位数仍为主划分。'))
     A('')
     # Supplementary Table 6: IPCW time-dependent AUC (section 46). The naive estimator that
     # used to be quoted here discarded everyone censored before the horizon, which is a large
@@ -611,8 +606,8 @@ def build_doc(chan_slopes):
     rows = [[gl[r.group], int(r.n_pairs), f'{r.upsit_icc:.3f}', f'{r.omi_icc:.3f}'] for _, r in ICG.iterrows() if r.group in gl]
     A(T('**By cohort and recruitment cohort.**', '**按队列与入组队列。**'))
     A(md_table([T('Group', '分组'), T('Pairs', '配对数'), T('ICC, UPSIT', 'ICC,UPSIT'), T('ICC, OMI', 'ICC,OMI')], rows))
-    A(T('Within the three prodromal recruitment cohorts the residual\'s ICC lies between 0.75 and 0.83. In the training cohorts both scores are less reliable, the residual there having mean zero by construction and a narrower range. SWEDD participants are excluded at source, as everywhere in this work. Source: `icc`.',
-        '三个前驱期队列内残差的 ICC 在 0.75 至 0.83 之间。训练队列中两个分数的信度均较低,残差在那里按构造均值为零且取值范围更窄。SWEDD 与全文口径一致已在源头剔除。来源:`icc`。'))
+    A(T('Within the three prodromal recruitment cohorts the residual\'s ICC lies between 0.75 and 0.83. In the training cohorts both scores are less reliable, the residual there having mean zero by construction and a narrower range. SWEDD participants are excluded at source, as everywhere in this work.',
+        '三个前驱期队列内残差的 ICC 在 0.75 至 0.83 之间。训练队列中两个分数的信度均较低,残差在那里按构造均值为零且取值范围更窄。SWEDD 与全文口径一致已在源头剔除。'))
     A(T(f'{ICC["n_pairs"]:,} participants with at least two UPSIT measurements and an OIS. About three quarters of residual variance is stable across visits, so the small R² values in the pathology tests reflect diversity of sources rather than noise.',
         f'{ICC["n_pairs"]:,} 名至少两次 UPSIT 且有 OIS 的参与者。残差方差约四分之三跨访视稳定,故病理检验中较小的 R² 反映来源多样而非噪声。'))
     A('')
@@ -635,8 +630,8 @@ def build_doc(chan_slopes):
         rows.append([T(f'platform: {k}', f'平台:{k}'), v['n'], f"{v['b_UPSIT']:+.3f} ({pf(v['p_UPSIT'])})", f"{v['b_OIS']:+.3f} ({pf(v['p_OIS'])})", f"{v['b_OMI']:+.3f} ({pf(v['p_OMI'])})"])
     A(md_table([T('Specification', '设定'), 'n', 'UPSIT β (P)', 'OIS β (P)', 'OMI β (P)'], rows))
     PC = J['csf_tau']['platform_concordance']
-    A(T(f'The two tau platforms were run on the same participants (Spearman ρ = {PC["spearman_prodromal"]:.3f} between platforms, n = {PC["n_prodromal"]}), so cross-platform agreement is consistency rather than independent replication. The raw total correlates slightly more strongly with the ratio than the residual does, which is an attribution result and not a demonstration that the residual outperforms the total. Source: `section22_csf_threeway.csv`, `csf_tau`.',
-        f'两个 tau 平台在同一批人上运行(平台间 Spearman ρ = {PC["spearman_prodromal"]:.3f},n = {PC["n_prodromal"]}),跨平台一致是一致性而非独立重复。原始总分与比值的相关略强于残差,这是归属结果而非残差胜过总分。来源:`section22_csf_threeway.csv`、`csf_tau`。'))
+    A(T(f'The two tau platforms were run on the same participants (Spearman ρ = {PC["spearman_prodromal"]:.3f} between platforms, n = {PC["n_prodromal"]}), so cross-platform agreement is consistency rather than independent replication. The raw total correlates slightly more strongly with the ratio than the residual does, which is an attribution result and not a demonstration that the residual outperforms the total.',
+        f'两个 tau 平台在同一批人上运行(平台间 Spearman ρ = {PC["spearman_prodromal"]:.3f},n = {PC["n_prodromal"]}),跨平台一致是一致性而非独立重复。原始总分与比值的相关略强于残差,这是归属结果而非残差胜过总分。'))
     A('')
     # ---------------- Table 10
     A(T('### Supplementary Table 9. Genotype contrast in full, its premise, and both tests on one metric', '### 补充表 9. 基因型对比全表、其前提,以及两项检验换算到同一个量'))
@@ -651,13 +646,13 @@ def build_doc(chan_slopes):
     for r in J['genotype']:
         rows.append([T({'Prodromal': 'Carriers without disease', 'PD': 'Diagnosed PD'}[r['cohort']], {'Prodromal': '未发病携带者', 'PD': '已确诊 PD'}[r['cohort']]), r['measure'], f"{r['n_gba']} / {r['n_lrrk2']}", f"{r['mean_gba']:.2f}", f"{r['mean_lrrk2']:.2f}", f"{r['beta']:+.2f} ({r['lo']:+.2f}, {r['hi']:+.2f})", pf(r['p'])])
     A(md_table([T('Cohort', '队列'), T('Measure', '指标'), T('n GBA1 / LRRK2', 'n GBA1 / LRRK2'), T('Mean GBA1', 'GBA1 均值'), T('Mean LRRK2', 'LRRK2 均值'), 'β (95% CI)', 'P'], rows))
-    A(T('Among carriers without disease the two genotypes have the same olfactory total while OIS is higher and OMI lower in GBA1, the two differences cancelling. Among diagnosed patients OIS is identical (the negative control) and the whole 6-point olfactory difference sits in the residual. Putamen SBR is shown for completeness. Source: `genotype`.',
-        '未发病携带者中两基因型嗅觉总分相同,而 GBA1 的 OIS 更高、OMI 更低,两者相抵。已确诊患者中 OIS 相同(阴性对照),6 分的嗅觉差全部落在残差上。壳核 SBR 为完整起见列出。来源:`genotype`。'))
+    A(T('Among carriers without disease the two genotypes have the same olfactory total while OIS is higher and OMI lower in GBA1, the two differences cancelling. Among diagnosed patients OIS is identical (the negative control) and the whole 6-point olfactory difference sits in the residual. Putamen SBR is shown for completeness.',
+        '未发病携带者中两基因型嗅觉总分相同,而 GBA1 的 OIS 更高、OMI 更低,两者相抵。已确诊患者中 OIS 相同(阴性对照),6 分的嗅觉差全部落在残差上。壳核 SBR 为完整起见列出。'))
     A(T('**c. Partial correlations adjusted for age, sex and years of education (Supplementary Method 4).**', '**c. 校正年龄、性别与教育年限的偏相关(补充方法 4)。**'))
     rows = [[r.test.replace('ABeta42', 'Aβ42').replace('GBA vs', 'GBA1 vs'), T({'Prodromal': 'Prodromal', 'PD': 'Diagnosed PD'}[r.cohort], {'Prodromal': '前驱期', 'PD': '已确诊 PD'}[r.cohort]), r.score, int(r.n), f'{r.r:+.3f}', pf(r.p)] for _, r in C42.iterrows()]
     A(md_table([T('External measurement', '外部测量'), T('Cohort', '队列'), T('Score', '分数'), 'n', T('Partial r', '偏相关 r'), 'P'], rows))
-    A(T('The UPSIT column shows that the total behaves like the residual on both measurements. The tests establish that the decomposition separates two biologies, not that the residual outperforms the total. Source: `section42_partial_r.csv`.',
-        'UPSIT 列显示总分在两项测量上的行为与残差相同;这两项检验证明的是分解把两种生物学分开了,不是残差胜过总分。来源:`section42_partial_r.csv`。'))
+    A(T('The UPSIT column shows that the total behaves like the residual on both measurements. The tests establish that the decomposition separates two biologies, not that the residual outperforms the total.',
+        'UPSIT 列显示总分在两项测量上的行为与残差相同;这两项检验证明的是分解把两种生物学分开了,不是残差胜过总分。'))
     A('')
     # ---------------- Table 11
     A(T('### Supplementary Table 10. The three scores against the biological staging axes and motor state in diagnosed Parkinson\'s disease', '### 补充表 10. 三个分数对生物学分期轴与运动状态,已确诊帕金森病'))
@@ -672,8 +667,8 @@ def build_doc(chan_slopes):
             cells.append(f"{r['stat']} ({pf(r['p'])})")
         rows.append(cells)
     A(md_table([T('Endpoint', '终点'), 'UPSIT', 'OIS', 'OMI'], rows))
-    A(T('Each component locks onto one axis, OIS on the D axis and the residual on the S axis, while the total is intermediate on both and still exceeds the residual on the S axis. Because the D axis is derived from the same imaging as OIS, that column is not independent evidence. The residual is not assigned to either axis by construction. It is orthogonal only to the predictors. Source: `staging_dissociation`.',
-        '两个成分各锁定一条轴:OIS 在 D 轴,残差在 S 轴,总分在两轴上均居中且在 S 轴仍高于残差。D 轴与 OIS 出自同一影像,该列不是独立证据。残差按构造不归属任一轴,它只正交于预测变量。来源:`staging_dissociation`。'))
+    A(T('Each component locks onto one axis, OIS on the D axis and the residual on the S axis, while the total is intermediate on both and still exceeds the residual on the S axis. Because the D axis is derived from the same imaging as OIS, that column is not independent evidence. The residual is not assigned to either axis by construction. It is orthogonal only to the predictors.',
+        '两个成分各锁定一条轴:OIS 在 D 轴,残差在 S 轴,总分在两轴上均居中且在 S 轴仍高于残差。D 轴与 OIS 出自同一影像,该列不是独立证据。残差按构造不归属任一轴,它只正交于预测变量。'))
     A(T('**b. Residual by biological stage.**', '**b. 按生物学分期的残差。**'))
     rows = [[s, n, f'{m:+.2f}', f'{sd:.1f}'] for s, n, m, sd in NSD_OMI]
     A(md_table([T('NSD stage', 'NSD 分期'), 'n', T('Mean OMI', 'OMI 均值'), 's.d.'], rows))
@@ -686,8 +681,8 @@ def build_doc(chan_slopes):
     CE = J['cognitive_endpoints']
     rows = [[r['endpoint'].replace('neuropsych', 'neuropsychological criteria'), r['model'].replace('upsit', 'UPSIT'), r['term'].replace('upsit', 'UPSIT'), f"{r['hr']:.3f}", pf(r['p']), f"{r['concordance']:.3f}", f"{r['n']:,} / {r['events']}"] for r in CE]
     A(md_table([T('Endpoint', '终点'), T('Model', '模型'), T('Term', '项'), T('HR per s.d.', '每标准差 HR'), 'P', T('Concordance', 'Concordance'), T('Participants / conversions', '人数 / 转化例数')], rows))
-    A(T('For incident mild cognitive impairment the two components are both significant when entered together, and the residual adds nothing to the total (HR 1.045, P = 0.81). All four models share the same concordance. The decomposition therefore provides no increment on cognitive endpoints, and no cognitive claim is made. Source: `cognitive_endpoints`.',
-        '新发轻度认知障碍上,两成分同时入模均显著,而残差对总分零增量(HR 1.045,P = 0.81);四个模型 concordance 相同。分解在认知终点上不提供增量,本文不作认知主张。来源:`cognitive_endpoints`。'))
+    A(T('For incident mild cognitive impairment the two components are both significant when entered together, and the residual adds nothing to the total (HR 1.045, P = 0.81). All four models share the same concordance. The decomposition therefore provides no increment on cognitive endpoints, and no cognitive claim is made.',
+        '新发轻度认知障碍上,两成分同时入模均显著,而残差对总分零增量(HR 1.045,P = 0.81);四个模型 concordance 相同。分解在认知终点上不提供增量,本文不作认知主张。'))
     A('')
     # ---------------- Table 13
     A(T('### Supplementary Table 12. Prodromal seed-amplification data: tested and not usable', '### 补充表 12. 前驱期种子扩增数据:已检验,不可用'))
@@ -701,24 +696,24 @@ def build_doc(chan_slopes):
     rows = [[r['score'].replace('upsit', 'UPSIT'), f"{r['auc']:.3f}", pf(r['p_unadjusted']), pf(r['p_arm_adjusted'])] for r in PS['csf']['results']]
     A(T(f'**c. CSF dilution series, prodromal (n = {PS["csf"]["n"]}, {PS["csf"]["n_positive"]} positive, PPMI project 262).**', f'**c. 脑脊液稀释系列,前驱期(n = {PS["csf"]["n"]},阳性 {PS["csf"]["n_positive"]};PPMI 项目 262)。**'))
     A(md_table([T('Score', '分数'), 'AUC', T('P, unadjusted', 'P,未校正'), T('P, recruitment cohort-adjusted', 'P,入组队列校正')], rows))
-    A(T(f'The skin assay is positive in only about half of diagnosed disease against 92.7% reported for the validated assay [PMID 38506839], and more often in prodromal than in diagnosed participants, so it lacks sensitivity. The CSF series has {PS["csf"]["hyposmia_arm_n"]} hyposmia-recruitment cohort participants with {PS["csf"]["hyposmia_arm_positive"]} positives, giving {PS["csf"]["hyposmia_arm_power_auc070"]*100:.0f}% power to detect an AUC of 0.70, and its positivity in diagnosed disease is {PS["csf"]["pd_positivity"]*100:.0f}% against 86% for the primary assay. The association between residual and synuclein pathology is therefore established only in the diagnosed cohort. Source: `prodromal_saa`.',
-        f'皮肤检测在已确诊疾病中阳性率仅约一半,而验证过的检测报告 92.7% [PMID 38506839],且前驱期阳性率高于已确诊者,故敏感度不足。脑脊液系列的嗅觉减退队列仅 {PS["csf"]["hyposmia_arm_n"]} 人、{PS["csf"]["hyposmia_arm_positive"]} 例阳性,检出 AUC 0.70 的功效 {PS["csf"]["hyposmia_arm_power_auc070"]*100:.0f}%,其在已确诊疾病中的阳性率为 {PS["csf"]["pd_positivity"]*100:.0f}%(主检测 86%)。残差与突触核蛋白病理的关联因此仅在已确诊队列中成立。来源:`prodromal_saa`。'))
+    A(T(f'The skin assay is positive in only about half of diagnosed disease against 92.7% reported for the validated assay [PMID 38506839], and more often in prodromal than in diagnosed participants, so it lacks sensitivity. The CSF series has {PS["csf"]["hyposmia_arm_n"]} hyposmia-recruitment cohort participants with {PS["csf"]["hyposmia_arm_positive"]} positives, giving {PS["csf"]["hyposmia_arm_power_auc070"]*100:.0f}% power to detect an AUC of 0.70, and its positivity in diagnosed disease is {PS["csf"]["pd_positivity"]*100:.0f}% against 86% for the primary assay. The association between residual and synuclein pathology is therefore established only in the diagnosed cohort.',
+        f'皮肤检测在已确诊疾病中阳性率仅约一半,而验证过的检测报告 92.7% [PMID 38506839],且前驱期阳性率高于已确诊者,故敏感度不足。脑脊液系列的嗅觉减退队列仅 {PS["csf"]["hyposmia_arm_n"]} 人、{PS["csf"]["hyposmia_arm_positive"]} 例阳性,检出 AUC 0.70 的功效 {PS["csf"]["hyposmia_arm_power_auc070"]*100:.0f}%,其在已确诊疾病中的阳性率为 {PS["csf"]["pd_positivity"]*100:.0f}%(主检测 86%)。残差与突触核蛋白病理的关联因此仅在已确诊队列中成立。'))
     A('')
     # ---------------- Table 14
     A(T('### Supplementary Table 13. Age and the three scores', '### 补充表 13. 年龄与三个分数'))
     AA = J['age_absorption']['correlations']
     rows = [[r['cohort'], f"{r['n']:,}", '' if r['r_age_upsit'] is None else f"{r['r_age_upsit']:+.3f}", '' if r['r_age_ois'] is None else f"{r['r_age_ois']:+.3f}", f"{r['r_age_omi']:+.3f}", pf(r['p_age_omi'])] for r in AA]
     A(md_table([T('Cohort', '队列'), 'n', 'r(age, UPSIT)', 'r(age, OIS)', 'r(age, OMI)', T('P for OMI', 'OMI 的 P')], rows))
-    A(T('Age is absorbed in the training cohorts but not in the applied prodromal cohort, so every analysis involving the residual is adjusted for age. Sinonasal disease, head trauma, smoking and post-infectious dysfunction have no field in PPMI. Source: `age_absorption`.',
-        '年龄在训练队列中被吸收,在应用的前驱期队列中未被吸收,故所有涉及残差的分析均校正年龄。鼻窦疾病、颅脑外伤、吸烟与感染后嗅觉障碍在 PPMI 中无字段。来源:`age_absorption`。'))
+    A(T('Age is absorbed in the training cohorts but not in the applied prodromal cohort, so every analysis involving the residual is adjusted for age. Sinonasal disease, head trauma, smoking and post-infectious dysfunction have no field in PPMI.',
+        '年龄在训练队列中被吸收,在应用的前驱期队列中未被吸收,故所有涉及残差的分析均校正年龄。鼻窦疾病、颅脑外伤、吸烟与感染后嗅觉障碍在 PPMI 中无字段。'))
     A('')
     # ---------------- Table 14 (proportional hazards check, supp_ph_test.py)
     if 'ph_test' in J:
         PH = J['ph_test']
         A(T('### Supplementary Table 14. Proportional hazards check for the Cox models adjusting a score for age',
             '### 补充表 14. 分数校正年龄的 Cox 模型的比例风险检验'))
-        A(T("Schoenfeld residual test (lifelines `proportional_hazard_test`, rank time transform) for the models reported in the main text, the score in its own units plus age in years, and for a fuller specification with sex and years of education (continuous terms z-scored). The global row sums the term statistics. Hazard ratios are per point (or per year) in the main-text models and per standard deviation in the fuller models.",
-            "对正文报告的模型(分数按原单位、年龄按年)以及加入性别与教育年限的完整模型(连续项 z 标准化)作 Schoenfeld 残差检验(lifelines `proportional_hazard_test`,秩时间变换)。global 行为各项统计量之和。正文模型的风险比为每 1 分(或每 1 岁),完整模型为每 1 个标准差。"))
+        A(T("Schoenfeld residual test (rank time transform, as implemented in the lifelines package) for the models reported in the main text, the score in its own units plus age in years, and for a fuller specification with sex and years of education (continuous terms z-scored). The global row sums the term statistics. Hazard ratios are per point (or per year) in the main-text models and per standard deviation in the fuller models.",
+            "对正文报告的模型(分数按原单位、年龄按年)以及加入性别与教育年限的完整模型(连续项 z 标准化)作 Schoenfeld 残差检验(秩时间变换,lifelines 软件包实现)。global 行为各项统计量之和。正文模型的风险比为每 1 分(或每 1 岁),完整模型为每 1 个标准差。"))
         _pl = {'hyposmia group': T('Hyposmia group', '嗅觉减退组'), 'non-deficit stratum': T('Non-deficit stratum', '非缺损亚组')}
         _tl = {'OIS': 'OIS', 'upsit': T('UPSIT total', 'UPSIT 总分'), 'age': T('Age', '年龄'), 'sex_num': T('Sex', '性别'), 'educyrs': T('Education', '教育年限'), 'global': T('Global', '整体')}
         rows = [[_pl[r['population']], r['model'].replace('upsit', 'UPSIT').replace('sex_num', 'sex').replace('educyrs', 'education'), _tl.get(r['term'], r['term']),
@@ -726,8 +721,8 @@ def build_doc(chan_slopes):
                  f"{r['ph_test_stat']:.2f}", pf(r['ph_p']), f"{r['n']:,} / {r['events']}"] for r in PH['rows']]
         A(md_table([T('Population', '人群'), T('Model', '模型'), T('Term', '项'), 'HR', T('P (Cox)', 'P(Cox)'), T('Schoenfeld χ²', 'Schoenfeld χ²'), T('P (proportional hazards)', 'P(比例风险)'), T('n / conversions', 'n / 转化')], rows))
         _min = min(r['ph_p'] for r in PH['rows'] if r['term'] != 'global'); _gmin = min(r['ph_p'] for r in PH['rows'] if r['term'] == 'global')
-        A(T(f'No term departs from proportional hazards at P < 0.05 (smallest term-level P = {_min:.3f}, smallest global P = {_gmin:.2f}). Source: `results/repro/supp_ph_test.csv`, `ph_test`.',
-            f'没有任何一项在 P<0.05 水平上偏离比例风险(最小的项水平 P = {_min:.3f},最小的整体 P = {_gmin:.2f})。来源:`results/repro/supp_ph_test.csv`、`ph_test`。'))
+        A(T(f'No term departs from proportional hazards at P < 0.05 (smallest term-level P = {_min:.3f}, smallest global P = {_gmin:.2f}).',
+            f'没有任何一项在 P<0.05 水平上偏离比例风险(最小的项水平 P = {_min:.3f},最小的整体 P = {_gmin:.2f})。'))
         A('')
     A(T('## Supplementary Figures', '## 补充图'))
     d = outdir()          # 图只有英文一套,两语种的 md 都引用同一路径
@@ -765,16 +760,16 @@ def build_doc(chan_slopes):
         f'{TS["cutoff"]} onwards. What varies there is the training set, since all {TS["n"]:,} of those '
         f'participants are also in the {L[0]["n"]:,} of the main analysis, so the row bears on training-set era and size rather than '
         f'on an out-of-sample population. Held-out correlation of the refitted model in the {TS["cutoff"]}-onwards training-type '
-        f'participants was {TS["r_heldout"]:.3f}. Source: `temporal_split`, `landmark`.',
+        f'participants was {TS["r_heldout"]:.3f}.',
         f'全部区间出自 1,000 次配对自助法。2017 年前那一行,模型在 {TS["cutoff"]} 年前入组的 {TS["n_train"]} 名训练队列受试者上重新拟合,'
         f'再用到 {TS["cutoff"]} 年及以后入组的嗅觉减退组受试者。该行变动的是训练集,因为这 {TS["n"]:,} 人全部'
         f'同时在主分析的 {L[0]["n"]:,} 人之内,故它检验的是训练集的年代与规模,而非一个样本外人群。'
-        f'重训模型在 {TS["cutoff"]} 年及以后的训练类型受试者上的留出相关为 {TS["r_heldout"]:.3f}。来源:`temporal_split`、`landmark`。'))
+        f'重训模型在 {TS["cutoff"]} 年及以后的训练类型受试者上的留出相关为 {TS["r_heldout"]:.3f}。'))
     A('')
     IT = J['interaction_test']
     A(T('## Supplementary Note. The between-group interaction is not significant', '## 补充说明. 两组间交互不显著'))
-    A(T(f'The gain of OIS over the olfactory total is {IT["dC_hyposmia"]:+.3f} in the hyposmia group ({IT["n_hyposmia"]:,} / {IT["events_hyposmia"]}) and {IT["dC_control"]:+.3f} in the RBD and variant-carrier group ({IT["n_control"]} / {IT["events_control"]}), a ratio of {IT["ratio"]:.2f}. The difference of differences is {IT["dd"]:+.3f} ({IT["lo"]:+.3f}, {IT["hi"]:+.3f}), P = {IT["p"]:.3f} over {IT["n_boot"]:,} paired bootstrap resamples, so no interaction is claimed and the contrast between groups is described only. Arguing an interaction from one significant and one non-significant group would be invalid.',
-        f'OIS 相对嗅觉总分的增益在嗅觉减退组为 {IT["dC_hyposmia"]:+.3f}({IT["n_hyposmia"]:,} / {IT["events_hyposmia"]}),在 RBD 与遗传携带组为 {IT["dC_control"]:+.3f}({IT["n_control"]} / {IT["events_control"]}),比值 {IT["ratio"]:.2f}。差中差为 {IT["dd"]:+.3f}({IT["lo"]:+.3f},{IT["hi"]:+.3f}),{IT["n_boot"]:,} 次配对 bootstrap 的 P = {IT["p"]:.3f},故不主张交互,两组间的对比仅作描述。以一组显著、另一组不显著来论证交互在统计上无效。'))
+    A(T(f'The gain of OIS over the olfactory total is {IT["dC_hyposmia"]:+.3f} in the hyposmia group ({IT["n_hyposmia"]:,} / {IT["events_hyposmia"]}) and {IT["dC_control"]:+.3f} in the RBD and variant-carrier group ({IT["n_control"]} / {IT["events_control"]}), a ratio of {IT["ratio"]:.2f}. The difference of differences is {IT["dd"]:+.3f} ({IT["lo"]:+.3f}, {IT["hi"]:+.3f}), P = {IT["p"]:.3f} over {IT["n_boot"]:,} paired bootstrap resamples, so the contrast between the two groups is described without a claim of interaction.',
+        f'OIS 相对嗅觉总分的增益在嗅觉减退组为 {IT["dC_hyposmia"]:+.3f}({IT["n_hyposmia"]:,} / {IT["events_hyposmia"]}),在 RBD 与遗传携带组为 {IT["dC_control"]:+.3f}({IT["n_control"]} / {IT["events_control"]}),比值 {IT["ratio"]:.2f}。差中差为 {IT["dd"]:+.3f}({IT["lo"]:+.3f},{IT["hi"]:+.3f}),{IT["n_boot"]:,} 次配对 bootstrap 的 P = {IT["p"]:.3f},故两组间的对比仅作描述,不主张交互。'))
     import re
     doc = '\n\n'.join(S) + '\n'
     doc = re.sub(r'(?<![\w\-])-(?=\d)', '−', doc)
