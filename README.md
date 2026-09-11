@@ -18,12 +18,14 @@ The UPSIT olfactory score is regressed on the 33 striatal dopamine transporter b
 | `code/08_main_figures.py` | Figures 2 to 4 |
 | `code/09_fig1_panels.py` | The three data panels of Fig. 1d (the rest of Fig. 1 is artwork) |
 | `code/10_supplementary.py` | `Supplementary_Information_EN.md` and Supplementary Figs 1 to 7 |
+| `code/11_source_data.py` | `Source_Data.xlsx`, one sheet per figure panel with the values each panel draws |
 | `code/common.py` | Paths, shared imports, state passing between scripts |
 | `results/repro/section16_stats.json` | The numerical ledger. Every value in the manuscript, the tables and the Supplementary Information is read from this file or from one of the CSV files beside it |
 | `results/repro/*.csv`, `*.json` | Aggregate tables written by the scripts, included as generated |
 | `model_output/repro_sbr_models/` | The fitted ridge model, its standardisation scaler and feature metadata (all that is needed to compute OIS in new individuals) |
 | `figures/main/`, `figures/Supplementary/` | Figures as generated (PDF with editable Type 1 text, plus PNG) |
 | `Supplementary_Information_EN.md` | Supplementary Information as generated |
+| `Source_Data.xlsx` | Source data for Figs 1d, 2, 3, 4 and Supplementary Figs 1 to 7 (aggregate values only) |
 | `TRIPOD_AI_checklist.md` | Completed TRIPOD+AI checklist |
 | `data/README.md` | The PPMI source files required, with checksums |
 
@@ -48,6 +50,7 @@ python code/07_channel_followup.py
 python code/08_main_figures.py
 python code/09_fig1_panels.py
 python code/10_supplementary.py
+python code/11_source_data.py
 ```
 
 The scripts are run in this order. Scripts 01 and 02 write participant-level frames to `results/intermediate/` that the later scripts read, so they only need to be run once. All paths are resolved from the repository root whatever the working directory. Random seeds are fixed (five-fold splitting 41, bootstrap 42, centre split 14). On the PPMI release listed in `data/README.md` the scripts reproduce `results/repro/section16_stats.json` as committed.
