@@ -40,8 +40,8 @@ export PPMI_DATA_DIR=/path/to/ppmi/files
 
 python code/01_fit_model.py          # about 1 min
 python code/02_survival_cohort.py    # about 3 min
-python code/03_discrimination.py     # about 20 min (bootstrap and permutation loops)
-python code/04_residual.py           # about 3 min (reads the 177 MB biospecimen file)
+python code/03_discrimination.py     # about 15 min (bootstrap and permutation loops)
+python code/04_residual.py           # about 2 min (reads the 177 MB biospecimen file)
 python code/05_baseline_table.py
 python code/06_ph_test.py
 python code/07_channel_followup.py
