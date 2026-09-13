@@ -1,5 +1,7 @@
 # PPMI source data: never commit (Data Use Agreement)
 *.xlsx
+# the one exception: aggregate figure source data, no participant-level values
+!Source_Data.xlsx
 *.parquet
 Xing_Core_Lab_*.csv
 molecular/
