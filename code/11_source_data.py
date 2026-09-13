@@ -22,11 +22,10 @@ from sklearn.pipeline import make_pipeline
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); os.chdir(ROOT)
 R = 'results/repro'
 J = json.load(open(f'{R}/section16_stats.json'))
-STATE = [p for p in ['results/intermediate/02_cohort.pkl',
-                     '/tmp/claude-1006/-data1-zqchen-PD/42480af9-dc82-416f-9e58-930337430367/scratchpad/state.pkl'] if os.path.exists(p)]
-if not STATE:
+STATE = 'results/intermediate/02_cohort.pkl'
+if not os.path.exists(STATE):
     sys.exit('participant-level frames not found, run 02_survival_cohort.py first')
-st = pickle.load(open(STATE[0], 'rb')); df = st['df']; prod = st['prod'].copy(); FEAT = st['FEATURES']; SBR = st['SBR_COLS']
+st = pickle.load(open(STATE, 'rb')); df = st['df']; prod = st['prod'].copy(); FEAT = st['FEATURES']; SBR = st['SBR_COLS']
 OUTFILE = 'Source_Data.xlsx'
 sheets = {}      # name -> (DataFrame, note)
 

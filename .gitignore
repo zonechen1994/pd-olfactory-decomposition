@@ -12,3 +12,4 @@ results/repro/figures/
 # scratch
 __pycache__/
 *.pyc
+.ipynb_checkpoints/
