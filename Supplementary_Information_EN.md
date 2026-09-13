@@ -117,7 +117,7 @@ Pooled r = 0.417 (n = 2,441).
 | 43 | site_63 | 20 | 7 | 13 | 65% | 0.706 | 5.1 × 10<sup>−4</sup> | 5.08 |
 | 44 | site_20 | 16 | 14 | 2 | 12% | 0.709 | 0.002 | 7.82 |
 
-The 44 centres are numbered 1 to 44 in order of r, and the centre column gives the PPMI site code. Across the 44 centres the correlation rises with the control fraction (r = 0.521, P = 2.8 × 10<sup>−4</sup>) and is unrelated to centre size (r = 0.140, P = 0.36). Median centre size 26. The 35 centres that enrolled controls as well as patients reach a mean r of 0.493 against 0.204 in the 9 that enrolled patients only (Welch P = 8.4 × 10<sup>−4</sup>), and the two negative centres are both patient-dominated, so the olfactory score and the scan each vary over a narrow range there and a within-centre correlation carries little information. 30 of 44 reach P < 0.05, against 26.5 expected under a true correlation of 0.434 at the observed centre sizes.
+The 44 centres are numbered 1 to 44 in order of r, and the centre column gives the PPMI site code. Across the 44 centres the correlation rises with the control fraction (r = 0.521, P = 2.8 × 10<sup>−4</sup>) and is unrelated to centre size (r = 0.140, P = 0.36). Median centre size 26. The 35 centres that enrolled controls as well as patients reach a mean r of 0.493 against 0.204 in the 9 that enrolled patients only (Welch P = 8.4 × 10<sup>−4</sup>), and the two negative centres are both patient-dominated, so the UPSIT total and the scan each vary over a narrow range there and a within-centre correlation carries little information. 30 of 44 reach P < 0.05, against 26.5 expected under a true correlation of 0.434 at the observed centre sizes.
 
 
 
@@ -158,7 +158,7 @@ Survival cohort after the exclusions in Methods (1,759 / 152). The RBD and varia
 
 
 
-Dichotomisation costs 0.082 of concordance for the olfactory score and 0.035 for imaging in the whole prodromal cohort, and 0.118 against 0.013 within the hyposmia group, where the olfactory flag is nearly constant. Descriptive, with no paired test.
+Dichotomisation costs 0.082 of concordance for the UPSIT total and 0.035 for imaging in the whole prodromal cohort, and 0.118 against 0.013 within the hyposmia group, where the olfactory flag is nearly constant. Descriptive, with no paired test.
 
 **b. Five readings in five strata, including the residual.**
 
@@ -170,7 +170,7 @@ Dichotomisation costs 0.082 of concordance for the olfactory score and 0.035 for
 | Hyposmia, no DAT deficit | 738 / 22 | 0.690 (0.562–0.813) | 0.719 (0.567–0.884) | 0.621 (0.504–0.733) | 0.517 (0.361–0.719)\* | 0.424 (0.276–0.577)\* |
 | RBD and variant-carrier | 756 / 84 | 0.700 (0.635–0.760) | 0.766 (0.704–0.823) | 0.590 (0.516–0.659) | 0.737 (0.664–0.799) | 0.746 (0.681–0.804) |
 
-\* interval includes 0.5. The residual is at chance in the hyposmia group and in its deficit stratum only. In the whole cohort and in the RBD and variant-carrier group its interval excludes 0.5, and it never approaches the olfactory total. All values come from one bootstrap run.
+\* interval includes 0.5. The residual is at chance in the hyposmia group and in its deficit stratum only. In the whole cohort and in the RBD and variant-carrier group its interval excludes 0.5, and it never approaches the UPSIT total. All values come from one bootstrap run.
 
 
 
@@ -186,7 +186,7 @@ Dichotomisation costs 0.082 of concordance for the olfactory score and 0.035 for
 | OIS, SBR-only | ridge on UPSIT in PD + HC, transferred unchanged | 0.820 | +0.016 (−0.006, +0.038) | 0.08 |
 | OIS, full | ridge on UPSIT in PD + HC, transferred unchanged | 0.835 |  |  |
 
-1,003 participants, 68 conversions, 1,000 paired bootstrap resamples. OIS exceeds the olfactory total and the binary flag, is tied with the conversion-supervised 33-region model plus demographics and with its own imaging-only version, and reaches nominal significance against the 33 regions alone. The supervised models were cross-validated within this cohort and would be expected to fall in a new cohort. OIS used no conversion label.
+1,003 participants, 68 conversions, 1,000 paired bootstrap resamples. OIS exceeds the UPSIT total and the binary flag, is tied with the conversion-supervised 33-region model plus demographics and with its own imaging-only version, and reaches nominal significance against the 33 regions alone. The supervised models were cross-validated within this cohort and would be expected to fall in a new cohort. OIS used no conversion label.
 
 
 
@@ -258,7 +258,7 @@ These cut points are outcome-selected and exploratory. The main text uses the me
 | 30% (300) | 35 / 68 (51%) | 46 / 68 (68%) | 52 / 68 (76%) |
 | 50% (501) | 50 / 68 (74%) | 54 / 68 (79%) | 61 / 68 (90%) |
 
-Read by rank alone, OIS dominates at every operating point, needing 132, 247 and 326 participants flagged to capture 50%, 70% and 80% of converters against 276, 458 and 525 for the olfactory total and 158, 348 and 537 for the lower putamen percentage. Imaging falls below the olfactory total at the high-sensitivity end (537 against 525), the same non-monotonicity seen across its clinical bands. These cut points are selected against the outcome and cannot serve as clinical thresholds. The median remains the primary division.
+Read by rank alone, OIS dominates at every operating point, needing 132, 247 and 326 participants flagged to capture 50%, 70% and 80% of converters against 276, 458 and 525 for the UPSIT total and 158, 348 and 537 for the lower putamen percentage. Imaging falls below the UPSIT total at the high-sensitivity end (537 against 525), the same non-monotonicity seen across its clinical bands. These cut points are selected against the outcome and cannot serve as clinical thresholds. The median remains the primary division.
 
 
 
@@ -279,7 +279,7 @@ Read by rank alone, OIS dominates at every operating point, needing 132, 247 and
 | 2.0 | putamen SBR | 432 / 41 | 0.806 | (0.727, 0.872) |  |
 | 2.0 | OIS minus UPSIT total | 432 / 41 | +0.127 | (+0.061, +0.188) | 0.001 |
 
-Cumulative/dynamic AUC with inverse probability of censoring weighting, 1,000 usable bootstrap resamples of 1,000. All three readings are protective and were entered as negative risk scores. P values are the paired comparison of OIS against the olfactory total. Horizons beyond two years are not reported because the group thins from 432 at risk at two years to 118 at two and a half. The one-year estimate rests on 10 conversions and is correspondingly imprecise.
+Cumulative/dynamic AUC with inverse probability of censoring weighting, 1,000 usable bootstrap resamples of 1,000. All three readings are protective and were entered as negative risk scores. P values are the paired comparison of OIS against the UPSIT total. Horizons beyond two years are not reported because the group thins from 432 at risk at two years to 118 at two and a half. The one-year estimate rests on 10 conversions and is correspondingly imprecise.
 
 
 
@@ -372,7 +372,7 @@ Fisher exact P = 8.8 × 10<sup>−5</sup>.
 | Diagnosed PD | OIS | 69 / 126 | 23.59 | 23.71 | −0.24 (−0.82, +0.34) | 0.41 |
 | Diagnosed PD | OMI | 69 / 126 | −4.09 | 1.88 | −5.90 (−8.17, −3.64) | 6.9 × 10<sup>−7</sup> |
 
-Among carriers without disease the two genotypes have the same olfactory total while OIS is higher and OMI lower in GBA1, the two differences cancelling. Among diagnosed patients OIS is identical (the negative control) and the whole 6-point olfactory difference sits in the residual. Putamen SBR is shown for completeness.
+Among carriers without disease the two genotypes have the same UPSIT total while OIS is higher and OMI lower in GBA1, the two differences cancelling. Among diagnosed patients OIS is identical (the negative control) and the whole 6-point difference in the UPSIT total sits in the residual. Putamen SBR is shown for completeness.
 
 **c. Partial correlations adjusted for age, sex and years of education (Supplementary Method 4).**
 
@@ -542,7 +542,7 @@ No term departs from proportional hazards at P < 0.05 (smallest term-level P = 0
 
 ![FigS2](figures/Supplementary/FigS2_calibration.png)
 
-**Supplementary Fig. 3 | Robustness of the advantage of OIS over the olfactory total in the hyposmia group.** ΔC with 1,000-resample paired bootstrap intervals for the full group, the one- and two-year landmarks (participants converting before the landmark removed), the temporal split (model retrained on participants enrolled before 2017 and evaluated in hyposmia-group participants enrolled from 2017, point estimate only) and the two halves of the centre split (discovery, 5 centres, and external, 6 centres). The discovery interval includes zero. The centre split is presented as heterogeneity and not as support.
+**Supplementary Fig. 3 | Robustness of the advantage of OIS over the UPSIT total in the hyposmia group.** ΔC with 1,000-resample paired bootstrap intervals for the full group, the one- and two-year landmarks (participants converting before the landmark removed), the temporal split (model retrained on participants enrolled before 2017 and evaluated in hyposmia-group participants enrolled from 2017, point estimate only) and the two halves of the centre split (discovery, 5 centres, and external, 6 centres). The discovery interval includes zero. The centre split is presented as heterogeneity and not as support.
 
 ![FigS3](figures/Supplementary/FigS3_robustness.png)
 
@@ -554,7 +554,7 @@ No term departs from proportional hazards at P < 0.05 (smallest term-level P = 0
 
 ![FigS5](figures/Supplementary/FigS5_three_bands.png)
 
-**Supplementary Fig. 6 | Improvement of OIS over the olfactory total in the two groups.** Points are the paired difference in concordance index with 95% CI from 1,000 paired bootstrap resamples, in the hyposmia group (1,003 participants, 68 conversions) and the RBD and variant-carrier group (756, 84). The two improvements differ in magnitude, and the direct test of that difference gives +0.070 (95% CI −0.032 to +0.168), P = 0.181, so no interaction is established. Significance in one group and non-significance in the other is not evidence of interaction. This figure is descriptive.
+**Supplementary Fig. 6 | Improvement of OIS over the UPSIT total in the two groups.** Points are the paired difference in concordance index with 95% CI from 1,000 paired bootstrap resamples, in the hyposmia group (1,003 participants, 68 conversions) and the RBD and variant-carrier group (756, 84). The two improvements differ in magnitude, and the direct test of that difference gives +0.070 (95% CI −0.032 to +0.168), P = 0.181, so no interaction is established. Significance in one group and non-significance in the other is not evidence of interaction. This figure is descriptive.
 
 ![FigS6](figures/Supplementary/FigS6_gain_by_stratum.png)
 
@@ -577,4 +577,4 @@ All intervals are from 1,000 paired bootstrap resamples. In the pre-2017 row the
 
 ## Supplementary Note. The between-group interaction is not significant
 
-The gain of OIS over the olfactory total is +0.137 in the hyposmia group (1,003 / 68) and +0.067 in the RBD and variant-carrier group (756 / 84), a ratio of 2.05. The difference of differences is +0.070 (−0.032, +0.168), P = 0.181 over 2,000 paired bootstrap resamples, so the contrast between the two groups is described without a claim of interaction.
+The gain of OIS over the UPSIT total is +0.137 in the hyposmia group (1,003 / 68) and +0.067 in the RBD and variant-carrier group (756 / 84), a ratio of 2.05. The difference of differences is +0.070 (−0.032, +0.168), P = 0.181 over 2,000 paired bootstrap resamples, so the contrast between the two groups is described without a claim of interaction.
