@@ -231,7 +231,7 @@ These cut points are outcome-selected and exploratory. The main text uses the me
 
 ### Supplementary Table 5. Permutation-corrected cut points and sensitivity-matched flagging
 
-**a. Identical selection applied to three readings in the hyposmia group (1,003 / 68).**
+**a. Identical selection applied to three readings in the hyposmia group (1,003 / 68). Candidates lie between the 10th and 90th percentile of the reading with at least 20 participants in each group, the candidate with the largest log-rank statistic is retained, and the permutation P repeats the same selection on 1,000 outcome permutations.**
 
 | Reading | Cut | Log-rank χ² | Flagged, n (% of group) | Events captured | 2-year conversion, flagged / not | Naive P | Permutation P (1,000) |
 |---|---|---|---|---|---|---|---|

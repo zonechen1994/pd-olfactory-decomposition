@@ -546,7 +546,8 @@ def build_doc(chan_slopes):
     # ---------------- Figures
     # ---------------- Table 5
     A(T('### Supplementary Table 5. Permutation-corrected cut points and sensitivity-matched flagging', '### 补充表 5. 置换校正的切点与灵敏度匹配'))
-    A(T('**a. Identical selection applied to three readings in the hyposmia group (1,003 / 68).**', '**a. 对三种读法施加相同选取,嗅觉减退组(1,003 / 68)。**'))
+    A(T('**a. Identical selection applied to three readings in the hyposmia group (1,003 / 68). Candidates lie between the 10th and 90th percentile of the reading with at least 20 participants in each group, the candidate with the largest log-rank statistic is retained, and the permutation P repeats the same selection on 1,000 outcome permutations.**',
+        '**a. 对三种读法施加相同选取,嗅觉减退组(1,003 / 68)。候选切点取该读法第 10 至 90 百分位之间且每组不少于 20 人,保留 log-rank 统计量最大者,置换 P 为在 1,000 次结局置换上重复同一选取。**'))
     rdl2 = {'UPSIT total': T('UPSIT total', 'UPSIT 总分'), 'lowest putamen %expected': T('Lower putamen, % expected', '较低侧壳核 %预期'), 'OIS': 'OIS'}
     rows = [[rdl2[r.reading], f'{r.cut:.2f}', f'{r.chi2:.1f}', f'{int(r.n_low)} ({r.frac_layer*100:.0f}%)', f'{r.frac_events*100:.0f}%', f'{r.risk2y_low*100:.1f}% / {r.risk2y_high*100:.1f}%', pf(r.p_naive), '< 0.001'] for _, r in C39A.iterrows()]
     A(md_table([T('Reading', '读法'), T('Cut', '切点'), T('Log-rank χ²', 'Log-rank χ²'), T('Flagged, n (% of group)', '标记人数(占该组)'), T('Events captured', '捕获转化'), T('2-year conversion, flagged / not', '两年转化,标记 / 未标记'), T('Naive P', '未校正 P'), T('Permutation P (1,000)', '置换 P(1,000 次)')], rows))
