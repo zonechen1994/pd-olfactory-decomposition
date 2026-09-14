@@ -346,6 +346,7 @@ def build_doc(chan_slopes):
     A(T(f'**Supplementary Method 2. Imaging-state determination and its validation.** DAT deficit is defined on the PPMI canonical quantity, the lower of the two putamen binding ratios divided by the value expected from a linear regression on age and sex fitted in healthy controls (n = {D["n_hc_normative"]}), expected = {D["norm_intercept"]:.4f} − {abs(D["norm_beta_age"]):.5f} × age − {abs(D["norm_beta_sex"]):.4f} × sex. Official staging fields are populated only for the Parkinson\'s disease and SWEDD cohorts in the curated cut, so the implementation was validated there. At the 0.75 cut used by the staging system it reproduced the official determination in {D["agreement_vs_official_Stage_D"]*100:.1f}% of {D["n_validated"]:,} participants, with all {D["n_discordant"]} disagreements inside the band {D["official_normal_min_pct_exp"]:.4f} to {D["official_deficit_max_pct_exp"]:.4f}. The 65% cut used for the deficit split comes from PARS.',
         f'**补充方法 2. 影像状态判定及其验证。**DAT 缺损按 PPMI 规范量定义:较低侧壳核结合比除以在健康对照(n = {D["n_hc_normative"]})上由年龄与性别线性回归得到的预期值,预期值 = {D["norm_intercept"]:.4f} − {abs(D["norm_beta_age"]):.5f} × 年龄 − {abs(D["norm_beta_sex"]):.4f} × 性别。curated cut 中官方分期字段仅帕金森病与 SWEDD 队列有值,故在该处验证:以分期系统的 0.75 切点,在 {D["n_validated"]:,} 人中复现官方判定 {D["agreement_vs_official_Stage_D"]*100:.1f}%,{D["n_discordant"]} 例不一致全部落在 {D["official_normal_min_pct_exp"]:.4f} 至 {D["official_deficit_max_pct_exp"]:.4f} 的窄带内。缺损划分所用的 65% 切点出自 PARS。'))
     A('')
+    A(T('## Supplementary Tables', '## 补充表'))
     # ---------------- Table 1
     A(T('### Supplementary Table 1. Model families, training-set choice and held-out correlation by recruitment cohort', '### 补充表 1. 回归族、训练集选择与分队列 held-out 相关'))
     A(T('**a. Six regression families, five-fold cross-validation in the training cohort (n = 1,398), identical folds (seed 41).**', '**a. 六个回归族,训练队列五折交叉验证(n = 1,398),折数相同(种子 41)。**'))
@@ -394,7 +395,6 @@ def build_doc(chan_slopes):
         f'{LO2["n_significant_expected"]:.1f} 个。'))
     A('')
     # ---------------- Table 2
-    A(T('## Supplementary Tables', '## 补充表'))
     A(T('### Supplementary Table 2. Follow-up by recruitment cohort and group', '### 补充表 2. 各入组队列与各组的随访'))
     order = ['Hyposmia', 'RBD', 'Genetic', 'Non-hyposmia-enriched', 'All prodromal']
     names = {'Hyposmia': T('Hyposmia cohort', '嗅觉减退队列'), 'RBD': T('RBD cohort', 'RBD 队列'), 'Genetic': T('Pathogenic-variant cohort', '遗传携带队列'),

@@ -20,6 +20,8 @@
 
 
 
+## Supplementary Tables
+
 ### Supplementary Table 1. Model families, training-set choice and held-out correlation by recruitment cohort
 
 **a. Six regression families, five-fold cross-validation in the training cohort (n = 1,398), identical folds (seed 41).**
@@ -113,8 +115,6 @@ Pooled r = 0.417 (n = 2,441).
 The 44 centres are numbered 1 to 44 in order of r, and the centre column gives the PPMI site code. Across the 44 centres the correlation rises with the control fraction (r = 0.521, P = 2.8 × 10<sup>−4</sup>) and is unrelated to centre size (r = 0.140, P = 0.36). Median centre size 26. The 35 centres that enrolled controls as well as patients reach a mean r of 0.493 against 0.204 in the 9 that enrolled patients only (Welch P = 8.4 × 10<sup>−4</sup>), and the two negative centres are both patient-dominated, so the UPSIT total and the scan each vary over a narrow range there and a within-centre correlation carries little information. 30 of 44 reach P < 0.05, against 26.5 expected under a true correlation of 0.434 at the observed centre sizes.
 
 
-
-## Supplementary Tables
 
 ### Supplementary Table 2. Follow-up by recruitment cohort and group
 
