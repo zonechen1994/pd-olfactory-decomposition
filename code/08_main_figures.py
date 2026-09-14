@@ -231,8 +231,7 @@ def fig3():
     _EV=68
     panel(ax,'a',T(f'Hyposmia group ({H["n"]} participants, {_EV} conversions)',f'嗅觉减退组({H["n"]} 人,{_EV} 例转化)'),dx=-.085)
     _R=H['r_ois_omi']
-    fig.text(.5,-.030,T(f'Variance shares exceed 100% because the two components are negatively correlated (r = {_R:+.3f}). The residual is at chance in this group only.',
-             f'两成分方差占比之和超过 100%,因二者负相关(r = {_R:+.3f})。残差等同随机仅在本组成立。'),ha='center',fontsize=7.4,style='italic',color='#555')
+    # (footer note removed 2026-09-14: it sat below the A4 canvas and was never rendered, and the figure legend carries the same information)
 
     # b 时依 AUC(IPCW),§46。与 a 同一组人群,但按时点而非全程给判别力
     ax=fig.add_subplot(gs[0,4:])
@@ -354,9 +353,7 @@ def fig3():
     ax.set_xlabel(T('Years','距基线年数'),fontsize=8.5); ax.set_ylabel(T('Free of PD','未确诊比例'),fontsize=8.5)
     panel(ax,'e',T(f'Within non-deficit (n={len(ndf)})',f'非缺损亚组内部(n={len(ndf)})'),dx=-.155)
 
-    fig.text(.5,-.02,T(f'Curves are shown to 2 years. Panels d and e split each population at its OIS median. In panel e the same split by UPSIT gives {_u[0]:.1f}% against {_u[1]:.1f}% (P = {_u[2]:.1e}) and by lower putamen %expected {_i[0]:.1f}% against {_i[1]:.1f}% (P = {_i[2]:.2f}), so the stratification there comes from the smell information, not from imaging, and that stratum has 22 events. Tertile and permutation-corrected three-band versions are in Supplementary Figs. 4 and 5.',
-             f'曲线绘至两年。面板 d 与 e 按各自的 OIS 中位数划分。面板 e 中按 UPSIT 中位数划分为 {_u[0]:.1f}% 对 {_u[1]:.1f}%(P = {_u[2]:.1e}),按较低侧壳核 %预期划分为 {_i[0]:.1f}% 对 {_i[1]:.1f}%(P = {_i[2]:.2f}),该组的分层来自嗅觉信息而非影像,且仅 22 例事件。三分位版与置换校正三档版见 Supplementary Fig 4 与 5。'),
-             ha='center',fontsize=7.2,style='italic',color='#555')
+    # (footer note removed 2026-09-14: it sat below the A4 canvas and was never rendered, and the figure legend carries the same information)
     save(fig,'Fig3_OIS_clinical',a4=True)
 fig3()
 
@@ -417,8 +414,6 @@ def fig4():
                 fontsize=7,style='italic',color=GREY)
         ax.set_ylabel(T('GBA1 minus LRRK2 (points)','GBA1 减 LRRK2(分)'))
         panel(ax,'b' if k==0 else 'c', f'{ttl}\n({nn})',dx=-.22)
-    fig.text(.5,-.015,T('Negative controls: neurofilament light in a, and OIS in the diagnosed cohort in c (P = 0.41).',
-             '阴性对照:a 中为神经丝轻链,c 中为已确诊队列内的 OIS(P=0.41)。'),
-             ha='center',fontsize=7.6,style='italic',color='#555')
+    # (footer note removed 2026-09-14: it sat below the A4 canvas and was never rendered, and the figure legend carries the same information)
     save(fig,'Fig4_what_the_residual_is',a4=True)
 fig4()
