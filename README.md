@@ -13,11 +13,11 @@ The UPSIT olfactory score is regressed on the 33 striatal dopamine transporter b
 | `code/03_discrimination.py` | Pre-specified paired comparisons, interaction test, concordance with bootstrap intervals for every stratum and reading (Tables 2 to 4), continuous against dichotomised readings, calibration and age within strata, group flow, median split (Fig. 3d, 3e), permutation-corrected three-group split, IPCW time-dependent AUC (Fig. 3b) |
 | `code/04_residual.py` | Genotype contrast (Fig. 4b, 4c), staging axes, CSF tau and neurofilament (Fig. 4a), residual by biological stage, training-cohort alternatives, prodromal seed amplification, genotype premise, cognitive endpoints, age in the residual, partial correlations and tau tertile means (Fig. 1d) |
 | `code/05_baseline_table.py` | Table 1 |
-| `code/06_ph_test.py` | Schoenfeld proportional-hazards test for the reported Cox models (Supplementary Table 14) |
+| `code/06_ph_test.py` | Schoenfeld proportional-hazards test for the reported Cox models (Supplementary Table 11) |
 | `code/07_channel_followup.py` | Follow-up by recruitment cohort (Supplementary Table 2) |
 | `code/08_main_figures.py` | Figures 2 to 4 |
 | `code/09_fig1_panels.py` | The three data panels of Fig. 1d (the rest of Fig. 1 is artwork) |
-| `code/10_supplementary.py` | `Supplementary_Information_EN.md` and Supplementary Figs 1 to 7 |
+| `code/10_supplementary.py` | `Supplementary_Information_EN.md` and Supplementary Figs 1 to 5 |
 | `code/11_source_data.py` | `Source_Data.xlsx`, one sheet per figure panel with the values each panel draws |
 | `code/common.py` | Paths, shared imports, state passing between scripts |
 | `results/repro/section16_stats.json` | The numerical ledger. Every value in the manuscript, the tables and the Supplementary Information is read from this file or from one of the CSV files beside it |
@@ -25,7 +25,7 @@ The UPSIT olfactory score is regressed on the 33 striatal dopamine transporter b
 | `model_output/repro_sbr_models/` | The fitted ridge model, its standardisation scaler and feature metadata (all that is needed to compute OIS in new individuals) |
 | `figures/main/`, `figures/Supplementary/` | Figures as generated (PDF with editable Type 1 text, plus PNG) |
 | `Supplementary_Information_EN.md` | Supplementary Information as generated |
-| `Source_Data.xlsx` | Source data for Figs 1d, 2, 3, 4 and Supplementary Figs 1 to 7 (aggregate values only) |
+| `Source_Data.xlsx` | Source data for Figs 1d, 2, 3, 4 and Supplementary Figs 1 to 5 (aggregate values only) |
 | `TRIPOD_AI_checklist.md` | Completed TRIPOD+AI checklist |
 | `data/README.md` | The PPMI source files required, with checksums |
 

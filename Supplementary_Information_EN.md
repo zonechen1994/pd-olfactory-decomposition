@@ -6,9 +6,9 @@
 
 ## Contents
 
-- Supplementary Methods 1–4
-- Supplementary Tables 1–14
-- Supplementary Figures 1–7
+- Supplementary Methods 1–2
+- Supplementary Tables 1–11
+- Supplementary Figures 1–5
 
 
 
@@ -17,10 +17,6 @@
 **Supplementary Method 1. Assignment to recruitment cohort.** PPMI enrols prodromal participants through three recruitment cohorts, namely olfactory screening (the hyposmia cohort), polysomnography-confirmed REM sleep behaviour disorder (RBD) and pathogenic-variant carriage. Six individuals carry a pathogenic variant and also have RBD. Rule A, used throughout the main text, assigns them to the RBD cohort (1,558 / 534 / 361). Rule B assigns them to the pathogenic-variant cohort (1,558 / 528 / 367). Both rules total 2,453 and the held-out correlations differ only in the third decimal (Supplementary Table 1).
 
 **Supplementary Method 2. Imaging-state determination and its validation.** DAT deficit is defined on the PPMI canonical quantity, the lower of the two putamen binding ratios divided by the value expected from a linear regression on age and sex fitted in healthy controls (n = 239), expected = 1.8547 − 0.00303 × age − 0.2419 × sex. Official staging fields are populated only for the Parkinson's disease and SWEDD cohorts in the curated cut, so the implementation was validated there. At the 0.75 cut used by the staging system it reproduced the official determination in 99.7% of 1,181 participants, with all 4 disagreements inside the band 0.7315 to 0.7486. The 65% cut used for the deficit split comes from PARS.
-
-**Supplementary Method 3. Paired bootstrap for differences in concordance.** For each contrast, 1,000 resamples of the stratum are drawn with replacement, both concordance indices are recomputed on each resample, and the 2.5th and 97.5th percentiles of the difference form the interval. The two-sided P value is twice the smaller tail proportion of differences crossing zero. The seed is fixed at 42. Confidence intervals for single concordance indices (Supplementary Table 3) come from the same procedure.
-
-**Supplementary Method 4. Putting a group contrast and a continuous association on one metric.** For the two tests of the residual, the association of each score with the external measurement was expressed as a partial correlation adjusted for age, sex and years of education. Both the score and the measurement were regressed on the covariates and the Pearson correlation of the two residual series taken. For the genotype contrast the external measurement is a binary indicator (GBA1 = 1, LRRK2 = 0), so the partial correlation is a point-biserial coefficient and is directly comparable in magnitude to the CSF result.
 
 
 
@@ -53,16 +49,13 @@ Training on healthy controls alone gives an OIS with no discrimination. Down-sam
 
 
 
-**c. Held-out correlation between OIS and measured UPSIT in the prodromal cohort, by recruitment cohort and by assignment rule.**
+**c. Held-out correlation between OIS and measured UPSIT in the prodromal cohort, by recruitment cohort.**
 
-| Rule | Recruitment cohort | n | r | P | UPSIT mean (s.d.) |
-|---|---|---|---|---|---|
-| A | Hyposmia | 1,556 | 0.358 | 3.5 × 10<sup>−48</sup> | 21.2 (6.9) |
-| A | RBD | 526 | 0.312 | 2.4 × 10<sup>−13</sup> | 22.4 (8.3) |
-| A | Variant carriers | 359 | 0.224 | 1.9 × 10<sup>−5</sup> | 33.0 (5.4) |
-| B | Hyposmia | 1,556 | 0.358 | 3.5 × 10<sup>−48</sup> | 21.2 (6.9) |
-| B | RBD | 520 | 0.322 | 5.1 × 10<sup>−14</sup> | 22.3 (8.3) |
-| B | Variant carriers | 365 | 0.223 | 1.8 × 10<sup>−5</sup> | 32.9 (5.5) |
+| Recruitment cohort | n | r | P | UPSIT mean (s.d.) |
+|---|---|---|---|---|
+| Hyposmia | 1,556 | 0.358 | 3.5 × 10<sup>−48</sup> | 21.2 (6.9) |
+| RBD | 526 | 0.312 | 2.4 × 10<sup>−13</sup> | 22.4 (8.3) |
+| Variant carriers | 359 | 0.224 | 1.9 × 10<sup>−5</sup> | 33.0 (5.4) |
 
 Pooled r = 0.417 (n = 2,441).
 
@@ -229,17 +222,9 @@ These cut points are outcome-selected and exploratory. The main text uses the me
 
 
 
-### Supplementary Table 5. Permutation-corrected cut points and sensitivity-matched flagging
+### Supplementary Table 5. Flagging by rank on the three readings, hyposmia group (1,003 / 68)
 
-**a. Identical selection applied to three readings in the hyposmia group (1,003 / 68). Candidates lie between the 10th and 90th percentile of the reading with at least 20 participants in each group, the candidate with the largest log-rank statistic is retained, and the permutation P repeats the same selection on 1,000 outcome permutations.**
-
-| Reading | Cut | Log-rank χ² | Flagged, n (% of group) | Events captured | 2-year conversion, flagged / not | Naive P | Permutation P (1,000) |
-|---|---|---|---|---|---|---|---|
-| UPSIT total | 23.00 | 32.9 | 592 (59%) | 85% | 9.6% / 1.3% | 9.8 × 10<sup>−9</sup> | < 0.001 |
-| Lower putamen, % expected | 52.87 | 112.9 | 128 (13%) | 47% | 26.7% / 3.1% | 2.3 × 10<sup>−26</sup> | < 0.001 |
-| OIS | 24.30 | 137.9 | 121 (12%) | 49% | 28.0% / 2.8% | 7.7 × 10<sup>−32</sup> | < 0.001 |
-
-**b. Number that must be flagged to capture a given fraction of converters, by rank.**
+**a. Number that must be flagged to capture a given fraction of converters, by rank.**
 
 | Converters captured | UPSIT total | Lower putamen, % expected | OIS |
 |---|---|---|---|
@@ -249,7 +234,7 @@ These cut points are outcome-selected and exploratory. The main text uses the me
 | 80% | 525 (52%) | 537 (54%) | 326 (33%) |
 | 90% | 668 (67%) | 771 (77%) | 579 (58%) |
 
-**c. Fraction of converters captured when a fixed fraction of the group is flagged.**
+**b. Fraction of converters captured when a fixed fraction of the group is flagged.**
 
 | Group flagged (n) | UPSIT total | Lower putamen, % expected | OIS |
 |---|---|---|---|
@@ -262,28 +247,7 @@ Read by rank alone, OIS dominates at every operating point, needing 132, 247 and
 
 
 
-### Supplementary Table 6. Time-dependent AUC at fixed horizons in the hyposmia group (n = 1,003, 68 conversions)
-
-| Horizon (y) | Reading | At risk / conversions by T | AUC | 95% CI | P |
-|---|---|---|---|---|---|
-| 1.0 | UPSIT total | 817 / 10 | 0.651 | (0.517, 0.787) |  |
-| 1.0 | OIS | 817 / 10 | 0.843 | (0.678, 0.967) |  |
-| 1.0 | putamen SBR | 817 / 10 | 0.832 | (0.636, 0.949) |  |
-| 1.0 | OIS minus UPSIT total | 817 / 10 | +0.192 | (+0.028, +0.367) | 0.02 |
-| 1.5 | UPSIT total | 488 / 36 | 0.732 | (0.658, 0.802) |  |
-| 1.5 | OIS | 488 / 36 | 0.847 | (0.774, 0.910) |  |
-| 1.5 | putamen SBR | 488 / 36 | 0.784 | (0.690, 0.860) |  |
-| 1.5 | OIS minus UPSIT total | 488 / 36 | +0.115 | (+0.038, +0.180) | 0.006 |
-| 2.0 | UPSIT total | 432 / 41 | 0.734 | (0.669, 0.800) |  |
-| 2.0 | OIS | 432 / 41 | 0.861 | (0.798, 0.915) |  |
-| 2.0 | putamen SBR | 432 / 41 | 0.806 | (0.727, 0.872) |  |
-| 2.0 | OIS minus UPSIT total | 432 / 41 | +0.127 | (+0.061, +0.188) | 0.001 |
-
-Cumulative/dynamic AUC with inverse probability of censoring weighting, 1,000 usable bootstrap resamples of 1,000. All three readings are protective and were entered as negative risk scores. P values are the paired comparison of OIS against the UPSIT total. Horizons beyond two years are not reported because the group thins from 432 at risk at two years to 118 at two and a half. The one-year estimate rests on 10 conversions and is correspondingly imprecise.
-
-
-
-### Supplementary Table 7. Test-retest reliability
+### Supplementary Table 6. Test-retest reliability
 
 | Score | First against second visit r | ICC(1,1) |
 |---|---|---|
@@ -306,7 +270,7 @@ Within the three prodromal recruitment cohorts the residual's ICC lies between 0
 
 
 
-### Supplementary Table 8. Cerebrospinal fluid and blood analytes against the three scores
+### Supplementary Table 7. Cerebrospinal fluid and blood analytes against the three scores
 
 Standardised regression coefficients adjusted for age, sex and years of education. The q value is Benjamini–Hochberg across analytes within cohort.
 
@@ -347,7 +311,7 @@ The two tau platforms were run on the same participants (Spearman ρ = 0.825 bet
 
 
 
-### Supplementary Table 9. Genotype contrast in full, its premise, and both tests on one metric
+### Supplementary Table 8. Genotype contrast in full, its premise, and both tests on one metric
 
 **a. Premise, seed-amplification positivity in diagnosed Parkinson's disease by genotype.**
 
@@ -374,7 +338,7 @@ Fisher exact P = 8.8 × 10<sup>−5</sup>.
 
 Among carriers without disease the two genotypes have the same UPSIT total while OIS is higher and OMI lower in GBA1, the two differences cancelling. Among diagnosed patients OIS is identical (the negative control) and the whole 6-point difference in the UPSIT total sits in the residual. Putamen SBR is shown for completeness.
 
-**c. Partial correlations adjusted for age, sex and years of education (Supplementary Method 4).**
+**c. Partial correlations adjusted for age, sex and years of education.**
 
 | External measurement | Cohort | Score | n | Partial r | P |
 |---|---|---|---|---|---|
@@ -389,62 +353,7 @@ The UPSIT column shows that the total behaves like the residual on both measurem
 
 
 
-### Supplementary Table 10. The three scores against the biological staging axes and motor state in diagnosed Parkinson's disease
-
-S axis is seed-amplification status, D axis is the imaging deficit determination, both as AUC. NSD stage and Hoehn–Yahr are Spearman ρ, MDS-UPDRS III is β per point, and conversion is the C-index in the hyposmia group for reference.
-
-| Endpoint | UPSIT | OIS | OMI |
-|---|---|---|---|
-| S axis | 0.897 (0.003) | 0.639 (0.003) | 0.855 (0.003) |
-| D axis | 0.679 (0.003) | 0.868 (0.003) | 0.529 (0.19) |
-| NSD stage | −0.368 (1.9 × 10<sup>−34</sup>) | −0.214 (3.4 × 10<sup>−12</sup>) | −0.305 (1.1 × 10<sup>−23</sup>) |
-| Hoehn-Yahr | −0.071 (0.02) | −0.171 (1.1 × 10<sup>−8</sup>) | −0.035 (0.25) |
-| UPDRS-III | −1.03 (9.5 × 10<sup>−4</sup>) | −1.81 (5.5 × 10<sup>−9</sup>) | −0.49 (0.12) |
-| PD conversion | 0.698 (0.003) | 0.835 (0.003) | 0.539 (0.11) |
-
-Each component locks onto one axis, OIS on the D axis and the residual on the S axis, while the total is intermediate on both and still exceeds the residual on the S axis. Because the D axis is derived from the same imaging as OIS, that column is not independent evidence. The residual is not assigned to either axis by construction. It is orthogonal only to the predictors.
-
-**b. Residual by biological stage.**
-
-| NSD stage | n | Mean OMI | s.d. |
-|---|---|---|---|
-| Not NSD | 153 | +8.21 | 5.7 |
-| 2a | 27 | −4.66 | 7.6 |
-| 2b | 192 | −1.23 | 7.1 |
-| 3 | 531 | −1.31 | 6.8 |
-| 4 | 123 | −2.65 | 7.2 |
-| 5 | 6 | +1.80 | 7.0 |
-
-n = 1,034 with a staging code. Participants without detectable synuclein pathology (Not NSD, 153 of 1,034) have a residual about 8 points above every staged group, so the residual is enriched, not depleted, in the subset that an anti-synuclein trial would exclude. Spearman ρ between residual and stage among staged participants is −0.305 (Supplementary Table 10).
-
-
-
-
-
-### Supplementary Table 11. Incident cognitive endpoints in the prodromal cohort
-
-| Endpoint | Model | Term | HR per s.d. | P | Concordance | Participants / conversions |
-|---|---|---|---|---|---|---|
-| incident MCI (neuropsychological criteria) | univariate UPSIT | UPSIT | 0.695 | 5.6 × 10<sup>−5</sup> | 0.675 | 1,623 / 212 |
-| incident MCI (neuropsychological criteria) | univariate OIS | OIS | 0.940 | 0.49 | 0.659 | 1,623 / 212 |
-| incident MCI (neuropsychological criteria) | univariate OMI | OMI | 0.762 | 4.1 × 10<sup>−4</sup> | 0.672 | 1,623 / 212 |
-| incident MCI (neuropsychological criteria) | OIS + OMI | OIS | 0.831 | 0.05 | 0.675 | 1,623 / 212 |
-| incident MCI (neuropsychological criteria) | OIS + OMI | OMI | 0.721 | 6.9 × 10<sup>−5</sup> | 0.675 | 1,623 / 212 |
-| incident MCI (neuropsychological criteria) | UPSIT + OMI (increment) | UPSIT | 0.663 | 0.05 | 0.675 | 1,623 / 212 |
-| incident MCI (neuropsychological criteria) | UPSIT + OMI (increment) | OMI | 1.045 | 0.81 | 0.675 | 1,623 / 212 |
-| incident cognitive impairment (clinician) | univariate UPSIT | UPSIT | 0.816 | 0.008 | 0.679 | 1,622 / 281 |
-| incident cognitive impairment (clinician) | univariate OIS | OIS | 0.700 | 5.0 × 10<sup>−6</sup> | 0.690 | 1,622 / 281 |
-| incident cognitive impairment (clinician) | univariate OMI | OMI | 0.962 | 0.57 | 0.676 | 1,622 / 281 |
-| incident cognitive impairment (clinician) | OIS + OMI | OIS | 0.670 | 8.0 × 10<sup>−7</sup> | 0.692 | 1,622 / 281 |
-| incident cognitive impairment (clinician) | OIS + OMI | OMI | 0.873 | 0.05 | 0.692 | 1,622 / 281 |
-| incident cognitive impairment (clinician) | UPSIT + OMI (increment) | UPSIT | 0.416 | 8.0 × 10<sup>−7</sup> | 0.692 | 1,622 / 281 |
-| incident cognitive impairment (clinician) | UPSIT + OMI (increment) | OMI | 1.918 | 2.9 × 10<sup>−5</sup> | 0.692 | 1,622 / 281 |
-
-For incident mild cognitive impairment the two components are both significant when entered together, and the residual adds nothing to the total (HR 1.045, P = 0.81). All four models share the same concordance. The decomposition therefore provides no increment on cognitive endpoints, and no cognitive claim is made.
-
-
-
-### Supplementary Table 12. Prodromal seed-amplification data: tested and not usable
+### Supplementary Table 9. Prodromal seed-amplification data: tested and not usable
 
 **a. Positivity of the skin assay by cohort (PPMI project 259).**
 
@@ -476,7 +385,7 @@ The skin assay is positive in only about half of diagnosed disease against 92.7%
 
 
 
-### Supplementary Table 13. Age and the three scores
+### Supplementary Table 10. Age and the three scores
 
 | Cohort | n | r(age, UPSIT) | r(age, OIS) | r(age, OMI) | P for OMI |
 |---|---|---|---|---|---|
@@ -489,7 +398,7 @@ Age is absorbed in the training cohorts but not in the applied prodromal cohort,
 
 
 
-### Supplementary Table 14. Proportional hazards check for the Cox models adjusting a score for age
+### Supplementary Table 11. Proportional hazards check for the Cox models adjusting a score for age
 
 Schoenfeld residual test (rank time transform, as implemented in the lifelines package) for the models reported in the main text, the score in its own units plus age in years, and for a fuller specification with sex and years of education (continuous terms z-scored). The global row sums the term statistics. Hazard ratios are per point (or per year) in the main-text models and per standard deviation in the fuller models.
 
@@ -553,27 +462,6 @@ No term departs from proportional hazards at P < 0.05 (smallest term-level P = 0
 **Supplementary Fig. 5 | Three risk bands from permutation-corrected selection of two cut points on OIS in the hyposmia group.** Bands at OIS ≤ 24.91, 24.91 to 27.24 and > 27.24 hold 15%, 20% and 65% of the group with two-year conversion of 22.7%, 9.6% and 0.9%, all pairwise log-rank P < 0.001, permutation P < 0.001 for the selection, and bootstrap 95% intervals for the cut points of 24.4 to 25.4 and 27.1 to 28.8 (Supplementary Table 4). Both cut points lie below the median, which is where the risk is concentrated. The cut points are outcome-selected and this figure is exploratory; no pair of cut points separates three groups in the non-deficit stratum.
 
 ![FigS5](figures/Supplementary/FigS5_three_bands.png)
-
-**Supplementary Fig. 6 | Improvement of OIS over the UPSIT total in the two groups.** Points are the paired difference in concordance index with 95% CI from 1,000 paired bootstrap resamples, in the hyposmia group (1,003 participants, 68 conversions) and the RBD and variant-carrier group (756, 84). The two improvements differ in magnitude, and the direct test of that difference gives +0.070 (95% CI −0.032 to +0.168), P = 0.181, so no interaction is established. Significance in one group and non-significance in the other is not evidence of interaction. This figure is descriptive.
-
-![FigS6](figures/Supplementary/FigS6_gain_by_stratum.png)
-
-**Supplementary Fig. 7 | Premise for the genotype test, detectable synuclein pathology by genotype.** Cerebrospinal fluid alpha-synuclein seed amplification was positive in 93% of GBA1-associated Parkinson's disease (52 of 56), 67% of LRRK2-associated disease (84 of 126) and 93% of sporadic disease (764 of 824), Fisher exact P = 8.8 x 10-5, bars with Wilson 95% confidence intervals. The sporadic group is a second reference showing that the low rate is specific to LRRK2 rather than general to genetic forms. This is a descriptive check on the two groups compared in Fig. 4b and 4c and is consistent with the published rate in LRRK2 carriers [PMID 37059509].
-
-![FigS7](figures/Supplementary/FigS7_saa_premise.png)
-
-| Analysis | Participants / conversions | C (UPSIT) | C (OIS) | ΔC (95% CI) | P |
-|---|---|---|---|---|---|
-| Full group | 1,003 / 68 | 0.698 | 0.835 | +0.137 (+0.067, +0.204) | < 0.001 |
-| Landmark 1 y | 993 / 58 | 0.720 | 0.831 | +0.111 (+0.041, +0.185) | < 0.001 |
-| Landmark 2 y | 962 / 27 | 0.737 | 0.893 | +0.156 (+0.022, +0.275) | 0.02 |
-| Model retrained on pre-2017 enrolment (435 of 1,398) | 986 / 54 | 0.702 | 0.827 | +0.125 (+0.057, +0.200) | 0.001 |
-| Centre split, discovery (5 centres) | 290 / 16 | 0.719 | 0.830 | +0.111 (−0.020, +0.234) | 0.09 |
-| Centre split, external (6 centres) | 343 / 17 | 0.663 | 0.938 | +0.276 (+0.150, +0.421) | < 0.001 |
-
-All intervals are from 1,000 paired bootstrap resamples. In the pre-2017 row the model is refitted in the 435 training participants enrolled before 2017 and applied to the hyposmia participants enrolled from 2017 onwards. What varies there is the training set, since all 986 of those participants are also in the 1,003 of the main analysis, so the row bears on training-set era and size rather than on an out-of-sample population. Held-out correlation of the refitted model in the 2017-onwards training-type participants was 0.416.
-
-
 
 ## Supplementary Note. The between-group interaction is not significant
 

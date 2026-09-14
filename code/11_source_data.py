@@ -1,7 +1,7 @@
 """11_source_data.py  Source data for every figure panel, one workbook.
 
 Writes Source_Data.xlsx with one sheet per panel of Figs 1d, 2, 3 and 4 and of Supplementary
-Figs 1 to 7. Every sheet holds exactly the values that the corresponding panel draws, read from
+Figs 1 to 5. Every sheet holds exactly the values that the corresponding panel draws, read from
 the ledger and the section tables that the figure scripts read, or recomputed on the same
 participant-level frame with the same estimators (Kaplan-Meier tables, decile means).
 Participant-level points (the scatter of Fig. 2a and the faint points of Fig. 2c) are not
@@ -211,18 +211,6 @@ S44 = pd.read_csv(f'{R}/section44_three_groups.csv'); r44 = S44[(S44.stratum == 
 d = hh.copy(); d['grp'] = np.where(d.OIS <= r44.cut1, 'low', np.where(d.OIS <= r44.cut2, 'mid', 'high'))
 km_three(d, ['low', 'mid', 'high'], ['high risk', 'intermediate', 'low risk'], 'FigS5',
          f'OIS bands at {r44.cut1:.4f} and {r44.cut2:.4f} (permutation P {r44.p_permutation}, {int(r44.n_perm)} permutations, bootstrap 95% for the cuts {r44.cut1_boot_lo:.2f} to {r44.cut1_boot_hi:.2f} and {r44.cut2_boot_lo:.2f} to {r44.cut2_boot_hi:.2f}).')
-I = J['interaction_test']
-P = pd.DataFrame(J['prespecified_comparisons']); P = P[P.comparison == 'OIS - UPSIT'][['stratum', 'n', 'events', 'dC', 'lo', 'hi', 'p']].copy()
-P['stratum'] = P.stratum.map({'hyposmia': 'Hyposmia', 'non-hyposmia-enriched': 'RBD and variant-carrier'}).fillna(P.stratum)
-P = pd.concat([P, pd.DataFrame([{}]), pd.DataFrame([dict(item='difference between groups', value=I['dd']), dict(item='ci_lower', value=I['lo']), dict(item='ci_upper', value=I['hi']), dict(item='p', value=I['p']), dict(item='n_boot', value=I['n_boot'])])], axis=0)
-add('FigS6', P, 'Delta C by group and the difference of differences.')
-GP = J['genotype_saa_premise']; rows = []
-for x in GP['groups']:
-    k, n = x['positive'], x['n']; z = 1.959963985; ph = k / n; dd = 1 + z * z / n; c = (ph + z * z / (2 * n)) / dd; hw = z * ((ph * (1 - ph) / n + z * z / (4 * n * n)) ** 0.5) / dd
-    rows.append(dict(group={'GBA': 'GBA1'}.get(x['group'], x['group']), n=n, positive=k, rate_pct=100 * ph, wilson_ci_lower_pct=100 * max(0, c - hw), wilson_ci_upper_pct=100 * min(1, c + hw)))
-add('FigS7', pd.concat([pd.DataFrame(rows), pd.DataFrame([{}]), pd.DataFrame([dict(item='Fisher exact P, GBA1 vs LRRK2', value=GP['fisher_p'])])], axis=0),
-    'CSF alpha-synuclein SAA positivity with Wilson 95% CI.')
-
 # ================================================================== write
 readme = pd.DataFrame([dict(sheet=k, description=v[1]) for k, v in sheets.items()])
 readme = pd.concat([pd.DataFrame([dict(sheet='About', description='Source data for the figures of "Decomposition of the olfactory score by dopamine transporter imaging improves Parkinson\'s disease risk stratification in hyposmic individuals". One sheet per panel. Participant-level values are not included (PPMI Data Use Agreement); the underlying data are available on application at www.ppmi-info.org.')]), readme], axis=0)

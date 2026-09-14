@@ -354,8 +354,8 @@ def fig3():
     ax.set_xlabel(T('Years','距基线年数'),fontsize=8.5); ax.set_ylabel(T('Free of PD','未确诊比例'),fontsize=8.5)
     panel(ax,'e',T(f'Within non-deficit (n={len(ndf)})',f'非缺损亚组内部(n={len(ndf)})'),dx=-.155)
 
-    fig.text(.5,-.02,T(f'Curves are shown to 2 years. Panels d and e split each population at its OIS median. In panel e the same split by UPSIT gives {_u[0]:.1f}% against {_u[1]:.1f}% (P = {_u[2]:.1e}) and by lower putamen %expected {_i[0]:.1f}% against {_i[1]:.1f}% (P = {_i[2]:.2f}), so the stratification there comes from the smell information, not from imaging, and that stratum has 22 events. Tertile and permutation-corrected three-band versions are in Supplementary Figs. 5 and 6.',
-             f'曲线绘至两年。面板 d 与 e 按各自的 OIS 中位数划分。面板 e 中按 UPSIT 中位数划分为 {_u[0]:.1f}% 对 {_u[1]:.1f}%(P = {_u[2]:.1e}),按较低侧壳核 %预期划分为 {_i[0]:.1f}% 对 {_i[1]:.1f}%(P = {_i[2]:.2f}),该组的分层来自嗅觉信息而非影像,且仅 22 例事件。三分位版与置换校正三档版见 Supplementary Fig 5 与 6。'),
+    fig.text(.5,-.02,T(f'Curves are shown to 2 years. Panels d and e split each population at its OIS median. In panel e the same split by UPSIT gives {_u[0]:.1f}% against {_u[1]:.1f}% (P = {_u[2]:.1e}) and by lower putamen %expected {_i[0]:.1f}% against {_i[1]:.1f}% (P = {_i[2]:.2f}), so the stratification there comes from the smell information, not from imaging, and that stratum has 22 events. Tertile and permutation-corrected three-band versions are in Supplementary Figs. 4 and 5.',
+             f'曲线绘至两年。面板 d 与 e 按各自的 OIS 中位数划分。面板 e 中按 UPSIT 中位数划分为 {_u[0]:.1f}% 对 {_u[1]:.1f}%(P = {_u[2]:.1e}),按较低侧壳核 %预期划分为 {_i[0]:.1f}% 对 {_i[1]:.1f}%(P = {_i[2]:.2f}),该组的分层来自嗅觉信息而非影像,且仅 22 例事件。三分位版与置换校正三档版见 Supplementary Fig 4 与 5。'),
              ha='center',fontsize=7.2,style='italic',color='#555')
     save(fig,'Fig3_OIS_clinical',a4=True)
 fig3()
