@@ -1,0 +1,27 @@
+{
+ "FigS1_flow": {
+  "ink_top_pt": 71.377776,
+  "ink_bottom_pt": 340.35787200000004,
+  "page": "A4 portrait"
+ },
+ "FigS2_calibration": {
+  "ink_top_pt": 42.843800999999914,
+  "ink_bottom_pt": 294.01709579999994,
+  "page": "A4 portrait"
+ },
+ "FigS3_robustness": {
+  "ink_top_pt": 43.80671314285729,
+  "ink_bottom_pt": 300.62010298285713,
+  "page": "A4 portrait"
+ },
+ "FigS4_tertiles": {
+  "ink_top_pt": 42.45081060000007,
+  "ink_bottom_pt": 243.62040000000002,
+  "page": "A4 portrait"
+ },
+ "FigS5_three_bands": {
+  "ink_top_pt": 52.0188000000001,
+  "ink_bottom_pt": 333.33177,
+  "page": "A4 portrait"
+ }
+}

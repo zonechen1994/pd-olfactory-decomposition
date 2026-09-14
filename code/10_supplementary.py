@@ -113,15 +113,35 @@ def outdir():
     d = 'figures/Supplementary'
     os.makedirs(d, exist_ok=True); return d
 
+A4W, A4H = 8.27, 11.69
+_LAYOUT = {}      # name -> ink extent on the A4 page (points from the top), read by the submission builder
+
+def a4_subplots(nrows, ncols, w, h, wspace=None, left=.06, right=.94, top=.965):
+    """Axes laid out as plt.subplots(nrows, ncols, figsize=(w, h)) would lay them out, but drawn at the
+    top of a portrait A4 page (every figure is delivered as an A4 portrait page). The drawing is scaled
+    to the page width when wider than it and kept at its natural size otherwise."""
+    s = min(1.0, (right - left) * A4W / w)
+    bw, bh = w * s / A4W, h * s / A4H                       # box occupied by the original figure, in page fractions
+    l = left if s < 1 else .5 - bw / 2
+    fig = plt.figure(figsize=(A4W, A4H))
+    gs = fig.add_gridspec(nrows, ncols, left=l + .125 * bw, right=l + .9 * bw, top=top - .12 * bh, bottom=top - .89 * bh,
+                          wspace=.2 if wspace is None else wspace)
+    axes = np.array([[fig.add_subplot(gs[i, j]) for j in range(ncols)] for i in range(nrows)])
+    fig._foot_y, fig._foot_x0 = top - bh - .004, l + .125 * bw
+    return fig, (axes[0, 0] if axes.size == 1 else axes.ravel())
+
 def save(fig, name):
     d = outdir()
     if LANG == 'en': _sanitize(fig)
-    fig.savefig(f'{d}/{name}.pdf', bbox_inches='tight'); fig.savefig(f'{d}/{name}.png', dpi=200, bbox_inches='tight')
+    bb = fig.get_tightbbox(fig.canvas.get_renderer())        # ink extent in inches, origin bottom left
+    _LAYOUT[name] = dict(ink_top_pt=(A4H - bb.y1) * 72, ink_bottom_pt=(A4H - bb.y0) * 72, page='A4 portrait')
+    fig.savefig(f'{d}/{name}.pdf'); fig.savefig(f'{d}/{name}.png', dpi=200)
+    json.dump(_LAYOUT, open(f'{d}/figS_layout.json', 'w'), indent=1)
     plt.close(fig); print('  saved', d, name)
 
 def figS1_flow():
     LF = J['layer_flow']; ch = CH.set_index('channel')
-    fig, ax = plt.subplots(figsize=(9.6, 6.4)); ax.set_xlim(0, 10.5); ax.set_ylim(0, 10); ax.axis('off')
+    fig, ax = a4_subplots(1, 1, 9.6, 6.4); ax.set_xlim(0, 10.5); ax.set_ylim(0, 10); ax.axis('off')
     def box(x, y, w, h, txt, fc='#F4F6F7', ec=DARK, fs=7.8, bold=False):
         ax.add_patch(plt.Rectangle((x - w / 2, y - h / 2), w, h, fc=fc, ec=ec, lw=1.0))
         ax.text(x, y, txt, ha='center', va='center', fontsize=fs, fontweight='bold' if bold else 'normal')
@@ -174,7 +194,7 @@ def figS1_flow():
 
 def figS2_calibration(chan_slopes):
     dec = pd.DataFrame(J['calibration_deciles']); cal = pd.DataFrame(J['calibration'])
-    fig, axes = plt.subplots(1, 2, figsize=(9.6, 3.9), gridspec_kw=dict(wspace=.38))
+    fig, axes = a4_subplots(1, 2, 9.6, 3.9, wspace=.38)
     ax = axes[0]
     ax.plot([15, 40], [15, 40], c=GREY, ls='--', lw=1, label=T('identity', '等值线'))
     ax.errorbar(dec.pred, dec.obs, fmt='o', c=BLUE, ms=5)
@@ -211,7 +231,7 @@ def figS3_robustness():
             (T(f'Model retrained on pre-2017 enrolment, {TS["n"]:,} / {TS["events"]}', f'模型改用 2017 年前入组者重训,{TS["n"]:,} / {TS["events"]}'), TS['dc'], TS['lo'], TS['hi'], pf(TS['p']), TEAL),
             (T('Centre split, discovery 5 sites, 290 / 16', '中心拆分,发现 5 中心,290 / 16'), CENTRE['discovery']['dc'], CENTRE['discovery']['lo'], CENTRE['discovery']['hi'], pf(CENTRE['discovery']['p']), ORANGE),
             (T('Centre split, external 6 sites, 343 / 17', '中心拆分,外部 6 中心,343 / 17'), CENTRE['external']['dc'], CENTRE['external']['lo'], CENTRE['external']['hi'], pf(CENTRE['external']['p']), ORANGE)]
-    fig, ax = plt.subplots(figsize=(8.4, 3.6)); y = np.arange(len(rows))[::-1]
+    fig, ax = a4_subplots(1, 1, 8.4, 3.6); y = np.arange(len(rows))[::-1]
     for yi, (lab, d, lo, hi, p, col) in zip(y, rows):
         if lo is not None:
             ax.plot([lo, hi], [yi, yi], c=col, lw=2.4, solid_capstyle='round')
@@ -276,22 +296,22 @@ def _km_panel(ax, d, groups, labels, colors, ymin, title):
     ax.set_title(title, loc='left', fontsize=8.8, fontweight='bold')
 
 def figS4_tertiles():
-    hh = hyposmia_frame(); fig, axes = plt.subplots(1, 2, figsize=(10, 4), gridspec_kw=dict(wspace=.35))
+    hh = hyposmia_frame(); fig, axes = a4_subplots(1, 2, 10, 4, wspace=.35)
     for ax, d, ymin, ttl in [(axes[0], hh, .68, T('a  Whole hyposmia group (n = 1,003), OIS tertiles', 'a  全嗅觉减退组(n = 1,003),OIS 三分位')),
                              (axes[1], hh[hh.pct >= 65], .875, T('b  Non-deficit stratum (n = 738), OIS tertiles', 'b  非缺损亚组(n = 738),OIS 三分位'))]:
         d = d.copy(); d['grp'] = pd.qcut(d.OIS, 3, labels=['T1', 'T2', 'T3']).astype(str)
         _km_panel(ax, d, ['T1', 'T2', 'T3'], [T('lowest', '最低'), T('middle', '中间'), T('highest', '最高')], [RED, ORANGE, TEAL], ymin, ttl)
-    fig.text(.5, -.04, T('Outcome-blind division into OIS tertiles. The middle and highest tertiles do not differ in either population, so the main text divides at the median into two groups.',
+    fig.text(.5, fig._foot_y, T('Outcome-blind division into OIS tertiles. The middle and highest tertiles do not differ in either population, so the main text divides at the median into two groups.',
                          '按 OIS 三分位划分,不看结局。两个人群中中间与最高三分位均不分开,因此正文按中位数分为两组。'), ha='center', fontsize=6.8, color='#555')
     save(fig, 'FigS4_tertiles')
 
 def figS5_three_bands():
     hh = hyposmia_frame(); r = S44[(S44.stratum == 'hyposmia') & (S44.reading == 'OIS')].iloc[0]
     d = hh.copy(); d['grp'] = np.where(d.OIS <= r.cut1, 'low', np.where(d.OIS <= r.cut2, 'mid', 'high'))
-    fig, ax = plt.subplots(figsize=(5.4, 4))
+    fig, ax = a4_subplots(1, 1, 5.4, 4)
     _km_panel(ax, d, ['low', 'mid', 'high'], [T('high risk', '高危'), T('intermediate', '中危'), T('low risk', '低危')], [RED, ORANGE, TEAL], .60,
               T(f'OIS bands at {r.cut1:.2f} and {r.cut2:.2f}, hyposmia group', f'OIS 切点 {r.cut1:.2f} 与 {r.cut2:.2f},嗅觉减退组'))
-    fig.text(.02, -.02, T(f'two cut points, permutation P {"< 0.001" if r.p_permutation < .001 else f"= {r.p_permutation:.3f}"} ({int(r.n_perm)} permutations)\nbootstrap 95% for the cuts: {r.cut1_boot_lo:.1f} to {r.cut1_boot_hi:.1f} and {r.cut2_boot_lo:.1f} to {r.cut2_boot_hi:.1f}',
+    fig.text(fig._foot_x0, fig._foot_y, T(f'two cut points, permutation P {"< 0.001" if r.p_permutation < .001 else f"= {r.p_permutation:.3f}"} ({int(r.n_perm)} permutations)\nbootstrap 95% for the cuts: {r.cut1_boot_lo:.1f} to {r.cut1_boot_hi:.1f} and {r.cut2_boot_lo:.1f} to {r.cut2_boot_hi:.1f}',
                          f'两切点选取,置换 P {"< 0.001" if r.p_permutation < .001 else f"= {r.p_permutation:.3f}"}({int(r.n_perm)} 次)\n切点 bootstrap 95%:{r.cut1_boot_lo:.1f} 至 {r.cut1_boot_hi:.1f} 与 {r.cut2_boot_lo:.1f} 至 {r.cut2_boot_hi:.1f}'),
             fontsize=6.4, color='#555', va='top')
     ax.legend(frameon=False, loc='lower left', fontsize=6.2, bbox_to_anchor=(0, .0))
