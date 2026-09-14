@@ -639,10 +639,6 @@ def build_doc(chan_slopes):
     A(T('**Supplementary Fig. 5 | Three risk bands from permutation-corrected selection of two cut points on OIS in the hyposmia group.** Bands at OIS ≤ 24.91, 24.91 to 27.24 and > 27.24 hold 15%, 20% and 65% of the group with two-year conversion of 22.7%, 9.6% and 0.9%, all pairwise log-rank P < 0.001, permutation P < 0.001 for the selection, and bootstrap 95% intervals for the cut points of 24.4 to 25.4 and 27.1 to 28.8 (Supplementary Table 4). Both cut points lie below the median, which is where the risk is concentrated. The cut points are outcome-selected and this figure is exploratory; no pair of cut points separates three groups in the non-deficit stratum.',
         '**补充图 5 | 嗅觉减退组 OIS 经置换校正选出两切点得到的三个风险档。**切点 OIS ≤ 24.91、24.91 至 27.24、> 27.24 分别占该组 15%、20%、65%,两年转化 22.7%、9.6%、0.9%,两两 log-rank P 均 < 0.001,选取过程的置换 P < 0.001,切点 bootstrap 95% 区间 24.4 至 25.4 与 27.1 至 28.8(补充表 4)。两个切点都落在中位数以下,风险集中于此。切点对着结局选出,本图属探索性;非缺损亚组中无切点对能分出三组。'))
     A(f'![FigS5]({d}/FigS5_three_bands.png)')
-    IT = J['interaction_test']
-    A(T('## Supplementary Note. The between-group interaction is not significant', '## 补充说明. 两组间交互不显著'))
-    A(T(f'The gain of OIS over the UPSIT total is {IT["dC_hyposmia"]:+.3f} in the hyposmia group ({IT["n_hyposmia"]:,} / {IT["events_hyposmia"]}) and {IT["dC_control"]:+.3f} in the RBD and variant-carrier group ({IT["n_control"]} / {IT["events_control"]}), a ratio of {IT["ratio"]:.2f}. The difference of differences is {IT["dd"]:+.3f} ({IT["lo"]:+.3f}, {IT["hi"]:+.3f}), P = {IT["p"]:.3f} over {IT["n_boot"]:,} paired bootstrap resamples, so the contrast between the two groups is described without a claim of interaction.',
-        f'OIS 相对嗅觉总分的增益在嗅觉减退组为 {IT["dC_hyposmia"]:+.3f}({IT["n_hyposmia"]:,} / {IT["events_hyposmia"]}),在 RBD 与遗传携带组为 {IT["dC_control"]:+.3f}({IT["n_control"]} / {IT["events_control"]}),比值 {IT["ratio"]:.2f}。差中差为 {IT["dd"]:+.3f}({IT["lo"]:+.3f},{IT["hi"]:+.3f}),{IT["n_boot"]:,} 次配对 bootstrap 的 P = {IT["p"]:.3f},故两组间的对比仅作描述,不主张交互。'))
     import re
     doc = '\n\n'.join(S) + '\n'
     doc = re.sub(r'(?<![\w\-])-(?=\d)', '−', doc)

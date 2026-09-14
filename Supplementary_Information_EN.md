@@ -462,7 +462,3 @@ No term departs from proportional hazards at P < 0.05 (smallest term-level P = 0
 **Supplementary Fig. 5 | Three risk bands from permutation-corrected selection of two cut points on OIS in the hyposmia group.** Bands at OIS ≤ 24.91, 24.91 to 27.24 and > 27.24 hold 15%, 20% and 65% of the group with two-year conversion of 22.7%, 9.6% and 0.9%, all pairwise log-rank P < 0.001, permutation P < 0.001 for the selection, and bootstrap 95% intervals for the cut points of 24.4 to 25.4 and 27.1 to 28.8 (Supplementary Table 4). Both cut points lie below the median, which is where the risk is concentrated. The cut points are outcome-selected and this figure is exploratory; no pair of cut points separates three groups in the non-deficit stratum.
 
 ![FigS5](figures/Supplementary/FigS5_three_bands.png)
-
-## Supplementary Note. The between-group interaction is not significant
-
-The gain of OIS over the UPSIT total is +0.137 in the hyposmia group (1,003 / 68) and +0.067 in the RBD and variant-carrier group (756 / 84), a ratio of 2.05. The difference of differences is +0.070 (−0.032, +0.168), P = 0.181 over 2,000 paired bootstrap resamples, so the contrast between the two groups is described without a claim of interaction.
