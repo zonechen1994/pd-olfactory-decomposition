@@ -150,14 +150,14 @@ def figS1_flow():
     # training cohort
     box(1.6, 9.2, 2.9, 1.0, T('Training cohort\nPD 1,163 + HC 235 = 1,398\nUPSIT and imaging both present',
                               '训练队列\nPD 1,163 + HC 235 = 1,398\n同时有 UPSIT 与影像'), fc='#E8F6F3', ec=TEAL)
-    box(1.6, 7.7, 2.9, 0.9, T('Ridge (α = 1.0), 33 SBR + age, sex, education\nfive-fold r = 0.479',
-                              '岭回归(α = 1.0),33 SBR + 年龄、性别、教育\n五折 r = 0.479'), fc='#E8F6F3', ec=TEAL, fs=7.2)
+    box(1.6, 7.6, 3.1, 1.1, T('Ridge (α = 1.0)\n33 SBR + age, sex, education\nfive-fold r = 0.479',
+                              '岭回归(α = 1.0)\n33 SBR + 年龄、性别、教育\n五折 r = 0.479'), fc='#E8F6F3', ec=TEAL, fs=7.2)
     arrow(1.6, 8.7, 1.6, 8.15)
     # prodromal flow
     x = 6.0
-    box(x, 9.2, 4.0, 0.8, T('Prodromal cohort with imaging and baseline clinical data\nn = 2,453 (rule A: 1,558 / 534 / 361)',
+    box(x, 9.2, 5.0, 0.8, T('Prodromal cohort with imaging and baseline clinical data\nn = 2,453 (rule A: 1,558 / 534 / 361)',
                             '有影像与基线临床数据的前驱期队列\nn = 2,453(规则 A:1,558 / 534 / 361)'), bold=True)
-    box(x, 8.05, 4.0, 0.7, T('Correlation analyses (OIS and UPSIT both present)\nn = 2,441',
+    box(x, 8.05, 5.0, 0.7, T('Correlation analyses (OIS and UPSIT both present)\nn = 2,441',
                              '相关分析(OIS 与 UPSIT 均有)\nn = 2,441'), fc='#FEF9E7', ec=ORANGE, fs=7.4)
     arrow(x, 8.8, x, 8.4)
     steps = [(T('Prevalent Parkinson\'s disease at baseline', '基线即已确诊帕金森病'), 78, 2375),
@@ -178,12 +178,12 @@ def figS1_flow():
     box(8.0, 3.35, 3.4, 0.85, T(f'RBD and variant-carrier group\nn = {int(nh.n):,}, {int(nh.events)} conversions\n{nh.rate_per_100py:.2f} per 100 person-years',
                                 f'RBD 与遗传携带组\n{int(nh.n):,} 人,{int(nh.events)} 例转化\n每百人年 {nh.rate_per_100py:.2f}'), fc='#EBF5FB', ec=BLUE, fs=7.6)
     arrow(x - 0.6, 4.6, 3.6, 3.8); arrow(x + 0.6, 4.6, 8.0, 3.8)
-    box(2.1, 1.75, 2.35, 0.8, T(f'DAT deficit (< 65%)\nn = {265}, {46} conversions', f'DAT 缺损(< 65%)\n265 人,46 例转化'), fs=7.4)
-    box(5.0, 1.75, 2.35, 0.8, T(f'No DAT deficit\nn = {738}, {22} conversions', f'DAT 非缺损\n738 人,22 例转化'), fs=7.4)
-    arrow(3.0, 2.9, 2.1, 2.2); arrow(4.2, 2.9, 5.0, 2.2)
-    box(7.2, 1.75, 1.9, 0.8, T(f'RBD cohort\nn = {int(rbd.n)}, {int(rbd.events)} conversions', f'RBD 队列\n{int(rbd.n)} 人,{int(rbd.events)} 例转化'), fs=7.4)
-    box(9.2, 1.75, 1.9, 0.8, T(f'Pathogenic-variant cohort\nn = {int(gen.n)}, {int(gen.events)} conversions', f'遗传携带队列\n{int(gen.n)} 人,{int(gen.events)} 例转化'), fs=7.4)
-    arrow(7.4, 2.9, 7.2, 2.2); arrow(8.6, 2.9, 9.2, 2.2)
+    box(2.0, 1.75, 2.3, 0.8, T(f'DAT deficit (< 65%)\nn = {265}, {46} conversions', f'DAT 缺损(< 65%)\n265 人,46 例转化'), fs=7.4)
+    box(4.65, 1.75, 2.3, 0.8, T(f'No DAT deficit\nn = {738}, {22} conversions', f'DAT 非缺损\n738 人,22 例转化'), fs=7.4)
+    arrow(3.0, 2.9, 2.0, 2.2); arrow(4.2, 2.9, 4.65, 2.2)
+    box(7.15, 1.75, 2.0, 0.8, T(f'RBD cohort\nn = {int(rbd.n)}, {int(rbd.events)} conversions', f'RBD 队列\n{int(rbd.n)} 人,{int(rbd.events)} 例转化'), fs=7.0)
+    box(9.35, 1.75, 2.25, 0.8, T(f'Pathogenic-variant cohort\nn = {int(gen.n)}, {int(gen.events)} conversions', f'遗传携带队列\n{int(gen.n)} 人,{int(gen.events)} 例转化'), fs=7.0)
+    arrow(7.4, 2.9, 7.15, 2.2); arrow(8.6, 2.9, 9.35, 2.2)
     ax.text(0.2, 0.55, T('Deficit is lower putamen SBR below 65% of its age- and sex-expected value (PARS threshold). '
                          'The 65% split uses the 1,003 participants of the hyposmia group; the two recruitment cohorts of the RBD and variant-carrier group '
                          'follow rule A (dual carriers with RBD assigned to the RBD cohort).',
