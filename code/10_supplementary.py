@@ -107,6 +107,11 @@ def setup_fonts():
         mpl.rcParams['font.serif'] = ['Times', 'Times New Roman', 'Nimbus Roman', 'DejaVu Serif']
 TEAL, RED, GREY, DARK, ORANGE, BLUE = '#16A085', '#C0392B', '#7F8C8D', '#2C3E50', '#E67E22', '#2980B9'
 
+PANEL_CASE = os.environ.get('PANEL_CASE', 'lower')     # 'upper' for journals that letter panels A, B
+def PL(s):
+    """Panel letter at the start of an in-figure title ('a  Decile calibration'), uppercased when required."""
+    return (s[0].upper() + s[1:]) if PANEL_CASE == 'upper' else s
+
 def outdir():
     # 图件一律只出英文(2026-09-10 用户定):投稿用英文图,中文稿沿用同一套图,
     # 避免同一张图维护两份、也避免中文 PDF 的字体坑。
