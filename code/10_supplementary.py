@@ -194,7 +194,7 @@ def figS1_flow():
 
 def figS2_calibration(chan_slopes):
     dec = pd.DataFrame(J['calibration_deciles']); cal = pd.DataFrame(J['calibration'])
-    fig, axes = a4_subplots(1, 2, 9.6, 3.9, wspace=.38)
+    fig, axes = a4_subplots(1, 2, 10.4, 3.9, wspace=.85)
     ax = axes[0]
     ax.plot([15, 40], [15, 40], c=GREY, ls='--', lw=1, label=T('identity', '等值线'))
     ax.errorbar(dec.pred, dec.obs, fmt='o', c=BLUE, ms=5)
@@ -202,9 +202,9 @@ def figS2_calibration(chan_slopes):
         ax.text(r.pred + .25, r.obs - .9, f'{int(r.dec)}', fontsize=6.5, color=BLUE)
     ax.set_xlabel(T('Mean predicted UPSIT (OIS) in decile', '各十分位的平均预测 UPSIT(OIS)')); ax.set_ylabel(T('Mean observed UPSIT', '平均实测 UPSIT'))
     ax.set_xlim(20, 39); ax.set_ylim(15, 39); ax.legend(frameon=False, fontsize=7.5, loc='upper left')
-    ax.set_title(T('a  Decile calibration, RBD and variant-carrier group (n = 885)', 'a  十分位校准,RBD 与遗传携带组(n = 885)'), loc='left', fontsize=9, fontweight='bold')
-    ax.text(.98, .04, T('observed below predicted in every decile\n(mean residual −2.7 points)', '每个十分位实测均低于预测\n(平均残差 −2.7 分)'),
-            transform=ax.transAxes, ha='right', va='bottom', fontsize=7, color='#555')
+    ax.set_title(PL(T('a  Decile calibration\nRBD and variant-carrier group (n = 885)', 'a  十分位校准\nRBD 与遗传携带组(n = 885)')), loc='left', fontsize=9, fontweight='bold')
+    ax.text(.04, .86, T('observed below predicted in every decile\n(mean residual −2.7 points)', '每个十分位实测均低于预测\n(平均残差 −2.7 分)'),
+            transform=ax.transAxes, ha='left', va='top', fontsize=7, color='#555')
     ax = axes[1]
     cols_ = {T('All prodromal', '全前驱期'): GREY, T('Hyposmia cohort', '嗅觉减退队列'): RED, T('RBD cohort', 'RBD 队列'): BLUE, T('Pathogenic-variant cohort', '遗传携带队列'): '#8E44AD'}
     rows = [(k, v['slope'], v['r'], v['n'], cols_[k], v['lo'], v['hi'], v['p']) for k, v in chan_slopes.items()]
@@ -212,15 +212,16 @@ def figS2_calibration(chan_slopes):
     ax.barh(y, [r[1] for r in rows], color=[r[4] for r in rows], height=.6,
             xerr=[[r[1] - r[5] for r in rows], [r[6] - r[1] for r in rows]], error_kw=dict(ecolor='#566573', lw=.9, capsize=3))
     ax.axvline(1, c=GREY, ls='--', lw=1)
+    x0 = max(r[6] for r in rows) + .06                      # one text column, clear of every upper CI limit and of the line at 1
     for yi, r in zip(y, rows):
-        ax.text(r[6] + .02, yi, f'{r[1]:.2f} ({r[5]:.2f} to {r[6]:.2f})   r = {r[2]:.3f}, P = {r[7]:.0e}, n = {r[3]:,}', va='center', fontsize=6.8)
-    ax.set_yticks(y); ax.set_yticklabels([r[0] for r in rows], fontsize=8); ax.set_xlim(0, 1.75)
+        ax.text(x0, yi, f'{r[1]:.2f} ({r[5]:.2f} to {r[6]:.2f})\nr = {r[2]:.3f}, P = {r[7]:.0e}, n = {r[3]:,}', va='center', fontsize=6.8, linespacing=1.3)
+    ax.set_yticks(y); ax.set_yticklabels([r[0] for r in rows], fontsize=7.5); ax.set_xlim(0, 1.9)
     ax.set_xlabel(T('Slope of measured UPSIT on OIS (95% CI)', '实测 UPSIT 对 OIS 的回归斜率(95% CI)'))
-    ax.set_title(T('b  Slope by recruitment cohort', 'b  分队列斜率'), loc='left', fontsize=9, fontweight='bold')
-    ax.text(.02, -.30, T('A slope below 1 means OIS varies over a narrower range than the measured score. The pooled slope for the RBD and variant-carrier group (1.027) is not shown '
-                         'because it mixes two recruitment cohorts with different means. The within-recruitment cohort slopes are the interpretable values.',
-                         '斜率低于 1 表示 OIS 的取值范围比实测分数窄。不显示 RBD 与遗传携带组的合并斜率(1.027),它混合了均值不同的两个队列。队列内斜率才是可解读的值。'),
-            transform=ax.transAxes, fontsize=6.6, color='#555', va='top', wrap=True)
+    ax.set_title(PL(T('b  Slope by recruitment cohort', 'b  分队列斜率')), loc='left', fontsize=9, fontweight='bold')
+    axes[0].text(0, -.30, T('A slope below 1 means OIS varies over a narrower range than the measured score. The pooled slope for the RBD and variant-carrier group (1.027) is not shown '
+                            'because it mixes two recruitment cohorts with different means. The within-recruitment cohort slopes are the interpretable values.',
+                            '斜率低于 1 表示 OIS 的取值范围比实测分数窄。不显示 RBD 与遗传携带组的合并斜率(1.027),它混合了均值不同的两个队列。队列内斜率才是可解读的值。'),
+                 transform=axes[0].transAxes, fontsize=6.6, color='#555', va='top', wrap=True)
     save(fig, 'FigS2_calibration')
 
 def figS3_robustness():
