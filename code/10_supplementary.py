@@ -132,8 +132,17 @@ def a4_subplots(nrows, ncols, w, h, wspace=None, left=.06, right=.94, top=.965):
     gs = fig.add_gridspec(nrows, ncols, left=l + .125 * bw, right=l + .9 * bw, top=top - .12 * bh, bottom=top - .89 * bh,
                           wspace=.2 if wspace is None else wspace)
     axes = np.array([[fig.add_subplot(gs[i, j]) for j in range(ncols)] for i in range(nrows)])
-    fig._foot_y, fig._foot_x0 = top - bh - .004, l + .125 * bw
+    fig._foot_y, fig._foot_x0, fig._foot_w = top - bh - .012, l + .125 * bw, bw * A4W
     return fig, (axes[0, 0] if axes.size == 1 else axes.ravel())
+
+def footnote(fig, txt, fs=6.6):
+    """Grey note under the drawing, wrapped to the drawing width and centred on the page."""
+    import textwrap
+    n = int(fig._foot_w * 72 / (fs * (1.0 if LANG == 'zh' else 0.46)))     # characters per line for this width and size
+    lines = []
+    for para in txt.split('\n'):
+        lines += textwrap.wrap(para, n) if LANG == 'en' else [para[i:i + n] for i in range(0, len(para), n)]
+    fig.text(.5, fig._foot_y, '\n'.join(lines), ha='center', va='top', fontsize=fs, color='#555', linespacing=1.35)
 
 def save(fig, name):
     d = outdir()
@@ -146,7 +155,7 @@ def save(fig, name):
 
 def figS1_flow():
     LF = J['layer_flow']; ch = CH.set_index('channel')
-    fig, ax = a4_subplots(1, 1, 9.6, 6.4); ax.set_xlim(0, 10.5); ax.set_ylim(0, 10); ax.axis('off')
+    fig, ax = a4_subplots(1, 1, 9.6, 6.0); ax.set_xlim(0, 10.5); ax.set_ylim(1.0, 10); ax.axis('off')
     def box(x, y, w, h, txt, fc='#F4F6F7', ec=DARK, fs=7.8, bold=False):
         ax.add_patch(plt.Rectangle((x - w / 2, y - h / 2), w, h, fc=fc, ec=ec, lw=1.0))
         ax.text(x, y, txt, ha='center', va='center', fontsize=fs, fontweight='bold' if bold else 'normal')
@@ -189,12 +198,12 @@ def figS1_flow():
     box(7.15, 1.75, 2.0, 0.8, T(f'RBD cohort\nn = {int(rbd.n)}, {int(rbd.events)} conversions', f'RBD 队列\n{int(rbd.n)} 人,{int(rbd.events)} 例转化'), fs=7.0)
     box(9.35, 1.75, 2.25, 0.8, T(f'Pathogenic-variant cohort\nn = {int(gen.n)}, {int(gen.events)} conversions', f'遗传携带队列\n{int(gen.n)} 人,{int(gen.events)} 例转化'), fs=7.0)
     arrow(7.4, 2.9, 7.15, 2.2); arrow(8.6, 2.9, 9.35, 2.2)
-    ax.text(0.2, 0.55, T('Deficit is lower putamen SBR below 65% of its age- and sex-expected value (PARS threshold). '
-                         'The 65% split uses the 1,003 participants of the hyposmia group; the two recruitment cohorts of the RBD and variant-carrier group '
+    footnote(fig, T('Deficit is lower putamen SBR below 65% of its age- and sex-expected value (PARS threshold). '
+                         'The 65% split uses the 1,003 participants of the hyposmia group. The two recruitment cohorts of the RBD and variant-carrier group '
                          'follow rule A (dual carriers with RBD assigned to the RBD cohort).',
                          '缺损定义为较低侧壳核 SBR 低于年龄性别预期值的 65%(PARS 阈值)。65% 划分施加于嗅觉减退组 1,003 人;'
                          'RBD 与遗传携带组的两个队列按规则 A(兼有遗传变异与 RBD 者归 RBD 队列)。'),
-            fontsize=6.6, color='#555', wrap=True)
+            )
     save(fig, 'FigS1_flow')
 
 def figS2_calibration(chan_slopes):
@@ -223,10 +232,10 @@ def figS2_calibration(chan_slopes):
     ax.set_yticks(y); ax.set_yticklabels([r[0] for r in rows], fontsize=7.5); ax.set_xlim(0, 1.9)
     ax.set_xlabel(T('Slope of measured UPSIT on OIS (95% CI)', '实测 UPSIT 对 OIS 的回归斜率(95% CI)'))
     ax.set_title(PL(T('b  Slope by recruitment cohort', 'b  分队列斜率')), loc='left', fontsize=9, fontweight='bold')
-    axes[0].text(0, -.30, T('A slope below 1 means OIS varies over a narrower range than the measured score. The pooled slope for the RBD and variant-carrier group (1.027) is not shown '
+    footnote(fig, T('A slope below 1 means OIS varies over a narrower range than the measured score. The pooled slope for the RBD and variant-carrier group (1.027) is not shown '
                             'because it mixes two recruitment cohorts with different means. The within-recruitment cohort slopes are the interpretable values.',
                             '斜率低于 1 表示 OIS 的取值范围比实测分数窄。不显示 RBD 与遗传携带组的合并斜率(1.027),它混合了均值不同的两个队列。队列内斜率才是可解读的值。'),
-                 transform=axes[0].transAxes, fontsize=6.6, color='#555', va='top', wrap=True)
+                 )
     save(fig, 'FigS2_calibration')
 
 def figS3_robustness():
@@ -238,6 +247,7 @@ def figS3_robustness():
             (T('Centre split, discovery 5 sites, 290 / 16', '中心拆分,发现 5 中心,290 / 16'), CENTRE['discovery']['dc'], CENTRE['discovery']['lo'], CENTRE['discovery']['hi'], pf(CENTRE['discovery']['p']), ORANGE),
             (T('Centre split, external 6 sites, 343 / 17', '中心拆分,外部 6 中心,343 / 17'), CENTRE['external']['dc'], CENTRE['external']['lo'], CENTRE['external']['hi'], pf(CENTRE['external']['p']), ORANGE)]
     fig, ax = a4_subplots(1, 1, 8.4, 3.6); y = np.arange(len(rows))[::-1]
+    ax.get_gridspec().update(left=.34)                      # room for the long row labels on the page
     for yi, (lab, d, lo, hi, p, col) in zip(y, rows):
         if lo is not None:
             ax.plot([lo, hi], [yi, yi], c=col, lw=2.4, solid_capstyle='round')
@@ -247,10 +257,10 @@ def figS3_robustness():
     ax.axvline(0, c=DARK, lw=1); ax.set_yticks(y); ax.set_yticklabels([r[0] for r in rows], fontsize=7.8)
     ax.set_xlim(-.08, .75); ax.set_xlabel(T('ΔC, OIS minus UPSIT (hyposmia group)', 'ΔC,OIS 减 UPSIT 总分(嗅觉减退组)'))
     ax.set_title(T('Robustness of the OIS advantage over UPSIT', 'OIS 相对 UPSIT 优势的稳健性'), loc='left', fontsize=9.5, fontweight='bold')
-    ax.text(0, -.34, T('Intervals are 1,000 paired bootstrap resamples. The discovery-cohort interval includes zero (P = 0.092); the centre split is reported as heterogeneity, not as support. '
+    footnote(fig, T('Intervals are 1,000 paired bootstrap resamples. The discovery-cohort interval includes zero (P = 0.092), and the centre split is reported as heterogeneity, not as support. '
                        'The temporal split retrains the model on participants enrolled before 2017 and evaluates in hyposmia-group participants enrolled from 2017 (C 0.702 to 0.827).',
                        '区间为 1,000 次配对 bootstrap。发现队列区间含零(P = 0.092),中心拆分作为异质性报告而非支持性证据。时间拆分在 2017 年前入组者上重训模型,在 2017 年起入组的嗅觉减退组评价(C 0.702 至 0.827)。'),
-            transform=ax.transAxes, fontsize=6.6, color='#555', va='top', wrap=True)
+            )
     save(fig, 'FigS3_robustness')
 
 
@@ -283,12 +293,13 @@ def _km_panel(ax, d, groups, labels, colors, ymin, title):
         ax.fill_between(ci.index[mc], ci.iloc[:, 0][mc], ci.iloc[:, 1][mc], step='post', color=col, alpha=.10, lw=0)
         idx = ci.index[ci.index <= 2.0][-1]
         labs_.append([float(k.predict(2.)), f'{(1 - float(k.predict(2.))) * 100:.1f}%\n({(1 - ci.loc[idx].iloc[1]) * 100:.1f} to {(1 - ci.loc[idx].iloc[0]) * 100:.1f})', col])
-    gap = (1.005 - ymin) * 0.075
-    labs_.sort(key=lambda r: r[0])
+    gap = (1.005 - ymin) * 0.10
+    labs_.sort(key=lambda r: -r[0])                          # highest curve first, labels pushed downwards so none climbs into the title
+    labs_[0][0] = min(labs_[0][0], 1.0 - gap * 0.35)
     for i in range(1, len(labs_)):
-        if labs_[i][0] - labs_[i - 1][0] < gap: labs_[i][0] = labs_[i - 1][0] + gap
+        if labs_[i - 1][0] - labs_[i][0] < gap: labs_[i][0] = labs_[i - 1][0] - gap
     for y_, txt, col in labs_:
-        ax.text(2.04, min(y_, 1.0 + gap * 0.2), txt, fontsize=6.8, color=col, va='center', fontweight='bold')
+        ax.text(2.04, y_, txt, fontsize=6.8, color=col, va='center', fontweight='bold')
     p3 = multivariate_logrank_test(d.time_years, d.grp, d.converted).p_value
     lines = [T(f'3-group log-rank P = {p3:.1e}', f'三组 log-rank P = {p3:.1e}')]
     for a, b in [(0, 1), (1, 2), (0, 2)]:
@@ -303,12 +314,12 @@ def _km_panel(ax, d, groups, labels, colors, ymin, title):
 
 def figS4_tertiles():
     hh = hyposmia_frame(); fig, axes = a4_subplots(1, 2, 10, 4, wspace=.35)
-    for ax, d, ymin, ttl in [(axes[0], hh, .68, T('a  Whole hyposmia group (n = 1,003), OIS tertiles', 'a  全嗅觉减退组(n = 1,003),OIS 三分位')),
-                             (axes[1], hh[hh.pct >= 65], .875, T('b  Non-deficit stratum (n = 738), OIS tertiles', 'b  非缺损亚组(n = 738),OIS 三分位'))]:
+    for ax, d, ymin, ttl in [(axes[0], hh, .68, PL(T('a  Whole hyposmia group (n = 1,003), OIS tertiles', 'a  全嗅觉减退组(n = 1,003),OIS 三分位'))),
+                             (axes[1], hh[hh.pct >= 65], .875, PL(T('b  Non-deficit stratum (n = 738), OIS tertiles', 'b  非缺损亚组(n = 738),OIS 三分位')))]:
         d = d.copy(); d['grp'] = pd.qcut(d.OIS, 3, labels=['T1', 'T2', 'T3']).astype(str)
         _km_panel(ax, d, ['T1', 'T2', 'T3'], [T('lowest', '最低'), T('middle', '中间'), T('highest', '最高')], [RED, ORANGE, TEAL], ymin, ttl)
-    fig.text(.5, fig._foot_y, T('Outcome-blind division into OIS tertiles. The middle and highest tertiles do not differ in either population, so the main text divides at the median into two groups.',
-                         '按 OIS 三分位划分,不看结局。两个人群中中间与最高三分位均不分开,因此正文按中位数分为两组。'), ha='center', fontsize=6.8, color='#555')
+    footnote(fig, T('Outcome-blind division into OIS tertiles. The middle and highest tertiles do not differ in either population, so the main text divides at the median into two groups.',
+                         '按 OIS 三分位划分,不看结局。两个人群中中间与最高三分位均不分开,因此正文按中位数分为两组。'), fs=6.8)
     save(fig, 'FigS4_tertiles')
 
 def figS5_three_bands():
@@ -317,9 +328,9 @@ def figS5_three_bands():
     fig, ax = a4_subplots(1, 1, 5.4, 4)
     _km_panel(ax, d, ['low', 'mid', 'high'], [T('high risk', '高危'), T('intermediate', '中危'), T('low risk', '低危')], [RED, ORANGE, TEAL], .60,
               T(f'OIS bands at {r.cut1:.2f} and {r.cut2:.2f}, hyposmia group', f'OIS 切点 {r.cut1:.2f} 与 {r.cut2:.2f},嗅觉减退组'))
-    fig.text(fig._foot_x0, fig._foot_y, T(f'two cut points, permutation P {"< 0.001" if r.p_permutation < .001 else f"= {r.p_permutation:.3f}"} ({int(r.n_perm)} permutations)\nbootstrap 95% for the cuts: {r.cut1_boot_lo:.1f} to {r.cut1_boot_hi:.1f} and {r.cut2_boot_lo:.1f} to {r.cut2_boot_hi:.1f}',
+    footnote(fig, T(f'two cut points, permutation P {"< 0.001" if r.p_permutation < .001 else f"= {r.p_permutation:.3f}"} ({int(r.n_perm)} permutations)\nbootstrap 95% for the cuts: {r.cut1_boot_lo:.1f} to {r.cut1_boot_hi:.1f} and {r.cut2_boot_lo:.1f} to {r.cut2_boot_hi:.1f}',
                          f'两切点选取,置换 P {"< 0.001" if r.p_permutation < .001 else f"= {r.p_permutation:.3f}"}({int(r.n_perm)} 次)\n切点 bootstrap 95%:{r.cut1_boot_lo:.1f} 至 {r.cut1_boot_hi:.1f} 与 {r.cut2_boot_lo:.1f} 至 {r.cut2_boot_hi:.1f}'),
-            fontsize=6.4, color='#555', va='top')
+            fs=6.4)
     ax.legend(frameon=False, loc='lower left', fontsize=6.2, bbox_to_anchor=(0, .0))
     save(fig, 'FigS5_three_bands')
 
