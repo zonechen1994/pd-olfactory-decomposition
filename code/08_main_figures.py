@@ -385,11 +385,11 @@ def fig4():
     ax.axhline(0,c='#34495E',lw=.9); ax.set_xticks(x)
     _labs=[T('UPSIT','总分'),T('OIS','OIS'),T('OMI','残差')]
     ax.set_xticklabels([f"{l}\n(n={m[k]['n']})\n"+"\n".join(f"{lb} {_PROWS[lb][i]}" for lb in _labs) for i,(k,l) in enumerate(keys)],fontsize=5.6)
-    ax.set_ylim(-.22,.20); ax.legend(frameon=False,ncol=3,loc='upper left',fontsize=7.4,bbox_to_anchor=(0,1.0))
+    ax.set_ylim(-.24,.26); ax.legend(frameon=False,ncol=3,loc='upper left',fontsize=7.4,bbox_to_anchor=(0,1.0))
     ax.text(.99,.02,T('bars: standardised beta with 95% CI','柱:标准化系数与 95% CI'),transform=ax.transAxes,ha='right',fontsize=6,color='#777',style='italic')
     ax.set_ylabel(T('Standardised β','标准化回归系数'))
     ax.axvspan(2.5,4.5,color='#F4F6F6',zorder=0)
-    ax.text(3.5,.185,T('negative control','阴性对照'),ha='center',fontsize=7,color='#777',style='italic')
+    ax.text(3.5,.243,T('negative control','阴性对照'),ha='center',fontsize=7,color='#777',style='italic')
     panel(ax,'a',T('Tau axis with NfL control (prodromal, n = 827)',
                    'tau 轴与 NfL 对照(前驱期,n=827)'),dx=-.055)
     # c 基因型抵消
@@ -410,7 +410,7 @@ def fig4():
         ax.axhline(0,c='#34495E',lw=1)
         lo,hi=min(v[1]['lo'] for v in vals),max(v[1]['hi'] for v in vals)
         pad=(hi-lo)*.35+.6; ax.set_ylim(lo-pad,hi+pad)
-        ax.text(.5,.03,T('OIS + OMI = total; bars are 95% CI of the adjusted difference','OIS + 残差 = 总分;误差线为校正后差值的 95% CI').replace('; ',', ').replace(';',','),transform=ax.transAxes,ha='center',
+        ax.text(.5,.03,T('OIS + OMI = UPSIT; bars are 95% CI of the adjusted difference','OIS + OMI = UPSIT;误差线为校正后差值的 95% CI').replace('; ',', ').replace(';',','),transform=ax.transAxes,ha='center',
                 fontsize=7,style='italic',color=GREY)
         ax.set_ylabel(T('GBA1 minus LRRK2 (points)','GBA1 减 LRRK2(分)'))
         panel(ax,'b' if k==0 else 'c', f'{ttl}\n({nn})',dx=-.22)
