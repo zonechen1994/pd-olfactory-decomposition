@@ -516,8 +516,25 @@ def build_doc(chan_slopes):
         '这些切点是对着结局选出的,属探索性。正文使用中位数,它不看结局,且与试验模拟中最低 50% 入组的规则一致。'))
     A('')
     # ---------------- Figures
+    # ---------------- Table 14 (proportional hazards check, supp_ph_test.py)
+    if 'ph_test' in J:
+        PH = J['ph_test']
+        A(T('### Supplementary Table 5. Proportional hazards check for the Cox models adjusting a score for age',
+            '### 补充表 5. 分数校正年龄的 Cox 模型的比例风险检验'))
+        A(T("Schoenfeld residual test (rank time transform, as implemented in the lifelines package) for the models reported in the main text, the score in its own units plus age in years, and for a fuller specification with sex and years of education (continuous terms z-scored). The global row sums the term statistics. Hazard ratios are per point (or per year) in the main-text models and per standard deviation in the fuller models.",
+            "对正文报告的模型(分数按原单位、年龄按年)以及加入性别与教育年限的完整模型(连续项 z 标准化)作 Schoenfeld 残差检验(秩时间变换,lifelines 软件包实现)。global 行为各项统计量之和。正文模型的风险比为每 1 分(或每 1 岁),完整模型为每 1 个标准差。"))
+        _pl = {'hyposmia group': T('Hyposmia group', '嗅觉减退组'), 'non-deficit stratum': T('Non-deficit stratum', '非缺损亚组')}
+        _tl = {'OIS': 'OIS', 'upsit': 'UPSIT', 'age': T('Age', '年龄'), 'sex_num': T('Sex', '性别'), 'educyrs': T('Education', '教育年限'), 'global': T('Global', '整体')}
+        rows = [[_pl[r['population']], r['model'].replace('upsit', 'UPSIT').replace('sex_num', 'sex').replace('educyrs', 'education'), _tl.get(r['term'], r['term']),
+                 '' if r['hr'] != r['hr'] else f"{r['hr']:.3f}", '' if r['p_cox'] != r['p_cox'] else pf(r['p_cox']),
+                 f"{r['ph_test_stat']:.2f}", pf(r['ph_p']), f"{r['n']:,} / {r['events']}"] for r in PH['rows']]
+        A(md_table([T('Population', '人群'), T('Model', '模型'), T('Term', '项'), 'HR', T('P (Cox)', 'P(Cox)'), T('Schoenfeld χ²', 'Schoenfeld χ²'), T('P (proportional hazards)', 'P(比例风险)'), T('n / conversions', 'n / 转化')], rows))
+        _min = min(r['ph_p'] for r in PH['rows'] if r['term'] != 'global'); _gmin = min(r['ph_p'] for r in PH['rows'] if r['term'] == 'global')
+        A(T(f'No term departs from proportional hazards at P < 0.05 (smallest term-level P = {_min:.3f}, smallest global P = {_gmin:.2f}).',
+            f'没有任何一项在 P<0.05 水平上偏离比例风险(最小的项水平 P = {_min:.3f},最小的整体 P = {_gmin:.2f})。'))
+        A('')
     # ---------------- Table 5
-    A(T('### Supplementary Table 5. Flagging by rank on the three readings, hyposmia group (1,003 / 68)', '### 补充表 5. 三种读法按排序标记,嗅觉减退组(1,003 / 68)'))
+    A(T('### Supplementary Table 6. Flagging by rank on the three readings, hyposmia group (1,003 / 68)', '### 补充表 6. 三种读法按排序标记,嗅觉减退组(1,003 / 68)'))
     rdl2 = {'UPSIT total': 'UPSIT', 'lowest putamen %expected': T('Lower putamen, % expected', '较低侧壳核 %预期'), 'OIS': 'OIS'}
     A(T('**a. Number that must be flagged to capture a given fraction of converters, by rank.**', '**a. 为捕获给定比例转化者所需标记的人数,按秩。**'))
     piv = C39B.pivot(index='target_sensitivity', columns='reading', values=['n_flagged', 'frac_flagged'])
@@ -541,7 +558,7 @@ def build_doc(chan_slopes):
         '若只按秩读,OIS 在每一个工作点均占优,欲覆盖 50%、70%、80% 的转化者需标记 132、247 与 326 人,而 UPSIT 需 276、458 与 525 人,较低侧壳核 %预期需 158、348 与 537 人。影像在高灵敏度端反而低于 UPSIT(537 对 525),与其临床分档在本队列不单调是同一现象。这些切点是对着结局选出的,不能作为临床阈值,中位数仍为主划分。'))
     A('')
     # ---------------- Table 8
-    A(T('### Supplementary Table 6. Test-retest reliability', '### 补充表 6. 重测信度'))
+    A(T('### Supplementary Table 7. Test-retest reliability', '### 补充表 7. 重测信度'))
     rows = [['UPSIT', f"{ICC['upsit_r']:.3f}", f"{ICC['upsit_icc']:.3f}"], [T('OMI (residual)', 'OMI(残差)'), f"{ICC['omi_r']:.3f}", f"{ICC['omi_icc']:.3f}"]]
     A(md_table([T('Score', '分数'), T('First against second visit r', '首次对第二次访视 r'), 'ICC(1,1)'], rows))
     # 分组 ICC 现由 notebook §12 写入总账并同名落盘,SWEDD 已在源头剔除,此处不再补丁式过滤
@@ -557,7 +574,7 @@ def build_doc(chan_slopes):
         f'{ICC["n_pairs"]:,} 名至少两次 UPSIT 且有 OIS 的参与者。残差方差约四分之三跨访视稳定,故病理检验中较小的 R² 反映来源多样而非噪声。'))
     A('')
     # ---------------- Table 9
-    A(T('### Supplementary Table 7. Cerebrospinal fluid and blood analytes against the three scores', '### 补充表 7. 脑脊液与血液分析物对三个分数'))
+    A(T('### Supplementary Table 8. Cerebrospinal fluid and blood analytes against the three scores', '### 补充表 8. 脑脊液与血液分析物对三个分数'))
     A(T('Standardised regression coefficients adjusted for age, sex and years of education. The q value is Benjamini–Hochberg across analytes within cohort.', '校正年龄、性别与教育年限的标准化回归系数;q 为队列内跨分析物的 Benjamini–Hochberg 校正。'))
     alab = {'CSF pTau181/ABeta42': 'CSF pTau181/Aβ42', 'CSF pTau181': 'CSF pTau181', 'CSF eMTBR-TAU243': 'CSF eMTBR-tau243', 'CSF ABeta42': 'CSF Aβ42', 'Serum NfL': T('Serum NfL', '血清 NfL'), 'Plasma NfL': T('Plasma NfL', '血浆 NfL'), 'CSF NfL': 'CSF NfL'}
     rows = []
@@ -579,7 +596,7 @@ def build_doc(chan_slopes):
         f'两个 tau 平台在同一批人上运行(平台间 Spearman ρ = {PC["spearman_prodromal"]:.3f},n = {PC["n_prodromal"]}),跨平台一致是一致性而非独立重复。原始总分与比值的相关略强于残差,这是归属结果而非残差胜过总分。'))
     A('')
     # ---------------- Table 10
-    A(T('### Supplementary Table 8. Genotype contrast in full, its premise, and both tests on one metric', '### 补充表 8. 基因型对比全表、其前提,以及两项检验换算到同一个量'))
+    A(T('### Supplementary Table 9. Genotype contrast in full, its premise, and both tests on one metric', '### 补充表 9. 基因型对比全表、其前提,以及两项检验换算到同一个量'))
     GP = J['genotype_saa_premise']
     A(T('**a. Premise, seed-amplification positivity in diagnosed Parkinson\'s disease by genotype.**', '**a. 前提:已确诊帕金森病中按基因型的种子扩增阳性率。**'))
     # the ledger stores the PPMI subgroup label 'GBA', displayed here as the current symbol GBA1
@@ -600,7 +617,7 @@ def build_doc(chan_slopes):
         'UPSIT 列显示总分在两项测量上的行为与残差相同;这两项检验证明的是分解把两种生物学分开了,不是残差胜过总分。'))
     A('')
     # ---------------- Table 13
-    A(T('### Supplementary Table 9. Prodromal seed-amplification data: tested and not usable', '### 补充表 9. 前驱期种子扩增数据:已检验,不可用'))
+    A(T('### Supplementary Table 10. Prodromal seed-amplification data: tested and not usable', '### 补充表 10. 前驱期种子扩增数据:已检验,不可用'))
     PS = J['prodromal_saa']
     rows = [[a['assay'], a['cohort'], a['n'], a['positive'], f"{a['rate']*100:.0f}%"] for a in PS['assay_quality']]
     A(T('**a. Positivity of the skin assay by cohort (PPMI project 259).**', '**a. 皮肤检测按队列的阳性率(PPMI 项目 259)。**'))
@@ -615,30 +632,13 @@ def build_doc(chan_slopes):
         f'皮肤检测在已确诊疾病中阳性率仅约一半,而验证过的检测报告 92.7% [PMID 38506839],且前驱期阳性率高于已确诊者,故敏感度不足。脑脊液系列的嗅觉减退队列仅 {PS["csf"]["hyposmia_arm_n"]} 人、{PS["csf"]["hyposmia_arm_positive"]} 例阳性,检出 AUC 0.70 的功效 {PS["csf"]["hyposmia_arm_power_auc070"]*100:.0f}%,其在已确诊疾病中的阳性率为 {PS["csf"]["pd_positivity"]*100:.0f}%(主检测 86%)。残差与突触核蛋白病理的关联因此仅在已确诊队列中成立。'))
     A('')
     # ---------------- Table 14
-    A(T('### Supplementary Table 10. Age and the three scores', '### 补充表 10. 年龄与三个分数'))
+    A(T('### Supplementary Table 11. Age and the three scores', '### 补充表 11. 年龄与三个分数'))
     AA = J['age_absorption']['correlations']
     rows = [[r['cohort'], f"{r['n']:,}", '' if r['r_age_upsit'] is None else f"{r['r_age_upsit']:+.3f}", '' if r['r_age_ois'] is None else f"{r['r_age_ois']:+.3f}", f"{r['r_age_omi']:+.3f}", pf(r['p_age_omi'])] for r in AA]
     A(md_table([T('Cohort', '队列'), 'n', 'r(age, UPSIT)', 'r(age, OIS)', 'r(age, OMI)', T('P for OMI', 'OMI 的 P')], rows))
     A(T('Age is absorbed in the training cohorts but not in the applied prodromal cohort, so every analysis involving the residual is adjusted for age. Sinonasal disease, head trauma, smoking and post-infectious dysfunction have no field in PPMI.',
         '年龄在训练队列中被吸收,在应用的前驱期队列中未被吸收,故所有涉及残差的分析均校正年龄。鼻窦疾病、颅脑外伤、吸烟与感染后嗅觉障碍在 PPMI 中无字段。'))
     A('')
-    # ---------------- Table 14 (proportional hazards check, supp_ph_test.py)
-    if 'ph_test' in J:
-        PH = J['ph_test']
-        A(T('### Supplementary Table 11. Proportional hazards check for the Cox models adjusting a score for age',
-            '### 补充表 11. 分数校正年龄的 Cox 模型的比例风险检验'))
-        A(T("Schoenfeld residual test (rank time transform, as implemented in the lifelines package) for the models reported in the main text, the score in its own units plus age in years, and for a fuller specification with sex and years of education (continuous terms z-scored). The global row sums the term statistics. Hazard ratios are per point (or per year) in the main-text models and per standard deviation in the fuller models.",
-            "对正文报告的模型(分数按原单位、年龄按年)以及加入性别与教育年限的完整模型(连续项 z 标准化)作 Schoenfeld 残差检验(秩时间变换,lifelines 软件包实现)。global 行为各项统计量之和。正文模型的风险比为每 1 分(或每 1 岁),完整模型为每 1 个标准差。"))
-        _pl = {'hyposmia group': T('Hyposmia group', '嗅觉减退组'), 'non-deficit stratum': T('Non-deficit stratum', '非缺损亚组')}
-        _tl = {'OIS': 'OIS', 'upsit': 'UPSIT', 'age': T('Age', '年龄'), 'sex_num': T('Sex', '性别'), 'educyrs': T('Education', '教育年限'), 'global': T('Global', '整体')}
-        rows = [[_pl[r['population']], r['model'].replace('upsit', 'UPSIT').replace('sex_num', 'sex').replace('educyrs', 'education'), _tl.get(r['term'], r['term']),
-                 '' if r['hr'] != r['hr'] else f"{r['hr']:.3f}", '' if r['p_cox'] != r['p_cox'] else pf(r['p_cox']),
-                 f"{r['ph_test_stat']:.2f}", pf(r['ph_p']), f"{r['n']:,} / {r['events']}"] for r in PH['rows']]
-        A(md_table([T('Population', '人群'), T('Model', '模型'), T('Term', '项'), 'HR', T('P (Cox)', 'P(Cox)'), T('Schoenfeld χ²', 'Schoenfeld χ²'), T('P (proportional hazards)', 'P(比例风险)'), T('n / conversions', 'n / 转化')], rows))
-        _min = min(r['ph_p'] for r in PH['rows'] if r['term'] != 'global'); _gmin = min(r['ph_p'] for r in PH['rows'] if r['term'] == 'global')
-        A(T(f'No term departs from proportional hazards at P < 0.05 (smallest term-level P = {_min:.3f}, smallest global P = {_gmin:.2f}).',
-            f'没有任何一项在 P<0.05 水平上偏离比例风险(最小的项水平 P = {_min:.3f},最小的整体 P = {_gmin:.2f})。'))
-        A('')
     A(T('## Supplementary Figures', '## 补充图'))
     d = outdir()          # 图只有英文一套,两语种的 md 都引用同一路径
     A(T('**Supplementary Fig. 1 | Participant flow.** Training cohort (Parkinson\'s disease and healthy controls with both tests) at the top left. Prodromal cohort through the survival exclusions on the right, then split into the hyposmia group and the RBD and variant-carrier group, and the hyposmia group split at the 65% PARS threshold. Numbers as in Methods and Supplementary Table 2.',

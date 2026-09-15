@@ -222,7 +222,50 @@ These cut points are outcome-selected and exploratory. The main text uses the me
 
 
 
-### Supplementary Table 5. Flagging by rank on the three readings, hyposmia group (1,003 / 68)
+### Supplementary Table 5. Proportional hazards check for the Cox models adjusting a score for age
+
+Schoenfeld residual test (rank time transform, as implemented in the lifelines package) for the models reported in the main text, the score in its own units plus age in years, and for a fuller specification with sex and years of education (continuous terms z-scored). The global row sums the term statistics. Hazard ratios are per point (or per year) in the main-text models and per standard deviation in the fuller models.
+
+| Population | Model | Term | HR | P (Cox) | Schoenfeld χ² | P (proportional hazards) | n / conversions |
+|---|---|---|---|---|---|---|---|
+| Hyposmia group | OIS + age (per point / year) | OIS | 0.683 | 1.3 × 10<sup>−17</sup> | 0.07 | 0.79 | 1,003 / 68 |
+| Hyposmia group | OIS + age (per point / year) | Age | 1.055 | 0.03 | 0.53 | 0.47 | 1,003 / 68 |
+| Hyposmia group | OIS + age (per point / year) | Global |  |  | 0.60 | 0.74 | 1,003 / 68 |
+| Hyposmia group | OIS + age + sex + education (z-scored) | OIS | 0.243 | 1.3 × 10<sup>−15</sup> | 0.02 | 0.89 | 999 / 68 |
+| Hyposmia group | OIS + age + sex + education (z-scored) | Age | 1.291 | 0.05 | 0.25 | 0.62 | 999 / 68 |
+| Hyposmia group | OIS + age + sex + education (z-scored) | Education | 1.155 | 0.25 | 0.30 | 0.58 | 999 / 68 |
+| Hyposmia group | OIS + age + sex + education (z-scored) | Sex | 0.712 | 0.30 | 0.19 | 0.66 | 999 / 68 |
+| Hyposmia group | OIS + age + sex + education (z-scored) | Global |  |  | 0.76 | 0.94 | 999 / 68 |
+| Non-deficit stratum | OIS + age (per point / year) | OIS | 0.792 | 0.006 | 1.71 | 0.19 | 738 / 22 |
+| Non-deficit stratum | OIS + age (per point / year) | Age | 1.161 | 1.1 × 10<sup>−4</sup> | 0.01 | 0.94 | 738 / 22 |
+| Non-deficit stratum | OIS + age (per point / year) | Global |  |  | 1.71 | 0.42 | 738 / 22 |
+| Non-deficit stratum | OIS + age + sex + education (z-scored) | OIS | 0.649 | 0.13 | 0.45 | 0.50 | 734 / 22 |
+| Non-deficit stratum | OIS + age + sex + education (z-scored) | Age | 2.163 | 2.9 × 10<sup>−4</sup> | 0.05 | 0.82 | 734 / 22 |
+| Non-deficit stratum | OIS + age + sex + education (z-scored) | Education | 1.052 | 0.83 | 0.20 | 0.65 | 734 / 22 |
+| Non-deficit stratum | OIS + age + sex + education (z-scored) | Sex | 2.957 | 0.09 | 1.09 | 0.30 | 734 / 22 |
+| Non-deficit stratum | OIS + age + sex + education (z-scored) | Global |  |  | 1.79 | 0.77 | 734 / 22 |
+| Hyposmia group | UPSIT + age (per point / year) | Age | 1.101 | 7.9 × 10<sup>−6</sup> | 1.15 | 0.28 | 1,003 / 68 |
+| Hyposmia group | UPSIT + age (per point / year) | UPSIT | 0.906 | 1.0 × 10<sup>−6</sup> | 0.67 | 0.41 | 1,003 / 68 |
+| Hyposmia group | UPSIT + age (per point / year) | Global |  |  | 1.82 | 0.40 | 1,003 / 68 |
+| Hyposmia group | UPSIT + age + sex + education (z-scored) | Age | 1.567 | 1.4 × 10<sup>−4</sup> | 0.94 | 0.33 | 999 / 68 |
+| Hyposmia group | UPSIT + age + sex + education (z-scored) | Education | 1.144 | 0.30 | 0.07 | 0.80 | 999 / 68 |
+| Hyposmia group | UPSIT + age + sex + education (z-scored) | Sex | 1.811 | 0.04 | 0.14 | 0.71 | 999 / 68 |
+| Hyposmia group | UPSIT + age + sex + education (z-scored) | UPSIT | 0.548 | 1.3 × 10<sup>−4</sup> | 0.56 | 0.46 | 999 / 68 |
+| Hyposmia group | UPSIT + age + sex + education (z-scored) | Global |  |  | 1.70 | 0.79 | 999 / 68 |
+| Non-deficit stratum | UPSIT + age (per point / year) | Age | 1.175 | 1.8 × 10<sup>−5</sup> | 0.13 | 0.72 | 738 / 22 |
+| Non-deficit stratum | UPSIT + age (per point / year) | UPSIT | 0.896 | 0.004 | 3.78 | 0.05 | 738 / 22 |
+| Non-deficit stratum | UPSIT + age (per point / year) | Global |  |  | 3.91 | 0.14 | 738 / 22 |
+| Non-deficit stratum | UPSIT + age + sex + education (z-scored) | Age | 2.188 | 1.9 × 10<sup>−4</sup> | 0.21 | 0.65 | 734 / 22 |
+| Non-deficit stratum | UPSIT + age + sex + education (z-scored) | Education | 1.072 | 0.77 | 0.35 | 0.56 | 734 / 22 |
+| Non-deficit stratum | UPSIT + age + sex + education (z-scored) | Sex | 2.949 | 0.07 | 0.37 | 0.55 | 734 / 22 |
+| Non-deficit stratum | UPSIT + age + sex + education (z-scored) | UPSIT | 0.543 | 0.05 | 1.74 | 0.19 | 734 / 22 |
+| Non-deficit stratum | UPSIT + age + sex + education (z-scored) | Global |  |  | 2.66 | 0.62 | 734 / 22 |
+
+No term departs from proportional hazards at P < 0.05 (smallest term-level P = 0.052, smallest global P = 0.14).
+
+
+
+### Supplementary Table 6. Flagging by rank on the three readings, hyposmia group (1,003 / 68)
 
 **a. Number that must be flagged to capture a given fraction of converters, by rank.**
 
@@ -247,7 +290,7 @@ Read by rank alone, OIS dominates at every operating point, needing 132, 247 and
 
 
 
-### Supplementary Table 6. Test-retest reliability
+### Supplementary Table 7. Test-retest reliability
 
 | Score | First against second visit r | ICC(1,1) |
 |---|---|---|
@@ -270,7 +313,7 @@ Within the three prodromal recruitment cohorts the residual's ICC lies between 0
 
 
 
-### Supplementary Table 7. Cerebrospinal fluid and blood analytes against the three scores
+### Supplementary Table 8. Cerebrospinal fluid and blood analytes against the three scores
 
 Standardised regression coefficients adjusted for age, sex and years of education. The q value is Benjamini–Hochberg across analytes within cohort.
 
@@ -311,7 +354,7 @@ The two tau platforms were run on the same participants (Spearman ρ = 0.825 bet
 
 
 
-### Supplementary Table 8. Genotype contrast in full, its premise, and both tests on one metric
+### Supplementary Table 9. Genotype contrast in full, its premise, and both tests on one metric
 
 **a. Premise, seed-amplification positivity in diagnosed Parkinson's disease by genotype.**
 
@@ -353,7 +396,7 @@ The UPSIT column shows that the total behaves like the residual on both measurem
 
 
 
-### Supplementary Table 9. Prodromal seed-amplification data: tested and not usable
+### Supplementary Table 10. Prodromal seed-amplification data: tested and not usable
 
 **a. Positivity of the skin assay by cohort (PPMI project 259).**
 
@@ -385,7 +428,7 @@ The skin assay is positive in only about half of diagnosed disease against 92.7%
 
 
 
-### Supplementary Table 10. Age and the three scores
+### Supplementary Table 11. Age and the three scores
 
 | Cohort | n | r(age, UPSIT) | r(age, OIS) | r(age, OMI) | P for OMI |
 |---|---|---|---|---|---|
@@ -395,49 +438,6 @@ The skin assay is positive in only about half of diagnosed disease against 92.7%
 | Hyposmia stratum | 1,556 |  |  | −0.191 | 3.0 × 10<sup>−14</sup> |
 
 Age is absorbed in the training cohorts but not in the applied prodromal cohort, so every analysis involving the residual is adjusted for age. Sinonasal disease, head trauma, smoking and post-infectious dysfunction have no field in PPMI.
-
-
-
-### Supplementary Table 11. Proportional hazards check for the Cox models adjusting a score for age
-
-Schoenfeld residual test (rank time transform, as implemented in the lifelines package) for the models reported in the main text, the score in its own units plus age in years, and for a fuller specification with sex and years of education (continuous terms z-scored). The global row sums the term statistics. Hazard ratios are per point (or per year) in the main-text models and per standard deviation in the fuller models.
-
-| Population | Model | Term | HR | P (Cox) | Schoenfeld χ² | P (proportional hazards) | n / conversions |
-|---|---|---|---|---|---|---|---|
-| Hyposmia group | OIS + age (per point / year) | OIS | 0.683 | 1.3 × 10<sup>−17</sup> | 0.07 | 0.79 | 1,003 / 68 |
-| Hyposmia group | OIS + age (per point / year) | Age | 1.055 | 0.03 | 0.53 | 0.47 | 1,003 / 68 |
-| Hyposmia group | OIS + age (per point / year) | Global |  |  | 0.60 | 0.74 | 1,003 / 68 |
-| Hyposmia group | OIS + age + sex + education (z-scored) | OIS | 0.243 | 1.3 × 10<sup>−15</sup> | 0.02 | 0.89 | 999 / 68 |
-| Hyposmia group | OIS + age + sex + education (z-scored) | Age | 1.291 | 0.05 | 0.25 | 0.62 | 999 / 68 |
-| Hyposmia group | OIS + age + sex + education (z-scored) | Education | 1.155 | 0.25 | 0.30 | 0.58 | 999 / 68 |
-| Hyposmia group | OIS + age + sex + education (z-scored) | Sex | 0.712 | 0.30 | 0.19 | 0.66 | 999 / 68 |
-| Hyposmia group | OIS + age + sex + education (z-scored) | Global |  |  | 0.76 | 0.94 | 999 / 68 |
-| Non-deficit stratum | OIS + age (per point / year) | OIS | 0.792 | 0.006 | 1.71 | 0.19 | 738 / 22 |
-| Non-deficit stratum | OIS + age (per point / year) | Age | 1.161 | 1.1 × 10<sup>−4</sup> | 0.01 | 0.94 | 738 / 22 |
-| Non-deficit stratum | OIS + age (per point / year) | Global |  |  | 1.71 | 0.42 | 738 / 22 |
-| Non-deficit stratum | OIS + age + sex + education (z-scored) | OIS | 0.649 | 0.13 | 0.45 | 0.50 | 734 / 22 |
-| Non-deficit stratum | OIS + age + sex + education (z-scored) | Age | 2.163 | 2.9 × 10<sup>−4</sup> | 0.05 | 0.82 | 734 / 22 |
-| Non-deficit stratum | OIS + age + sex + education (z-scored) | Education | 1.052 | 0.83 | 0.20 | 0.65 | 734 / 22 |
-| Non-deficit stratum | OIS + age + sex + education (z-scored) | Sex | 2.957 | 0.09 | 1.09 | 0.30 | 734 / 22 |
-| Non-deficit stratum | OIS + age + sex + education (z-scored) | Global |  |  | 1.79 | 0.77 | 734 / 22 |
-| Hyposmia group | UPSIT + age (per point / year) | Age | 1.101 | 7.9 × 10<sup>−6</sup> | 1.15 | 0.28 | 1,003 / 68 |
-| Hyposmia group | UPSIT + age (per point / year) | UPSIT | 0.906 | 1.0 × 10<sup>−6</sup> | 0.67 | 0.41 | 1,003 / 68 |
-| Hyposmia group | UPSIT + age (per point / year) | Global |  |  | 1.82 | 0.40 | 1,003 / 68 |
-| Hyposmia group | UPSIT + age + sex + education (z-scored) | Age | 1.567 | 1.4 × 10<sup>−4</sup> | 0.94 | 0.33 | 999 / 68 |
-| Hyposmia group | UPSIT + age + sex + education (z-scored) | Education | 1.144 | 0.30 | 0.07 | 0.80 | 999 / 68 |
-| Hyposmia group | UPSIT + age + sex + education (z-scored) | Sex | 1.811 | 0.04 | 0.14 | 0.71 | 999 / 68 |
-| Hyposmia group | UPSIT + age + sex + education (z-scored) | UPSIT | 0.548 | 1.3 × 10<sup>−4</sup> | 0.56 | 0.46 | 999 / 68 |
-| Hyposmia group | UPSIT + age + sex + education (z-scored) | Global |  |  | 1.70 | 0.79 | 999 / 68 |
-| Non-deficit stratum | UPSIT + age (per point / year) | Age | 1.175 | 1.8 × 10<sup>−5</sup> | 0.13 | 0.72 | 738 / 22 |
-| Non-deficit stratum | UPSIT + age (per point / year) | UPSIT | 0.896 | 0.004 | 3.78 | 0.05 | 738 / 22 |
-| Non-deficit stratum | UPSIT + age (per point / year) | Global |  |  | 3.91 | 0.14 | 738 / 22 |
-| Non-deficit stratum | UPSIT + age + sex + education (z-scored) | Age | 2.188 | 1.9 × 10<sup>−4</sup> | 0.21 | 0.65 | 734 / 22 |
-| Non-deficit stratum | UPSIT + age + sex + education (z-scored) | Education | 1.072 | 0.77 | 0.35 | 0.56 | 734 / 22 |
-| Non-deficit stratum | UPSIT + age + sex + education (z-scored) | Sex | 2.949 | 0.07 | 0.37 | 0.55 | 734 / 22 |
-| Non-deficit stratum | UPSIT + age + sex + education (z-scored) | UPSIT | 0.543 | 0.05 | 1.74 | 0.19 | 734 / 22 |
-| Non-deficit stratum | UPSIT + age + sex + education (z-scored) | Global |  |  | 2.66 | 0.62 | 734 / 22 |
-
-No term departs from proportional hazards at P < 0.05 (smallest term-level P = 0.052, smallest global P = 0.14).
 
 
 
