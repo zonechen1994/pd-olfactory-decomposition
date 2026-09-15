@@ -112,7 +112,7 @@ Pooled r = 0.417 (n = 2,441).
 | 43 | site_63 | 20 | 7 | 13 | 65% | 0.706 | 5.1 × 10<sup>−4</sup> | 5.08 |
 | 44 | site_20 | 16 | 14 | 2 | 12% | 0.709 | 0.002 | 7.82 |
 
-The 44 centres are numbered 1 to 44 in order of r, and the centre column gives the PPMI site code. Across the 44 centres the correlation rises with the control fraction (r = 0.521, P = 2.8 × 10<sup>−4</sup>) and is unrelated to centre size (r = 0.140, P = 0.36). Median centre size 26. The 35 centres that enrolled controls as well as patients reach a mean r of 0.493 against 0.204 in the 9 that enrolled patients only (Welch P = 8.4 × 10<sup>−4</sup>), and the two negative centres are both patient-dominated, so the UPSIT total and the scan each vary over a narrow range there and a within-centre correlation carries little information. 30 of 44 reach P < 0.05, against 26.5 expected under a true correlation of 0.434 at the observed centre sizes.
+The 44 centres are numbered 1 to 44 in order of r, and the centre column gives the PPMI site code. Across the 44 centres the correlation rises with the control fraction (r = 0.521, P = 2.8 × 10<sup>−4</sup>) and is unrelated to centre size (r = 0.140, P = 0.36). Median centre size 26. The 35 centres that enrolled controls as well as patients reach a mean r of 0.493 against 0.204 in the 9 that enrolled patients only (Welch P = 8.4 × 10<sup>−4</sup>), and the two negative centres are both patient-dominated, so UPSIT and the scan each vary over a narrow range there and a within-centre correlation carries little information. 30 of 44 reach P < 0.05, against 26.5 expected under a true correlation of 0.434 at the observed centre sizes.
 
 
 
@@ -151,11 +151,11 @@ Survival cohort after the exclusions in Methods (1,759 / 152). The RBD and varia
 
 
 
-Dichotomisation costs 0.082 of concordance for the UPSIT total and 0.035 for imaging in the whole prodromal cohort, and 0.118 against 0.013 within the hyposmia group, where the olfactory flag is nearly constant. Descriptive, with no paired test.
+Dichotomisation costs 0.082 of concordance for UPSIT and 0.035 for imaging in the whole prodromal cohort, and 0.118 against 0.013 within the hyposmia group, where the olfactory flag is nearly constant. Descriptive, with no paired test.
 
 **b. Five readings in five strata, including the residual.**
 
-| Stratum | Participants / conversions | UPSIT total | OIS | OMI (residual) | Single-region putamen | Lower putamen, % expected |
+| Stratum | Participants / conversions | UPSIT | OIS | OMI (residual) | Single-region putamen | Lower putamen, % expected |
 |---|---|---|---|---|---|---|
 | All prodromal | 1,759 / 152 | 0.700 (0.653–0.745) | 0.799 (0.753–0.843) | 0.583 (0.536–0.632) | 0.753 (0.706–0.804) | 0.750 (0.700–0.798) |
 | Hyposmia group | 1,003 / 68 | 0.698 (0.633–0.760) | 0.835 (0.774–0.895) | 0.539 (0.473–0.611)\* | 0.776 (0.690–0.848) | 0.761 (0.674–0.837) |
@@ -163,7 +163,7 @@ Dichotomisation costs 0.082 of concordance for the UPSIT total and 0.035 for ima
 | Hyposmia, no DAT deficit | 738 / 22 | 0.690 (0.562–0.813) | 0.719 (0.567–0.884) | 0.621 (0.504–0.733) | 0.517 (0.361–0.719)\* | 0.424 (0.276–0.577)\* |
 | RBD and variant-carrier | 756 / 84 | 0.700 (0.635–0.760) | 0.766 (0.704–0.823) | 0.590 (0.516–0.659) | 0.737 (0.664–0.799) | 0.746 (0.681–0.804) |
 
-\* interval includes 0.5. The residual is at chance in the hyposmia group and in its deficit stratum only. In the whole cohort and in the RBD and variant-carrier group its interval excludes 0.5, and it never approaches the UPSIT total. All values come from one bootstrap run.
+\* interval includes 0.5. The residual is at chance in the hyposmia group and in its deficit stratum only. In the whole cohort and in the RBD and variant-carrier group its interval excludes 0.5, and it never approaches UPSIT. All values come from one bootstrap run.
 
 
 
@@ -179,7 +179,7 @@ Dichotomisation costs 0.082 of concordance for the UPSIT total and 0.035 for ima
 | OIS, SBR-only | ridge on UPSIT in PD + HC, transferred unchanged | 0.820 | +0.016 (−0.006, +0.038) | 0.08 |
 | OIS, full | ridge on UPSIT in PD + HC, transferred unchanged | 0.835 |  |  |
 
-1,003 participants, 68 conversions, 1,000 paired bootstrap resamples. OIS exceeds the UPSIT total and the binary flag, is tied with the conversion-supervised 33-region model plus demographics and with its own imaging-only version, and reaches nominal significance against the 33 regions alone. The supervised models were cross-validated within this cohort and would be expected to fall in a new cohort. OIS used no conversion label.
+1,003 participants, 68 conversions, 1,000 paired bootstrap resamples. OIS exceeds UPSIT and the binary flag, is tied with the conversion-supervised 33-region model plus demographics and with its own imaging-only version, and reaches nominal significance against the 33 regions alone. The supervised models were cross-validated within this cohort and would be expected to fall in a new cohort. OIS used no conversion label.
 
 
 
@@ -192,10 +192,10 @@ Dichotomisation costs 0.082 of concordance for the UPSIT total and 0.035 for ima
 | Population | Reading | Median | At or below, conversions / participants | 2-year conversion (95% CI) | Above, conversions / participants | 2-year conversion (95% CI) | Log-rank P |
 |---|---|---|---|---|---|---|---|
 | Hyposmia group | OIS | 28.96 | 61 / 502 | 11.0% (8.0–15.0) | 7 / 501 | 0.9% (0.4–2.5) | 1.9 × 10<sup>−13</sup> |
-| Hyposmia group | UPSIT total | 22.00 | 55 / 533 | 10.0% (7.1–13.9) | 13 / 470 | 1.9% (0.9–3.9) | 1.3 × 10<sup>−8</sup> |
+| Hyposmia group | UPSIT | 22.00 | 55 / 533 | 10.0% (7.1–13.9) | 13 / 470 | 1.9% (0.9–3.9) | 1.3 × 10<sup>−8</sup> |
 | Hyposmia group | Lower putamen, % expected | 76.49 | 54 / 502 | 9.5% (6.7–13.3) | 14 / 501 | 2.5% (1.3–4.7) | 9.5 × 10<sup>−6</sup> |
 | Non-deficit stratum | OIS | 29.93 | 16 / 369 | 3.5% (1.7–7.0) | 6 / 369 | 0.9% (0.3–2.8) | 0.01 |
-| Non-deficit stratum | UPSIT total | 23.00 | 19 / 405 | 3.4% (1.7–6.5) | 3 / 333 | 0.8% (0.2–3.3) | 1.6 × 10<sup>−4</sup> |
+| Non-deficit stratum | UPSIT | 23.00 | 19 / 405 | 3.4% (1.7–6.5) | 3 / 333 | 0.8% (0.2–3.3) | 1.6 × 10<sup>−4</sup> |
 | Non-deficit stratum | Lower putamen, % expected | 80.98 | 12 / 369 | 2.4% (1.0–5.8) | 10 / 369 | 2.0% (0.9–4.3) | 0.74 |
 
 **b. Outcome-blind division at the tertile boundary (lowest third against upper two thirds).**
@@ -203,19 +203,19 @@ Dichotomisation costs 0.082 of concordance for the UPSIT total and 0.035 for ima
 | Population | Reading | Lowest third, conversions / participants | 2-year conversion (95% CI) | Upper two thirds, conversions / participants | 2-year conversion (95% CI) | Two-group log-rank P | Three-tertile log-rank P | Middle against highest tertile P |
 |---|---|---|---|---|---|---|---|---|
 | Hyposmia group | OIS | 56 / 335 | 15.3% (11.0–21.0) | 12 / 668 | 1.3% (0.6–2.8) | 1.3 × 10<sup>−20</sup> | 1.3 × 10<sup>−19</sup> | 0.42 |
-| Hyposmia group | UPSIT total | 41 / 372 | 9.9% (6.6–14.6) | 27 / 631 | 3.7% (2.3–6.0) | 1.1 × 10<sup>−5</sup> | 2.0 × 10<sup>−7</sup> | 1.0 × 10<sup>−5</sup> |
+| Hyposmia group | UPSIT | 41 / 372 | 9.9% (6.6–14.6) | 27 / 631 | 3.7% (2.3–6.0) | 1.1 × 10<sup>−5</sup> | 2.0 × 10<sup>−7</sup> | 1.0 × 10<sup>−5</sup> |
 | Non-deficit stratum | OIS | 14 / 246 | 4.6% (2.2–9.7) | 8 / 492 | 1.0% (0.4–2.5) | 2.5 × 10<sup>−4</sup> | 7.7 × 10<sup>−4</sup> | 0.09 |
-| Non-deficit stratum | UPSIT total | 14 / 254 | 3.6% (1.6–8.1) | 8 / 484 | 1.4% (0.6–3.5) | 0.002 | 0.002 | 0.07 |
+| Non-deficit stratum | UPSIT | 14 / 254 | 3.6% (1.6–8.1) | 8 / 484 | 1.4% (0.6–3.5) | 0.002 | 0.002 | 0.07 |
 
 **c. Selection of pairs of cut points (10th to 90th percentile grid in 2.5-percentile steps, each group at least 15% of the population), retaining the pair with the largest three-group log-rank statistic among pairs whose three groups all differ pairwise at P < 0.05. The permutation P repeats the unconstrained selection on 1,000 outcome permutations; cut-point intervals are from 200 bootstrap resamples.**
 
 | Population | Reading | Cut points (bootstrap 95%) | Share of population, low / mid / high | Conversions | 2-year conversion | χ², permutation P | Pairwise P, low–mid / mid–high / low–high |
 |---|---|---|---|---|---|---|---|
 | Hyposmia group | OIS | 24.91 (24.4–25.4) / 27.24 (27.1–28.8) | 15% / 20% / 65% | 39 / 19 / 10 | 22.7% / 9.6% / 0.9% | 124.0, < 0.001 | 2.3 × 10<sup>−4</sup> / 6.0 × 10<sup>−10</sup> / 4.7 × 10<sup>−30</sup> |
-| Hyposmia group | UPSIT total | 22.00 (13.0–23.0) / 28.00 (22.0–28.0) | 53% / 27% / 20% | 55 / 12 / 1 | 10.0% / 3.1% / 0.5% | 35.5, < 0.001 | 5.1 × 10<sup>−4</sup> / 0.007 / 1.6 × 10<sup>−7</sup> |
+| Hyposmia group | UPSIT | 22.00 (13.0–23.0) / 28.00 (22.0–28.0) | 53% / 27% / 20% | 55 / 12 / 1 | 10.0% / 3.1% / 0.5% | 35.5, < 0.001 | 5.1 × 10<sup>−4</sup> / 0.007 / 1.6 × 10<sup>−7</sup> |
 | Hyposmia group | Lower putamen, % expected | 55.41 (53.2–65.2) / 72.33 (66.7–92.2) | 15% / 25% / 60% | 32 / 19 / 17 | 22.9% / 6.0% / 2.0% | 96.3, < 0.001 | 6.6 × 10<sup>−7</sup> / 2.9 × 10<sup>−4</sup> / 2.7 × 10<sup>−22</sup> |
 | Non-deficit stratum | OIS | no pair separates all three groups |  |  |  |  |  |
-| Non-deficit stratum | UPSIT total | 17.00 (14.0–20.0) / 26.00 (19.0–30.0) | 31% / 38% / 31% | 13 / 8 / 1 | 3.1% / 3.0% / 0.5% | 14.6, 0.02 | 0.03 / 0.05 / 3.4 × 10<sup>−4</sup> |
+| Non-deficit stratum | UPSIT | 17.00 (14.0–20.0) / 26.00 (19.0–30.0) | 31% / 38% / 31% | 13 / 8 / 1 | 3.1% / 3.0% / 0.5% | 14.6, 0.02 | 0.03 / 0.05 / 3.4 × 10<sup>−4</sup> |
 | Non-deficit stratum | Lower putamen, % expected | no pair separates all three groups |  |  |  |  |  |
 
 These cut points are outcome-selected and exploratory. The main text uses the median, which is outcome-blind and coincides with the lowest-50% enrolment rule of the trial simulation.
@@ -226,7 +226,7 @@ These cut points are outcome-selected and exploratory. The main text uses the me
 
 **a. Number that must be flagged to capture a given fraction of converters, by rank.**
 
-| Converters captured | UPSIT total | Lower putamen, % expected | OIS |
+| Converters captured | UPSIT | Lower putamen, % expected | OIS |
 |---|---|---|---|
 | 50% | 276 (28%) | 158 (16%) | 132 (13%) |
 | 60% | 367 (37%) | 216 (22%) | 195 (19%) |
@@ -236,14 +236,14 @@ These cut points are outcome-selected and exploratory. The main text uses the me
 
 **b. Fraction of converters captured when a fixed fraction of the group is flagged.**
 
-| Group flagged (n) | UPSIT total | Lower putamen, % expected | OIS |
+| Group flagged (n) | UPSIT | Lower putamen, % expected | OIS |
 |---|---|---|---|
 | 10% (100) | 13 / 68 (19%) | 25 / 68 (37%) | 30 / 68 (44%) |
 | 20% (200) | 23 / 68 (34%) | 39 / 68 (57%) | 41 / 68 (60%) |
 | 30% (300) | 35 / 68 (51%) | 46 / 68 (68%) | 52 / 68 (76%) |
 | 50% (501) | 50 / 68 (74%) | 54 / 68 (79%) | 61 / 68 (90%) |
 
-Read by rank alone, OIS dominates at every operating point, needing 132, 247 and 326 participants flagged to capture 50%, 70% and 80% of converters against 276, 458 and 525 for the UPSIT total and 158, 348 and 537 for the lower putamen percentage. Imaging falls below the UPSIT total at the high-sensitivity end (537 against 525), the same non-monotonicity seen across its clinical bands. These cut points are selected against the outcome and cannot serve as clinical thresholds. The median remains the primary division.
+Read by rank alone, OIS dominates at every operating point, needing 132, 247 and 326 participants flagged to capture 50%, 70% and 80% of converters against 276, 458 and 525 for UPSIT and 158, 348 and 537 for the lower putamen percentage. Imaging falls below UPSIT at the high-sensitivity end (537 against 525), the same non-monotonicity seen across its clinical bands. These cut points are selected against the outcome and cannot serve as clinical thresholds. The median remains the primary division.
 
 
 
@@ -251,7 +251,7 @@ Read by rank alone, OIS dominates at every operating point, needing 132, 247 and
 
 | Score | First against second visit r | ICC(1,1) |
 |---|---|---|
-| UPSIT total | 0.807 | 0.801 |
+| UPSIT | 0.807 | 0.801 |
 | OMI (residual) | 0.764 | 0.759 |
 
 **By cohort and recruitment cohort.**
@@ -327,16 +327,16 @@ Fisher exact P = 8.8 × 10<sup>−5</sup>.
 
 | Cohort | Measure | n GBA1 / LRRK2 | Mean GBA1 | Mean LRRK2 | β (95% CI) | P |
 |---|---|---|---|---|---|---|
-| Carriers without disease | UPSIT total | 161 / 166 | 33.57 | 33.09 | +0.36 (−0.76, +1.47) | 0.53 |
+| Carriers without disease | UPSIT | 161 / 166 | 33.57 | 33.09 | +0.36 (−0.76, +1.47) | 0.53 |
 | Carriers without disease | Putamen SBR | 161 / 166 | 1.60 | 1.42 | +0.18 (+0.11, +0.25) | 2.7 × 10<sup>−7</sup> |
 | Carriers without disease | OIS | 161 / 166 | 32.86 | 30.89 | +2.14 (+1.49, +2.78) | 3.1 × 10<sup>−10</sup> |
 | Carriers without disease | OMI | 161 / 166 | 0.71 | 2.20 | −1.78 (−2.99, −0.58) | 0.004 |
-| Diagnosed PD | UPSIT total | 69 / 126 | 19.49 | 25.59 | −6.14 (−8.48, −3.81) | 5.4 × 10<sup>−7</sup> |
+| Diagnosed PD | UPSIT | 69 / 126 | 19.49 | 25.59 | −6.14 (−8.48, −3.81) | 5.4 × 10<sup>−7</sup> |
 | Diagnosed PD | Putamen SBR | 69 / 126 | 0.60 | 0.65 | −0.05 (−0.14, +0.03) | 0.24 |
 | Diagnosed PD | OIS | 69 / 126 | 23.59 | 23.71 | −0.24 (−0.82, +0.34) | 0.41 |
 | Diagnosed PD | OMI | 69 / 126 | −4.09 | 1.88 | −5.90 (−8.17, −3.64) | 6.9 × 10<sup>−7</sup> |
 
-Among carriers without disease the two genotypes have the same UPSIT total while OIS is higher and OMI lower in GBA1, the two differences cancelling. Among diagnosed patients OIS is identical (the negative control) and the whole 6-point difference in the UPSIT total sits in the residual. Putamen SBR is shown for completeness.
+Among carriers without disease the two genotypes have the same UPSIT while OIS is higher and OMI lower in GBA1, the two differences cancelling. Among diagnosed patients OIS is identical (the negative control) and the whole 6-point difference in UPSIT sits in the residual. Putamen SBR is shown for completeness.
 
 **c. Partial correlations adjusted for age, sex and years of education.**
 
@@ -421,20 +421,20 @@ Schoenfeld residual test (rank time transform, as implemented in the lifelines p
 | Non-deficit stratum | OIS + age + sex + education (z-scored) | Sex | 2.957 | 0.09 | 1.09 | 0.30 | 734 / 22 |
 | Non-deficit stratum | OIS + age + sex + education (z-scored) | Global |  |  | 1.79 | 0.77 | 734 / 22 |
 | Hyposmia group | UPSIT + age (per point / year) | Age | 1.101 | 7.9 × 10<sup>−6</sup> | 1.15 | 0.28 | 1,003 / 68 |
-| Hyposmia group | UPSIT + age (per point / year) | UPSIT total | 0.906 | 1.0 × 10<sup>−6</sup> | 0.67 | 0.41 | 1,003 / 68 |
+| Hyposmia group | UPSIT + age (per point / year) | UPSIT | 0.906 | 1.0 × 10<sup>−6</sup> | 0.67 | 0.41 | 1,003 / 68 |
 | Hyposmia group | UPSIT + age (per point / year) | Global |  |  | 1.82 | 0.40 | 1,003 / 68 |
 | Hyposmia group | UPSIT + age + sex + education (z-scored) | Age | 1.567 | 1.4 × 10<sup>−4</sup> | 0.94 | 0.33 | 999 / 68 |
 | Hyposmia group | UPSIT + age + sex + education (z-scored) | Education | 1.144 | 0.30 | 0.07 | 0.80 | 999 / 68 |
 | Hyposmia group | UPSIT + age + sex + education (z-scored) | Sex | 1.811 | 0.04 | 0.14 | 0.71 | 999 / 68 |
-| Hyposmia group | UPSIT + age + sex + education (z-scored) | UPSIT total | 0.548 | 1.3 × 10<sup>−4</sup> | 0.56 | 0.46 | 999 / 68 |
+| Hyposmia group | UPSIT + age + sex + education (z-scored) | UPSIT | 0.548 | 1.3 × 10<sup>−4</sup> | 0.56 | 0.46 | 999 / 68 |
 | Hyposmia group | UPSIT + age + sex + education (z-scored) | Global |  |  | 1.70 | 0.79 | 999 / 68 |
 | Non-deficit stratum | UPSIT + age (per point / year) | Age | 1.175 | 1.8 × 10<sup>−5</sup> | 0.13 | 0.72 | 738 / 22 |
-| Non-deficit stratum | UPSIT + age (per point / year) | UPSIT total | 0.896 | 0.004 | 3.78 | 0.05 | 738 / 22 |
+| Non-deficit stratum | UPSIT + age (per point / year) | UPSIT | 0.896 | 0.004 | 3.78 | 0.05 | 738 / 22 |
 | Non-deficit stratum | UPSIT + age (per point / year) | Global |  |  | 3.91 | 0.14 | 738 / 22 |
 | Non-deficit stratum | UPSIT + age + sex + education (z-scored) | Age | 2.188 | 1.9 × 10<sup>−4</sup> | 0.21 | 0.65 | 734 / 22 |
 | Non-deficit stratum | UPSIT + age + sex + education (z-scored) | Education | 1.072 | 0.77 | 0.35 | 0.56 | 734 / 22 |
 | Non-deficit stratum | UPSIT + age + sex + education (z-scored) | Sex | 2.949 | 0.07 | 0.37 | 0.55 | 734 / 22 |
-| Non-deficit stratum | UPSIT + age + sex + education (z-scored) | UPSIT total | 0.543 | 0.05 | 1.74 | 0.19 | 734 / 22 |
+| Non-deficit stratum | UPSIT + age + sex + education (z-scored) | UPSIT | 0.543 | 0.05 | 1.74 | 0.19 | 734 / 22 |
 | Non-deficit stratum | UPSIT + age + sex + education (z-scored) | Global |  |  | 2.66 | 0.62 | 734 / 22 |
 
 No term departs from proportional hazards at P < 0.05 (smallest term-level P = 0.052, smallest global P = 0.14).
@@ -451,7 +451,7 @@ No term departs from proportional hazards at P < 0.05 (smallest term-level P = 0
 
 ![FigS2](figures/Supplementary/FigS2_calibration.png)
 
-**Supplementary Fig. 3 | Robustness of the advantage of OIS over the UPSIT total in the hyposmia group.** ΔC with 1,000-resample paired bootstrap intervals for the full group, the one- and two-year landmarks (participants converting before the landmark removed), the temporal split (model retrained on participants enrolled before 2017 and evaluated in hyposmia-group participants enrolled from 2017, point estimate only) and the two halves of the centre split (discovery, 5 centres, and external, 6 centres). The discovery interval includes zero. The centre split is presented as heterogeneity and not as support.
+**Supplementary Fig. 3 | Robustness of the advantage of OIS over UPSIT in the hyposmia group.** ΔC with 1,000-resample paired bootstrap intervals for the full group, the one- and two-year landmarks (participants converting before the landmark removed), the temporal split (model retrained on participants enrolled before 2017 and evaluated in hyposmia-group participants enrolled from 2017, point estimate only) and the two halves of the centre split (discovery, 5 centres, and external, 6 centres). The discovery interval includes zero. The centre split is presented as heterogeneity and not as support.
 
 ![FigS3](figures/Supplementary/FigS3_robustness.png)
 

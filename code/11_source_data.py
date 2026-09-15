@@ -108,7 +108,7 @@ add('Fig2c', pd.concat([pd.DataFrame(rows), pd.DataFrame([{}]), pd.concat(decs)]
 # ================================================================== Fig 3
 H = [d for d in J['decomposition'] if d['cohort'] == 'Hyposmia'][0]
 C36 = {r_['reading']: r_ for r_ in J['cindex_ci'] if r_['stratum'] == 'hyposmia'}
-f3a = pd.DataFrame([dict(score='UPSIT total', c_index=C36['UPSIT total']['c'], ci_lower=C36['UPSIT total']['lo'], ci_upper=C36['UPSIT total']['hi'], variance_share_pct=100.0),
+f3a = pd.DataFrame([dict(score='UPSIT', c_index=C36['UPSIT total']['c'], ci_lower=C36['UPSIT total']['lo'], ci_upper=C36['UPSIT total']['hi'], variance_share_pct=100.0),
                     dict(score='OIS', c_index=C36['OIS']['c'], ci_lower=C36['OIS']['lo'], ci_upper=C36['OIS']['hi'], variance_share_pct=H['sd_ois'] ** 2 / H['sd_upsit'] ** 2 * 100),
                     dict(score='OMI', c_index=C36['OMI']['c'], ci_lower=C36['OMI']['lo'], ci_upper=C36['OMI']['hi'], variance_share_pct=H['sd_omi'] ** 2 / H['sd_upsit'] ** 2 * 100)])
 pu = [r_ for r_ in J['prespecified_comparisons'] if r_['stratum'] == 'hyposmia' and r_['comparison'] == 'OIS - UPSIT'][0]
@@ -118,10 +118,10 @@ f3a_b = pd.DataFrame([dict(item='n', value=H['n']), dict(item='events', value=68
 add('Fig3a', pd.concat([f3a, pd.DataFrame([{}]), f3a_b], axis=0), 'Concordance with 95% bootstrap CI and share of UPSIT variance, hyposmia group.')
 td = pd.DataFrame(J['td_auc_ipcw']['rows'])
 add('Fig3b', td[td.horizon_yr.isin(J['td_auc_ipcw']['times'])][['horizon_yr', 'reading', 'auc', 'lo', 'hi', 'n_at_risk', 'events_by_t', 'p']],
-    'Cumulative/dynamic AUC with IPCW, 95% CI from 1,000 bootstrap resamples. The row OIS minus UPSIT total carries the paired P.')
+    'Cumulative/dynamic AUC with IPCW, 95% CI from 1,000 bootstrap resamples. The row OIS minus UPSIT carries the paired P.')
 CA = pd.DataFrame([r for r in J['calibration_and_age'] if 'c' in r and r['c'] == r['c']])
 METH = ['single-region putamen', 'lowest putamen %expected', '33 SBR + demographics, CV Cox', 'age alone', 'UPSIT total', 'OIS, imaging only, zero-shot', 'OIS, full, zero-shot']
-LAB = dict(zip(METH, ['Putamen SBR', 'Lower putamen, % expected', '33 SBR + demographics, supervised Cox', 'Age', 'UPSIT total', 'OIS, imaging only', 'OIS']))
+LAB = dict(zip(METH, ['Putamen SBR', 'Lower putamen, % expected', '33 SBR + demographics, supervised Cox', 'Age', 'UPSIT', 'OIS, imaging only', 'OIS']))
 ST = ['hyposmia', 'hyposmia + DAT deficit', 'hyposmia + no DAT deficit']
 f3c = CA[CA.reading.isin(METH) & CA.stratum.isin(ST)][['stratum', 'reading', 'n', 'events', 'c', 'lo', 'hi']].copy()
 f3c['reading_label'] = f3c.reading.map(LAB); f3c['interval_includes_0.5'] = f3c.lo < 0.5
@@ -137,7 +137,7 @@ for name, d, lab_med in [('Fig3d', hh, 'whole hyposmia group'), ('Fig3e', ndf, '
     S = pd.DataFrame(summ); S['OIS_median'] = med; S['log_rank_p'] = plr
     if name == 'Fig3e':
         extra = []
-        for col, lab in [('upsit', 'UPSIT total'), ('pct', 'lower putamen % expected')]:
+        for col, lab in [('upsit', 'UPSIT'), ('pct', 'lower putamen % expected')]:
             m2 = d[col].median(); x1, x2 = d[d[col] <= m2], d[d[col] > m2]
             k1 = KaplanMeierFitter().fit(x1.time_years, x1.converted); k2 = KaplanMeierFitter().fit(x2.time_years, x2.converted)
             extra.append(dict(split_by=lab, median=m2, two_year_pct_at_or_below=(1 - float(k1.predict(2.))) * 100, two_year_pct_above=(1 - float(k2.predict(2.))) * 100,
@@ -189,7 +189,7 @@ rows = [dict(analysis='Full hyposmia group', n=L[0]['n'], events=L[0]['events'],
         dict(analysis='Model retrained on pre-2017 enrolment', n=TS['n'], events=TS['events'], delta_C=TS['dc'], ci_lower=TS['lo'], ci_upper=TS['hi'], p=TS['p']),
         dict(analysis='Centre split, discovery 5 sites', n=CE['discovery']['n_hyp'], events=CE['discovery']['ev_hyp'], delta_C=CE['discovery']['dc'], ci_lower=CE['discovery']['lo'], ci_upper=CE['discovery']['hi'], p=CE['discovery']['p']),
         dict(analysis='Centre split, external 6 sites', n=CE['external']['n_hyp'], events=CE['external']['ev_hyp'], delta_C=CE['external']['dc'], ci_lower=CE['external']['lo'], ci_upper=CE['external']['hi'], p=CE['external']['p'])]
-add('FigS3', pd.DataFrame(rows), 'Delta C (OIS minus UPSIT total) with 95% CI from 1,000 paired bootstrap resamples. P of 0 means below 1/1000.')
+add('FigS3', pd.DataFrame(rows), 'Delta C (OIS minus UPSIT) with 95% CI from 1,000 paired bootstrap resamples. P of 0 means below 1/1000.')
 
 
 def km_three(d, groups, labels, name, note):
@@ -217,6 +217,7 @@ readme = pd.concat([pd.DataFrame([dict(sheet='About', description='Source data f
 with pd.ExcelWriter(OUTFILE, engine='openpyxl') as w:
     readme.to_excel(w, sheet_name='README', index=False)
     for k, (fr, note) in sheets.items():
+        fr = fr.replace('UPSIT total', 'UPSIT', regex=True)     # ledger label -> manuscript wording (display only)
         fr.to_excel(w, sheet_name=k, index=False)
     for ws in w.book.worksheets:
         for col in ws.columns:

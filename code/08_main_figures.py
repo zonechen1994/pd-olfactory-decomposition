@@ -206,7 +206,7 @@ def fig3():
     ax=fig.add_subplot(gs[0,:4])
     # C 与 95% CI 直接取 §36(与正文表 2 同一次 bootstrap);方差占比取 decomposition
     _C36={r_['reading']:r_ for r_ in J['cindex_ci'] if r_['stratum']=='hyposmia'}
-    rows=[(T('UPSIT','UPSIT 总分'),_C36['UPSIT total']['c'],_C36['UPSIT total']['lo'],_C36['UPSIT total']['hi'],GREY,100.0),
+    rows=[('UPSIT',_C36['UPSIT total']['c'],_C36['UPSIT total']['lo'],_C36['UPSIT total']['hi'],GREY,100.0),
           (T('OIS','OIS 拟合值'),_C36['OIS']['c'],_C36['OIS']['lo'],_C36['OIS']['hi'],TEAL,H['sd_ois']**2/H['sd_upsit']**2*100),
           (T('OMI','OMI 残差'),_C36['OMI']['c'],_C36['OMI']['lo'],_C36['OMI']['hi'],RED,H['sd_omi']**2/H['sd_upsit']**2*100)]
     # 自上而下:UPSIT 总分、OMI、OIS(用户 2026-09-04 定)
@@ -236,7 +236,7 @@ def fig3():
     # b 时依 AUC(IPCW),§46。与 a 同一组人群,但按时点而非全程给判别力
     ax=fig.add_subplot(gs[0,4:])
     _TD=J['td_auc_ipcw']; _tr=pd.DataFrame(_TD['rows'])
-    _ORD=[('UPSIT total',T('UPSIT','UPSIT 总分'),GREY),
+    _ORD=[('UPSIT total','UPSIT',GREY),
           ('putamen SBR',T('Putamen SBR','单区壳核'),DARK),
           ('OIS',T('OIS','OIS'),TEAL)]
     _ts=_TD['times']; _x=np.arange(len(_ts))
@@ -266,7 +266,7 @@ def fig3():
           ('lowest putamen %expected',T('Lower putamen, % expected','较低侧壳核 %预期'),'#5D6D7E'),
           ('33 SBR + demographics, CV Cox',T('33 SBR + demographics, supervised Cox','33 区 + 人口学,转化标签 Cox'),'#9B8EC4'),
           ('age alone',T('Age','年龄'),'#C8A27F'),
-          ('UPSIT total',T('UPSIT total','UPSIT 总分'),GREY),
+          ('UPSIT total','UPSIT',GREY),
           ('OIS, imaging only, zero-shot',T('OIS, imaging only','OIS 仅影像版'),'#7FB3C8'),
           ('OIS, full, zero-shot','OIS',TEAL)]
     _CA={(r['stratum'],r['reading']):r for r in J['calibration_and_age'] if 'c' in r and r['c']==r['c']}
@@ -397,7 +397,7 @@ def fig4():
     for k,(ttl,coh,nn) in enumerate([(T('Non-manifesting carriers','未发病携带者'),'Prodromal','GBA1 161 / LRRK2 166'),
                                      (T('Diagnosed PD','已确诊帕金森病'),'PD','GBA1 69 / LRRK2 126')]):
         ax=fig.add_subplot(gs[1,k])
-        vals=[('OIS',_G[(coh,'OIS')]),(T('OMI','残差'),_G[(coh,'OMI')]),(T('UPSIT total','嗅觉总分'),_G[(coh,'UPSIT total')])]
+        vals=[('OIS',_G[(coh,'OIS')]),(T('OMI','残差'),_G[(coh,'OMI')]),('UPSIT',_G[(coh,'UPSIT total')])]
         cols=[TEAL,RED,DARK]
         bb=ax.bar([v[0] for v in vals],[v[1]['beta'] for v in vals],color=cols,width=.5,
                   yerr=[[v[1]['beta']-v[1]['lo'] for v in vals],[v[1]['hi']-v[1]['beta'] for v in vals]],error_kw=dict(ecolor='#566573',lw=.9,capsize=3))

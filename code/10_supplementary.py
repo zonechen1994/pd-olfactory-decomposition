@@ -245,8 +245,8 @@ def figS3_robustness():
         txt = (f'{d:+.3f} ({lo:+.3f}, {hi:+.3f})   P ' + (p if p.startswith('<') else '= ' + p)) if lo is not None else f'{d:+.3f}   ' + p
         ax.text(0.46, yi, txt, va='center', fontsize=7.4, color=col)
     ax.axvline(0, c=DARK, lw=1); ax.set_yticks(y); ax.set_yticklabels([r[0] for r in rows], fontsize=7.8)
-    ax.set_xlim(-.08, .75); ax.set_xlabel(T('ΔC, OIS minus UPSIT total (hyposmia group)', 'ΔC,OIS 减 UPSIT 总分(嗅觉减退组)'))
-    ax.set_title(T('Robustness of the OIS advantage over the UPSIT total', 'OIS 相对嗅觉总分优势的稳健性'), loc='left', fontsize=9.5, fontweight='bold')
+    ax.set_xlim(-.08, .75); ax.set_xlabel(T('ΔC, OIS minus UPSIT (hyposmia group)', 'ΔC,OIS 减 UPSIT 总分(嗅觉减退组)'))
+    ax.set_title(T('Robustness of the OIS advantage over UPSIT', 'OIS 相对 UPSIT 优势的稳健性'), loc='left', fontsize=9.5, fontweight='bold')
     ax.text(0, -.34, T('Intervals are 1,000 paired bootstrap resamples. The discovery-cohort interval includes zero (P = 0.092); the centre split is reported as heterogeneity, not as support. '
                        'The temporal split retrains the model on participants enrolled before 2017 and evaluates in hyposmia-group participants enrolled from 2017 (C 0.702 to 0.827).',
                        '区间为 1,000 次配对 bootstrap。发现队列区间含零(P = 0.092),中心拆分作为异质性报告而非支持性证据。时间拆分在 2017 年前入组者上重训模型,在 2017 年起入组的嗅觉减退组评价(C 0.702 至 0.827)。'),
@@ -410,7 +410,7 @@ def build_doc(chan_slopes):
         f'(r = {LO2["r_controlfrac_vs_siter"]:.3f}, P = {pf(LO2["p_controlfrac_vs_siter"])}) and is unrelated to centre size '
         f'(r = {LO2["r_size_vs_siter"]:.3f}, P = {LO2["p_size_vs_siter"]:.2f}). Median centre size {LO2["median_site_n"]}. '
         f'The {LO2["n_with_hc"]} centres that enrolled controls as well as patients reach a mean r of {LO2["r_with_hc"]:.3f} against {LO2["r_without_hc"]:.3f} in the {LO2["n_without_hc"]} that enrolled patients only (Welch P = {pf(LO2["p_with_vs_without"])}), '
-        f'and the two negative centres are both patient-dominated, so the UPSIT total and the scan each vary over a narrow range there and a within-centre correlation carries little information. '
+        f'and the two negative centres are both patient-dominated, so UPSIT and the scan each vary over a narrow range there and a within-centre correlation carries little information. '
         f'{LO2["n_significant"]} of 44 reach P < 0.05, against {LO2["n_significant_expected"]:.1f} expected under a true correlation of '
         f'{LO2["r_mean"]:.3f} at the observed centre sizes.',
         f'44 个中心按 r 从低到高编为 1 至 44,站点一列为 PPMI 站点号。44 个中心间,相关随对照占比升高(r = {LO2["r_controlfrac_vs_siter"]:.3f},P = {pf(LO2["p_controlfrac_vs_siter"])}),'
@@ -450,12 +450,12 @@ def build_doc(chan_slopes):
     A(md_table([T('Stratum', '分层'), T('Reading', '读法'), T('Participants / conversions', '人数 / 转化例数'), T('C-index (95% CI)', 'C-index(95% CI)')], rows))
     c = C38.set_index(['stratum', 'reading'])['c']
     A('')
-    A(T(f'Dichotomisation costs {c[("all prodromal","UPSIT, continuous score")]-c[("all prodromal","UPSIT, dichotomised (hyposmic yes/no)")]:.3f} of concordance for the UPSIT total and {c[("all prodromal","imaging, continuous (lowest putamen %exp)")]-c[("all prodromal","imaging, dichotomised (DAT-deficit flag)")]:.3f} for imaging in the whole prodromal cohort, and {c[("hyposmia","UPSIT, continuous score")]-c[("hyposmia","UPSIT, dichotomised (hyposmic yes/no)")]:.3f} against {c[("hyposmia","imaging, continuous (lowest putamen %exp)")]-c[("hyposmia","imaging, dichotomised (DAT-deficit flag)")]:.3f} within the hyposmia group, where the olfactory flag is nearly constant. Descriptive, with no paired test.',
+    A(T(f'Dichotomisation costs {c[("all prodromal","UPSIT, continuous score")]-c[("all prodromal","UPSIT, dichotomised (hyposmic yes/no)")]:.3f} of concordance for UPSIT and {c[("all prodromal","imaging, continuous (lowest putamen %exp)")]-c[("all prodromal","imaging, dichotomised (DAT-deficit flag)")]:.3f} for imaging in the whole prodromal cohort, and {c[("hyposmia","UPSIT, continuous score")]-c[("hyposmia","UPSIT, dichotomised (hyposmic yes/no)")]:.3f} against {c[("hyposmia","imaging, continuous (lowest putamen %exp)")]-c[("hyposmia","imaging, dichotomised (DAT-deficit flag)")]:.3f} within the hyposmia group, where the olfactory flag is nearly constant. Descriptive, with no paired test.',
         f'二分使嗅觉分数在全前驱期损失 {c[("all prodromal","UPSIT, continuous score")]-c[("all prodromal","UPSIT, dichotomised (hyposmic yes/no)")]:.3f} 的 C-index、影像损失 {c[("all prodromal","imaging, continuous (lowest putamen %exp)")]-c[("all prodromal","imaging, dichotomised (DAT-deficit flag)")]:.3f};嗅觉减退组内分别为 {c[("hyposmia","UPSIT, continuous score")]-c[("hyposmia","UPSIT, dichotomised (hyposmic yes/no)")]:.3f} 对 {c[("hyposmia","imaging, continuous (lowest putamen %exp)")]-c[("hyposmia","imaging, dichotomised (DAT-deficit flag)")]:.3f},该组内嗅觉标志近乎常数。描述性,无配对检验。'))
     A(T('**b. Five readings in five strata, including the residual.**', '**b. 五种读法在五个分层中的表现,含残差。**'))
     stl = {'all prodromal': T('All prodromal', '全前驱期'), 'hyposmia': T('Hyposmia group', '嗅觉减退组'), 'hyposmia + DAT deficit': T('Hyposmia, DAT deficit', '嗅觉减退,DAT 缺损'),
            'hyposmia + no DAT deficit': T('Hyposmia, no DAT deficit', '嗅觉减退,DAT 非缺损'), 'non-hyposmia-enriched': T('RBD and variant-carrier', 'RBD 与遗传携带组')}
-    rdl = {'UPSIT total': T('UPSIT total', 'UPSIT 总分'), 'OIS': 'OIS', 'OMI': T('OMI (residual)', 'OMI(残差)'), 'putamen SBR': T('Single-region putamen', '单区壳核'), 'lowest putamen %expected': T('Lower putamen, % expected', '较低侧壳核 %预期')}
+    rdl = {'UPSIT total': 'UPSIT', 'OIS': 'OIS', 'OMI': T('OMI (residual)', 'OMI(残差)'), 'putamen SBR': T('Single-region putamen', '单区壳核'), 'lowest putamen %expected': T('Lower putamen, % expected', '较低侧壳核 %预期')}
     rows = []
     for st in stl:
         g = C36[C36.stratum == st].set_index('reading')
@@ -465,8 +465,8 @@ def build_doc(chan_slopes):
             r = g.loc[rd]; cells.append(ci(r.c, r.lo, r.hi) + ('\\*' if bool(r.at_chance) else ''))
         rows.append(cells)
     A(md_table([T('Stratum', '分层'), T('Participants / conversions', '人数 / 转化例数')] + [rdl[k] for k in ['UPSIT total', 'OIS', 'OMI', 'putamen SBR', 'lowest putamen %expected']], rows))
-    A(T('\\* interval includes 0.5. The residual is at chance in the hyposmia group and in its deficit stratum only. In the whole cohort and in the RBD and variant-carrier group its interval excludes 0.5, and it never approaches the UPSIT total. All values come from one bootstrap run.',
-        '\\* 区间含 0.5。残差仅在嗅觉减退组及其缺损亚组等同随机;在全队列与RBD 与遗传携带组其区间不含 0.5,且从未接近嗅觉总分。全部数值出自同一次 bootstrap。'))
+    A(T('\\* interval includes 0.5. The residual is at chance in the hyposmia group and in its deficit stratum only. In the whole cohort and in the RBD and variant-carrier group its interval excludes 0.5, and it never approaches UPSIT. All values come from one bootstrap run.',
+        '\\* 区间含 0.5。残差仅在嗅觉减退组及其缺损亚组等同随机;在全队列与RBD 与遗传携带组其区间不含 0.5,且从未接近 UPSIT。全部数值出自同一次 bootstrap。'))
     A('')
     A(T('**c. Head to head with OIS in the hyposmia group.**', '**c. 嗅觉减退组内与 OIS 的头对头比较。**'))
     HH = J['head_to_head']
@@ -477,14 +477,14 @@ def build_doc(chan_slopes):
         p = '' if r['p'] != r['p'] else pf(r['p'])
         rows.append([r['model'], tr[r['training']], f3(r['c']), d, p])
     A(md_table([T('Model', '模型'), T('How it was built', '构建方式'), 'C', T('ΔC, OIS minus model (95% CI)', 'ΔC,OIS 减模型(95% CI)'), 'P'], rows))
-    A(T('1,003 participants, 68 conversions, 1,000 paired bootstrap resamples. OIS exceeds the UPSIT total and the binary flag, is tied with the conversion-supervised 33-region model plus demographics and with its own imaging-only version, and reaches nominal significance against the 33 regions alone. The supervised models were cross-validated within this cohort and would be expected to fall in a new cohort. OIS used no conversion label.',
-        '1,003 人,68 转化,1,000 次配对 bootstrap。OIS 优于嗅觉总分与二分标志,与转化标签监督的 33 区加人口学模型及自身仅影像版打平,对单独 33 区达到名义显著。监督模型在本队列内交叉验证,换新队列预期会下降;OIS 未用任何转化标签。'))
+    A(T('1,003 participants, 68 conversions, 1,000 paired bootstrap resamples. OIS exceeds UPSIT and the binary flag, is tied with the conversion-supervised 33-region model plus demographics and with its own imaging-only version, and reaches nominal significance against the 33 regions alone. The supervised models were cross-validated within this cohort and would be expected to fall in a new cohort. OIS used no conversion label.',
+        '1,003 人,68 转化,1,000 次配对 bootstrap。OIS 优于 UPSIT 与二分标志,与转化标签监督的 33 区加人口学模型及自身仅影像版打平,对单独 33 区达到名义显著。监督模型在本队列内交叉验证,换新队列预期会下降;OIS 未用任何转化标签。'))
     A('')
     A('')
     # ---------------- Table 4 (three groups, §44)
     A(T('### Supplementary Table 4. Two groups at the median or the tertile boundary, and three groups by permutation-corrected selection of two cut points', '### 补充表 4. 中位数或三分位边界的两组划分,以及置换校正选出的两切点三组划分'))
     sl = {'hyposmia': T('Hyposmia group', '嗅觉减退组'), 'hyposmia + no DAT deficit': T('Non-deficit stratum', '非缺损亚组')}
-    rl = {'OIS': 'OIS', 'UPSIT total': T('UPSIT total', 'UPSIT 总分'), 'lower putamen %expected': T('Lower putamen, % expected', '较低侧壳核 %预期')}
+    rl = {'OIS': 'OIS', 'UPSIT total': 'UPSIT', 'lower putamen %expected': T('Lower putamen, % expected', '较低侧壳核 %预期')}
     A(T('**a. Outcome-blind division at the median (the main-text division, Fig. 3c, e).**', '**a. 不看结局的中位数划分(正文所用,Fig 3c、e)。**'))
     rows = [[sl[r.stratum], rl[r.reading], f"{r['median']:.2f}", f'{int(r.ev_low)} / {int(r.n_low)}', f'{r.km2_low:.1f}% ({r.km2_low_lo:.1f}–{r.km2_low_hi:.1f})', f'{int(r.ev_high)} / {int(r.n_high)}', f'{r.km2_high:.1f}% ({r.km2_high_lo:.1f}–{r.km2_high_hi:.1f})', pf(r.p_logrank)] for _, r in M44.iterrows()]
     A(md_table([T('Population', '人群'), T('Reading', '读法'), T('Median', '中位数'), T('At or below, conversions / participants', '不高于中位数,转化 / 人数'), T('2-year conversion (95% CI)', '两年转化(95% CI)'), T('Above, conversions / participants', '高于中位数,转化 / 人数'), T('2-year conversion (95% CI)', '两年转化(95% CI)'), T('Log-rank P', 'log-rank P')], rows))
@@ -507,7 +507,7 @@ def build_doc(chan_slopes):
     # ---------------- Figures
     # ---------------- Table 5
     A(T('### Supplementary Table 5. Flagging by rank on the three readings, hyposmia group (1,003 / 68)', '### 补充表 5. 三种读法按排序标记,嗅觉减退组(1,003 / 68)'))
-    rdl2 = {'UPSIT total': T('UPSIT total', 'UPSIT 总分'), 'lowest putamen %expected': T('Lower putamen, % expected', '较低侧壳核 %预期'), 'OIS': 'OIS'}
+    rdl2 = {'UPSIT total': 'UPSIT', 'lowest putamen %expected': T('Lower putamen, % expected', '较低侧壳核 %预期'), 'OIS': 'OIS'}
     A(T('**a. Number that must be flagged to capture a given fraction of converters, by rank.**', '**a. 为捕获给定比例转化者所需标记的人数,按秩。**'))
     piv = C39B.pivot(index='target_sensitivity', columns='reading', values=['n_flagged', 'frac_flagged'])
     rows = []
@@ -526,12 +526,12 @@ def build_doc(chan_slopes):
             cells.append(f"{int(r.events_caught)} / 68 ({r.frac_events*100:.0f}%)")
         rows.append(cells)
     A(md_table([T('Group flagged (n)', '标记比例(人数)')] + [rdl2[k] for k in ['UPSIT total', 'lowest putamen %expected', 'OIS']], rows))
-    A(T('Read by rank alone, OIS dominates at every operating point, needing 132, 247 and 326 participants flagged to capture 50%, 70% and 80% of converters against 276, 458 and 525 for the UPSIT total and 158, 348 and 537 for the lower putamen percentage. Imaging falls below the UPSIT total at the high-sensitivity end (537 against 525), the same non-monotonicity seen across its clinical bands. These cut points are selected against the outcome and cannot serve as clinical thresholds. The median remains the primary division.',
-        '若只按秩读,OIS 在每一个工作点均占优,欲覆盖 50%、70%、80% 的转化者需标记 132、247 与 326 人,而嗅觉总分需 276、458 与 525 人,较低侧壳核 %预期需 158、348 与 537 人。影像在高灵敏度端反而低于嗅觉总分(537 对 525),与其临床分档在本队列不单调是同一现象。这些切点是对着结局选出的,不能作为临床阈值,中位数仍为主划分。'))
+    A(T('Read by rank alone, OIS dominates at every operating point, needing 132, 247 and 326 participants flagged to capture 50%, 70% and 80% of converters against 276, 458 and 525 for UPSIT and 158, 348 and 537 for the lower putamen percentage. Imaging falls below UPSIT at the high-sensitivity end (537 against 525), the same non-monotonicity seen across its clinical bands. These cut points are selected against the outcome and cannot serve as clinical thresholds. The median remains the primary division.',
+        '若只按秩读,OIS 在每一个工作点均占优,欲覆盖 50%、70%、80% 的转化者需标记 132、247 与 326 人,而 UPSIT 需 276、458 与 525 人,较低侧壳核 %预期需 158、348 与 537 人。影像在高灵敏度端反而低于 UPSIT(537 对 525),与其临床分档在本队列不单调是同一现象。这些切点是对着结局选出的,不能作为临床阈值,中位数仍为主划分。'))
     A('')
     # ---------------- Table 8
     A(T('### Supplementary Table 6. Test-retest reliability', '### 补充表 6. 重测信度'))
-    rows = [[T('UPSIT total', 'UPSIT 总分'), f"{ICC['upsit_r']:.3f}", f"{ICC['upsit_icc']:.3f}"], [T('OMI (residual)', 'OMI(残差)'), f"{ICC['omi_r']:.3f}", f"{ICC['omi_icc']:.3f}"]]
+    rows = [['UPSIT', f"{ICC['upsit_r']:.3f}", f"{ICC['upsit_icc']:.3f}"], [T('OMI (residual)', 'OMI(残差)'), f"{ICC['omi_r']:.3f}", f"{ICC['omi_icc']:.3f}"]]
     A(md_table([T('Score', '分数'), T('First against second visit r', '首次对第二次访视 r'), 'ICC(1,1)'], rows))
     # 分组 ICC 现由 notebook §12 写入总账并同名落盘,SWEDD 已在源头剔除,此处不再补丁式过滤
     ICG = pd.DataFrame(ICC['by_group'])
@@ -578,10 +578,10 @@ def build_doc(chan_slopes):
     A(T('**b. GBA1 against LRRK2 carriers, linear regression adjusted for age, sex and years of education (β is GBA1 minus LRRK2).**', '**b. GBA1 对 LRRK2 携带者,校正年龄、性别与教育年限的线性回归(β 为 GBA1 减 LRRK2)。**'))
     rows = []
     for r in J['genotype']:
-        rows.append([T({'Prodromal': 'Carriers without disease', 'PD': 'Diagnosed PD'}[r['cohort']], {'Prodromal': '未发病携带者', 'PD': '已确诊 PD'}[r['cohort']]), r['measure'], f"{r['n_gba']} / {r['n_lrrk2']}", f"{r['mean_gba']:.2f}", f"{r['mean_lrrk2']:.2f}", f"{r['beta']:+.2f} ({r['lo']:+.2f}, {r['hi']:+.2f})", pf(r['p'])])
+        rows.append([T({'Prodromal': 'Carriers without disease', 'PD': 'Diagnosed PD'}[r['cohort']], {'Prodromal': '未发病携带者', 'PD': '已确诊 PD'}[r['cohort']]), r['measure'].replace('UPSIT total', 'UPSIT'), f"{r['n_gba']} / {r['n_lrrk2']}", f"{r['mean_gba']:.2f}", f"{r['mean_lrrk2']:.2f}", f"{r['beta']:+.2f} ({r['lo']:+.2f}, {r['hi']:+.2f})", pf(r['p'])])
     A(md_table([T('Cohort', '队列'), T('Measure', '指标'), T('n GBA1 / LRRK2', 'n GBA1 / LRRK2'), T('Mean GBA1', 'GBA1 均值'), T('Mean LRRK2', 'LRRK2 均值'), 'β (95% CI)', 'P'], rows))
-    A(T('Among carriers without disease the two genotypes have the same UPSIT total while OIS is higher and OMI lower in GBA1, the two differences cancelling. Among diagnosed patients OIS is identical (the negative control) and the whole 6-point difference in the UPSIT total sits in the residual. Putamen SBR is shown for completeness.',
-        '未发病携带者中两基因型嗅觉总分相同,而 GBA1 的 OIS 更高、OMI 更低,两者相抵。已确诊患者中 OIS 相同(阴性对照),6 分的嗅觉差全部落在残差上。壳核 SBR 为完整起见列出。'))
+    A(T('Among carriers without disease the two genotypes have the same UPSIT while OIS is higher and OMI lower in GBA1, the two differences cancelling. Among diagnosed patients OIS is identical (the negative control) and the whole 6-point difference in UPSIT sits in the residual. Putamen SBR is shown for completeness.',
+        '未发病携带者中两基因型 UPSIT 相同,而 GBA1 的 OIS 更高、OMI 更低,两者相抵。已确诊患者中 OIS 相同(阴性对照),6 分的嗅觉差全部落在残差上。壳核 SBR 为完整起见列出。'))
     A(T('**c. Partial correlations adjusted for age, sex and years of education.**', '**c. 校正年龄、性别与教育年限的偏相关(补充方法 4)。**'))
     rows = [[r.test.replace('ABeta42', 'Aβ42').replace('GBA vs', 'GBA1 vs'), T({'Prodromal': 'Prodromal', 'PD': 'Diagnosed PD'}[r.cohort], {'Prodromal': '前驱期', 'PD': '已确诊 PD'}[r.cohort]), r.score, int(r.n), f'{r.r:+.3f}', pf(r.p)] for _, r in C42.iterrows()]
     A(md_table([T('External measurement', '外部测量'), T('Cohort', '队列'), T('Score', '分数'), 'n', T('Partial r', '偏相关 r'), 'P'], rows))
@@ -619,7 +619,7 @@ def build_doc(chan_slopes):
         A(T("Schoenfeld residual test (rank time transform, as implemented in the lifelines package) for the models reported in the main text, the score in its own units plus age in years, and for a fuller specification with sex and years of education (continuous terms z-scored). The global row sums the term statistics. Hazard ratios are per point (or per year) in the main-text models and per standard deviation in the fuller models.",
             "对正文报告的模型(分数按原单位、年龄按年)以及加入性别与教育年限的完整模型(连续项 z 标准化)作 Schoenfeld 残差检验(秩时间变换,lifelines 软件包实现)。global 行为各项统计量之和。正文模型的风险比为每 1 分(或每 1 岁),完整模型为每 1 个标准差。"))
         _pl = {'hyposmia group': T('Hyposmia group', '嗅觉减退组'), 'non-deficit stratum': T('Non-deficit stratum', '非缺损亚组')}
-        _tl = {'OIS': 'OIS', 'upsit': T('UPSIT total', 'UPSIT 总分'), 'age': T('Age', '年龄'), 'sex_num': T('Sex', '性别'), 'educyrs': T('Education', '教育年限'), 'global': T('Global', '整体')}
+        _tl = {'OIS': 'OIS', 'upsit': 'UPSIT', 'age': T('Age', '年龄'), 'sex_num': T('Sex', '性别'), 'educyrs': T('Education', '教育年限'), 'global': T('Global', '整体')}
         rows = [[_pl[r['population']], r['model'].replace('upsit', 'UPSIT').replace('sex_num', 'sex').replace('educyrs', 'education'), _tl.get(r['term'], r['term']),
                  '' if r['hr'] != r['hr'] else f"{r['hr']:.3f}", '' if r['p_cox'] != r['p_cox'] else pf(r['p_cox']),
                  f"{r['ph_test_stat']:.2f}", pf(r['ph_p']), f"{r['n']:,} / {r['events']}"] for r in PH['rows']]
@@ -636,8 +636,8 @@ def build_doc(chan_slopes):
     A(T('**Supplementary Fig. 2 | Calibration of OIS in the prodromal cohort.** **a**, Mean observed against mean predicted UPSIT by decile of OIS in the RBD and variant-carrier group (n = 885). Observed lies below predicted in every decile by about 2.7 points, which is the mean residual of that group. **b**, Slope of measured UPSIT on OIS, with its 95% CI, r, P and n, in the whole prodromal cohort, the hyposmia cohort and each of the two recruitment cohorts of the RBD and variant-carrier group separately. The pooled slope of the RBD and variant-carrier group (1.027) is omitted because it mixes two recruitment cohorts with different means. The within-recruitment cohort values are the interpretable ones.',
         '**补充图 2 | OIS 在前驱期的校准。**(a) RBD 与遗传携带组(n = 885)按 OIS 十分位的平均实测对平均预测 UPSIT;每个十分位实测均低于预测约 2.7 分,即该组的平均残差。(b) 全前驱期、嗅觉减退队列以及RBD 与遗传携带组的两个队列分别的实测 UPSIT 对 OIS 的斜率及其 95% CI,附 r、P 与 n。省略RBD 与遗传携带组合并斜率 1.027,它出自均值不同的两个队列混合;队列内的值才可信。'))
     A(f'![FigS2]({d}/FigS2_calibration.png)')
-    A(T('**Supplementary Fig. 3 | Robustness of the advantage of OIS over the UPSIT total in the hyposmia group.** ΔC with 1,000-resample paired bootstrap intervals for the full group, the one- and two-year landmarks (participants converting before the landmark removed), the temporal split (model retrained on participants enrolled before 2017 and evaluated in hyposmia-group participants enrolled from 2017, point estimate only) and the two halves of the centre split (discovery, 5 centres, and external, 6 centres). The discovery interval includes zero. The centre split is presented as heterogeneity and not as support.',
-        '**补充图 3 | 嗅觉减退组中 OIS 相对嗅觉总分优势的稳健性。**ΔC 及 1,000 次配对 bootstrap 区间:全组、1 年与 2 年 landmark(剔除 landmark 前转化者)、时间拆分(在 2017 年前入组者上重训模型,在 2017 年起入组的嗅觉减退组评价,仅点估计)以及中心拆分的两半(发现 5 中心;外部 6 中心)。发现队列区间含零;中心拆分作为异质性呈现而非支持性证据。'))
+    A(T('**Supplementary Fig. 3 | Robustness of the advantage of OIS over UPSIT in the hyposmia group.** ΔC with 1,000-resample paired bootstrap intervals for the full group, the one- and two-year landmarks (participants converting before the landmark removed), the temporal split (model retrained on participants enrolled before 2017 and evaluated in hyposmia-group participants enrolled from 2017, point estimate only) and the two halves of the centre split (discovery, 5 centres, and external, 6 centres). The discovery interval includes zero. The centre split is presented as heterogeneity and not as support.',
+        '**补充图 3 | 嗅觉减退组中 OIS 相对 UPSIT 优势的稳健性。**ΔC 及 1,000 次配对 bootstrap 区间:全组、1 年与 2 年 landmark(剔除 landmark 前转化者)、时间拆分(在 2017 年前入组者上重训模型,在 2017 年起入组的嗅觉减退组评价,仅点估计)以及中心拆分的两半(发现 5 中心;外部 6 中心)。发现队列区间含零;中心拆分作为异质性呈现而非支持性证据。'))
     A(f'![FigS3]({d}/FigS3_robustness.png)')
     A(T('**Supplementary Fig. 4 | Kaplan–Meier curves by OIS tertile, with 95% confidence bands and pairwise log-rank P values.** **a**, Whole hyposmia group. **b**, Non-deficit stratum. In both populations the middle and highest tertiles do not differ (P = 0.42 and P = 0.09), so the main text divides at the median into a high-risk lower half and a low-risk upper half (Fig. 3c, e).',
         '**补充图 4 | 按 OIS 三分位的 Kaplan–Meier 曲线,含 95% 置信带与两两 log-rank P。**(a) 全嗅觉减退组。(b) 非缺损亚组。两个人群中中间与最高三分位均不分开(P = 0.42 与 P = 0.09),因此正文按中位数分为高危的低半与低危的高半(Fig 3c、e)。'))
