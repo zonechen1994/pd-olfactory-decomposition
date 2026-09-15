@@ -155,7 +155,7 @@ def save(fig, name):
 
 def figS1_flow():
     LF = J['layer_flow']; ch = CH.set_index('channel')
-    fig, ax = a4_subplots(1, 1, 9.6, 6.0); ax.set_xlim(0, 10.5); ax.set_ylim(1.0, 10); ax.axis('off')
+    fig, ax = a4_subplots(1, 1, 9.6, 6.0); ax.set_xlim(0, 10.5); ax.set_ylim(1.2, 10); ax.axis('off')
     def box(x, y, w, h, txt, fc='#F4F6F7', ec=DARK, fs=7.8, bold=False):
         ax.add_patch(plt.Rectangle((x - w / 2, y - h / 2), w, h, fc=fc, ec=ec, lw=1.0))
         ax.text(x, y, txt, ha='center', va='center', fontsize=fs, fontweight='bold' if bold else 'normal')
