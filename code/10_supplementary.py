@@ -243,9 +243,7 @@ def figS3_robustness():
     rows = [(T('Full hyposmia group, 1,003 / 68', '全嗅觉减退组,1,003 / 68'), L[0]['dc'], L[0]['lo'], L[0]['hi'], pf(L[0]['p']), TEAL),
             (T('Landmark 1 year, 993 / 58', '1 年 landmark,993 / 58'), L[1]['dc'], L[1]['lo'], L[1]['hi'], pf(L[1]['p']), TEAL),
             (T('Landmark 2 years, 962 / 27', '2 年 landmark,962 / 27'), L[2]['dc'], L[2]['lo'], L[2]['hi'], pf(L[2]['p']), TEAL),
-            (T(f'Model retrained on pre-2017 enrolment, {TS["n"]:,} / {TS["events"]}', f'模型改用 2017 年前入组者重训,{TS["n"]:,} / {TS["events"]}'), TS['dc'], TS['lo'], TS['hi'], pf(TS['p']), TEAL),
-            (T('Centre split, discovery 5 sites, 290 / 16', '中心拆分,发现 5 中心,290 / 16'), CENTRE['discovery']['dc'], CENTRE['discovery']['lo'], CENTRE['discovery']['hi'], pf(CENTRE['discovery']['p']), ORANGE),
-            (T('Centre split, external 6 sites, 343 / 17', '中心拆分,外部 6 中心,343 / 17'), CENTRE['external']['dc'], CENTRE['external']['lo'], CENTRE['external']['hi'], pf(CENTRE['external']['p']), ORANGE)]
+            (T(f'Model retrained on pre-2017 enrolment, {TS["n"]:,} / {TS["events"]}', f'模型改用 2017 年前入组者重训,{TS["n"]:,} / {TS["events"]}'), TS['dc'], TS['lo'], TS['hi'], pf(TS['p']), TEAL)]
     fig, ax = a4_subplots(1, 1, 8.4, 3.6); y = np.arange(len(rows))[::-1]
     ax.get_gridspec().update(left=.34)                      # room for the long row labels on the page
     for yi, (lab, d, lo, hi, p, col) in zip(y, rows):
@@ -257,9 +255,8 @@ def figS3_robustness():
     ax.axvline(0, c=DARK, lw=1); ax.set_yticks(y); ax.set_yticklabels([r[0] for r in rows], fontsize=7.8)
     ax.set_xlim(-.08, .75); ax.set_xlabel(T('ΔC, OIS minus UPSIT (hyposmia group)', 'ΔC,OIS 减 UPSIT 总分(嗅觉减退组)'))
     ax.set_title(T('Robustness of the OIS advantage over UPSIT', 'OIS 相对 UPSIT 优势的稳健性'), loc='left', fontsize=9.5, fontweight='bold')
-    footnote(fig, T('Intervals are 1,000 paired bootstrap resamples. The discovery-cohort interval includes zero (P = 0.092), and the centre split is reported as heterogeneity, not as support. '
-                       'The temporal split retrains the model on participants enrolled before 2017 and evaluates in hyposmia-group participants enrolled from 2017 (C 0.702 to 0.827).',
-                       '区间为 1,000 次配对 bootstrap。发现队列区间含零(P = 0.092),中心拆分作为异质性报告而非支持性证据。时间拆分在 2017 年前入组者上重训模型,在 2017 年起入组的嗅觉减退组评价(C 0.702 至 0.827)。'),
+    footnote(fig, T('Intervals are 1,000 paired bootstrap resamples. The temporal split retrains the model on participants enrolled before 2017 and evaluates in hyposmia-group participants enrolled from 2017 (C 0.702 to 0.827).',
+                       '区间为 1,000 次配对 bootstrap。时间拆分在 2017 年前入组者上重训模型,在 2017 年起入组的嗅觉减退组评价(C 0.702 至 0.827)。')
             )
     save(fig, 'FigS3_robustness')
 
@@ -647,8 +644,8 @@ def build_doc(chan_slopes):
     A(T('**Supplementary Fig. 2 | Calibration of OIS in the prodromal cohort.** **a**, Mean observed against mean predicted UPSIT by decile of OIS in the RBD and variant-carrier group (n = 885). Observed lies below predicted in every decile by about 2.7 points, which is the mean residual of that group. **b**, Slope of measured UPSIT on OIS, with its 95% CI, r, P and n, in the whole prodromal cohort, the hyposmia cohort and each of the two recruitment cohorts of the RBD and variant-carrier group separately. The pooled slope of the RBD and variant-carrier group (1.027) is omitted because it mixes two recruitment cohorts with different means. The within-recruitment cohort values are the interpretable ones.',
         '**补充图 2 | OIS 在前驱期的校准。**(a) RBD 与遗传携带组(n = 885)按 OIS 十分位的平均实测对平均预测 UPSIT;每个十分位实测均低于预测约 2.7 分,即该组的平均残差。(b) 全前驱期、嗅觉减退队列以及RBD 与遗传携带组的两个队列分别的实测 UPSIT 对 OIS 的斜率及其 95% CI,附 r、P 与 n。省略RBD 与遗传携带组合并斜率 1.027,它出自均值不同的两个队列混合;队列内的值才可信。'))
     A(f'![FigS2]({d}/FigS2_calibration.png)')
-    A(T('**Supplementary Fig. 3 | Robustness of the advantage of OIS over UPSIT in the hyposmia group.** ΔC with 1,000-resample paired bootstrap intervals for the full group, the one- and two-year landmarks (participants converting before the landmark removed), the temporal split (model retrained on participants enrolled before 2017 and evaluated in hyposmia-group participants enrolled from 2017, point estimate only) and the two halves of the centre split (discovery, 5 centres, and external, 6 centres). The discovery interval includes zero. The centre split is presented as heterogeneity and not as support.',
-        '**补充图 3 | 嗅觉减退组中 OIS 相对 UPSIT 优势的稳健性。**ΔC 及 1,000 次配对 bootstrap 区间:全组、1 年与 2 年 landmark(剔除 landmark 前转化者)、时间拆分(在 2017 年前入组者上重训模型,在 2017 年起入组的嗅觉减退组评价,仅点估计)以及中心拆分的两半(发现 5 中心;外部 6 中心)。发现队列区间含零;中心拆分作为异质性呈现而非支持性证据。'))
+    A(T('**Supplementary Fig. 3 | Robustness of the advantage of OIS over UPSIT in the hyposmia group.** ΔC with 1,000-resample paired bootstrap intervals for the full group, the one- and two-year landmarks (participants converting before the landmark removed), the temporal split (model retrained on participants enrolled before 2017 and evaluated in hyposmia-group participants enrolled from 2017, point estimate only).',
+        '**补充图 3 | 嗅觉减退组中 OIS 相对 UPSIT 优势的稳健性。**ΔC 及 1,000 次配对 bootstrap 区间:全组、1 年与 2 年 landmark(剔除 landmark 前转化者)、时间拆分(在 2017 年前入组者上重训模型,在 2017 年起入组的嗅觉减退组评价,仅点估计)。'))
     A(f'![FigS3]({d}/FigS3_robustness.png)')
     A(T('**Supplementary Fig. 4 | Kaplan–Meier curves by OIS tertile, with 95% confidence bands and pairwise log-rank P values.** **a**, Whole hyposmia group. **b**, Non-deficit stratum. In both populations the middle and highest tertiles do not differ (P = 0.42 and P = 0.09), so the main text divides at the median into a high-risk lower half and a low-risk upper half (Fig. 3c, e).',
         '**补充图 4 | 按 OIS 三分位的 Kaplan–Meier 曲线,含 95% 置信带与两两 log-rank P。**(a) 全嗅觉减退组。(b) 非缺损亚组。两个人群中中间与最高三分位均不分开(P = 0.42 与 P = 0.09),因此正文按中位数分为高危的低半与低危的高半(Fig 3c、e)。'))

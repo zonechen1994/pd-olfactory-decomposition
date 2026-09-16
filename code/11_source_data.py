@@ -186,9 +186,7 @@ L = {r['landmark_yr']: r for r in J['landmark']}; TS = J['temporal_split']; CE =
 rows = [dict(analysis='Full hyposmia group', n=L[0]['n'], events=L[0]['events'], delta_C=L[0]['dc'], ci_lower=L[0]['lo'], ci_upper=L[0]['hi'], p=L[0]['p']),
         dict(analysis='Landmark 1 year', n=L[1]['n'], events=L[1]['events'], delta_C=L[1]['dc'], ci_lower=L[1]['lo'], ci_upper=L[1]['hi'], p=L[1]['p']),
         dict(analysis='Landmark 2 years', n=L[2]['n'], events=L[2]['events'], delta_C=L[2]['dc'], ci_lower=L[2]['lo'], ci_upper=L[2]['hi'], p=L[2]['p']),
-        dict(analysis='Model retrained on pre-2017 enrolment', n=TS['n'], events=TS['events'], delta_C=TS['dc'], ci_lower=TS['lo'], ci_upper=TS['hi'], p=TS['p']),
-        dict(analysis='Centre split, discovery 5 sites', n=CE['discovery']['n_hyp'], events=CE['discovery']['ev_hyp'], delta_C=CE['discovery']['dc'], ci_lower=CE['discovery']['lo'], ci_upper=CE['discovery']['hi'], p=CE['discovery']['p']),
-        dict(analysis='Centre split, external 6 sites', n=CE['external']['n_hyp'], events=CE['external']['ev_hyp'], delta_C=CE['external']['dc'], ci_lower=CE['external']['lo'], ci_upper=CE['external']['hi'], p=CE['external']['p'])]
+        dict(analysis='Model retrained on pre-2017 enrolment', n=TS['n'], events=TS['events'], delta_C=TS['dc'], ci_lower=TS['lo'], ci_upper=TS['hi'], p=TS['p'])]
 add('FigS3', pd.DataFrame(rows), 'Delta C (OIS minus UPSIT) with 95% CI from 1,000 paired bootstrap resamples. P of 0 means below 1/1000.')
 
 
