@@ -631,7 +631,8 @@ def build_doc(chan_slopes):
     # ---------------- Table 14
     A(T('### Supplementary Table 11. Age and the three scores', '### 补充表 11. 年龄与三个分数'))
     AA = J['age_absorption']['correlations']
-    rows = [[r['cohort'], f"{r['n']:,}", '' if r['r_age_upsit'] is None else f"{r['r_age_upsit']:+.3f}", '' if r['r_age_ois'] is None else f"{r['r_age_ois']:+.3f}", f"{r['r_age_omi']:+.3f}", pf(r['p_age_omi'])] for r in AA]
+    _cl = {'Hyposmia stratum': T('Hyposmia group', '嗅觉减退组')}   # ledger label predates the cohort/group/stratum terminology, mapped at display only
+    rows = [[_cl.get(r['cohort'], r['cohort']), f"{r['n']:,}", '' if r['r_age_upsit'] is None else f"{r['r_age_upsit']:+.3f}", '' if r['r_age_ois'] is None else f"{r['r_age_ois']:+.3f}", f"{r['r_age_omi']:+.3f}", pf(r['p_age_omi'])] for r in AA]
     A(md_table([T('Cohort', '队列'), 'n', 'r(age, UPSIT)', 'r(age, OIS)', 'r(age, OMI)', T('P for OMI', 'OMI 的 P')], rows))
     A(T('Age is absorbed in the training cohorts but not in the applied prodromal cohort, so every analysis involving the residual is adjusted for age. Sinonasal disease, head trauma, smoking and post-infectious dysfunction have no field in PPMI.',
         '年龄在训练队列中被吸收,在应用的前驱期队列中未被吸收,故所有涉及残差的分析均校正年龄。鼻窦疾病、颅脑外伤、吸烟与感染后嗅觉障碍在 PPMI 中无字段。'))
