@@ -1,0 +1,51 @@
+model,fold,n_train,n_test,events_train,events_test,status
+hyposmia/demographics,1,802,201,49,19,ok
+hyposmia/demographics,2,802,201,57,11,ok
+hyposmia/demographics,3,802,201,61,7,ok
+hyposmia/demographics,4,803,200,50,18,ok
+hyposmia/demographics,5,803,200,55,13,ok
+hyposmia/SBR,1,802,201,49,19,ok
+hyposmia/SBR,2,802,201,57,11,ok
+hyposmia/SBR,3,802,201,61,7,ok
+hyposmia/SBR,4,803,200,50,18,ok
+hyposmia/SBR,5,803,200,55,13,ok
+hyposmia/SBR+demographics,1,802,201,49,19,ok
+hyposmia/SBR+demographics,2,802,201,57,11,ok
+hyposmia/SBR+demographics,3,802,201,61,7,ok
+hyposmia/SBR+demographics,4,803,200,50,18,ok
+hyposmia/SBR+demographics,5,803,200,55,13,ok
+hyposmia + DAT deficit/demographics,1,212,53,36,10,ok
+hyposmia + DAT deficit/demographics,2,212,53,40,6,ok
+hyposmia + DAT deficit/demographics,3,212,53,35,11,ok
+hyposmia + DAT deficit/demographics,4,212,53,34,12,ok
+hyposmia + DAT deficit/demographics,5,212,53,39,7,ok
+hyposmia + DAT deficit/SBR,1,212,53,36,10,ok
+hyposmia + DAT deficit/SBR,2,212,53,40,6,ok
+hyposmia + DAT deficit/SBR,3,212,53,35,11,ok
+hyposmia + DAT deficit/SBR,4,212,53,34,12,ok
+hyposmia + DAT deficit/SBR,5,212,53,39,7,ok
+hyposmia + DAT deficit/SBR+demographics,1,212,53,36,10,ok
+hyposmia + DAT deficit/SBR+demographics,2,212,53,40,6,ok
+hyposmia + DAT deficit/SBR+demographics,3,212,53,35,11,ok
+hyposmia + DAT deficit/SBR+demographics,4,212,53,34,12,ok
+hyposmia + DAT deficit/SBR+demographics,5,212,53,39,7,ok
+hyposmia + no DAT deficit/demographics,1,590,148,20,2,ok
+hyposmia + no DAT deficit/demographics,2,590,148,17,5,ok
+hyposmia + no DAT deficit/demographics,3,590,148,16,6,ok
+hyposmia + no DAT deficit/demographics,4,591,147,16,6,ok
+hyposmia + no DAT deficit/demographics,5,591,147,19,3,ok
+hyposmia + no DAT deficit/SBR,1,590,148,20,2,ok
+hyposmia + no DAT deficit/SBR,2,590,148,17,5,ok
+hyposmia + no DAT deficit/SBR,3,590,148,16,6,ok
+hyposmia + no DAT deficit/SBR,4,591,147,16,6,ok
+hyposmia + no DAT deficit/SBR,5,591,147,19,3,ok
+hyposmia + no DAT deficit/SBR+demographics,1,590,148,20,2,ok
+hyposmia + no DAT deficit/SBR+demographics,2,590,148,17,5,ok
+hyposmia + no DAT deficit/SBR+demographics,3,590,148,16,6,ok
+hyposmia + no DAT deficit/SBR+demographics,4,591,147,16,6,ok
+hyposmia + no DAT deficit/SBR+demographics,5,591,147,19,3,ok
+hyposmia/putamen+demographics,1,802,201,49,19,ok
+hyposmia/putamen+demographics,2,802,201,57,11,ok
+hyposmia/putamen+demographics,3,802,201,61,7,ok
+hyposmia/putamen+demographics,4,803,200,50,18,ok
+hyposmia/putamen+demographics,5,803,200,55,13,ok

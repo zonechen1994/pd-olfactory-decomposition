@@ -1,0 +1,124 @@
+{
+  "raw_snapshots_match_state": true,
+  "missing_covariates": {
+    "training": {
+      "age": 0,
+      "SEX": 0,
+      "EDUCYRS": 2
+    },
+    "prodromal_baseline": {
+      "age": 0,
+      "SEX": 0,
+      "EDUCYRS": 8
+    },
+    "survival": {
+      "age": 0,
+      "SEX": 0,
+      "EDUCYRS": 6
+    }
+  },
+  "icc": {
+    "n_pairs": 1809,
+    "upsit_r": 0.8066517041774,
+    "upsit_icc": 0.8007913560247816,
+    "omi_r": 0.7637441670187327,
+    "omi_icc": 0.7594488057932283,
+    "by_group": [
+      {
+        "group": "Genetic",
+        "n_pairs": 144,
+        "upsit_r": 0.7895153633074785,
+        "upsit_icc": 0.7868479641056754,
+        "omi_r": 0.800575105269107,
+        "omi_icc": 0.7998733035319129
+      },
+      {
+        "group": "HC",
+        "n_pairs": 94,
+        "upsit_r": 0.575162322129037,
+        "upsit_icc": 0.4238359912252593,
+        "omi_r": 0.6250502907136538,
+        "omi_icc": 0.4895006687139636
+      },
+      {
+        "group": "Hyposmia",
+        "n_pairs": 998,
+        "upsit_r": 0.8009061437184468,
+        "upsit_icc": 0.7887995649684649,
+        "omi_r": 0.7623730381096792,
+        "omi_icc": 0.7527540397541347
+      },
+      {
+        "group": "PD",
+        "n_pairs": 188,
+        "upsit_r": 0.6481361031879009,
+        "upsit_icc": 0.5258199420947012,
+        "omi_r": 0.6133759174419785,
+        "omi_icc": 0.4826491328492357
+      },
+      {
+        "group": "RBD",
+        "n_pairs": 385,
+        "upsit_r": 0.850272547138321,
+        "upsit_icc": 0.8478726567151046,
+        "omi_r": 0.8319798787403994,
+        "omi_icc": 0.8295692450574799
+      }
+    ]
+  },
+  "csf_all_rows_reproduced": true,
+  "tau_ratio_prodromal": [
+    {
+      "cohort": "Prodromal",
+      "analyte": "CSF pTau181/ABeta42",
+      "key": "pTau181_over_ABeta42_CSF",
+      "n": 827,
+      "b_UPSIT": -0.13089137891442473,
+      "se_UPSIT": 0.03660917880597475,
+      "p_UPSIT": 0.00037014334821566433,
+      "b_OIS": 0.00404863416107357,
+      "se_OIS": 0.041550953432909585,
+      "p_OIS": 0.9224022383599582,
+      "b_OMI": -0.12052032648447492,
+      "se_OMI": 0.03409468156632908,
+      "p_OMI": 0.0004307693764629357,
+      "jb_OIS": -0.0341639566775805,
+      "jp_OIS": 0.4247733903849049,
+      "jb_OMI": -0.1273439678303699,
+      "jp_OMI": 0.00031003833449596484,
+      "q_UPSIT": 0.002220860089293986,
+      "q_OIS": 0.9224022383599582,
+      "q_OMI": 0.0025846162587776144
+    }
+  ],
+  "genotype_all_rows_reproduced": true,
+  "partial_correlations": [
+    {
+      "test": "CSF pTau181/ABeta42",
+      "cohort": "Prodromal",
+      "score": "OMI",
+      "r": -0.12236626623766592,
+      "abs_r": 0.12236626623766592,
+      "p": 0.0004204547528714124,
+      "n": 827
+    },
+    {
+      "test": "CSF pTau181/ABeta42",
+      "cohort": "Prodromal",
+      "score": "OIS",
+      "r": 0.002920675376272327,
+      "abs_r": 0.002920675376272327,
+      "p": 0.9331639464562128,
+      "n": 827
+    },
+    {
+      "test": "CSF pTau181/ABeta42",
+      "cohort": "Prodromal",
+      "score": "UPSIT",
+      "r": -0.12374685956222523,
+      "abs_r": 0.12374685956222523,
+      "p": 0.00036109213749960613,
+      "n": 827
+    }
+  ]
+}

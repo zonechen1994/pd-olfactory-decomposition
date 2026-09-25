@@ -1,0 +1,23 @@
+{
+  "python": "3.12.12",
+  "packages": {
+    "numpy": "2.2.6",
+    "pandas": "2.2.3",
+    "scipy": "1.15.3",
+    "scikit-learn": "1.8.0",
+    "scikit-survival": "0.27.0",
+    "lifelines": "0.30.3",
+    "statsmodels": "0.14.6"
+  },
+  "release_commit": "2cd66e497973aa422e361c3de587df6dc0bf14b6",
+  "inputs": {
+    "results/intermediate/02_cohort.pkl": "85528d44397c28b7049e826d2da47f03c69e9138064166b3093b2c28b4393b45",
+    "reproduce_pipeline.ipynb": "bcbf9cdddbba57b5dfb1a060a062ed795d8f965b68761aa275db5f7ccfb34d34",
+    "build_notebook.py": "11dbfd9c75d79b6d3d0cc90b06722b5b75e60ee6e01e634bea617ee7926c4ed6",
+    "Xing_Core_Lab_-_Quant_SBR_18Mar2026.csv": "4a3561fae48042dcb5ac8b61b65db12fb4912cc49c7d04e519bcb61936c4465b",
+    "PPMI_Curated_Data_Cut_Public_20260223.xlsx": "9414dd34485783e5fe224b25c5cef05c0f5b09a4417b63152371990532e8aa95"
+  },
+  "audit_completed_utc": "2026-09-24T13:36:51.613447+00:00",
+  "audit_script_sha256": "933b364ab0bab2d6c7dae768bd9a1019dd8cc3fcaabf2238ed25606f5d32794e",
+  "secondary_script_sha256": "7d9c0bebf6766e56b02080738ee6f92f0afa88daed40b440e82d8a6950beebe6"
+}

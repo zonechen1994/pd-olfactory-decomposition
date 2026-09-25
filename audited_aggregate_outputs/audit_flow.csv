@@ -1,0 +1,11 @@
+stage,n,events,prevalent,incident
+all_baseline,2453,231,78,153
+all_exclude_prevalent,2375,153,0,153
+all_with_followup,1770,153,0,153
+all_complete,1759,152,0,152
+hyposmia_baseline,1558,133,65,68
+hyposmia_exclude_prevalent,1493,68,0,68
+hyposmia_with_followup,1005,68,0,68
+hyposmia_complete,1003,68,0,68
+retaining_prevalent_before_complete_case,1848,231,78,153
+retaining_prevalent_complete_case,1837,230,78,152
