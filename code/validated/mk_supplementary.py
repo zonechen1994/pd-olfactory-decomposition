@@ -14,7 +14,7 @@ Run from the project root:
 Writes
     Supplementary_Information_EN.md
     Supplementary_Information_中文.md
-    821_results/Supplementary/{English/,}FigS1_flow, FigS2_calibration, FigS3_robustness (.pdf + .png)
+    figures/Supplementary/{English/,}FigS1_flow, FigS2_calibration, FigS3_robustness (.pdf + .png)
 """
 import json, os, sys
 import numpy as np, pandas as pd
@@ -117,11 +117,11 @@ def PL(s):
 def outdir():
     # 图件一律只出英文(2026-09-10 用户定):投稿用英文图,中文稿沿用同一套图,
     # 避免同一张图维护两份、也避免中文 PDF 的字体坑。
-    d = os.environ.get('SUPP_FIG_DIR', '821_results/Supplementary/English')
+    d = os.environ.get('SUPP_FIG_DIR', 'figures/Supplementary/English')
     os.makedirs(d, exist_ok=True); return d
 
 A4W, A4H = 8.27, 11.69
-_LAYOUT = {}      # name -> ink extent on the A4 page (points from the top), read by the submission builder
+_LAYOUT = {}      # name -> ink extent on the A4 page (points from the top), read by the figure builder
 
 def a4_subplots(nrows, ncols, w, h, wspace=None, left=.06, right=.94, top=.965):
     """Axes laid out as plt.subplots(nrows, ncols, figsize=(w, h)) would lay them out, but drawn at the

@@ -61,12 +61,12 @@ def T(en,zh): return zh if LANG=='zh' else en
 A4W, A4H = 8.27, 11.69
 TEAL,RED,GREY,DARK,ORANGE,BLUE,PURPLE='#16A085','#C0392B','#7F8C8D','#2C3E50','#E67E22','#2980B9','#8E44AD'
 import os
-ROOT=os.path.dirname(os.path.dirname(os.path.abspath(__file__))); os.chdir(ROOT)
+ROOT=os.path.dirname(os.path.abspath(__file__)); os.chdir(ROOT)
 J=json.load(open('results/repro/section16_stats.json'))
 # Participant-level frame generated locally by code/02_survival_cohort.py.
 _STATE='results/intermediate/02_cohort.pkl'
 if not os.path.exists(_STATE):
-    raise FileNotFoundError(f'{_STATE}: run RUN_JTM.py from the repository root first')
+    raise FileNotFoundError(f'{_STATE}: run code/run_analysis.py from the repository root first')
 st=pickle.load(open(_STATE,'rb')); df=st['df']; prod=st['prod'].copy(); FEAT=st['FEATURES']
 H=[d for d in J['decomposition'] if d['cohort']=='Hyposmia'][0]
 rng=np.random.default_rng(42)
@@ -416,4 +416,4 @@ def fig4():
         panel(ax,'b' if k==0 else 'c', f'{ttl}\n({nn})',dx=-.22)
     # (footer note removed 2026-09-14: it sat below the A4 canvas and was never rendered, and the figure legend carries the same information)
     save(fig,'Fig4_what_the_residual_is',a4=True)
-# fig4 retained from submission
+# Generate Fig. 4 from the validated analysis.

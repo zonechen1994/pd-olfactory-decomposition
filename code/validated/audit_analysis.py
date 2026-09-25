@@ -1,4 +1,4 @@
-"""JTM numerical audit. Writes only under audit/JTM_20260924.
+"""Numerical audit of the corrected analyses. Writes only under code/validated.
 
 Uses the saved participant frames and re-fits the frozen ridge model as a check.
 No outcome-guided model tuning. Canonical comparator: Coxnet, alpha=.1,
